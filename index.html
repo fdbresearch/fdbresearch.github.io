@@ -27,6 +27,8 @@
   <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
   <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
 
+  <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+
   <!-- CSS Unify -->
   <link rel="stylesheet" href="assets/css/unify-core.css">
   <link rel="stylesheet" href="assets/css/unify-components.css">
@@ -351,7 +353,9 @@
                                         <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2017</a>
                                       </span>
                   <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1273-full.html">here</a> and <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>
+                    <p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see <a class="g-font-weight-700 g-font-size-13"
+                        href="http://www.cs.ox.ac.uk/news/1273-full.html">here</a> and <a class="g-font-weight-700 g-font-size-13"
+                        href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>
                   </h3>
                 </article>
                 <!-- End Article -->
@@ -412,7 +416,8 @@
                                                                                                         <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2016</a>
                                                                                                       </span>
                   <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.
+                    <p class="g-color-gray-dark-v1">Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic
+                      and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.
                     </p>
                   </h3>
                 </article>
@@ -427,289 +432,190 @@
 
         </div>
 
-        <!-- Cube Portfolio Blocks - Filter -->
-        <ul id="filterControls" class="d-block list-inline text-center g-mb-50">
-          <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--active g-font-weight-600 g-font-size-13 text-uppercase pr-2 mb-2"
-            role="button" data-filter="*">Show All
-          </li>
-          <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-13 text-uppercase px-2 mb-2"
-            role="button" data-filter=".pi">Principal Investigator
-          </li>
-          <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-13 text-uppercase px-2 mb-2"
-            role="button" data-filter=".postdoc">PostDoc
-          </li>
-          <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-13 text-uppercase px-2 mb-2"
-            role="button" data-filter=".phd">PhD
-          </li>
-          <li class="list-inline-item cbp-filter-item g-color-black g-color-primary--hover g-color-gray-dark-v5--active g-font-weight-600 g-font-size-13 text-uppercase g-letter-spacing-0_5 px-2 mb-2"
-            role="button" data-filter=".collaborator">Collaborator
-          </li>
-        </ul>
-        <!-- End Cube Portfolio Blocks - Filter -->
-      </div>
-      <!-- End Cube Portfolio Blocks -->
 
+        <!-- People -->
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">People</h2>
+        </div>
+        <!-- Carousel -->
+        <div id="carouselCus1" class="js-carousel g-mx-minus-5" data-infinite="true" data-slides-show="4" data-lazy-load="ondemand"
+          data-arrows-classes="u-arrow-v1 g-pos-abs g-top-minus-35 g-width-30 g-height-30 g-color-secondary-dark-v1 g-color-primary--hover"
+          data-arrow-left-classes="fa fa-angle-left g-right-30" data-arrow-right-classes="fa fa-angle-right g-right-0">
 
-      <!-- Cube Portfolio Blocks - Content -->
-      <div class="container">
-        <div class="cbp" data-controls="#filterControls" data-animation="quicksand" data-x-gap="5" data-y-gap="5" data-media-queries='[
-                         {"width": 1500, "cols": 4},
-                         {"width": 1100, "cols": 4},
-                         {"width": 800, "cols": 3},
-                         {"width": 480, "cols": 2},
-                         {"width": 300, "cols": 1}
-                       ]'>
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item pi">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Prof Dan Olteanu</h3>
-                  <span class="d-block g-color-white-opacity-0_8">Project Investigator</span>
+          <div class="js-slide g-px-5">
+            <!-- Figure -->
+            <figure class="u-block-hover g-pos-rel">
+              <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+              <figcaption class="g-color-white">
+                <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                  <h2 class="h4 g-color-white">Dan Olteanu</h2>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                              <i class="icon-communication-095 u-line-icon-pro"></i>
-                            </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item postdoc">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Dr Ahmet Kara</h3>
-                  <span class="d-block g-color-white-opacity-0_8">PostDoc</span>
+                <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">Principal Investigator</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                <i class="icon-communication-095 u-line-icon-pro"></i>
-                              </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item phd">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Maximilian Schleich</h3>
-                  <span class="d-block g-color-white-opacity-0_8">PhD</span>
+                <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">2015</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                <i class="icon-communication-095 u-line-icon-pro"></i>
-                              </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+              </figcaption>
+            </figure>
+            <!-- End Figure -->
           </div>
-          <!-- End Cube Portfolio Blocks - Item -->
 
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item phd">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Yu Tang</h3>
-                  <span class="d-block g-color-white-opacity-0_8">PhD</span>
+
+          <div class="js-slide g-px-5">
+            <!-- Figure -->
+            <figure class="u-block-hover g-pos-rel">
+              <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+              <figcaption class="g-color-white">
+                <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                  <h2 class="h4 g-color-white">Ahmet Kara</h2>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                  <i class="icon-communication-095 u-line-icon-pro"></i>
-                                </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item phd">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Haozhe Zhang</h3>
-                  <span class="d-block g-color-white-opacity-0_8">PhD</span>
+                <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">Postdoctoral Researcher</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                  <i class="icon-communication-095 u-line-icon-pro"></i>
-                                </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item collaborator">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Dr Mahmoud Abo Khamis </h3>
-                  <span class="d-block g-color-white-opacity-0_8">Collaborators</span>
-                  <span class="d-block g-color-white-opacity-0_8">Former LogicBlox, Inc.; now stealth mode</span>
+                <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">2016</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                  <i class="icon-communication-095 u-line-icon-pro"></i>
-                                </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+              </figcaption>
+            </figure>
+            <!-- End Figure -->
           </div>
-          <!-- End Cube Portfolio Blocks - Item -->
 
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item collaborator">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Dr Milos Nikolic</h3>
-                  <span class="d-block g-color-white-opacity-0_8">Collaborators</span>
-                  <span class="d-block g-color-white-opacity-0_8">University of Oxford</span>
+
+          <div class="js-slide g-px-5">
+            <!-- Figure -->
+            <figure class="u-block-hover g-pos-rel">
+              <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+              <figcaption class="g-color-white">
+                <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                  <h2 class="h4 g-color-white">Milos Nikolic</h2>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                  <i class="icon-communication-095 u-line-icon-pro"></i>
-                                </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item collaborator">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Dr Hung Q. Ngo</h3>
-                  <span class="d-block g-color-white-opacity-0_8">Collaborators</span>
-                  <span class="d-block g-color-white-opacity-0_8">Former LogicBlox, Inc.; now stealth mode</span>
+                <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">Departmental Lecturer</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                  <i class="icon-communication-095 u-line-icon-pro"></i>
-                                </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- End Cube Portfolio Blocks - Item -->
-
-
-          <!-- Cube Portfolio Blocks - Item -->
-          <div class="cbp-item collaborator">
-            <div class="u-block-hover g-parent">
-              <img class="img-fluid g-transform-scale-1_1--parent-hover g-transition-0_5 g-transition--ease-in-out" src="assets/img-temp/400x400/img1.png"
-                alt="Image description">
-              <div class="d-flex w-100 h-100 u-block-hover__additional--fade u-block-hover__additional--fade-in g-bg-bluegray-opacity-0_5 opacity-0 g-opacity-1--parent-hover g-pos-abs g-top-0 g-left-0 g-transition-0_3 g-transition--ease-in g-pa-20">
-                <div class="d-flex align-items-start flex-column mb-auto">
-                  <h3 class="h5 g-color-white g-font-weight-600 mb-1">Dr XuanLong Nguyen</h3>
-                  <span class="d-block g-color-white-opacity-0_8">Collaborators</span>
-                  <span class="d-block g-color-white-opacity-0_8">University of Michigan</span>
+                <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">2016</span>
                 </div>
-                <ul class="align-items-end flex-column list-inline mt-auto ml-auto mb-0">
-                  <li class="list-inline-item">
-                    <a class="u-icon-v2 u-icon-size--xs g-brd-white g-color-black g-bg-white rounded-circle" href="#">
-                                            <i class="icon-communication-095 u-line-icon-pro"></i>
-                                          </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+                <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+              </figcaption>
+            </figure>
+            <!-- End Figure -->
           </div>
-          <!-- End Cube Portfolio Blocks - Item -->
+
+
+          <div class="js-slide g-px-5">
+            <!-- Figure -->
+            <figure class="u-block-hover g-pos-rel">
+              <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+              <figcaption class="g-color-white">
+                <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                  <h2 class="h4 g-color-white">Maximilian Schleich</h2>
+                </div>
+                <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">DPhil Student</span>
+                </div>
+                <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                  <span class="d-block h6 g-color-white">2015</span>
+                </div>
+                <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+              </figcaption>
+            </figure>
+            <!-- End Figure -->
+          </div>
+
+          <div class="js-slide g-px-5">
+              <!-- Figure -->
+              <figure class="u-block-hover g-pos-rel">
+                <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+                <figcaption class="g-color-white">
+                  <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                    <h2 class="h4 g-color-white">Yu Tang</h2>
+                  </div>
+                  <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                    <span class="d-block h6 g-color-white">DPhil Student</span>
+                  </div>
+                  <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                    <span class="d-block h6 g-color-white">2015</span>
+                  </div>
+                  <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+                </figcaption>
+              </figure>
+              <!-- End Figure -->
+            </div>
+
+            <div class="js-slide g-px-5">
+                <!-- Figure -->
+                <figure class="u-block-hover g-pos-rel">
+                  <img class="img-fluid u-block-hover__main--zoom-v1 g-transition-0_5" src="assets/img-temp/350x400/img3.jpg" alt="Image Description">
+                  <figcaption class="g-color-white">
+                    <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
+                      <h2 class="h4 g-color-white">Haozhe Zhang</h2>
+                    </div>
+                    <div class="w-50 g-pos-abs g-bottom-0 g-left-0 g-pa-20">
+                      <span class="d-block h6 g-color-white">DPhil Student</span>
+                    </div>
+                    <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
+                      <span class="d-block h6 g-color-white">2017</span>
+                    </div>
+                    <a class="u-link-v2" href="bm-classic-single-2.html"></a>
+                  </figcaption>
+                </figure>
+                <!-- End Figure -->
+              </div>
+
+
+          <!-- End Carousel -->
+
+          <!-- End People -->
+
 
 
         </div>
-      </div>
-      <!-- End Cube Portfolio Blocks - Content -->
+        <!-- End Cube Portfolio Blocks -->
 
-      <div class="g-pt-100">
-        <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 align-self-center text-center text-md-left g-mb-10 g-mb-0--md">
-                <div class="d-lg-flex">
-                  <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2017 © All Rights Reserved.</small>
-                  <ul class="u-list-inline">
-                    <li class="list-inline-item">
-                      <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Privacy Policy</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <span>|</span>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Terms of Use</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <span>|</span>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">License</a>
-                    </li>
-                    <li class="list-inline-item">
-                      <span>|</span>
-                    </li>
-                    <li class="list-inline-item">
-                      <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Contact</a>
-                    </li>
-                  </ul>
+
+        <div class="g-pt-100">
+          <footer class="g-bg-gray-dark-v1 g-color-white-opacity-0_8 g-py-20">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 align-self-center text-center text-md-left g-mb-10 g-mb-0--md">
+                  <div class="d-lg-flex">
+                    <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2017 © All Rights Reserved.</small>
+                    <ul class="u-list-inline">
+                      <li class="list-inline-item">
+                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Privacy Policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <span>|</span>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Terms of Use</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <span>|</span>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">License</a>
+                      </li>
+                      <li class="list-inline-item">
+                        <span>|</span>
+                      </li>
+                      <li class="list-inline-item">
+                        <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
+
+
               </div>
-
-
             </div>
-          </div>
-        </footer>
-      </div>
+          </footer>
+        </div>
 
-      <!-- End Copyright Footer -->
+        <!-- End Copyright Footer -->
 
 
 
@@ -729,6 +635,8 @@
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
+  <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+
   <!-- JS Unify -->
   <script src="assets/js/hs.core.js"></script>
   <script src="assets/js/components/hs.header.js"></script>
@@ -737,6 +645,7 @@
   <script src="assets/js/components/hs.cubeportfolio.js"></script>
   <script src="assets/js/components/hs.onscroll-animation.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
+  <script src="assets/js/components/hs.carousel.js"></script>
 
   <!-- JS Customization -->
   <script src="assets/js/custom.js"></script>
@@ -752,6 +661,31 @@
 
       // initialization of go to
       $.HSCore.components.HSGoTo.init('.js-go-to');
+
+      // initialization of carousel
+      $.HSCore.components.HSCarousel.init('[class*="js-carousel"]');
+
+      $('#carouselCus1').slick('setOption', 'responsive', [{
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1
+        }
+      }, {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2
+        }
+      }, {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
+      }], true);
     });
 
     $(window).on('load', function () {
