@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="manifest.json">
+  <!-- <link rel="manifest" href="manifest.json"> -->
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4270a9">
   <meta name="theme-color" content="#ffffff">
   <!-- Google Fonts -->
@@ -42,7 +42,6 @@
   <!-- CSS Customization -->
   <link rel="stylesheet" href="assets/css/custom.css">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.min.js"></script>
 </head>
 
 <body>
@@ -51,83 +50,83 @@
 
     <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-shadow-v19">
-        <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-          <nav class="js-mega-menu navbar navbar-expand-lg">
-            <div class="container">
-              <!-- Responsive Toggle Button -->
-              <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button"
-                aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-                  <span class="hamburger hamburger--slider">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button"
+              aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
+              <span class="hamburger hamburger--slider">
                 <span class="hamburger-box">
                   <span class="hamburger-inner"></span>
-                  </span>
-                  </span>
-                </button>
-              <!-- End Responsive Toggle Button -->
-  
-              <!-- Logo -->
-              <a href="index.html" class="navbar-brand">
-                  <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
-                </a>
-              <!-- End Logo -->
-  
-              <!-- Navigation -->
-              <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-  
-                <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-                  <!-- Home -->
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
-                  </li>
-                  <!-- End Home -->
-  
-                  <!-- Projects -->
-                  <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-                    <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Projects</a>
-  
-                    <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                      id="nav-submenu--features" aria-labelledby="nav-link--features">
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="principles.html">
-                          Factorised Databases</a>
-                      </li>
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="analytics.html">In-Database Analytics</a>
-                      </li>
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="ivm.html">Incremental View Maintenance</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <!-- End Projects -->
-  
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
-                  </li>
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
-                  </li>
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="people.html" class="nav-link g-py-7 g-px-0">People</a>
-                  </li>
-  
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="news.html" class="nav-link g-py-7 g-px-0">News</a>
-                  </li>
-                  
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="index.html" class="nav-link g-py-7 g-px-0">Blog</a>
-                  </li>
-                  
-                </ul>
-              </div>
-              <!-- End Navigation -->
-  
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+
+            <!-- Logo -->
+            <a href="index.html" class="navbar-brand">
+              <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
+            </a>
+            <!-- End Logo -->
+
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Home -->
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
+                </li>
+                <!-- End Home -->
+
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Projects</a>
+
+                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features" aria-labelledby="nav-link--features">
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="principles.html">
+                        Factorised Databases</a>
+                    </li>
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="analytics.html">In-Database Analytics</a>
+                    </li>
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="ivm.html">Incremental View Maintenance</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
+                </li>
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
+                </li>
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="people.html" class="nav-link g-py-7 g-px-0">People</a>
+                </li>
+
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="news.html" class="nav-link g-py-7 g-px-0">News</a>
+                </li>
+
+                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
+                  <a href="index.html" class="nav-link g-py-7 g-px-0">Blog</a>
+                </li>
+
+              </ul>
             </div>
-          </nav>
-        </div>
-      </header>
-      <!-- End Header -->
+            <!-- End Navigation -->
+
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
 
 
 
@@ -151,8 +150,8 @@
                   <i class="g-color-gray-light-v2 g-ml-5">/</i>
                 </li>
                 <li class="list-inline-item">
-                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#Activities">Activities</a>
-                  </li>
+                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#Activities">Activities</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -165,12 +164,12 @@
 
 
     <!-- Blog Minimal Blocks -->
-    <div class="container g-pb-20">
+    <div id="fdb-app" class="container g-pb-20">
 
       <!-- row -->
       <div class="row justify-content-between">
-          <a name="News"></a>
-          <a name="Awards"></a>
+        <a name="News"></a>
+        <a name="Awards"></a>
         <!-- left panel -->
         <div class="col-lg-6 g-mb-80">
           <div class="u-heading-v3-1 g-mb-30">
@@ -181,108 +180,16 @@
           <div class="g-mb-40">
 
             <!-- Article -->
-            <article>
-
+            <article v-for="new_content in news">
               <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">Sep 31, 2017</a>
+                <a class="u-link-v5 g-color-gray-dark-v4" href="#">{{new_content.date}}</a>
               </span>
 
+              <h3 class="h6" v-html="new_content.html"></h3>
 
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">New PhD and postdoc positions available in my group funded by a 5-year ERC consolidator grant! Please contact
-                  a project member for details if you are interested.</p>
-                <p>
-                  <ul>
-                    <li>
-                      <a class="g-font-weight-700 g-font-size-13" href="#">Senior Researcher on in-database analytics</a>
-                    </li>
-                    <li>
-                      <a class="g-font-weight-700 g-font-size-13" href="#">Fully-Funded Doctoral Studentship in Databases</a>
-                    </li>
-                  </ul>
-                </p>
-              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
             </article>
             <!-- End Article -->
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-            <!-- Article -->
-            <article>
-              <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">Sep 2017</a>
-              </span>
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">Our own Ahmet Kara helping out at the ERC-funded
-                  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&utm_medium=referral">Curiosity Festival</a> taking place in Oxford.</p>
-              </h3>
-            </article>
-            <!-- End Article -->
-
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-            <!-- Article -->
-            <article>
-              <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">June 2017</a>
-              </span>
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!</p>
-              </h3>
-            </article>
-            <!-- End Article -->
-
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-            <!-- Article -->
-            <article>
-              <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2017</a>
-              </span>
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see
-                  <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1273-full.html">here</a> and
-                  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>
-              </h3>
-            </article>
-            <!-- End Article -->
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-            <!-- Article -->
-            <article>
-              <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">October 2016</a>
-              </span>
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">Pierre-Yves was awarded the Hoare Prize for best MSc in CS project 2016. His project investigates the problem
-                  of many-core and distributed regression learning over factorised joins.</p>
-              </h3>
-            </article>
-            <!-- End Article -->
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-            <!-- Article -->
-            <article>
-              <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">May 2016</a>
-              </span>
-              <h3 class="h6">
-                <p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>
-              </h3>
-            </article>
-            <!-- End Article -->
-
-
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
 
           </div>
           <!-- End News Feed -->
@@ -297,67 +204,22 @@
           </div>
           <!-- Awards content -->
           <!-- Article -->
-          <article class="media g-bg-white">
-            <figure class="d-flex g-width-70 g-height-70 mr-3">
-              <img class="img-fluid" src="assets/acknowledgements/epsrc-logo.png" alt="Image Description">
-            </figure>
+          <div v-for="award_content in awards">
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img class="img-fluid" :src="award_content.img" alt="Image Description">
+              </figure>
 
-            <div class="media-body">
-              <span class="g-font-size-14">
-                <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">June 2017</a>
-              </span>
-              <h4 class="g-font-size-13 mb-0">We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!</h4>
-            </div>
-          </article>
-          <!-- End Article -->
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">{{award_content.date}}</a>
+                </span>
+                <h4 class="g-font-size-13 mb-0" v-html="award_content.html"></h4>
+              </div>
 
-          <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
-
-          <!-- Article -->
-          <article class="media g-bg-white">
-            <figure class="d-flex g-width-70 g-height-70 mr-3">
-              <img class="img-fluid" src="assets/acknowledgements/epsrc-logo.png" alt="Image Description">
-            </figure>
-
-            <div class="media-body">
-              <span class="g-font-size-14">
-                <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">October 2016</a>
-              </span>
-              <h4 class="g-font-size-13 mb-0">Pierre-Yves was awarded the Hoare Prize for best MSc in CS project 2016. His project investigates the problem
-                of many-core and distributed regression learning over factorised joins.</h4>
-            </div>
-          </article>
-          <!-- End Article -->
-
-          <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
-
-          <!-- Article -->
-          <article class="media g-bg-white g-pa-10">
-            <figure class="d-flex g-width-70 g-height-70 mr-3">
-              <img class="img-fluid" src="assets/acknowledgements/epsrc-logo.png" alt="Image Description">
-            </figure>
-
-            <div class="media-body">
-              <span class="g-font-size-14">
-                <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">Sep 31, 2017</a>
-              </span>
-              <h4 class="g-font-size-13 mb-0">Jakub Závodný has been partially supported by the EPSRC DTA Grant EP/P505216/1</h4>
-            </div>
-          </article>
-          <!-- End Article -->
-          <!-- Article -->
-          <article class="media g-bg-white g-pa-10">
-            <figure class="d-flex g-width-70 g-height-70 mr-3">
-              <img class="img-fluid" src="assets/acknowledgements/epsrc-logo.png" alt="Image Description">
-            </figure>
-
-            <div class="media-body">
-              <span class="g-font-size-14">
-                <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">Sep 31, 2017</a>
-              </span>
-              <h4 class="g-font-size-13 mb-0">Jakub Závodný has been partially supported by the EPSRC DTA Grant EP/P505216/1</h4>
-            </div>
-          </article>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
+          </div>
           <!-- End Article -->
 
           <!-- end Awards content -->
@@ -369,7 +231,7 @@
 
       <!-- row -->
       <div class="row justify-content-between">
-          <a name="Activities"></a>
+        <a name="Activities"></a>
         <div class="col-lg-12 g-mb-80">
           <div class="u-heading-v3-1 g-mb-30">
             <h2 class="u-heading-v3__title g-color-gray-dark-v1
@@ -393,107 +255,74 @@
 
                 <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
                   <li class="list-inline-item">
-                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Mike Coolman</a>
-                  </li>
-                  <li class="list-inline-item">/</li>
-                  <li class="list-inline-item">
                     July 20, 2017
-                  </li>
-                  <li class="list-inline-item">/</li>
-                  <li class="list-inline-item">
-                    <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
-                      <i class="icon-finance-206 u-line-icon-pro align-middle g-pos-rel g-top-1 mr-1"></i> 24
-                    </a>
                   </li>
                 </ul>
 
                 <p class="g-color-gray-dark-v41">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten. If you
                   are a designer, you have probably gotten.</p>
-                <a class="g-font-size-12" href="#">Read More..</a>
               </article>
               <!-- Article -->
 
             </div>
 
             <div class="col-lg-4 g-mb-50 g-mb-0--lg">
-                <!-- Article -->
-                <article class="g-mb-40">
-                  <figure class="u-shadow-v25 g-pos-rel g-mb-20">
-                    <img class="img-fluid w-100" src="assets/img-temp/400x270/img11.jpg" alt="Image Description">
-  
-                    <figcaption class="g-pos-abs g-top-20 g-left-20">
-                      <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">Holiday</a>
-                    </figcaption>
-                  </figure>
-  
-                  <h3 class="h4 g-mb-10">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">10 Best tips and resources for UX/UI Designers in 2017</a>
-                  </h3>
-  
-                  <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
-                    <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Mike Coolman</a>
-                    </li>
-                    <li class="list-inline-item">/</li>
-                    <li class="list-inline-item">
-                      July 20, 2017
-                    </li>
-                    <li class="list-inline-item">/</li>
-                    <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
-                        <i class="icon-finance-206 u-line-icon-pro align-middle g-pos-rel g-top-1 mr-1"></i> 24
-                      </a>
-                    </li>
-                  </ul>
-  
-                  <p class="g-color-gray-dark-v41">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten. If you
-                    are a designer, you have probably gotten.</p>
-                  <a class="g-font-size-12" href="#">Read More..</a>
-                </article>
-                <!-- Article -->
-  
-              </div>
-              <div class="col-lg-4 g-mb-50 g-mb-0--lg">
-                  <!-- Article -->
-                  <article class="g-mb-40">
-                    <figure class="u-shadow-v25 g-pos-rel g-mb-20">
-                      <img class="img-fluid w-100" src="assets/img-temp/400x270/img11.jpg" alt="Image Description">
-    
-                      <figcaption class="g-pos-abs g-top-20 g-left-20">
-                        <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">Holiday</a>
-                      </figcaption>
-                    </figure>
-    
-                    <h3 class="h4 g-mb-10">
-                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">10 Best tips and resources for UX/UI Designers in 2017</a>
-                    </h3>
-    
-                    <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
-                      <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">Mike Coolman</a>
-                      </li>
-                      <li class="list-inline-item">/</li>
-                      <li class="list-inline-item">
-                        July 20, 2017
-                      </li>
-                      <li class="list-inline-item">/</li>
-                      <li class="list-inline-item">
-                        <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">
-                          <i class="icon-finance-206 u-line-icon-pro align-middle g-pos-rel g-top-1 mr-1"></i> 24
-                        </a>
-                      </li>
-                    </ul>
-    
-                    <p class="g-color-gray-dark-v41">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten. If you
-                      are a designer, you have probably gotten.</p>
-                    <a class="g-font-size-12" href="#">Read More..</a>
-                  </article>
-                  <!-- Article -->
-    
-                </div>
+              <!-- Article -->
+              <article class="g-mb-40">
+                <figure class="u-shadow-v25 g-pos-rel g-mb-20">
+                  <img class="img-fluid w-100" src="assets/img-temp/400x270/img11.jpg" alt="Image Description">
+
+                  <figcaption class="g-pos-abs g-top-20 g-left-20">
+                    <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">Holiday</a>
+                  </figcaption>
+                </figure>
+
+                <h3 class="h4 g-mb-10">
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">10 Best tips and resources for UX/UI Designers in 2017</a>
+                </h3>
+
+                <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
+                  <li class="list-inline-item">
+                    July 20, 2017
+                  </li>
+                </ul>
+
+                <p class="g-color-gray-dark-v41">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten. If you
+                  are a designer, you have probably gotten.</p>
+              </article>
+              <!-- Article -->
+
+            </div>
+            <div class="col-lg-4 g-mb-50 g-mb-0--lg">
+              <!-- Article -->
+              <article class="g-mb-40">
+                <figure class="u-shadow-v25 g-pos-rel g-mb-20">
+                  <img class="img-fluid w-100" src="assets/img-temp/400x270/img11.jpg" alt="Image Description">
+
+                  <figcaption class="g-pos-abs g-top-20 g-left-20">
+                    <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">Holiday</a>
+                  </figcaption>
+                </figure>
+
+                <h3 class="h4 g-mb-10">
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">10 Best tips and resources for UX/UI Designers in 2017</a>
+                </h3>
+
+                <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
+                  <li class="list-inline-item">
+                    July 20, 2017
+                  </li>
+                </ul>
+
+                <p class="g-color-gray-dark-v41">Clark Valberg is the founder and CEO of InVision. If you are a designer, you have probably gotten. If you
+                  are a designer, you have probably gotten.</p>
+              </article>
+              <!-- Article -->
+
+            </div>
 
           </div>
-          
+
         </div>
 
       </div>
@@ -583,6 +412,10 @@
 
 
   </main>
+
+  <!-- Vue.js part -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+  <script src="./content/news.js"></script>
 
   <!-- JS Global Compulsory -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>

@@ -1,4 +1,4 @@
-const news = [{
+const news_data = [{
   date: "Sep 31, 2017",
   html: `
     <p class="g-color-gray-dark-v1">New PhD and postdoc positions available in my group funded by a 5-year ERC consolidator grant! Please contact
@@ -33,6 +33,81 @@ const news = [{
 }, {
   date: "May 2016",
   html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
-}
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}, {
+  date: "May 2016",
+  html: `<p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>`
+}]
 
+const awards_data = [{
+    date: "June 2017",
+    img: "assets/acknowledgements/epsrc-logo.png",
+    html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
+  },
+  {
+    date: "June 2017",
+    img: "assets/acknowledgements/epsrc-logo.png",
+    html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
+  },
+  {
+    date: "June 2017",
+    img: "assets/acknowledgements/epsrc-logo.png",
+    html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
+  },
+  {
+    date: "June 2017",
+    img: "assets/acknowledgements/epsrc-logo.png",
+    html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
+  },
 ]
+
+var news_app = new Vue({
+  el: '#fdb-app',
+  data: {
+    news: news_data,
+    awards: awards_data,
+  },
+  computed: {
+    top_news: function () {
+      return news_data.slice(0, Math.min(7, news_data.length))
+    }
+  }
+})

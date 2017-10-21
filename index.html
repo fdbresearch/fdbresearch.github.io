@@ -55,18 +55,18 @@
             <!-- Responsive Toggle Button -->
             <button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" type="button"
               aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-                <span class="hamburger hamburger--slider">
-              <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
                 </span>
-                </span>
-              </button>
+              </span>
+            </button>
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
             <a href="index.html" class="navbar-brand">
-                <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
-              </a>
+              <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
+            </a>
             <!-- End Logo -->
 
             <!-- Navigation -->
@@ -112,11 +112,11 @@
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                   <a href="news.html" class="nav-link g-py-7 g-px-0">News</a>
                 </li>
-                
+
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                   <a href="index.html" class="nav-link g-py-7 g-px-0">Blog</a>
                 </li>
-                
+
               </ul>
             </div>
             <!-- End Navigation -->
@@ -171,7 +171,7 @@
     <div class="g-pt-50"></div>
 
 
-    <div>
+    <div id="fdb-app">
 
 
 
@@ -320,134 +320,18 @@
                 <div class="u-heading-v3-1 g-mb-30">
                   <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">News</h2>
                 </div>
-
                 <!-- Article -->
-                <article>
-
+                <article v-for="new_content in top_news">
                   <span class="g-font-size-12">
-                        <a class="u-link-v5 g-color-gray-dark-v4" href="#">Sep 31, 2017</a>
-                      </span>
+                    <a class="u-link-v5 g-color-gray-dark-v4" href="#">{{new_content.date}}</a>
+                  </span>
 
+                  <h3 class="h6" v-html="new_content.html"></h3>
 
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">New PhD and postdoc positions available in my group funded by a 5-year ERC consolidator grant! Please
-                      contact a project member for details if you are interested.</p>
-                    <p>
-                      <ul>
-                        <li><a class="g-font-weight-700 g-font-size-13" href="#">Senior Researcher on in-database analytics</a>                          </li>
-                        <li><a class="g-font-weight-700 g-font-size-13" href="#">Fully-Funded Doctoral Studentship in Databases</a>                          </li>
-                      </ul>
-                    </p>
-                  </h3>
+                  <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
                 </article>
                 <!-- End Article -->
 
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-                <!-- Article -->
-                <article>
-                  <span class="g-font-size-12">
-                            <a class="u-link-v5 g-color-gray-dark-v4" href="#">Sep 2017</a>
-                          </span>
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">Our own Ahmet Kara helping out at the ERC-funded <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&utm_medium=referral">Curiosity Festival</a>                      taking place in Oxford.</p>
-                  </h3>
-                </article>
-                <!-- End Article -->
-
-
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-                <!-- Article -->
-                <article>
-                  <span class="g-font-size-12">
-                        <a class="u-link-v5 g-color-gray-dark-v4" href="#">June 2017</a>
-                      </span>
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!</p>
-                  </h3>
-                </article>
-                <!-- End Article -->
-
-
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-                <!-- Article -->
-                <article>
-                  <span class="g-font-size-12">
-                                        <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2017</a>
-                                      </span>
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see <a class="g-font-weight-700 g-font-size-13"
-                        href="http://www.cs.ox.ac.uk/news/1273-full.html">here</a> and <a class="g-font-weight-700 g-font-size-13"
-                        href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>
-                  </h3>
-                </article>
-                <!-- End Article -->
-
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-                <!-- Article -->
-                <article>
-                  <span class="g-font-size-12">
-                                                        <a class="u-link-v5 g-color-gray-dark-v4" href="#">October 2016</a>
-                                                      </span>
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">Pierre-Yves was awarded the Hoare Prize for best MSc in CS project 2016. His project investigates the
-                      problem of many-core and distributed regression learning over factorised joins.</p>
-                  </h3>
-                </article>
-                <!-- End Article -->
-
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-                <!-- Article -->
-                <article>
-                  <span class="g-font-size-12">
-                                                                        <a class="u-link-v5 g-color-gray-dark-v4" href="#">May 2016</a>
-                                                                      </span>
-                  <h3 class="h6">
-                    <p class="g-color-gray-dark-v1">Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.</p>
-                  </h3>
-                </article>
-                <!-- End Article -->
-
-
-
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-
-
-                <!-- Article -->
-                <!-- <article> -->
-                <!--   <span class="g-font-size-12"> -->
-                <!--                                                                         <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2016</a> -->
-                <!--                                                                       </span> -->
-                <!--   <h3 class="h6"> -->
-                <!--     <p class="g-color-gray-dark-v1">The FDB project was featured in three interviews with Dan on Romanian National Radio (Radio Romania Cultural).</p> -->
-                <!--   </h3> -->
-                <!-- </article> -->
-                <!-- <\!-- End Article -\-> -->
-
-
-
-                <!-- <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10"> -->
-
-
-                <!-- <\!-- Article -\-> -->
-                <!-- <article> -->
-                <!--   <span class="g-font-size-12"> -->
-                <!--                                                                                         <a class="u-link-v5 g-color-gray-dark-v4" href="#">March 2016</a> -->
-                <!--                                                                                       </span> -->
-                <!--   <h3 class="h6"> -->
-                <!--     <p class="g-color-gray-dark-v1">Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis. -->
-                <!--     </p> -->
-                <!--   </h3> -->
-                <!-- </article> -->
-                <!-- End Article -->
               </div>
             </div>
             <!-- End News Feed -->
@@ -493,7 +377,7 @@
                 <div class="g-pos-abs g-top-0 g-left-0 g-pa-20">
                   <h2 class="h4 g-color-white">Milos Nikolic</h2>
                 </div>
-   
+
                 <div class="w-50 text-right g-pos-abs g-bottom-0 g-right-0 g-pa-20">
                   <span class="d-block h6 g-color-white">2016</span>
                 </div>
@@ -605,7 +489,9 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Dan Olteanu acknowledges the support of the FADAMS ERC consolidator grant (2016-2021)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Dan Olteanu acknowledges the support of the FADAMS ERC consolidator grant (2016-2021)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -619,7 +505,9 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Dan Olteanu acknowledges the support of a Google Research Award (starting 2014)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Dan Olteanu acknowledges the support of a Google Research Award (starting 2014)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -634,8 +522,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Dan Olteanu acknowledges the support of a Microsoft Azure grant (2017-)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Dan Olteanu acknowledges the support of a Microsoft Azure grant (2017-)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -649,8 +539,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Dan Olteanu acknowledges the support of an AWS in Education Research grant (2015-2017)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Dan Olteanu acknowledges the support of an AWS in Education Research grant (2015-2017)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -664,8 +556,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Dan Olteanu acknowledges the support of a Fondation Wiener Anspach grant (2017-2019)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Dan Olteanu acknowledges the support of a Fondation Wiener Anspach grant (2017-2019)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -679,8 +573,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Yu Tang has been supported by the VADA EPSRC programme grant (2015-2017)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Yu Tang has been supported by the VADA EPSRC programme grant (2015-2017)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -694,8 +590,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Dan Olteanu acknowledges the support of an Astor Travel Fund grant (2013)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Dan Olteanu acknowledges the support of an Astor Travel Fund grant (2013)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -711,8 +609,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Jakub Závodný has been partially supported by the EPSRC DTA Grant EP/P505216/1</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Jakub Závodný has been partially supported by the EPSRC DTA Grant EP/P505216/1</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -726,8 +626,10 @@
                     </figure>
 
                     <div class="media-body">
-                      <h4 class="g-font-size-13 mb-0"><a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
-                          Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (2016)</a></h4>
+                      <h4 class="g-font-size-13 mb-0">
+                        <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">
+                          Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (2016)</a>
+                      </h4>
                     </div>
                   </article>
                   <!-- End Article -->
@@ -777,6 +679,10 @@
 
 
   </main>
+
+  <!-- Vue.js part -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+  <script src="./content/news.js"></script>
 
   <!-- JS Global Compulsory -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
