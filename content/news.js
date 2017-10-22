@@ -54,7 +54,7 @@ const awards_data = [{
     date: "March 2016",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.",
-  },  {
+  }, {
     date: "December 2015",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "Dan received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized data management systems.",
@@ -68,11 +68,11 @@ const awards_data = [{
     date: "January 2015",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "We received an AWS in Education Research grant. Thank you Amazon!",
-  },  {
+  }, {
     date: "August 2014",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "We received a Google Research Award. Thank you Google!",
-  },  {
+  }, {
     date: "October 2013",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "Laura was awarded the Hoare Prize for best MSc in CS project 2013. Her project investigates the problem of updates in factorised databases.",
@@ -80,7 +80,7 @@ const awards_data = [{
     date: "September 2012",
     img: "assets/acknowledgements/epsrc-logo.png",
     html: "Tomáš was awarded the Gloucester Research Project Prize for best 4th year Maths&CS project 2012. His project investigates the evaluation problem for queries with ORDER-BY and GROUP-BY clauses on factorised databases. ",
-  }, 
+  },
 ]
 
 var news_app = new Vue({
