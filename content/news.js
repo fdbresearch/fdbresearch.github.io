@@ -37,48 +37,48 @@ const news_data = [{
 
 const awards_data = [{
     date: "June 2017",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/azure.png",
     html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
   },
   {
     date: "October 2016",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/oxford.png",
     html: "Pierre-Yves was awarded the Hoare Prize for best MSc in CS project 2016. His project investigates the problem of many-core and distributed regression learning over factorised joins. ",
   },
   {
     date: "May 2016",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/sigmod2016.png",
     html: "Maximilian received a SIGMOD travel grant to attend SIGMOD in San Francisco in June 2016.",
   },
   {
     date: "March 2016",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/vcla.png",
     html: "Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.",
   }, {
     date: "December 2015",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/erc-logo.png",
     html: "Dan received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized data management systems.",
   },
   {
     date: "September 2015",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/oxford.png",
     html: "Maximilian was awarded the Hoare Prize for best MSc in CS project 2015. His project investigates the problem of learning linear regression models over factorised joins. ",
   },
   {
     date: "January 2015",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/aws.png",
     html: "We received an AWS in Education Research grant. Thank you Amazon!",
   }, {
     date: "August 2014",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/google-logo.png",
     html: "We received a Google Research Award. Thank you Google!",
   }, {
     date: "October 2013",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/oxford.png",
     html: "Laura was awarded the Hoare Prize for best MSc in CS project 2013. Her project investigates the problem of updates in factorised databases.",
   }, {
     date: "September 2012",
-    img: "assets/acknowledgements/epsrc-logo.png",
+    img: "assets/acknowledgements/oxford.png",
     html: "Tomáš was awarded the Gloucester Research Project Prize for best 4th year Maths&CS project 2012. His project investigates the evaluation problem for queries with ORDER-BY and GROUP-BY clauses on factorised databases. ",
   },
 ]
