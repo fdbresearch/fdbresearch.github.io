@@ -91,7 +91,7 @@ var news_app = new Vue({
   },
   computed: {
     top_news: function () {
-      return news_data.slice(0, Math.min(2, news_data.length))
+      return news_data.slice(0, Math.min(3, news_data.length))
     }
   }
 })
