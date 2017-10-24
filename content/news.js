@@ -28,10 +28,10 @@ const news_data = [{
   html: `<p class="g-color-gray-dark-v1">The FDB project was featured in three interviews with Dan on Romanian National Radio (Radio
     Romania Cultural).</p>`
 }, {
-  date: "May 2016",
+  date: "November 2013",
   html: `<p class="g-color-gray-dark-v1">Congratulations to Jakub, who successfully defended his PhD and joined Google Zurich!</p>`
 }, {
-  date: "May 2016",
+  date: "June 2012",
   html: `<p class="g-color-gray-dark-v1">Jakub will do an internship over the summer of 2012 at Google Zurich.</p>`
 }, ]
 
@@ -91,7 +91,7 @@ var news_app = new Vue({
   },
   computed: {
     top_news: function () {
-      return news_data.slice(0, Math.min(7, news_data.length))
+      return news_data.slice(0, Math.min(2, news_data.length))
     }
   }
 })
