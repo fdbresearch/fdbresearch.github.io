@@ -140,6 +140,7 @@ var news_app = new Vue({
   data: {
     news: news_data,
     awards: awards_data,
+    acknowledgements: acknowledgements_data,
   },
   computed: {
     // control the number of news shown on the home page
@@ -147,7 +148,7 @@ var news_app = new Vue({
       return news_data.slice(0, Math.min(3, news_data.length))
     },
     acknowledgement_logos: function () {
-      return [...acknowledgements_data.sort((a,b) => a.tag > b.tag).map(award => award.img)]
+      return acknowledgements_data.sort((a,b) => a.tag > b.tag)
     },
   }
 })
