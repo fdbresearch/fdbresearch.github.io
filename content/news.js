@@ -35,12 +35,66 @@ const news_data = [{
   html: `<p class="g-color-gray-dark-v1">Jakub will do an internship over the summer of 2012 at Google Zurich.</p>`
 }, ]
 
-const awards_data = [{
+const acknowledgements_data = [{
     date: "June 2017",
-    img: "assets/acknowledgements/azure.png",
     html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
+    img: "assets/acknowledgements/azure.png",
+    url: "https://azure.microsoft.com/",
   },
   {
+    date: "2017-2019",
+    html: "Dan received a Fondation Wiener Anspach grant.",
+    img: "assets/acknowledgements/fwq.jpeg",
+    url: "http://fwa.ulb.ac.be/",
+  },
+  {
+    date: "2016",
+    html: "Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (2016).",
+    img: "assets/acknowledgements/dbonto.png",
+    url: "http://dbonto.cs.ox.ac.uk/",
+  },
+  {
+    date: "December 2015",
+    html: "Dan received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized data management systems.",
+    img: "assets/acknowledgements/erc-logo.png",
+    url: "https://erc.europa.eu/",
+  },
+  {
+    date: "2015-2017",
+    html: "Yu Tang has been supported by the VADA EPSRC programme grant (2015-2017).",
+    img: "assets/acknowledgements/vada.png",
+    url: "http://vada.org.uk/"
+  },
+  {
+    date: "January 2015",
+    html: "We received an AWS in Education Research grant. Thank you Amazon!",
+    img: "assets/acknowledgements/aws.png",
+    url: "https://aws.amazon.com/",
+  },
+  {
+    date: "August 2014",
+    html: "We received a Google Research Award. Thank you Google!",
+    img: "assets/acknowledgements/google-logo.png",
+    url: "https://google.com/"
+  },
+  {
+    date: "2013",
+    html: "Dan Olteanu acknowledges the support of an Astor Travel Fund grant.",
+    img: "assets/acknowledgements/astortravel.png",
+    url: "http://www.astortravel.gr/"
+  },
+  {
+    img: "assets/acknowledgements/alanturinginstitute.png",
+    url: "https://www.turing.ac.uk/",
+  },
+  {
+    img: "assets/acknowledgements/logicblox.png",
+    url: "http://www.logicblox.com/"
+  }
+]
+
+// student awards
+const awards_data = [{
     date: "October 2016",
     img: "assets/acknowledgements/oxford.png",
     html: "Pierre-Yves was awarded the Hoare Prize for best MSc in CS project 2016. His project investigates the problem of many-core and distributed regression learning over factorised joins. ",
@@ -54,10 +108,6 @@ const awards_data = [{
     date: "March 2016",
     img: "assets/acknowledgements/vcla.png",
     html: "Maximilian received the honourable mention (2nd place out of 17 submissions) from Vienna Centre for Logic and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.",
-  }, {
-    date: "December 2015",
-    img: "assets/acknowledgements/erc-logo.png",
-    html: "Dan received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized data management systems.",
   },
   {
     date: "September 2015",
@@ -65,14 +115,6 @@ const awards_data = [{
     html: "Maximilian was awarded the Hoare Prize for best MSc in CS project 2015. His project investigates the problem of learning linear regression models over factorised joins. ",
   },
   {
-    date: "January 2015",
-    img: "assets/acknowledgements/aws.png",
-    html: "We received an AWS in Education Research grant. Thank you Amazon!",
-  }, {
-    date: "August 2014",
-    img: "assets/acknowledgements/google-logo.png",
-    html: "We received a Google Research Award. Thank you Google!",
-  }, {
     date: "October 2013",
     img: "assets/acknowledgements/oxford.png",
     html: "Laura was awarded the Hoare Prize for best MSc in CS project 2013. Her project investigates the problem of updates in factorised databases.",
@@ -90,8 +132,12 @@ var news_app = new Vue({
     awards: awards_data,
   },
   computed: {
+    // control the number of news shown on the home page
     top_news: function () {
       return news_data.slice(0, Math.min(3, news_data.length))
-    }
+    },
+    acknowledgement_logos: function () {
+      return [...acknowledgements_data.map(award => award.img)]
+    },
   }
 })
