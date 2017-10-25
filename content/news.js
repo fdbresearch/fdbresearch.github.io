@@ -88,8 +88,8 @@ const acknowledgements_data = [{
     date: "2013",
     tag: "astortravel",
     html: "Dan Olteanu acknowledges the support of an Astor Travel Fund grant.",
-    img: "assets/acknowledgements/astortravel.png",
-    url: "http://www.astortravel.gr/"
+    img: "assets/acknowledgements/oxford.png",
+    url: ""
   },
   {
     tag: "alanturinginstitute",
