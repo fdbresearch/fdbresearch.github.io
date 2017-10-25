@@ -37,57 +37,67 @@ const news_data = [{
 
 const acknowledgements_data = [{
     date: "June 2017",
+    tag: "azure",
     html: "We received a Microsoft Azure grant to support our research experiments. Thank you Microsoft!",
     img: "assets/acknowledgements/azure.png",
     url: "https://azure.microsoft.com/",
   },
   {
     date: "2017-2019",
+    tag: "fwq",
     html: "Dan received a Fondation Wiener Anspach grant.",
     img: "assets/acknowledgements/fwq.jpeg",
     url: "http://fwa.ulb.ac.be/",
   },
   {
     date: "2016",
+    tag: "dbonto",
     html: "Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (2016).",
     img: "assets/acknowledgements/dbonto.png",
     url: "http://dbonto.cs.ox.ac.uk/",
   },
   {
     date: "December 2015",
+    tag: "erc",
     html: "Dan received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized data management systems.",
     img: "assets/acknowledgements/erc-logo.png",
     url: "https://erc.europa.eu/",
   },
   {
     date: "2015-2017",
+    tag: "vada",
     html: "Yu Tang has been supported by the VADA EPSRC programme grant (2015-2017).",
     img: "assets/acknowledgements/vada.png",
     url: "http://vada.org.uk/"
   },
   {
     date: "January 2015",
+    tag: "aws",
     html: "We received an AWS in Education Research grant. Thank you Amazon!",
     img: "assets/acknowledgements/aws.png",
     url: "https://aws.amazon.com/",
   },
   {
     date: "August 2014",
+    tag: "google",
     html: "We received a Google Research Award. Thank you Google!",
     img: "assets/acknowledgements/google-logo.png",
     url: "https://google.com/"
   },
   {
     date: "2013",
+    tag: "astortravel",
     html: "Dan Olteanu acknowledges the support of an Astor Travel Fund grant.",
     img: "assets/acknowledgements/astortravel.png",
     url: "http://www.astortravel.gr/"
   },
   {
+    tag: "alanturinginstitute",
     img: "assets/acknowledgements/alanturinginstitute.png",
     url: "https://www.turing.ac.uk/",
   },
   {
+    tag: "logicblox",
     img: "assets/acknowledgements/logicblox.png",
     url: "http://www.logicblox.com/"
   }
@@ -137,7 +147,7 @@ var news_app = new Vue({
       return news_data.slice(0, Math.min(3, news_data.length))
     },
     acknowledgement_logos: function () {
-      return [...acknowledgements_data.map(award => award.img)]
+      return [...acknowledgements_data.sort((a,b) => a.tag > b.tag).map(award => award.img)]
     },
   }
 })
