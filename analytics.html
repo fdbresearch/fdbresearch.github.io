@@ -95,18 +95,17 @@
                   <!-- Projects -->
                   <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
                     <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Projects</a>
-                    
                     <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
                         id="nav-submenu--features" aria-labelledby="nav-link--features">
                       <li class="dropdown-item ">
                         <a class="nav-link" href="principles.html">
-                          Factorised Databases</a>
+                          Principles of Factorised Databases</a>
                       </li>
                       <li class="dropdown-item ">
                         <a class="nav-link" href="analytics.html">In-Database Analytics</a>
                       </li>
                       <li class="dropdown-item ">
-                        <a class="nav-link" href="ivm.html">Incremental View Maintenance</a>
+                        <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
                       </li>
                     </ul>
                   </li>
@@ -119,15 +118,12 @@
                     <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
                   </li>
                   
-                  
-                  
-                  
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                     <a href="acknowledgements.html" class="nav-link g-py-7 g-px-0">Acknowledgements</a>
                   </li>
                   
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contacts</a>
+                    <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contact</a>
                   </li>
                   
                 </ul>
@@ -149,6 +145,19 @@
               <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">Factorised In-Database Analytics</h2>
             </div>
 
+            <div class="align-self-center ml-auto">
+              <div class="px-4">
+                <!-- <ul class="u-list-inline"> -->
+                <!--   <\!-- <li class="list-inline-item g-mr-5"> -\-> -->
+                <!--   <\!--   <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Home</a> -\-> -->
+                <!--   <\!--   <i class="g-color-gray-light-v2 g-ml-5">/</i> -\-> -->
+                <!--   <\!-- </li> -\-> -->
+                <!--   <li class="list-inline-item g-mr-5"> -->
+                <!--     <a class="u-link-v5 g-color-main g-color-primary--hover" href="#publications">Publications</a> -->
+                <!--   </li> -->
+                <!-- </ul>  -->
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -175,10 +184,9 @@
 
                 <p class="g-color-black-opacity-0_8">
                   Our aim is to build a database engine that provides scalable techniques to compute
-                  machine learning models over databases. We show that the data-intensive
-                  computations of many machine learning models can be factorised, which in can
-                  significantly scale the computation of such models. Computing machine
-                  learning models inside a database engine can lead to orders-of-magnitude
+                  machine learning models over normalised databases. We show that the data-intensive
+                  computations of many machine learning models can be factorised and computed
+                  directly inside a database engine. Doing so can lead to orders-of-magnitude
                   performance improvements over current state-of-the-art analytics systems. In
                   addition, a host of machine learning models can be learned with the same low
                   complexity guarantees as factorised query processing
@@ -229,7 +237,7 @@
                   </li> <br>
                   <li>
                     <strong> <font class="g-color-primary"> In-database analytics can exploit the
-                        benefits of factorized join computation. </font> </strong> <br>
+                        benefits of factorised join computation. </font> </strong> <br>
 
                     As shown in the <a href="principles.html"> Principles of Factorised
                       Databases</a> project, listing representations of relational data are known to
@@ -237,9 +245,9 @@
                       especially in the case of relations representing joins. This redundancy is not
                       necessary for subsequent processing, such as learning regression or
                       classification models, and we avoid such redundancy by computing machine
-                      learning algorithms over factorized joins instead. By doing so, we are able to
+                      learning algorithms over factorised joins instead. By doing so, we are able to
                       show that the data-intensive computation of many machine learning models
-                      follows the low complexity guarantees of factorized query processing. In
+                      follows the low complexity guarantees of factorised query processing. In
                       fact, computing the model over the factorised joins can take less time
                       than computing the conventional listing representation of the join only!
                   </li> <br> 
@@ -286,10 +294,10 @@
                 <!-- interest in academia and industry in building systems that integrate databases and -->
                 <!-- machine learning. -->
 
-                <div class="text-center g-width-90x--md mx-auto g-my-40">
-                  <h3 class="g-color-primary"> We propose a unified in-database analytics
-                    solution for a host of optimization problems. </h3>
-                </div>
+                <!-- <div class="text-center g-width-90x--md mx-auto g-my-40"> -->
+                <!--   <h3 class="g-color-primary"> We propose a unified in-database analytics -->
+                <!--     solution for a host of optimization problems. </h3> -->
+                <!-- </div> -->
                 
                 <br>
                 <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
@@ -312,39 +320,41 @@
                   <figure class="u-shadow-v25 g-mb-30">
                     <img class="img-fluid w-100" src="assets/projects/analytics.png"
                          alt="Image Description">
-                    <em> The <font color="red">conventional technology stack</font>
-                    compared to our approach to <font color="green">in-database analytics </font>). </em>
+                    <em> The <font color="red">conventional technology stack</font> compared to our
+                    approach to <font color="green">in-database analytics </font>. </em>
                   </figure>
                   
                 <p  class="example g-color-black-opacity-0_8">
                   <strong>Example: </strong>
                   
-                  In a conventional technology stack (the <font color="red">red</font> part of the diagram), a feature extraction
-                  query is issued to the database engine which computes, materializes and exports
-                  the output table. Depending on the chosen data model, the output table is then fed
-                  into an appropriate machine learning tool that learns and outputs the best model
-                  parameters $\mathbb{\theta^*}$.
+                  Consider the above Figure, which gives a high-level overview of our approach to
+                  in-database anayltics.
+
+                  <br>
+                  In a conventional technology stack (the <font color="red">red</font> part of the
+                  diagram), a feature extraction query is issued to the database engine which
+                  computes and materialises the output table. This table is then imported into a
+                  machine learning tool that learns and outputs the best model parameters
+                  $\mathbb{\theta^*}$.
 
                   <br>
                   In our in-database analytics framework (the <font color="green">green</font>
-                  part), we factorize the query and the model formulation and define highly
-                  optimized aggregate queries, which constitute the data-intensive part of the
-                  machine learning model. Only this small digest along with the function g are
-                  needed by the gradient-descent trainer to carry out all iterations of
-                  gradient-descent and compute $\mathbb{\theta^*}$, without ever having to go back
-                  to the original data tables.
+                  part), we rewrite the query and model formulation into highly optimized factorized
+                  aggregate queries. These queries capture the data-intensive part of the machine
+                  learning model, which is fed into an optimisation algorithm (gradient descent in
+                  this case) which computes $\mathbb{\theta^*}$, without ever having to go back to
+                  the original data tables.
 
                   <!-- have -->
                   <!-- a unified model formulation that subsumes many commonly-used models: Choosing a -->
                   <!-- specific model reduces mainly to choosing a function h of the features and a -->
                   <!-- function g of the model parameters. The function h, the feature extraction query, -->
-                  <!-- and the input tables are all fed into a factorization-based query optimizer, which -->
+                  <!-- and the input tables are all fed into a factorisation-based query optimizer, which -->
                   <!-- computes a relatively small “digest” in the form of a matrix ⌃ and a vector -->
                   <!-- c. Only this small digest along with the function g are needed by the -->
                   <!-- gradient-descent trainer to carry out all iterations of gradient-descent and -->
                   <!-- compute ✓⇤, without ever having to go back to the original data tables. -->
                 </p> 
-
 
                   The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
 
@@ -353,17 +363,17 @@
                       intermediate encoding of the input data. Typically, categorical variables are
                       one-hot encoded, which leads to a significant blow-up of the input data. We
                       avoid such intermediate encodings by treating categorical variables as group-by
-                      variables in our aggregate queries (see our <a href="#annos-pods"> PODS'18 paper </a>
+                      variables in our aggregate queries (see <a href="#annos-pods"> PODS'18 paper </a>
                       for details).</li>
                     <li> We can exploit functional dependencies to decrease the dimensionality
                       of the model (see our <a href="#annos-pods"> PODS'18 paper </a> for details). </li>
                     <li> Aggregates computed for a model can be re-used to compute models over any
                       subset of the original features, which means we can efficiently explore the
-                      feature space for the best model (see our <a href="#os-demo"> VLDB'16 demo
-                      paper </a> for details)</li>
+                      feature space for the best model (see <a href="#os-demo"> VLDB'16 demo
+                      paper </a> for details).</li>
                     <li> The aggregates that capture the data-intensive computations of the model
                       are distributive, which means these computations can be easily parallelized and
-                      distributed (see our <a href="#soc16"> SIGMOD'16 paper </a> for details).</li>
+                      distributed (see <a href="#soc16"> SIGMOD'16 paper </a> for details).</li>
                   </ol>
 
 
@@ -468,6 +478,8 @@
                   <!-- data sources. -->
 
             </article>
+
+            <a name="publications"></a>
             <div class="g-mb-30">
               <div class="u-heading-v3-1 g-mb-30">
                 <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
