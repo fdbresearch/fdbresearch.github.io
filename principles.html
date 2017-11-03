@@ -93,7 +93,7 @@
                       id="nav-submenu--features" aria-labelledby="nav-link--features">
                       <li class="dropdown-item ">
                         <a class="nav-link" href="principles.html">
-                          Factorised Databases</a>
+                          Principles</a>
                       </li>
                       <li class="dropdown-item ">
                         <a class="nav-link" href="analytics.html">In-Database Analytics</a>
@@ -120,7 +120,7 @@
                   </li>
   
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contacts</a>
+                    <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contact</a>
                   </li>
   
                 </ul>
@@ -146,15 +146,11 @@
               <div class="px-4">
                 <ul class="u-list-inline">
                   <li class="list-inline-item g-mr-5">
-                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Home</a>
+                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Goal</a>
                     <i class="g-color-gray-light-v2 g-ml-5">/</i>
                   </li>
                   <li class="list-inline-item g-mr-5">
-                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Pages</a>
-                    <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                  </li>
-                  <li class="list-inline-item g-color-primary">
-                    <span>Login</span>
+                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#publications">Publications</a>
                   </li>
                 </ul>
               </div>
@@ -178,30 +174,53 @@
           <div class="col-lg-10 g-mb-50 g-mb-0--lg">
             <article class="g-mb-60">
               
-
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-
-
-                <p class="g-color-black-opacity-0_8">Aliquam ante ipsum, maximus in orci ut, blandit aliquam ipsum. Phasellus sed tortor non magna lobortis faucibus.
-                  Mauris pharetra convallis urna, eu porttitor velit pretium eget. Vestibulum vehicula quis felis eget imperdiet.
-                  Sed vulputate tincidunt facilisis. Morbi eu suscipit dolor. Quisque nec turpis quis ante gravida placerat
-                  non at turpis. Phasellus tincidunt nisi eget posuere porta.</p>
-
-                <div class="text-center g-width-70x--md mx-auto g-my-40">
-                  <h3 class="text-uppercase g-color-primary">If you can design one thing, you can design everything. Just believe it.</h3>
+                <p class="g-color-black-opacity-0_8">
+                State-of-the-art relational data representation and processing are highly redundant. This project systematically investigates the sources of this redundancy and proposes alternatives to avoid it.
+                </p>
                 </div>
 
-                <p>Consectetur adipiscing elit. In risus neque, semper sed congue eget, ultricies et tortor. Duis lorem libero,
-                  dapibus lacinia tellus id, pulvinar rutrum diam. Cras tempor lectus quis erat facilisis, a commodo mi volutpat.
-                  Sed vitae libero libero. Vestibulum non leo lobortis, placerat est a, laoreet mauris. Aenean vitae erat interdum,
-                  dignissim tellus quis, pellentesque libero. Nullam feugiat magna non justo sodales mattis. Phasellus mattis
-                  velit justo, non hendrerit felis tincidunt vitae. In at mi finibus, finibus sem dictum, convallis libero.
-                  In condimentum euismod nunc id dapibus. Praesent sagittis posuere felis et viverra. Mauris eros dui, malesuada
-                  nec risus nec, placerat porta sem.</p>
+                <div class="text-center g-width-60x--md mx-auto g-my-40">
+                  <h3 class="text-uppercase g-color-primary">
+                  How much redundancy is there in the representation and computation of join results?
+                </h3>
+                </div>
+                
+              <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+                <p class="g-color-black-opacity-0_8">
+The main culprits behind this redundancy are the Cartesian products lurking within every database join. By avoiding the enumeration of the output of these Cartesian products, we can dramatically lower the space and computational costs for joins.                
+                </p>
+                <p>
+                Take for instance the natural join of two relations R(A,B) and S(A,C) and assume both relations have the A-values a<sub>1</sub>,...,a<sub><em>n</em></sub> for some large value of <em>n</em>. Partition the columns B and C of the two relations so that there is one partition per A-value: R<sub>i</sub> = &pi;<sub>B</sub> &sigma;<sub>A=a<sub>i</sub></sub>(R) and S<sub>i</sub> = &pi;<sub>C</sub> &sigma;<sub>A=a<sub>i</sub></sub>(S), for each i&isin; [n]. 
+                The join result is the union of the Cartesian products of the corresponding partitions in the two relations: R &#8904; S = {a<sub>1</sub>} x R<sub>1</sub> x S<sub>1</sub> &cup; ... &cup; {a<sub>n</sub>} x R<sub>n</sub> x S<sub>n</sub>. 
+                The state-of-the-art, listing (or row-oriented) representation of this result materialises these Cartesian products. In general, the result may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation of these products and it computes a representation that only takes linear size and time! This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be O(N<sup>q</sup>), where N is the size of the database and q is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!            
+                </p>
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="assets/img-temp/900x600/img1.jpg" alt="Image Description">
                 </figure>
-                <p>Cras sit amet mi eros. Pellentesque auctor, massa at laoreet lobortis, mi lorem commodo enim, non mollis arcu
+                <p>
+                So far, we investigated three distinct <em>factorised</em> representations of the join result: f-representations, d-representations, and covers. The first two of them are non-relational: They are to the listing representation what circuits are to formulas in disjunctive normal form. For the simple example above, the above union-product relational algebra expression.
+                
+                They are discussed in great detail in 
+                
+                
+                 is precisely 
+                </p>
+                                
+                
+                
+                
+                We investigated this redundancy problem for arbitrary join queries and give precise characterisations for the worst-case asymptotical gaps between the listing representation and three new succinct representations for results of 
+                
+                
+                 see the ICDT'12, TODS'15, and ICDT'18 papers below. 
+                
+                
+                
+                
+                
+                
+                Cras sit amet mi eros. Pellentesque auctor, massa at laoreet lobortis, mi lorem commodo enim, non mollis arcu
                   erat ac augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
                   Mauris maximus enim in mauris ornare bibendum. Cras bibendum, nibh non interdum lacinia, sem augue convallis
                   nibh, sit amet eleifend lacus felis quis turpis. Suspendisse potenti.</p>
@@ -356,7 +375,7 @@
             </article>
             <div class="g-mb-30">
               <div class="u-heading-v3-1 g-mb-30">
-                <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
+                <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
               </div>
             </div>
 
@@ -494,7 +513,7 @@
                     <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
                   </li>
                   <li class="list-inline-item g-px-10">
-                      <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" >Last modified: 25 Oct 2017</a>
+                      <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" >Last modified: 3 Nov 2017</a>
                   </li>
                 </ul>
                 <!-- End Links -->
