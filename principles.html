@@ -188,9 +188,9 @@
                 
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
                 <p class="g-color-black-opacity-0_8">
-The main culprits behind this redundancy are the Cartesian products lurking within every database join. By avoiding the enumeration of the output of these Cartesian products, we can dramatically lower the space and computational costs for joins.                
+The culprits behind this redundancy are the Cartesian products lurking within every database join. By avoiding the enumeration of the output of these products, we can dramatically lower the space and computational costs for joins.                
                 </p>
-                <p>
+                <p  class="example g-color-black-opacity-0_8">
                 Take for instance the natural join of two relations R(A,B) and S(A,C) and assume both relations have the A-values a<sub>1</sub>,...,a<sub><em>n</em></sub> for some large value of <em>n</em>. Partition the columns B and C of the two relations so that there is one partition per A-value: R<sub>i</sub> = &pi;<sub>B</sub> &sigma;<sub>A=a<sub>i</sub></sub>(R) and S<sub>i</sub> = &pi;<sub>C</sub> &sigma;<sub>A=a<sub>i</sub></sub>(S), for each i&isin; [n]. 
                 The join result is the union of the Cartesian products of the corresponding partitions in the two relations: R &#8904; S = {a<sub>1</sub>} x R<sub>1</sub> x S<sub>1</sub> &cup; ... &cup; {a<sub>n</sub>} x R<sub>n</sub> x S<sub>n</sub>. 
                 The state-of-the-art, listing (or row-oriented) representation of this result materialises these Cartesian products. In general, the result may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation of these products and it computes a representation that only takes linear size and time! This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be O(N<sup>q</sup>), where N is the size of the database and q is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!            
@@ -198,32 +198,24 @@ The main culprits behind this redundancy are the Cartesian products lurking with
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="assets/img-temp/900x600/img1.jpg" alt="Image Description">
                 </figure>
+                
+                <div class="text-center g-width-60x--md mx-auto g-my-40">
+                  <h3 class="text-uppercase g-color-primary">
+                  How to avoid redundancy using factorised representation and computation?
+                </h3>
+                </div>                
+                
+                
                 <p>
-                So far, we investigated three distinct <em>factorised</em> representations of the join result: f-representations, d-representations, and covers. The first two of them are non-relational: They are to the listing representation what circuits are to formulas in disjunctive normal form. For the simple example above, the above union-product relational algebra expression.
-                
-                They are discussed in great detail in 
-                
-                
-                 is precisely 
+                So far, we have investigated three distinct lossless <em>factorised</em> representations of the join result: <strong>f-representations</strong>, <strong>d-representations</strong>, and <strong>covers</strong>. 
                 </p>
-                                
-                
-                
-                
-                We investigated this redundancy problem for arbitrary join queries and give precise characterisations for the worst-case asymptotical gaps between the listing representation and three new succinct representations for results of 
-                
-                
-                 see the ICDT'12, TODS'15, and ICDT'18 papers below. 
-                
-                
-                
-                
-                
-                
-                Cras sit amet mi eros. Pellentesque auctor, massa at laoreet lobortis, mi lorem commodo enim, non mollis arcu
-                  erat ac augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                  Mauris maximus enim in mauris ornare bibendum. Cras bibendum, nibh non interdum lacinia, sem augue convallis
-                  nibh, sit amet eleifend lacus felis quis turpis. Suspendisse potenti.</p>
+                <p>The <strong>f-representations</strong> and <strong>d-representations</strong> are to the listing representation what parse trees and respectively circuits are to formulas in disjunctive normal form. For the simple example above, the union-product relational algebra expression is an <strong>f-representation</strong> (also a <strong>d-representation</strong>). The <strong>f-representations</strong> exploit the law of distributivity of relational product over union to factor out common subexpressions. The <strong>d-representations</strong> are f-representations with definitions: A recurring subexpression can be given a name and reused several times. 
+                </p>
+                <p>A <strong>cover of the join result</strong> is a minimal subset of this result from which we can losslessly reconstruct it entirely.
+               </p>
+                <p>
+                  F-representations have been introduced in our ICDT'12 paper, d-representations in the ACM TODS'15 paper, and covers in the ICDT'18 paper.       
+                </p>
 
                 <figure class="text-center text-md-left float-md-left g-pr-30--sm g-py-20 mb-0">
                   <img class="u-shadow-v25 img-fluid g-width-300" src="assets/img-temp/500x650/img1.jpg" alt="Image Description">
