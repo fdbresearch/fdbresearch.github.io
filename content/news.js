@@ -25,7 +25,7 @@ const news_data = [{
   <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>`
 }, {
   date: "March 2016",
-  html: `<p class="g-color-gray-dark-v1">The FDB project was featured in three interviews with Dan on Romanian National Radio (Radio
+  html: `<p class="g-color-gray-dark-v1">FDB featured in a series of three interviews with Dan on Romanian National Radio (Radio
     Romania Cultural).</p>`
 }, {
   date: "November 2013",
