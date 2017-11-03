@@ -65,7 +65,7 @@
   
               <!-- Logo -->
               <a href="index.html" class="navbar-brand">
-                <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
+                <img height="40px" src="assets/img/logo/logo-fdb.png" alt="FDB Logo">
               </a>
               <!-- End Logo -->
   
@@ -203,7 +203,9 @@
                 <BR>To appear in BeyondNP, AAAI workshop, Phoenix,
                 April 2016. </LI>
             </UL>
+            
             <H3>In-Database Analytics</H3>
+            
             <UL>
               <LI id="1703.04780"><STRONG>In-Database Learning with Sparse Tensors</STRONG>.
                 [<A href="https://arxiv.org/pdf/1703.04780.pdf">arxiv</A>]
@@ -244,18 +246,24 @@
                   updated version</A>,
                 <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
                 <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu.                                                                <BR>In SIGMOD, San Francisco, June 2016. </LI>
+                <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu. 
+                <BR>In SIGMOD, San Francisco, June 2016. </LI>
             </UL>
-            <H3>Incremental View Maintenance</H3>
+            
+            <H3>Incremental Maintenance for Analytics</H3>
+            
             <UL>
-              <LI id="no-pvldb17"><STRONG>Incremental Maintenance of Regression Models over Joins</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-pvldb17.pdf">local</A>,
-                <A href="https://arxiv.org/pdf/1703.07484">arxiv</A>]
-                <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
+              <LI id="no-sigmod18"><STRONG>Incremental View Maintenance with Triple Lock Factorisation Benefits</STRONG>.
+                [<!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</A>]
+                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
                 <BR>Milos Nikolic and Dan Olteanu.
-                <BR>arXiv report 1703.07484, March 2017. </LI>
+                <BR>To appear in ACM SIGMOD, Houston (USA), June 2018.
+                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1703.07484">
+                  arXiv technical report 1703.07484</A>, March 2017. </LI>
             </UL>
-            <H3>Succinct Data Representations and Factorized Query Processing</H3>
+
+            <H3>Factorised Representations for Data and Provenance</H3>
             <UL>
               <LI id="1709.01600"><STRONG>Covers of Query Results</STRONG>.
                 [<A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
@@ -264,6 +272,45 @@
                 <BR>To appear in Int Conf on Database Theory (ICDT), Vienna, March 2018. <BR>arXiv report 1709.01600, March
                 2017. </LI>
             </UL>
+            <UL>
+              <LI><STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+                <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
+                <BR>Radu Ciucanu and Dan Olteanu.  <BR>Technical report, November
+                2015. </LI>
+            </UL>
+            <UL>
+              <LI id="oz-tods15"><STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary
+                  version</A>]
+                <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+                <BR> Dan Olteanu and Jakub Závodný.
+                <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
+            </UL>
+            <UL>
+              <LI id="oz-icdt12"><STRONG>Factorised Representations of Query Results: Size
+                Bounds and Readability</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
+                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+                <BR>Dan Olteanu and Jakub  Závodný.
+                <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
+                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1104.0867">
+                  arXiv technical report 1104.0867</A>, April 2011. </LI>
+            </UL>
+            
+            <UL>
+              <LI id="oz-tap11"><STRONG>On Factorisation of Provenance Polynomials</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
+                <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
+                <BR>Dan Olteanu and Jakub Závodný.
+                <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
+              </LI>
+            </UL>
+
+            
+            <H3>Factorised Query Processing</H3>
+            
             <UL>
               <LI><STRONG>Worst-Case Optimal Join At A Time</STRONG>.
                 <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
@@ -305,38 +352,7 @@
                 <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
                 <BR>Prior version in <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A></LI>
             </UL>
-            <UL>
-              <LI id="oz-icdt12"><STRONG>Factorised Representations of Query Results: Size
-                Bounds and Readability</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Dan Olteanu and Jakub  Závodný.
-                <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1104.0867">
-                  arXiv technical report 1104.0867</A>, April 2011. </LI>
-            </UL>
-            
-            <H3>Provenance Compression</H3>
-            <UL>
-              <LI id="oz-icdt12"><STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Dan Olteanu and Jakub  Závodný.
-                <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1104.0867">
-                  arXiv technical report 1104.0867</A>, April 2011. </LI>
-            </UL>
-            <UL>
-              <LI id="oz-tap11"><STRONG>On Factorisation of Provenance Polynomials</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
-                <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-                <BR>Dan Olteanu and Jakub Závodný.
-                <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
-              </LI>
-            </UL>
+
 
             <hr>
 
