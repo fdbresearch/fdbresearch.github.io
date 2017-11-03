@@ -188,27 +188,27 @@
 
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
 
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Motivation</h3>
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Motivation</h3>
 
                 <p class="g-color-black-opacity-0_8">
                   Our aim is to build a database engine that provides scalable techniques to compute
-                  machine learning models over databases. We show that relational structure in the
-                  underlying data can be used to compute machine learning models faster, and by
-                  factorising the data-intensive computation machine learning models can be learned
-                  with the same low complexity guarantees as factorised query processing
-                  (see <a href="principles.html">Principles of Factorised Databases</a> for
-                  details). In practice, computing machine learning models in a database engine can
+                  machine learning models over databases. We show that the data-intensive
+                  computations of many machine learning models can be factorised, and relational
+                  structure in the underlying data can be used to compute machine learning models
+                  faster. In practice, computing machine learning models in a database engine can
                   lead to orders-of-magnitude performance improvements over current state-of-the-art
-                  analytics systems.  </p>
+                  analytics systems <a href="#soc16">[5]</a>. We also show that a host of machine learning models can be
+                  learned with the same low complexity guarantees as factorised query processing
+                  (see <a href="principles.html">Principles of Factorised Databases</a> for
+                  details).
+                </p>
 
-                  
-                  <div class="text-center g-width-90x--md mx-auto g-my-40">
-                    <h3 class="text-uppercase g-color-primary">We unify data management and
-                      analytics workloads in one highly optimized database engine. </h3>
-                  </div>
+                <div class="text-center g-width-90x--md mx-auto g-my-40">
+                  <h3 class="g-color-primary">We unify database and analytics engines into one highly optimised datalytics engine. </h3>
+                </div>
                   <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
 
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Why in-database analytics?</h3>
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Why in-database analytics?</h3>
 
                 <p> For many practical scenarios, machine learning models are computed over several
                   data sources that are stored in a database management system (DBMS). Machine
@@ -250,16 +250,16 @@
 
                     As shown in the <a href="principles.html"> Principles of Factorised
                       Databases</a> project, listing representations of relational data are known to
-                      require a high degree of redundancy for data representation and computation,
-                      especially in the case of relations representing joins. This redundancy is not
-                      necessary for subsequent processing, such as learning regression or
-                      classification models, and we avoid such redundancy by computing machine
-                      learning algorithms over factorized joins instead. By doing so, we are able to
-                      show that the data-intensive computation of many machine learning models
-                      follows the low complexity guarantees of factorized query processing. In our
-                      experiments, computing the model over the factorised joins can take less time
-                      than computing the conventional listing representation of the join only.
-                    </li> <br> 
+                    require a high degree of redundancy for data representation and computation,
+                    especially in the case of relations representing joins. This redundancy is not
+                    necessary for subsequent processing, such as learning regression or
+                    classification models, and we avoid such redundancy by computing machine
+                    learning algorithms over factorized joins instead. By doing so, we are able to
+                    show that the data-intensive computation of many machine learning models
+                    follows the low complexity guarantees of factorized query processing. In our
+                    experiments, computing the model over the factorised joins can take less time
+                    than computing the conventional listing representation of the join only.
+                  </li> <br> 
                   <li>
                     <strong>
                       <font class="g-color-primary"> In-database analytics can exploit relational
@@ -289,8 +289,14 @@
                 reason, that there is increasing interest in academia and industry in building
                 systems that integrate databases and machine learning.
 
-                <br> <br>
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
+                
+                <div class="text-center g-width-90x--md mx-auto g-my-40">
+                  <h3 class="text-uppercase g-color-primary"> We propose a unified in-database analytics
+                    solution for a host of optimization problems. </h3>
+                </div>
+                
+                <br>
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
 
                 <p>
                   Our research is based on the observation that the data-intensive computations of
@@ -300,46 +306,86 @@
                   experiments show that this rewriting can lead to performance improvements of
                   several orders-of-magnitude over over systems like R, Python StatsModels, and
                   MADlib, while maintaining the accuracy of these competitors (see
-                  our <a href="#osc16"> Sigmod paper </a> for details).
-
-                <p>
-                  In addition, we can treat categorical variables as group-by variables, and compute
-                  models over such variables without any intermediate encoding of the input data,
-                  which typically blow up the data significantly <a href="#annos-pods">
-                  [2] </a>. Also, we can exploit functional dependencies to decrease the
-                  dimensionality of the model [1];
-
-                  <!--  <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
+                  our <a href="#soc16"> SIGMOD paper </a> for details).
 
                   <div class="text-center g-width-90x--md mx-auto g-my-40">
-                    <h3 class="text-uppercase g-color-primary">Large chunks of analytics code can be rewritten
-                      into aggregates over joins. </h3>
+                    <h3 class="g-color-primary">Large chunks of analytics code can be rewritten
+                      into aggregates over joins and factorised. </h3>
                   </div>
-                Our observation is that the data-intensive computations of analytics problems can be
-                rewritten into aggregates over joins.
 
-                - Factorized aggregate computation.
+                  <figure class="u-shadow-v25 g-mb-30">
+                    <img class="img-fluid w-100" src="assets/projects/analytics.png"
+                         alt="Image Description">
+                    <em>Conventional vs. In-Database Analytics.</em>
+                  </figure>
+                  
+                <p  class="example g-color-black-opacity-0_8">
+                  <strong>Example: </strong> Need an example that shows the rewriting into aggregates over joins. (TBD) <br>
 
-                - One hot encoding is turned into group-by aggregates.
+                  Perhaps use Linear Regression and show the rewriting of the objective function. 
+                </p> 
 
-                - Functional dependencies can be used to decrease the dimensionality of the problem. 
+
+                  The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
+
+                  <ol>
+                    <li> We can efficiently capture categorical variables, without any an
+                      intermediate encoding of the input data. Typically, categorical variables are
+                      one-hot encoded, which leads to a significant blow-up of the input data. We
+                      avoid such intermediate encodings by treating categorical vairables as group-by
+                      variables in our aggregate queries (see our <a href="#annos-pods"> PODS paper </a>
+                      for details).</li>
+                    <li> We can exploit functional dependencies to decrease the dimensionality
+                      of the model (see our <a href="#annos-pods"> PODS paper </a> for details). </li>
+                    <li> Aggregates computed for a model can be re-used to compute models over any
+                      subset of the original features, which means we can efficiently explore the
+                      feature space for the best model (see our <a href="#os-demo"> VLDB demo
+                      paper </a> for details)</li>
+                    <li> The aggregates that capture the data-intensive computations of the model
+                      are distributive, which means these computations can be easily parallelized and
+                      distributed (see our <a href="#soc16"> SIGMOD paper </a> for details).</li>
+                  </ol>
 
 
-               
-                Further benefits:
+                  <hr>
+                   
+                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3>
 
-                  (3)
-                  aggregates computed for a model can be re-used to compute models over any subset
-                  of the original features, which means we can efficiently explore the feature space
-                  for the best model [5]; and (4) the aggregates that capture the data-intensive
-                  computations of the model are distributive, which means these computations can be
-                  easily parallelized and distributed [8].
+                <p>
+                  Rewriting the data-intensive computations into aggregates over joins has
+                  additional benefits. One such advantage is that we can efficiently treat
+                  categorical variables as group-by variables.
+
+                  TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables. 
+                  
+                  <!-- we can treat categorical variables as group-by variables, and compute -->
+                  <!-- models over such variables without any intermediate encoding of the input data, -->
+                  <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
+                  <!--   [2] </a>. -->
+
+                  <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3>
+                  
+                  Also, we can exploit functional dependencies to decrease the
+                  dimensionality of the model [1];
+
+                  
+                  <!-- Our observation is that the data-intensive computations of analytics problems can be -->
+                  <!-- rewritten into aggregates over joins. -->
+                  <!-- - Factorized aggregate computation. -->
+                  <!-- - One hot encoding is turned into group-by aggregates. -->
+                  <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
+
+                  <hr>
+                  
+                  Further benefits: (3) aggregates computed for a model can be re-used to compute
+                  models over any subset of the original features, which means we can efficiently
+                  explore the feature space for the best model [5]; and (4) the aggregates that
+                  capture the data-intensive computations of the model are distributive, which means
+                  these computations can be easily parallelized and distributed [8].
                   
                  <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
-                  
-                <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
+                 <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
 
-                
                 <!-- <ul> -->
                 <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
                 <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
@@ -415,7 +461,7 @@
               </div>
             </div>
             
-            <UL>
+            <ol>
               <a name="annos-pods"></a>
               <LI class="g-mb-15"><STRONG>In-Database Learning with Sparse Tensors</STRONG>.
                 [<A href="https://arxiv.org/pdf/1703.04780.pdf">arxiv</A>]
@@ -446,7 +492,7 @@
                 <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
                 <BR>Dan Olteanu and Maximilian Schleich.
                 <BR>To appear in PVLDB 9(13), New Delhi, Sept 2016. </LI>
-              <a name="osc16"></a>
+              <a name="soc16"></a>
               <LI class="g-mb-15"><STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
                   updated version</A>,
@@ -454,7 +500,7 @@
                 <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
                 <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
                 <BR>In SIGMOD, San Francisco, June 2016. </LI>
-            </UL>
+            </ol>
 
             <div id="stickyblock-end"></div>
           </div>
