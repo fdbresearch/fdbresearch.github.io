@@ -16,7 +16,7 @@ const news_data = [{
     `
 }, {
   date: "Sep 2017",
-  html: `<p class="g-color-gray-dark-v1">Ahmet Kara helped out at the European Researcher's
+  html: `<p class="g-color-gray-dark-v1">Ahmet helped out at the European Researcher's
   <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&utm_medium=referral">Curiosity Festival</a> in Oxford.</p>`
 }, {
   date: "March 2017",
