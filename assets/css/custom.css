@@ -1,3 +1,11 @@
+p.example {
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+  background-color: rgb(243, 242, 242);
+  padding: 2em;
+}
+
 /* Add here all your css styles (customizations) */
 .u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .open > .nav-link,
 .u-header__section--light .navbar-nav:not([class*="u-main-nav-v"]) .active > .nav-link,
