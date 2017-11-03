@@ -98,13 +98,13 @@
                       id="nav-submenu--features" aria-labelledby="nav-link--features">
                       <li class="dropdown-item ">
                         <a class="nav-link" href="principles.html">
-                          Principles</a>
+                          Principles of Factorised Databases</a>
                       </li>
                       <li class="dropdown-item ">
                         <a class="nav-link" href="analytics.html">In-Database Analytics</a>
                       </li>
                       <li class="dropdown-item ">
-                        <a class="nav-link" href="ivm.html">Incremental View Maintenance</a>
+                        <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
                       </li>
                     </ul>
                   </li>
@@ -151,7 +151,7 @@
               <div class="px-4">
                 <ul class="u-list-inline">
                   <li class="list-inline-item g-mr-5">
-                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Goal</a>
+                    <a class="u-link-v5 g-color-main g-color-primary--hover" href="customer-order-price.html">Example</a>
                     <i class="g-color-gray-light-v2 g-ml-5">/</i>
                   </li>
                   <li class="list-inline-item g-mr-5">
@@ -181,7 +181,7 @@
               
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
                 <p class="g-color-black-opacity-0_8">
-                State-of-the-art relational data representation and processing are highly redundant. This project systematically investigates the sources of this redundancy and proposes alternatives to avoid it.
+                State-of-the-art relational data representation and processing are highly redundant. This project investigates the sources of this redundancy and proposes alternatives that avoid it.
                 </p>
                 </div>
 
@@ -199,7 +199,7 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 Take for instance the natural join of two relations $R(A,B)$ and $S(A,C)$ and assume both relations have the $A$-values $a_1,\ldots,a_n$ for some large value of $n$. Partition the columns $B$ and $C$ of the two relations so that there is one partition per $A$-value: $R_i = \pi_B \sigma_{A=a_i}(R)$ and $S_i = \pi_C \sigma_{A=a_i}(S)$, for each $i\in  [n]$. 
                 The join result is the union of the Cartesian products of the corresponding partitions in the two relations: $R\Join S = \{(a_1)\} \times R_1 \times S_1 \cup\cdots\cup \{(a_n)\} \times R_n \times S_n$. <br/>
                 The listing (or row-oriented) representation of this result materialises the products. In general, the result may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation of these products and computes a representation that only takes linear size and time!<br/> 
-                This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be ${\cal O}(N^q)$, where $N$ is the size of the database and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!            
+                This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be ${\cal O}(N^q)$, where $N$ is the size of the database and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!<br/> A more detailed example is available <a href="customer-order-price.html">here</a>.        
                 </p>
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="assets/img-temp/900x600/img1.jpg" alt="Image Description">
@@ -207,159 +207,47 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 
                 <div class="text-center g-width-60x--md mx-auto g-my-40">
                   <h3 class="text-uppercase g-color-primary">
-                  How to avoid redundancy using factorised representation and computation?
+                  How to avoid this redundancy using factorisation?
                 </h3>
                 </div>                
                 
                 
                 <p>
-                So far, we have investigated three distinct lossless <em>factorised</em> representations of the join result: <strong>f-representations</strong> (<a href="">ICDT'12 paper<a/>), <strong>d-representations</strong> (<a href="">ACM TODS'15 article<a/>), and <strong>covers</strong> (<a href="">ICDT'18 paper<a/>). 
+                So far, we have investigated three distinct lossless <em>factorised</em> representations of the join result: <strong>f-representations</strong> (<a href="#oz-icdt12">ICDT'12 paper<a/>), <strong>d-representations</strong> (<a href="#oz-tods15">ACM TODS'15 article<a/>), and <strong>covers</strong> (<a href="#ko-icdt18">ICDT'18 paper<a/>). 
                 </p>
-                <p>The <strong>f-representations</strong> and <strong>d-representations</strong> are to the listing representation what parse trees and respectively circuits are to formulas in disjunctive normal form. For the simple example above, the union-product relational algebra expression is an <strong>f-representation</strong> (also a <strong>d-representation</strong>). The <strong>f-representations</strong> exploit the law of distributivity of relational product over union to factor out common subexpressions. The <strong>d-representations</strong> are f-representations with definitions: A recurring subexpression can be given a name and reused several times. 
+                <p>The <strong>f-representations</strong> and <strong>d-representations</strong> are to the listing representation what parse trees and respectively circuits are to formulas in disjunctive normal form. They are relational algebra expressions with opera
+                
+                For the simple example above, the union-product relational algebra expression is an <strong>f-representation</strong> (also a <strong>d-representation</strong>). The <strong>f-representations</strong> exploit the law of distributivity of relational product over union to factor out common subexpressions. The <strong>d-representations</strong> are f-representations with definitions: A recurring subexpression can be given a name and reused several times. 
                 </p>
                 <p>A <strong>cover of the join result</strong> is a minimal subset of this result from which we can losslessly reconstruct it entirely.
                </p>
+               <p>
+               Compression by factorisation can also be applied to query provenance or lineage (<a href="#oz-icdt12">ICDT'12<a/> and <a href="#oz-tapp11">TAPP'11<a/> papers).
+                              </p>
+        
+                <div class="text-center g-width-60x--md mx-auto g-my-40">
+                  <h3 class="text-uppercase g-color-primary">
+                  Can we compute over factorised data?
+                </h3>
+                </div>      
 
+                <p>
+                 One crucial property of our factorised representations of a join result is that they allow for the enumeration of the result tuples with constant delay, which is as efficient as enumerating them from the listing representation of the result. This is a prerequisite for the computation of aggregates (and more complex analytics) in one pass over factorised data.<br/> 
+                In case the materialisation of the factorised join result is not desirable, subsequent aggregate computation can happen on the fly. In this case, the <em>trace</em> of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially) pushing aggregates past joins.<br/>
+                To read more on: constant-delay enumeration see the <a href="#oz-tods15">TODS'15 article</a>; aggregates over factorised joins see the <a href="os-sigrec16">SIGMOD Record'16</a> and <a href="bkoz-vldb13">VLDB'13</a> papers; machine learning over factorised joins see the <a href="publications.html#soc-sigmod16">SIGMOD'16</a> and <a href="publications.html#annos-pods18">PODS'18</a> papers.
+                </p>
 
-                <figure class="text-center text-md-left float-md-left g-pr-30--sm g-py-20 mb-0">
-                  <img class="u-shadow-v25 img-fluid g-width-300" src="assets/img-temp/500x650/img1.jpg" alt="Image Description">
-                  <figcaption class="figure-caption g-font-size-12 g-color-gray-dark-v4 g-mt-5">
-                    <em>A caption for the above image.</em>
-                  </figcaption>
-                </figure>
-
-                <p>Proin laoreet massa vitae pulvinar accumsan. Aenean auctor ipsum mauris, et sodales odio tristique non. Quisque
-                  eget diam a mi condimentum ullamcorper imperdiet sed urna. Pellentesque cursus convallis blandit. Mauris
-                  lorem eros, consequat et rutrum id, vestibulum quis felis. Proin non mollis eros. Curabitur vel laoreet mauris.</p>
-
-                <p>Curabitur dolor elit, egestas eget lectus vel, pretium semper tellus. Nunc urna lectus, vulputate ut tellus
-                  aliquam, pharetra consectetur enim. Nunc scelerisque libero diam, nec tempor justo hendrerit eu. Donec sed
-                  diam mattis, ullamcorper eros eu, aliquam dui. Maecenas rutrum suscipit risus sed posuere. Vestibulum imperdiet
-                  turpis mauris, sit amet consectetur ex porttitor ut. Duis sit amet auctor nunc. Praesent ultrices, enim a
-                  varius condimentum, nunc elit rhoncus ligula, quis fringilla risus augue sit amet enim. Mauris et porttitor
-                  diam. In semper volutpat mauris, ac fermentum orci commodo vitae. Curabitur ut feugiat tellus. Quisque consequat
-                  pharetra massa ultricies auctor. Sed mollis vulputate sapien eget tincidunt. Curabitur tempus lacus a sapien
-                  rutrum, feugiat blandit nunc tincidunt. Donec nec ornare tellus nunc elit rhoncus ligula.</p>
-
-                <p>In neque ipsum, auctor eu bibendum cursus, fringilla sed magna. Vestibulum lobortis libero et lectus congue
-                  efficitur. Suspendisse varius varius finibus. Maecenas luctus convallis euismod.</p>
-                <br>
-
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Unify Template v2</h3>
-
-                <p>Praesent ultrices, enim a varius condimentum, nunc elit rhoncus ligula, quis fringilla risus augue sit amet
-                  enim. Curabitur dolor elit, egestas eget lectus vel, pretium semper tellus. Nunc urna lectus, vulputate ut
-                  tellus aliquam, pharetra consectetur enim. Nunc scelerisque libero diam, nec tempor justo hendrerit eu. Donec
-                  sed diam mattis, ullamcorper eros eu, aliquam dui. Maecenas rutrum suscipit risus sed posuere. Vestibulum
-                  imperdiet turpis mauris, sit amet consectetur ex porttitor ut. Duis sit amet auctor nunc.</p>
-
-                <div class="g-width-70x--md 1mx-auto g-my-40">
-                  <blockquote class="blockquote g-color-primary g-brd-2 g-brd-primary--hover text-uppercase g-font-size-22 g-transition-0_2 g-mb-30">
-                    <p>The best ideas come as jokes. Make your thinking as funny as possible and use them in your projects.</p>
-                    <footer class="blockquote-footer g-font-size-12">John Doe</footer>
-                  </blockquote>
-                </div>
-
-                <p>Adipiscing elit, in risus neque, semper sed congue eget, ultricies et tortor. Duis lorem libero, dapibus lacinia
-                  tellus id, pulvinar rutrum diam. Cras tempor lectus quis erat facilisis, a commodo mi volutpat. Sed vitae
-                  libero libero. Vestibulum non leo lobortis, placerat est a, laoreet mauris. Aenean vitae erat interdum, dignissim
-                  tellus quis, pellentesque libero. Nullam feugiat magna non justo sodales mattis. Phasellus mattis velit justo,
-                  non hendrerit felis tincidunt vitae. In at mi finibus, finibus sem dictum, convallis libero. In condimentum
-                  euismod nunc id dapibus. Praesent sagittis posuere felis et viverra. Mauris eros dui, malesuada nec risus
-                  nec, placerat porta sem. Suspendisse id quam in ante lobortis fringilla. Aenean euismod ante eget auctor
-                  fringilla. Morbi consequat ut felis a scelerisque. Aliquam purus sem, rutrum sit amet ligula a, tristique
-                  porttitor mauris.</p>
-
-                <figure class="text-center g-my-40">
-                  <img class="u-shadow-v25 img-fluid" src="assets/img-temp/430x270/img1.jpg" alt="Image Description">
-                  <figcaption class="figure-caption g-font-size-12 g-color-gray-dark-v4 g-mt-5">
-                    <em>A caption for the above image.</em>
-                  </figcaption>
-                </figure>
-
-                <p>Curabitur dolor elit, egestas eget lectus vel, pretium semper tellus. Nunc urna lectus. Vulputate ut tellus
-                  aliquam, pharetra consectetur enim. Nunc scelerisque libero diam, nec tempor justo hendrerit eu. Donec sed
-                  diam mattis, ullamcorper eros eu, aliquam dui. Maecenas rutrum suscipit risus sed posuere. Vestibulum imperdiet
-                  turpis mauris, sit amet consectetur ex porttitor ut. Duis sit amet auctor nunc.</p>
-                <br>
-
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Now and Future</h3>
-
-                <p>Praesent sagittis posuere felis et viverra. Mauris eros dui, malesuada nec risus nec, placerat porta sem. Suspendisse
-                  id quam in ante lobortis fringilla. Aenean euismod ante eget auctor fringilla. Morbi consequat ut felis a
-                  scelerisque. Aliquam purus sem, rutrum sit amet ligula a, tristique porttitor mauris.</p>
-
-                <ul class="list-unstyled g-font-size-16 g-my-30">
-                  <li class="g-mb-15">
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Wrapbootstrap Marketplace egestas eget lectus vel, pretium semper tellus</span>
-                    </h4>
-                  </li>
-                  <li class="g-mb-15">
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Google Adwords &amp; Adsense purus sem, rutrum sit amet ligula a, tristique port</span>
-                    </h4>
-                  </li>
-                  <li class="g-mb-15">
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Web Design with UX/UI enim a varius condimentum, nunc elit rhoncus</span>
-                    </h4>
-                  </li>
-                  <li class="g-mb-15">
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Digital Marketing scelerisque libero diam, nec tempor justo hendreri</span>
-                    </h4>
-                  </li>
-                  <li class="g-mb-15">
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Support Forum &amp; Community rutrum suscipit risus sed posuere</span>
-                    </h4>
-                  </li>
-                  <li>
-                    <h4 class="h6 d-flex align-items-baseline">
-                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-10"></i>
-                      <span>Unify Template Pages eros duiesuada nec risus nec, placerat porta sem</span>
-                    </h4>
-                  </li>
-                </ul>
-
-                <p>Praesent ultrices, enim a varius condimentum, nunc elit rhoncus ligula, quis fringilla risus augue sit amet
-                  enim. Curabitur dolor elit, egestas eget lectus vel, pretium semper tellus. Nunc urna lectus, vulputate ut
-                  tellus aliquam, pharetra consectetur enim. Nunc scelerisque libero diam, nec tempor justo hendrerit eu.</p>
-
-                <div class="text-center g-width-70x--md mx-auto g-my-40">
-                  <h3 class="text-uppercase g-color-primary">Finding ways to help tell your story through video is a powerful tool.</h3>
-                </div>
-
-                <p>Mauris et porttitor diam. In semper volutpat mauris, ac fermentum orci commodo vitae. Curabitur ut feugiat
-                  tellus. Quisque consequat pharetra massa ultricies auctor. Sed mollis vulputate sapien eget tincidunt. Curabitur
-                  tempus lacus a sapien rutrum, feugiat blandit nunc tincidunt. Donec nec ornare tellus. In neque ipsum, auctor
-                  eu bibendum cursus, fringilla sed magna. Vestibulum lobortis libero et lectus congue efficitur. Suspendisse
-                  varius varius finibus. Maecenas luctus convallis euismod. Praesent ultrices, enim a varius condimentum, nunc
-                  elit rhoncus ligula, quis fringilla risus augue sit amet enim.</p>
-              </div>
 
               <!-- Sources & Tags -->
               <div class="g-mb-30">
-                <h6 class="g-color-gray-dark-v1 g-mb-15">
-                  <strong class="g-mr-5">Reference:</strong>
-                  <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#">The Next Web (TNW)</a>
-                </h6>
                 <h6 class="g-color-gray-dark-v1">
                   <strong class="g-mr-5">Tags:</strong>
                   <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                     href="#">Business</a>
+                     href="#">factorisation</a>
                   <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                     href="#">SaaS</a>
+                     href="#">joins</a>
                   <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                     href="#">Web Design</a>
-                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                     href="#">IT</a>
+                     href="#">aggregates</a>
                 </h6>
               </div>
               <!-- End Sources & Tags -->
@@ -378,7 +266,7 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
             <H3>Overviews</H3>
             
             <UL>
-              <LI class="g-mb-15">
+              <LI id="os-sigrec16" class="g-mb-15">
                 <STRONG>Factorized Databases</STRONG>. 
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">preliminary
                   version</A>]
@@ -386,17 +274,17 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 <BR>Dan Olteanu and Maximilian Schleich.
                 <BR>In SIGMOD Record (Database Principles Column), vol. 45,
                 no. 2, June 2016. </LI>
-              <LI class="g-mb-15">
+              <LI id="o-beyondnp16" class="g-mb-15">
                 <STRONG>Factorized Databases: A Knowledge Compilation Perspective</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">pdf</A>]
                 <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
                 <BR>Dan Olteanu.
-                <BR>To appear in BeyondNP, AAAI workshop, Phoenix,
+                <BR>In BeyondNP, AAAI workshop, Phoenix,
                 April 2016. </LI>
             </UL>
-            <H3>Succinct Data Representations and Factorized Query Processing</H3>
+            <H3>Factorised Representations for Data and Provenance</H3>
             <UL>
-              <LI><STRONG>Covers of Query Results</STRONG>.
+              <LI id="ko-icdt18"><STRONG>Covers of Query Results</STRONG>.
                 [<A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
                 <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
                 <BR>Ahmet Kara and Dan Olteanu.
@@ -404,13 +292,13 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 2017. </LI>
             </UL>
             <UL>
-              <LI><STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+              <LI id="co-tr15"><STRONG>Worst-Case Optimal Join At A Time</STRONG>.
                 <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
                 <BR>Radu Ciucanu and Dan Olteanu.  <BR>Technical report, November
                 2015. </LI>
             </UL>
             <UL>
-              <LI><STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>.
+              <LI id="oz-tods15"><STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary
                   version</A>]
                 <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
@@ -418,28 +306,7 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
             </UL>
             <UL>
-              <LI><STRONG>Aggregation and Ordering in Factorised Databases</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub  Závodný.
-                <BR>March 2013. <BR> In Very Large Data Bases (PVLDB), vol 6,
-                2013.
-                <BR> Complementary information available in
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas'thesis</A></LI>
-              <LI><STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>;
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
-                <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-                <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub  Závodný.
-                <BR>System demonstration.
-                In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
-              <LI><STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
-                <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-                <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub  Závodný.
-                <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-                <BR>Prior version in <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A></LI>
-              <LI><STRONG>Factorised Representations of Query Results: Size
+              <LI id="oz-icdt12"><STRONG>Factorised Representations of Query Results: Size
                   Bounds and Readability</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
                 <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
@@ -449,25 +316,58 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1104.0867">
                   arXiv technical report 1104.0867</A>, April 2011. </LI>
             </UL>
-            
-            <H3>Provenance Compression</H3>
             <UL>
-              <LI><STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Dan Olteanu and Jakub  Závodný.
-                <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1104.0867">
-                  arXiv technical report 1104.0867</A>, April 2011. </LI>
-              <LI><STRONG>On Factorisation of Provenance Polynomials</STRONG>.
+               <LI><STRONG>On Factorisation of Provenance Polynomials</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
                 <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
                 <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
                 <BR>Dan Olteanu and Jakub Závodný.
                 <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
               </LI>
-              
+            </UL>
+            
+            <H3>Factorised Query Processing</H3>
+
+            <UL>
+              <LI id="co-tr15"><STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+                <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
+                <BR>Radu Ciucanu and Dan Olteanu.  <BR>Technical report, November
+                2015. </LI>
+            </UL>
+            <UL>
+              <LI id="oz-tods15"><STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary
+                  version</A>]
+                <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+                <BR> Dan Olteanu and Jakub Závodný.
+                <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
+            </UL>
+            <UL>
+              <LI id="bkoz-vldb13"><STRONG>Aggregation and Ordering in Factorised Databases</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
+                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+                <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub  Závodný.
+                <BR>March 2013. <BR> In Very Large Data Bases (PVLDB), vol 6,
+                2013.
+                <BR> Complementary information available in
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas'thesis</A></LI>
+            </UL>
+            <UL>    
+              <LI><STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>;
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
+                <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
+                <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub  Závodný.
+                <BR>System demonstration.
+                In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
+            </UL>
+            <UL>    
+              <LI><STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>.
+                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
+                <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+                <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub  Závodný.
+                <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+                <BR>Prior version in <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A></LI>
             </UL>
 
             <div id="stickyblock-end"></div>
