@@ -193,18 +193,18 @@
                 <p class="g-color-black-opacity-0_8">
                   Our aim is to build a database engine that provides scalable techniques to compute
                   machine learning models over databases. We show that the data-intensive
-                  computations of many machine learning models can be factorised, and relational
-                  structure in the underlying data can be used to compute machine learning models
-                  faster. In practice, computing machine learning models in a database engine can
-                  lead to orders-of-magnitude performance improvements over current state-of-the-art
-                  analytics systems <a href="#soc16">[5]</a>. We also show that a host of machine learning models can be
-                  learned with the same low complexity guarantees as factorised query processing
+                  computations of many machine learning models can be factorised, which in can
+                  significantly scale the computation of such models. Computing machine
+                  learning models inside a database engine can lead to orders-of-magnitude
+                  performance improvements over current state-of-the-art analytics systems. In
+                  addition, a host of machine learning models can be learned with the same low
+                  complexity guarantees as factorised query processing
                   (see <a href="principles.html">Principles of Factorised Databases</a> for
                   details).
                 </p>
 
                 <div class="text-center g-width-90x--md mx-auto g-my-40">
-                  <h3 class="g-color-primary">We unify database and analytics engines into one highly optimised datalytics engine. </h3>
+                  <h3 class="g-color-primary">We unify database and analytics engines into one highly optimised in-database analytics engine. </h3>
                 </div>
                   <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
 
@@ -212,24 +212,24 @@
 
                 <p> For many practical scenarios, machine learning models are computed over several
                   data sources that are stored in a database management system (DBMS). Machine
-                  learning algorithms, on the other hand, require the input to be a single design
+                  learning algorithms, on the other hand, require as input a single design
                   matrix, which means that the distinct data sources need to be joined into a single
                   relation.
 
-                <p  class="example g-color-black-opacity-0_8">
-                  <strong>Example: </strong> (TBD) <br> For instance, a retailer wants to be a
-                  model which predicts whether a customer buys a certain product. The model would be
-                  based on information about this customer and product, but also external factors
-                  such as the current weather conditions, demographics, and more. In a relational
-                  DBMS, these data sources are stored in different relations. (different example:
-                  perhaps signals from sensors?)
-                </p> 
+                <!-- <p  class="example g-color-black-opacity-0_8"> -->
+                <!--   <strong>Example: </strong> (TBD) <br> -->
+                <!--   For instance, a retailer wants to be a model which predicts whether a customer -->
+                <!--   buys a certain product. The model would be based on information about this -->
+                <!--   customer and product, but also external factors such as the current weather -->
+                <!--   conditions, demographics, and more. In a relational DBMS, these data sources are -->
+                <!--   stored in different relations. (different example: perhaps signals from sensors?) -->
+                <!-- </p>  -->
 
-                <p> In a conventional technology stack, the data sources are joined in a DBMS and
-                  the join result is then exported into a specialised analytics system that computes
-                  the machine learning model.  Computing the machine learning model directly in the
-                  DBMS has several non-trivial benefits over the conventional approach with
-                  specialized systems:
+                <p> In a conventional technology stack, the join is computed in a DBMS and the join
+                  result is then exported into a specialised analytics system that computes the
+                  machine learning model. Computing the machine learning model directly in the DBMS
+                  has several non-trivial benefits over the conventional approach with specialized
+                  systems:
 
                 <ol>
                   <br>
@@ -250,15 +250,15 @@
 
                     As shown in the <a href="principles.html"> Principles of Factorised
                       Databases</a> project, listing representations of relational data are known to
-                    require a high degree of redundancy for data representation and computation,
-                    especially in the case of relations representing joins. This redundancy is not
-                    necessary for subsequent processing, such as learning regression or
-                    classification models, and we avoid such redundancy by computing machine
-                    learning algorithms over factorized joins instead. By doing so, we are able to
-                    show that the data-intensive computation of many machine learning models
-                    follows the low complexity guarantees of factorized query processing. In our
-                    experiments, computing the model over the factorised joins can take less time
-                    than computing the conventional listing representation of the join only.
+                      require a high degree of redundancy for data representation and computation,
+                      especially in the case of relations representing joins. This redundancy is not
+                      necessary for subsequent processing, such as learning regression or
+                      classification models, and we avoid such redundancy by computing machine
+                      learning algorithms over factorized joins instead. By doing so, we are able to
+                      show that the data-intensive computation of many machine learning models
+                      follows the low complexity guarantees of factorized query processing. In
+                      fact, computing the model over the factorised joins can take less time
+                      than computing the conventional listing representation of the join only!
                   </li> <br> 
                   <li>
                     <strong>
@@ -269,9 +269,10 @@
 
                     When computing a machine learning model inside a database engine, it is possible
                     to exploit relational structures in the underlying data to compute machine
-                    learning models faster. For instance, we show that we can use functional
-                    dependencies to decrease the dimensionality of a machine learning model, which
-                    leads to significant performance improvements <a href="#annos-pods"> [2] </a>.
+                    learning models faster. For instance, we can exploit functional dependencies to
+                    decrease the dimensionality of a machine learning model, which leads to
+                    significant performance improvements (see our <a href="#annos-pods">PODS'18</a>
+                    paper).
                     <!-- In our algorithms, we use structure in the data, such as the schema -->
                     <!-- or functional dependencies between variables, to avoid redundant computation for -->
                     <!-- the analytics task.  This is along the lines of the factorized join computation -->
@@ -279,19 +280,31 @@
                   </li>
                 </ol>
 
-                A conventional technology stack leads to a poor integration of analytics and
-                databases, and misses crucial optimization opportunities. More importantly however,
-                the poor efficiency of the specialised systems leads to the omission of relevant
-                data sources, which implies that the machine learning models do not reach their full
-                potential. Computing the machine learning models directly inside a database engine
-                mitigates these insufficiencies and thus cannot only scale the computation of the
-                models but also lead to the computation of more accurate models. It is for this
-                reason, that there is increasing interest in academia and industry in building
-                systems that integrate databases and machine learning.
-
                 
+                <!-- Since state-of-the-art analytics systems are inherently suboptimal, data scientists -->
+                <!-- are often forced to omit relevant data sources from their models, which means that -->
+                <!-- the models can miss important patterns in the data. miss important patterns in -->
+                <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+                <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+                <!-- and thus cannot only scale the computation of the models but also lead to the -->
+                <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+                <!-- interest in academia and industry in building systems that integrate databases and -->
+                <!-- machine learning. -->
+                
+                <!-- The conventional technology stack leads to poor integration of analytics and -->
+                <!-- databases, and misses crucial optimization opportunities. More importantly, however, -->
+                <!-- specialised analytics systems that require a listing representation of the join as -->
+                <!-- input are inherently inefficient and often lead to the omission of relevant data -->
+                <!-- sources. This implies that the machine learning models miss important patterns in -->
+                <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+                <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+                <!-- and thus cannot only scale the computation of the models but also lead to the -->
+                <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+                <!-- interest in academia and industry in building systems that integrate databases and -->
+                <!-- machine learning. -->
+
                 <div class="text-center g-width-90x--md mx-auto g-my-40">
-                  <h3 class="text-uppercase g-color-primary"> We propose a unified in-database analytics
+                  <h3 class="g-color-primary"> We propose a unified in-database analytics
                     solution for a host of optimization problems. </h3>
                 </div>
                 
@@ -299,16 +312,16 @@
                 <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
 
                 <p>
-                  Our research is based on the observation that the data-intensive computations of
-                  many machine learning algorithms can be rewritten into aggregates over joins. We
-                  factorise the computation of these aggregates, as described in
-                  the <a href="principles.html"> Principles of Factorised Databases</a> project. Our
-                  experiments show that this rewriting can lead to performance improvements of
-                  several orders-of-magnitude over over systems like R, Python StatsModels, and
-                  MADlib, while maintaining the accuracy of these competitors (see
-                  our <a href="#soc16"> SIGMOD paper </a> for details).
+                  The data-intensive computations of a large class of machine learning models can be
+                  rewritten into aggregates over joins and factorised. This class includes (among
+                  others) regression, principal component analysis, decision trees, random forests,
+                  naive bayes, Bayesian networks, k-nearest neighbors, and frequent itemset
+                  mining. Our experiments show that this rewriting can lead to performance
+                  improvements of several orders-of-magnitude over over systems like R, Python
+                  StatsModels, and MADlib, while maintaining the accuracy of these competitors (see
+                  our <a href="#soc16"> SIGMOD'16 paper </a> for details).
 
-                  <div class="text-center g-width-90x--md mx-auto g-my-40">
+                  <div class="text-center mx-auto g-my-40">
                     <h3 class="g-color-primary">Large chunks of analytics code can be rewritten
                       into aggregates over joins and factorised. </h3>
                   </div>
@@ -316,13 +329,37 @@
                   <figure class="u-shadow-v25 g-mb-30">
                     <img class="img-fluid w-100" src="assets/projects/analytics.png"
                          alt="Image Description">
-                    <em>Conventional vs. In-Database Analytics.</em>
+                    <em> The <font color="red">conventional technology stack</font>
+                    compared to our approach to <font color="green">in-database analytics </font>). </em>
                   </figure>
                   
                 <p  class="example g-color-black-opacity-0_8">
-                  <strong>Example: </strong> Need an example that shows the rewriting into aggregates over joins. (TBD) <br>
+                  <strong>Example: </strong>
+                  
+                  In a conventional technology stack (the <font color="red">red</font> part of the diagram), a feature extraction
+                  query is issued to the database engine which computes, materializes and exports
+                  the output table. Depending on the chosen data model, the output table is then fed
+                  into an appropriate machine learning tool that learns and outputs the best model
+                  parameters $\mathbb{\theta^*}$.
 
-                  Perhaps use Linear Regression and show the rewriting of the objective function. 
+                  <br>
+                  In our in-database analytics framework (the <font color="green">green</font>
+                  part), we factorize the query and the model formulation and define highly
+                  optimized aggregate queries, which constitute the data-intensive part of the
+                  machine learning model. Only this small digest along with the function g are
+                  needed by the gradient-descent trainer to carry out all iterations of
+                  gradient-descent and compute $\mathbb{\theta^*}$, without ever having to go back
+                  to the original data tables.
+
+                  <!-- have -->
+                  <!-- a unified model formulation that subsumes many commonly-used models: Choosing a -->
+                  <!-- specific model reduces mainly to choosing a function h of the features and a -->
+                  <!-- function g of the model parameters. The function h, the feature extraction query, -->
+                  <!-- and the input tables are all fed into a factorization-based query optimizer, which -->
+                  <!-- computes a relatively small “digest” in the form of a matrix ⌃ and a vector -->
+                  <!-- c. Only this small digest along with the function g are needed by the -->
+                  <!-- gradient-descent trainer to carry out all iterations of gradient-descent and -->
+                  <!-- compute ✓⇤, without ever having to go back to the original data tables. -->
                 </p> 
 
 
@@ -332,41 +369,37 @@
                     <li> We can efficiently capture categorical variables, without any an
                       intermediate encoding of the input data. Typically, categorical variables are
                       one-hot encoded, which leads to a significant blow-up of the input data. We
-                      avoid such intermediate encodings by treating categorical vairables as group-by
-                      variables in our aggregate queries (see our <a href="#annos-pods"> PODS paper </a>
+                      avoid such intermediate encodings by treating categorical variables as group-by
+                      variables in our aggregate queries (see our <a href="#annos-pods"> PODS'18 paper </a>
                       for details).</li>
                     <li> We can exploit functional dependencies to decrease the dimensionality
-                      of the model (see our <a href="#annos-pods"> PODS paper </a> for details). </li>
+                      of the model (see our <a href="#annos-pods"> PODS'18 paper </a> for details). </li>
                     <li> Aggregates computed for a model can be re-used to compute models over any
                       subset of the original features, which means we can efficiently explore the
-                      feature space for the best model (see our <a href="#os-demo"> VLDB demo
+                      feature space for the best model (see our <a href="#os-demo"> VLDB'16 demo
                       paper </a> for details)</li>
                     <li> The aggregates that capture the data-intensive computations of the model
                       are distributive, which means these computations can be easily parallelized and
-                      distributed (see our <a href="#soc16"> SIGMOD paper </a> for details).</li>
+                      distributed (see our <a href="#soc16"> SIGMOD'16 paper </a> for details).</li>
                   </ol>
 
 
-                  <hr>
-                   
-                <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3>
-
-                <p>
-                  Rewriting the data-intensive computations into aggregates over joins has
-                  additional benefits. One such advantage is that we can efficiently treat
-                  categorical variables as group-by variables.
-
-                  TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables. 
+                  <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3> -->
+                  <!-- <p> -->
+                  <!--   Rewriting the data-intensive computations into aggregates over joins has -->
+                  <!--   additional benefits. One such advantage is that we can efficiently treat -->
+                  <!--   categorical variables as group-by variables. -->
+                  <!--   TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables.  -->
                   
                   <!-- we can treat categorical variables as group-by variables, and compute -->
                   <!-- models over such variables without any intermediate encoding of the input data, -->
                   <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
                   <!--   [2] </a>. -->
 
-                  <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3>
+                  <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3> -->
                   
-                  Also, we can exploit functional dependencies to decrease the
-                  dimensionality of the model [1];
+                  <!-- Also, we can exploit functional dependencies to decrease the -->
+                  <!-- dimensionality of the model [1]; -->
 
                   
                   <!-- Our observation is that the data-intensive computations of analytics problems can be -->
@@ -375,84 +408,81 @@
                   <!-- - One hot encoding is turned into group-by aggregates. -->
                   <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
 
-                  <hr>
+                  <!-- Further benefits: (3) aggregates computed for a model can be re-used to compute -->
+                  <!-- models over any subset of the original features, which means we can efficiently -->
+                  <!-- explore the feature space for the best model [5]; and (4) the aggregates that -->
+                  <!-- capture the data-intensive computations of the model are distributive, which means -->
+                  <!-- these computations can be easily parallelized and distributed [8]. -->
                   
-                  Further benefits: (3) aggregates computed for a model can be re-used to compute
-                  models over any subset of the original features, which means we can efficiently
-                  explore the feature space for the best model [5]; and (4) the aggregates that
-                  capture the data-intensive computations of the model are distributive, which means
-                  these computations can be easily parallelized and distributed [8].
-                  
-                 <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
-                 <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
+                  <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
+                  <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
 
-                <!-- <ul> -->
-                <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
-                <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
-                <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
-                <!--     - Use scalable systems and low complexity for query processing </li> -->
-                <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
-                <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
-                <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
-                <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
-                <!-- </ul> -->
-                <!-- (1) Poor integration of analytics and databases, which are -->
-                <!-- traditionally confined to distinct specialized systems in the -->
-                <!-- ever-growing technology stack [2]; -->
-                <!-- (2) poor efficiency already for few data sources; and -->
-                <!-- (3) insufficient accuracy due to omission of further relevant -->
-                <!-- data sources. -->
-                <!-- <br> -->
+                  <!-- <ul> -->
+                  <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
+                  <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
+                  <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
+                  <!--     - Use scalable systems and low complexity for query processing </li> -->
+                  <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
+                  <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
+                  <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
+                  <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
+                  <!-- </ul> -->
+                  <!-- (1) Poor integration of analytics and databases, which are -->
+                  <!-- traditionally confined to distinct specialized systems in the -->
+                  <!-- ever-growing technology stack [2]; -->
+                  <!-- (2) poor efficiency already for few data sources; and -->
+                  <!-- (3) insufficient accuracy due to omission of further relevant -->
+                  <!-- data sources. -->
+                  <!-- <br> -->
 
-                <!-- <p class="g-color-black-opacity-0_8"> -->
-                <!--   Due to ever growing technology stacks, it is common for -->
-                <!--   companies to have two distinct systems for data management -->
-                <!--   and data analytics workloads.  This distinction is (up to a -->
-                <!--   few exceptions) also predominate in academic -->
-                <!--   literature. In-database analytics is a research field that -->
-                <!--   aims to unify data management and data analytics workloads in -->
-                <!--   one database engine. Combining both types of workloads in one -->
-                <!--   systems engine can have many advantages:   -->
-                <!--   <ol> -->
-                <!--     <li> <font class="g-color-primary">In-database analytics -->
-                <!--         brings analytics closer to the data </font><br> -->
+                  <!-- <p class="g-color-black-opacity-0_8"> -->
+                  <!--   Due to ever growing technology stacks, it is common for -->
+                  <!--   companies to have two distinct systems for data management -->
+                  <!--   and data analytics workloads.  This distinction is (up to a -->
+                  <!--   few exceptions) also predominate in academic -->
+                  <!--   literature. In-database analytics is a research field that -->
+                  <!--   aims to unify data management and data analytics workloads in -->
+                  <!--   one database engine. Combining both types of workloads in one -->
+                  <!--   systems engine can have many advantages:   -->
+                  <!--   <ol> -->
+                  <!--     <li> <font class="g-color-primary">In-database analytics -->
+                  <!--         brings analytics closer to the data </font><br> -->
 
-                <!--       In many real world scenarios, data is stored in a relation -->
-                <!--       database management system. To complete an analytics task, -->
-                <!--       the data is then exported from the DBMS and imported in a -->
-                <!--       statistical analytics package, which is inefficient. Save -->
-                <!--       non-trivial export/import time </li> -->
-                <!--     <li> <font class="g-color-primary"> Database management -->
-                <!--         systems have structural information that can be useful for -->
-                <!--         analytics workloads. </font><br> -->
+                  <!--       In many real world scenarios, data is stored in a relation -->
+                  <!--       database management system. To complete an analytics task, -->
+                  <!--       the data is then exported from the DBMS and imported in a -->
+                  <!--       statistical analytics package, which is inefficient. Save -->
+                  <!--       non-trivial export/import time </li> -->
+                  <!--     <li> <font class="g-color-primary"> Database management -->
+                  <!--         systems have structural information that can be useful for -->
+                  <!--         analytics workloads. </font><br> -->
 
-                <!--       In our algorithms, we use structure in the data, such as -->
-                <!--       the schema or functional dependencies between variables, -->
-                <!--       to avoid redundant computation for the analytics task. -->
-                <!--       This is along the lines of the factorized join computation -->
-                <!--       that has been described in the Principles project. -->
+                  <!--       In our algorithms, we use structure in the data, such as -->
+                  <!--       the schema or functional dependencies between variables, -->
+                  <!--       to avoid redundant computation for the analytics task. -->
+                  <!--       This is along the lines of the factorized join computation -->
+                  <!--       that has been described in the Principles project. -->
 
-                <!--       (Using schema information to factorize the computation and -->
-                <!--       avoid redundant computation ) -->
-                <!--     </li> -->
-                <!--     <li> -->
-                <!--       <font class="g-color-primary"> Large chunks of analytics -->
-                <!--         code can be rewritten into aggregates over joins </font> -->
-                <!--       <br> -->
+                  <!--       (Using schema information to factorize the computation and -->
+                  <!--       avoid redundant computation ) -->
+                  <!--     </li> -->
+                  <!--     <li> -->
+                  <!--       <font class="g-color-primary"> Large chunks of analytics -->
+                  <!--         code can be rewritten into aggregates over joins </font> -->
+                  <!--       <br> -->
 
-                <!--       Use scalable systems and low complexity for query -->
-                <!--       processing -->
-                <!--     </li> -->
-                <!--   </ol> -->
-                <!-- </p> -->
+                  <!--       Use scalable systems and low complexity for query -->
+                  <!--       processing -->
+                  <!--     </li> -->
+                  <!--   </ol> -->
+                  <!-- </p> -->
 
-                <!-- (1) Poor integration of analytics and databases, which are -->
-                <!-- traditionally confined to distinct specialized systems in the -->
-                <!-- ever-growing technology stack [2]; -->
-                <!-- (2) poor efficiency already for few data sources; and -->
-                <!-- (3) insufficient accuracy due to omission of further relevant -->
-                <!-- data sources. -->
-
+                  <!-- (1) Poor integration of analytics and databases, which are -->
+                  <!-- traditionally confined to distinct specialized systems in the -->
+                  <!-- ever-growing technology stack [2]; -->
+                  <!-- (2) poor efficiency already for few data sources; and -->
+                  <!-- (3) insufficient accuracy due to omission of further relevant -->
+                  <!-- data sources. -->
 
             </article>
             <div class="g-mb-30">
