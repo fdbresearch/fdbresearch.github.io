@@ -1,7 +1,7 @@
 const news_data = [{
   date: "Sep 31, 2017",
   html: `
-    <p class="g-color-gray-dark-v1">New PhD and postdoc positions available funded by a 5-year ERC consolidator grant! Please contact
+    <p class="g-color-gray-dark-v1">Research positions available! Please contact
     a project member for details if you are interested.</p>
     <p>
       <ul>
