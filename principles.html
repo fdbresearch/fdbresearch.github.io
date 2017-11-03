@@ -41,6 +41,11 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
   </head>
 
   <body>
@@ -191,9 +196,10 @@
 The culprits behind this redundancy are the Cartesian products lurking within every database join. By avoiding the enumeration of the output of these products, we can dramatically lower the space and computational costs for joins.                
                 </p>
                 <p  class="example g-color-black-opacity-0_8">
-                Take for instance the natural join of two relations R(A,B) and S(A,C) and assume both relations have the A-values a<sub>1</sub>,...,a<sub><em>n</em></sub> for some large value of <em>n</em>. Partition the columns B and C of the two relations so that there is one partition per A-value: R<sub>i</sub> = &pi;<sub>B</sub> &sigma;<sub>A=a<sub>i</sub></sub>(R) and S<sub>i</sub> = &pi;<sub>C</sub> &sigma;<sub>A=a<sub>i</sub></sub>(S), for each i&isin; [n]. 
-                The join result is the union of the Cartesian products of the corresponding partitions in the two relations: R &#8904; S = {a<sub>1</sub>} x R<sub>1</sub> x S<sub>1</sub> &cup; ... &cup; {a<sub>n</sub>} x R<sub>n</sub> x S<sub>n</sub>. 
-                The state-of-the-art, listing (or row-oriented) representation of this result materialises these Cartesian products. In general, the result may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation of these products and it computes a representation that only takes linear size and time! This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be O(N<sup>q</sup>), where N is the size of the database and q is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!            
+                Take for instance the natural join of two relations $R(A,B)$ and $S(A,C)$ and assume both relations have the $A$-values $a_1,\ldots,a_n$ for some large value of $n$. Partition the columns $B$ and $C$ of the two relations so that there is one partition per $A$-value: $R_i = \pi_B \sigma_{A=a_i}(R)$ and $S_i = \pi_C \sigma_{A=a_i}(S)$, for each $i\in  [n]$. 
+                The join result is the union of the Cartesian products of the corresponding partitions in the two relations: $R\Join S = \{(a_1)\} \times R_1 \times S_1 \cup\cdots\cup \{(a_n)\} \times R_n \times S_n$. <br/>
+                The listing (or row-oriented) representation of this result materialises the products. In general, the result may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation of these products and computes a representation that only takes linear size and time!<br/> 
+                This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our succinct representations on the other hand can be ${\cal O}(N^q)$, where $N$ is the size of the database and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude improvement in performance for query processing in our approach versus the state-of-the-art!            
                 </p>
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="assets/img-temp/900x600/img1.jpg" alt="Image Description">
@@ -207,15 +213,13 @@ The culprits behind this redundancy are the Cartesian products lurking within ev
                 
                 
                 <p>
-                So far, we have investigated three distinct lossless <em>factorised</em> representations of the join result: <strong>f-representations</strong>, <strong>d-representations</strong>, and <strong>covers</strong>. 
+                So far, we have investigated three distinct lossless <em>factorised</em> representations of the join result: <strong>f-representations</strong> (<a href="">ICDT'12 paper<a/>), <strong>d-representations</strong> (<a href="">ACM TODS'15 article<a/>), and <strong>covers</strong> (<a href="">ICDT'18 paper<a/>). 
                 </p>
                 <p>The <strong>f-representations</strong> and <strong>d-representations</strong> are to the listing representation what parse trees and respectively circuits are to formulas in disjunctive normal form. For the simple example above, the union-product relational algebra expression is an <strong>f-representation</strong> (also a <strong>d-representation</strong>). The <strong>f-representations</strong> exploit the law of distributivity of relational product over union to factor out common subexpressions. The <strong>d-representations</strong> are f-representations with definitions: A recurring subexpression can be given a name and reused several times. 
                 </p>
                 <p>A <strong>cover of the join result</strong> is a minimal subset of this result from which we can losslessly reconstruct it entirely.
                </p>
-                <p>
-                  F-representations have been introduced in our ICDT'12 paper, d-representations in the ACM TODS'15 paper, and covers in the ICDT'18 paper.       
-                </p>
+
 
                 <figure class="text-center text-md-left float-md-left g-pr-30--sm g-py-20 mb-0">
                   <img class="u-shadow-v25 img-fluid g-width-300" src="assets/img-temp/500x650/img1.jpg" alt="Image Description">
