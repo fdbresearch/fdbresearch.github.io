@@ -1,7 +1,7 @@
 const news_data = [{
   date: "Sep 31, 2017",
   html: `
-    <p class="g-color-gray-dark-v1">New PhD and postdoc positions available in my group funded by a 5-year ERC consolidator grant! Please contact
+    <p class="g-color-gray-dark-v1">New PhD and postdoc positions available funded by a 5-year ERC consolidator grant! Please contact
     a project member for details if you are interested.</p>
     <p>
       <ul>
@@ -16,8 +16,8 @@ const news_data = [{
     `
 }, {
   date: "Sep 2017",
-  html: `<p class="g-color-gray-dark-v1">Our own Ahmet Kara helping out at the ERC-funded
-  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&utm_medium=referral">Curiosity Festival</a> taking place in Oxford.</p>`
+  html: `<p class="g-color-gray-dark-v1">Ahmet Kara helped out at the European Researcher's
+  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&utm_medium=referral">Curiosity Festival</a> in Oxford.</p>`
 }, {
   date: "March 2017",
   html: `<p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see
@@ -32,7 +32,7 @@ const news_data = [{
   html: `<p class="g-color-gray-dark-v1">Congratulations to Jakub, who successfully defended his PhD and joined Google Zurich!</p>`
 }, {
   date: "June 2012",
-  html: `<p class="g-color-gray-dark-v1">Jakub will do an internship over the summer of 2012 at Google Zurich.</p>`
+  html: `<p class="g-color-gray-dark-v1">Jakub started his summer internship at Google Zurich.</p>`
 }, ]
 
 const acknowledgements_data = [{
