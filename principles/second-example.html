@@ -168,23 +168,30 @@
               
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
                 <p class="example g-color-black-opacity-0_8">
-                Consider the following database with three relations Orders, Dish, and Items.
+                Consider the following database with three relations <tt>Orders</tt> (O), <tt>Dish</tt> (D), and <tt>Items</tt> (I).
                 </p>
-                </div>
 
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="orders-dish-items-db.png" alt="Example Database">
                 </figure>
 
                 <p class="example g-color-black-opacity-0_8">    
-                The natural join of the three relations entails loads of redundancy, as shown below for a fragment of it.
+                The natural join of the three relations entails loads of redundancy, as shown below for a fragment of it. For instance, the values <tt>Elise</tt> and <tt>burger</tt> appear in all tuples in this fragment.
                 </p>
                             
                 <figure class="u-shadow-v25 g-mb-30">
-                  <img class="img-fluid w-100" src="orders-dish-items-join.png" alt="Example Database">
+                  <img class="img-fluid w-100" src="orders-dish-items-join.png" alt="Fragment of the Natural Join of Database Relations">
                 </figure>
                 
-                                
+                <p class="example g-color-black-opacity-0_8">    
+                How can we get rid of this redundancy? Let us have a closer look at this result fragment through relational algebra glasses. This relation can be expressed in relational algebra using 
+                </p>
+                            
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-algebra.png" alt="Fragment of the Natural Join of Database Relations">
+                </figure>
+                                                
+                </div>
 
             </article>
 
