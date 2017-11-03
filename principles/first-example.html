@@ -189,45 +189,74 @@
               </p>
             </div>
 
-            <!--div class="text-center g-width-60x--md mx-auto g-my-40">
+            <div class="text-center g-width-60x--md mx-auto g-my-40">
               <h3 class="text-uppercase g-color-primary">
                 How much redundancy is there in the representation and computation of join results?
               </h3>
-            </div-->
-
-            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-              <p class="g-color-black-opacity-0_8">
-                For relational join processing, the culprit behind this redundancy is the Cartesian product lurking within every database join. By avoiding the listing (enumeration)  of the output of these products, we can lower the space and computational costs for joins. See first this simple <a href="principles/first-example.html">example</a> and then the second more insightful <a href="principles/second-example.html">example</a>.
-              </p>
             </div>
 
             <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-            <p><span class="text-uppercase g-color-primary">This redundancy can be avoided via factorisation</span></p>
-            <p>
-                We developed three distinct lossless
-                factorised representations for join queries and even the more general functional aggregate queries:
-            </p>
-            <ul>
-            <li>    
-                The <strong>f-representations</strong> (see
+              <p class="g-color-black-opacity-0_8">
+                The culprits behind this redundancy are the Cartesian products lurking within every database join. By avoiding the enumeration
+                of the output of these products, we can dramatically lower the space and computational costs for joins.
+              </p>
+              <p class="example g-color-black-opacity-0_8">
+                Take for instance the natural join of two relations $R(A,B)$ and $S(A,C)$ and assume both relations have the $A$-values $a_1,\ldots,a_n$
+                for some large value of $n$. Partition the columns $B$ and $C$ of the two relations so that there is one
+                partition per $A$-value: $R_i = \pi_B \sigma_{A=a_i}(R)$ and $S_i = \pi_C \sigma_{A=a_i}(S)$, for each $i\in
+                [n]$. The join result is the union of the Cartesian products of the corresponding partitions in the two relations:
+                $R\Join S = \{(a_1)\} \times R_1 \times S_1 \cup\cdots\cup \{(a_n)\} \times R_n \times S_n$.
+                <br/> The listing (or row-oriented) representation of this result materialises the products. In general, the result
+                may have quadratically many tuples and it takes quadratic time to compute. Our approach avoids the materialisation
+                of these products and computes a representation that only takes linear size and time!
+                <br/> This simple idea can be applied to arbitrary join queries, albeit with a bit more effort. The complexity
+                gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our
+                succinct representations on the other hand can be ${\cal O}(N^q)$, where $N$ is the size of the database
+                and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude
+                improvement in performance for query processing in our approach versus the state-of-the-art!
+                <br/> A more detailed example is available
+                <a href="customer-order-price.html">here</a>.
+              </p>
+              <figure class="u-shadow-v25 g-mb-30">
+                <img class="img-fluid w-100" src="assets/img-temp/900x600/img1.jpg" alt="Image Description">
+              </figure>
+
+              <div class="text-center g-width-60x--md mx-auto g-my-40">
+                <h3 class="text-uppercase g-color-primary">
+                  How to avoid this redundancy using factorisation?
+                </h3>
+              </div>
+
+
+              <p>
+                So far, we have investigated three distinct lossless
+                <em>factorised</em> representations of the join result:
+                <strong>f-representations</strong> (
                 <a href="#oz-icdt12">ICDT'12 paper
-                  <a/>) are to the listing representation what nested formulas are
-                to formulas in disjunctive normal form. They are relational algebra expressions with operators union and product over singleton relations (relations with one column and one row). They exploit the distributivity of the product over union to factor out
-                common subexpressions.
-            </li>
-            <li>      
-                 The <strong>d-representations</strong> (see
-                  <a href="#oz-tods15">TODS'15 article
-                    <a/>) are  <strong>f-representations</strong> with definitions: A recurring subexpression can be given
-                a name and referenced several times by name instead of content. They correspond to circuits.
-             </li>
-             <li>
-                  The  <strong>covers</strong> (see
+                  <a/>),
+                  <strong>d-representations</strong> (
+                  <a href="#oz-tods15">ACM TODS'15 article
+                    <a/>), and
+                    <strong>covers</strong> (
                     <a href="#ko-icdt18">ICDT'18 paper
-                      <a/>) of a query result is a minimal subset of this result from which we can losslessly reconstruct
+                      <a/>).
+              </p>
+              <p>The
+                <strong>f-representations</strong> and
+                <strong>d-representations</strong> are to the listing representation what parse trees and respectively circuits are
+                to formulas in disjunctive normal form. They are relational algebra expressions with opera For the simple
+                example above, the union-product relational algebra expression is an
+                <strong>f-representation</strong> (also a
+                <strong>d-representation</strong>). The
+                <strong>f-representations</strong> exploit the law of distributivity of relational product over union to factor out
+                common subexpressions. The
+                <strong>d-representations</strong> are f-representations with definitions: A recurring subexpression can be given
+                a name and reused several times.
+              </p>
+              <p>A
+                <strong>cover of the join result</strong> is a minimal subset of this result from which we can losslessly reconstruct
                 it entirely.
-              </li>
-              </ul>
+              </p>
               <p>
                 Compression by factorisation can also be applied to query provenance or lineage (
                 <a href="#oz-icdt12">ICDT'12
@@ -236,19 +265,23 @@
                     <a/> papers).
               </p>
 
-              <p><span class="text-uppercase g-color-primary">Analytics can be computed directly over factorised data</span></p>
+              <div class="text-center g-width-60x--md mx-auto g-my-40">
+                <h3 class="text-uppercase g-color-primary">
+                  Can we compute over factorised data?
+                </h3>
+              </div>
+
               <p>
-                The factorised representations of a join result allow for the enumeration of the result
+                One crucial property of our factorised representations of a join result is that they allow for the enumeration of the result
                 tuples with constant delay, which is as efficient as enumerating them from the listing representation of
                 the result. This is a prerequisite for the computation of aggregates (and more complex analytics) in one
                 pass over factorised data.
-                <br/> In case the materialisation of the factorised join result is not desirable, aggregates
-                can be computed on the fly. In this case, the
+                <br/> In case the materialisation of the factorised join result is not desirable, subsequent aggregate computation
+                can happen on the fly. In this case, the
                 <em>trace</em> of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially)
                 pushing aggregates past joins.
-                <br/> To explore more on: constant-delay enumeration and worst-case optimal join factorisation see the
-                <a href="#oz-tods15">TODS'15 article</a>; factorised join plans see the <a href="boz-vldb12">VLDB'12</a> paper;
-                aggregates over factorised joins see the
+                <br/> To read more on: constant-delay enumeration see the
+                <a href="#oz-tods15">TODS'15 article</a>; aggregates over factorised joins see the
                 <a href="os-sigrec16">SIGMOD Record'16</a> and
                 <a href="bkoz-vldb13">VLDB'13</a> papers; machine learning over factorised joins see the
                 <a href="publications.html#soc-sigmod16">SIGMOD'16</a> and
@@ -281,28 +314,52 @@
 
 
         <!-- right panel -->
-        <div class="col-lg-3 g-mb-80">
+        <!-- <div class="col-lg-3 g-mb-80">
             <div class="g-mb-50">
                 <div class="u-heading-v3-1 g-mb-30">
-                  <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">More</h2>
+                  <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Related Blogs</h2>
                 </div>
 
                 <ul class="list-unstyled">
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/simple-example.html">Simple Example</a>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Wrapbootstrap Marketplace</a>
                     </h4>
                   </li>
                   <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
                     <h4 class="h6">
                       <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/customer-order-price.html">Another Example</a>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Google Adwords &amp; Adsense</a>
+                    </h4>
+                  </li>
+                  <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                    <h4 class="h6">
+                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Web Design with UX/UI</a>
+                    </h4>
+                  </li>
+                  <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                    <h4 class="h6">
+                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Digital Marketing</a>
+                    </h4>
+                  </li>
+                  <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                    <h4 class="h6">
+                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Support Forum &amp; Community</a>
+                    </h4>
+                  </li>
+                  <li class="mb-0">
+                    <h4 class="h6">
+                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#">Unify Template Pages</a>
                     </h4>
                   </li>
                 </ul>
               </div>
-        </div>
+        </div> -->
         <!-- end right panel -->
       </div>
 
