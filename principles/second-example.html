@@ -236,7 +236,7 @@
                 </p>
                 
                 
-                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">How To Compute Factorisations?</h3>                
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">How To Compute Factorised Joins?</h3>                
                 
                 <p class="example g-color-black-opacity-0_8">
                 Given a variable order, we can compute the factorisation in worst-case optimal time. At each variable in the order, we compute the join of all relations on that variable: At <tt>dish</tt>, we intersect the relations Orders (O) and Dish (D) on <tt>dish</tt>;  at <tt>day</tt>, we look up into Orders the days for a given <tt>dish</tt> and then at <tt>customer</tt> we look up into Orders the customers for the given day and dish. We proceed similarly on the right branch. These lookups and intersections can be done efficiently if the relations are sorted following a topological order of the variable order. To guarantee optimality, the intersection of several lists needs to take time linear in the size of the smallest list (modulo a log factor).                
