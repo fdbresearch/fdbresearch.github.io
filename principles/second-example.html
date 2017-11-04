@@ -167,6 +167,9 @@
             <article class="g-mb-60">
               
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              
+              <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Redundancy in Join Results</h3>
+
                 <p class="example g-color-black-opacity-0_8">
                 Consider the following database with three relations <tt>Orders</tt> (O), <tt>Dish</tt> (D), and <tt>Items</tt> (I).
                 </p>
@@ -182,6 +185,9 @@
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="orders-dish-items-join.png" alt="Fragment of the Natural Join of Database Relations">
                 </figure>
+                
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Getting Rid of Redundancy using Factorisation</h3>
+
                 
                 <p class="example g-color-black-opacity-0_8">    
                 How can we get rid of this redundancy? Let us have a closer look at this result fragment through relational algebra glasses. This relation can be expressed in relational algebra using the operators union and Cartesian product over singleton relations (relations with one column and one row).
@@ -226,13 +232,21 @@
                 </figure>
                  
                 <p class="example g-color-black-opacity-0_8">    
-                An important question is which d-trees lead to asymptotically smallest factorisations and hence of worst-case optimal size within the class of factorisations whose structure is given by f-trees and respectively d-trees. This question is answered in the <a href="../principles.html#oz-icdt12">ICDT'12 paper</a> for f-trees and in the <a href="../principles.html#oz-tods15">TODS'15 article</a> for d-trees.<br/>
+                An important question is which d-trees lead to asymptotically smallest factorisations and hence of worst-case optimal size within the class of factorisations whose structure is given by f-trees and respectively d-trees. This question is answered in the <a href="../principles.html#oz-icdt12">ICDT'12 paper</a> for f-trees and in the <a href="../principles.html#oz-tods15">TODS'15 article</a> for d-trees.
+                </p>
+                
+                
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">How To Compute Factorisations?</h3>                
+                
+                <p class="example g-color-black-opacity-0_8">
                 Given a variable order, we can compute the factorisation in worst-case optimal time. At each variable in the order, we compute the join of all relations on that variable: At <tt>dish</tt>, we intersect the relations Orders (O) and Dish (D) on <tt>dish</tt>;  at <tt>day</tt>, we look up into Orders the days for a given <tt>dish</tt> and then at <tt>customer</tt> we look up into Orders the customers for the given day and dish. We proceed similarly on the right branch. These lookups and intersections can be done efficiently if the relations are sorted following a topological order of the variable order. To guarantee optimality, the intersection of several lists needs to take time linear in the size of the smallest list (modulo a log factor).                
                 </p>                   
  
                  <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="orders-dish-items-evaluation.png" alt="Factorised Join over a D-tree">
                 </figure>
+
+                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">How To Compute Aggregates over Factorised Joins?</h3>                
  
                 <p class="example g-color-black-opacity-0_8">    
                 We now turn to a different question: How to evaluate aggregates over the previous factorised join? It turns out that common SQL aggregates, such as <tt>SUM</tt>, <tt>MIN</tt>, and <tt>MAX</tt> can be evaluated in one pass over factorisations.<br/>
