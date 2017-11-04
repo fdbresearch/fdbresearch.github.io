@@ -1,17 +1,20 @@
 const news_data = [{
   date: "Sep 31, 2017",
   html: `
-    <p class="g-color-gray-dark-v1">Research positions available! Please contact
-    a project member for details if you are interested.</p>
+    <p class="g-color-gray-dark-v1">Research positions available in our research group! Please contact
+    Professor Dan Olteanu (dan.olteanu@cs.ox.ac.uk) for details.</p>
     <p>
       <ul>
         <li>
-          <a class="g-font-weight-700 g-font-size-13" href="#">Senior Researcher on in-database analytics</a>
+          <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1379-full.html">Senior Researcher on in-database analytics</a>
         </li>
         <li>
-          <a class="g-font-weight-700 g-font-size-13" href="#">Fully-Funded Doctoral Studentship in Databases</a>
+          <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1372-full.html">Fully-Funded Doctoral Studentship in Databases, partially sponsored by Ordnance Survey</a>
         </li>
-      </ul>
+        <li>
+          <span class="g-font-weight-700 g-font-size-13">Several ERC-Funded Doctoral Studentships to start any time in the academic year</span>
+        </li>
+        </ul>
     </p>
     `
 }, {
