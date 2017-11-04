@@ -12,7 +12,7 @@ const news_data = [{
           <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1372-full.html">Fully-Funded Doctoral Studentship in Databases, partially sponsored by Ordnance Survey</a>
         </li>
         <li>
-          <span class="g-font-weight-700 g-font-size-13">Several ERC-Funded Doctoral Studentships to start any time in the academic year</span>
+          <span class="g-font-weight-700 g-font-size-13">Several ERC-Funded Doctoral Studentships to start any term in the academic year</span>
         </li>
         </ul>
     </p>
