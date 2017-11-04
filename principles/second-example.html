@@ -184,14 +184,80 @@
                 </figure>
                 
                 <p class="example g-color-black-opacity-0_8">    
-                How can we get rid of this redundancy? Let us have a closer look at this result fragment through relational algebra glasses. This relation can be expressed in relational algebra using 
+                How can we get rid of this redundancy? Let us have a closer look at this result fragment through relational algebra glasses. This relation can be expressed in relational algebra using the operators union and Cartesian product over singleton relations (relations with one column and one row).
                 </p>
                             
                 <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="orders-dish-items-algebra.png" alt="Fragment of the Natural Join of Database Relations">
                 </figure>
+                         
+                <p class="example g-color-black-opacity-0_8">    
+                We can simplify this algebraic expression by using the distributivity of the product over union to <em>factor out</em> common subexpressions. One possible factorisation is given below (right). Its structure (left) is given by a partial order on the query variables, or <em>variable order</em> for short, which is sometimes called <em>f-tree</em> for factorisation tree; a more refined version is called <em>d-tree</em>.<br/> 
+                The f-tree below means the following: We first enumerate the possible <tt>dishes</tt>. For each <tt>dish</tt>, we consider independently the list of <tt>days</tt> when the dish is ordered from the list of component <tt>items</tt> of the <tt>dish</tt>. Under each <tt>day</tt>, we enumerate the <tt>customers</tt> who ordered on that <tt>day</tt> the <tt>dish</tt>. Also, under each <tt>item</tt>, we have its <tt>price</tt>.
+                </p>                         
                                                 
-                </div>
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-factorisation1.png" alt="Factorised Join over F-tree">
+                </figure>
+                
+                <p class="example g-color-black-opacity-0_8">    
+                The above factorisation exploits some of the <em>join dependencies</em>, or equivalently the conditional independence, present in the join result: Given the <tt>dish</tt> variable, the variables <tt>day</tt> and <tt>customer</tt> on one hand and the variables <tt>item</tt> and <tt>price</tt> on the other hand are independent in the sense that values for the latter do not restrict the possible values for the former.<br/>
+                 In f-trees, a variable is assumed to depend on all its ancestor variables. This simplification leads to factorisations that are trees: For each tuple of values of the ancestor variables, we list the possible valid values of the current variable. This assumption is not necessarily justified. For instance, <tt>price</tt> does not depend on <tt>dish</tt> given <tt>item</tt>. In general, a variable may only depend on a subset of its ancestors.<br/> The d-trees, which are variable orders that refine f-trees, explicitly associate with each variable its dependency set that consists of those ancestor variables on which it depends or its descendants depend. The d-trees may lead to more compact factorisations, as depicted next.
+                </p>                         
+                                                
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-factorisation2.png" alt="Factorised Join over D-tree">
+                </figure>
+                
+                <p class="example g-color-black-opacity-0_8">    
+                The above factorisations are not the only one possible for our join result. Indeed, different variable orders lead to different factorisations. The factorisation below is over an f-tree that is a path; in this case, the factorisation becomes a trie and does not exploit the join dependencies.
+                </p>                   
+                
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-factorisation3.png" alt="Factorised Join over a Path F-tree">
+                </figure>
+                
+                <p class="example g-color-black-opacity-0_8">    
+                We can turn the previous path f-tree into a d-tree by noting the conditional independence between the query variables. The factorisation over this d-tree now becomes much more compact.
+                </p>                   
+                
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-factorisation4.png" alt="Factorised Join over a D-tree">
+                </figure>
+                 
+                <p class="example g-color-black-opacity-0_8">    
+                An important question is which d-trees lead to asymptotically smallest factorisations and hence of worst-case optimal size within the class of factorisations whose structure is given by f-trees and respectively d-trees. This question is answered in the <a href="../principles.html#oz-icdt12">ICDT'12 paper</a> for f-trees and in the <a href="../principles.html#oz-tods15">TODS'15 article</a> for d-trees.<br/>
+                Given a variable order, we can compute the factorisation in worst-case optimal time. At each variable in the order, we compute the join of all relations on that variable: At <tt>dish</tt>, we intersect the relations Orders (O) and Dish (D) on <tt>dish</tt>;  at <tt>day</tt>, we look up into Orders the days for a given <tt>dish</tt> and then at <tt>customer</tt> we look up into Orders the customers for the given day and dish. We proceed similarly on the right branch. These lookups and intersections can be done efficiently if the relations are sorted following a topological order of the variable order. To guarantee optimality, the intersection of several lists needs to take time linear in the size of the smallest list (modulo a log factor).                
+                </p>                   
+ 
+                 <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-evaluation.png" alt="Factorised Join over a D-tree">
+                </figure>
+ 
+                <p class="example g-color-black-opacity-0_8">    
+                We now turn to a different question: How to evaluate aggregates over the previous factorised join? It turns out that common SQL aggregates, such as <tt>SUM</tt>, <tt>MIN</tt>, and <tt>MAX</tt> can be evaluated in one pass over factorisations.<br/>
+                Consider the computation of the count aggregate <tt>COUNT(*)</tt> over our above factorisation whose structure is given by the d-tree with two branches. This aggregate computes the number of tuples in the join result. We do this in one bottom-up pass over the factorisation, where we interpret each singleton relation as  value 1 and map each union and Cartesian product operator to arithmetic addition and respectively multiplication. As shown below, the factorisation saves computation time by avoiding counting the tuples and instead replacing a summation of the same number by multiplication.
+                </p>     
+                
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-agg1.png" alt="COUNT Aggregate over Factorised Join">
+                </figure>
+ 
+                 <p class="example g-color-black-opacity-0_8">    
+                More complex aggregates are also possible. Below is the case of the aggregate <tt>SUM(dish * price)</tt>: We map all values except for <tt>dish</tt> and <tt>price</tt> to 1, union and product to arithmetic addition and respectively multiplication. Since <tt>dish</tt> is not a numerical variable, we assume here there is a function $f$ that turns <tt>dish</tt> into reals.  
+                </p>     
+                
+                <figure class="u-shadow-v25 g-mb-30">
+                  <img class="img-fluid w-100" src="orders-dish-items-agg2.png" alt="SUM Aggregate over Factorised Join">
+                </figure>
+ 
+                 <p class="example g-color-black-opacity-0_8">    
+                The above aggregates have no GROUP-BY clauses (or free variables). We can compute them as exemplified above in one pass over factorisations with any structure. This is not the case however for aggregate with GROUP-BY clauses, whose computation is sensitive to the structure of the factorisation: In particular, as long as the GROUP-BY variables lie above the other variables in the variable order, the aggregates can be computed in one pass over the factorisation. Furthermore, the computation of ORDER-BY clauses is also sensitive to the structure of the factorisation: Like for GROUP-BY, the ORDER-BY variables need to lie above the other variables in the variable order. Moreover, the order of the ORDER-BY variables must match a topological order of the variable order.<br/>
+                More on this topic is available in the <a href="../principles.html#bkoz-pvldb13">PVLDB'13</a> and the more recent <a href="../principles.html#os-sigrec16">SIGMOD Record'16</a> articles. 
+                
+                </p>    
+                
+          </div>
 
             </article>
 
