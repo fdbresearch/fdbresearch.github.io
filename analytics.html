@@ -369,7 +369,7 @@
                       of the model (see our <a href="#annos-pods"> PODS'18 paper </a> for details). </li>
                     <li> Aggregates computed for a model can be re-used to compute models over any
                       subset of the original features, which means we can efficiently explore the
-                      feature space for the best model (see <a href="#os-demo"> VLDB'16 demo
+                      feature space for the best model (see <a href="#os-pvldb16"> VLDB'16 demo
                       paper </a> for details).</li>
                     <li> The aggregates that capture the data-intensive computations of the model
                       are distributive, which means these computations can be easily parallelized and
@@ -495,13 +495,15 @@
                 Maximilian Schleich. <BR>To appear in ACM Principles of Database
                 Systems (PODS), Houston, June 2018. <BR>arXiv report 1703.04780,
                 March 2017. </LI>
-              <a name="no-ivm"></a>
-              <LI class="g-mb-15"><STRONG>Incremental Maintenance of Regression Models over Joins</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-pvldb17.pdf">local</A>,
-                <A href="https://arxiv.org/pdf/1703.07484">arxiv</A>]
+
+              <LI class="g-mb-15" id="no-sigmod18"><STRONG>Incremental View Maintenance with Triple Lock Factorisation Benefits</STRONG>.
+                [<!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
+                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</A>]
                 <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Milos Nikolic and Dan Olteanu. <BR>arXiv report 1703.07484, March
-                2017. </LI>
+                <BR>Milos Nikolic and Dan Olteanu.
+                <BR>To appear in ACM SIGMOD, Houston (USA), June 2018.
+                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1703.07484">
+                  arXiv technical report 1703.07484</A>, March 2017. </LI>
               <a name="nnos-amw"></a>
               <LI class="g-mb-15"><STRONG>In-Database Factorized Learning</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">local</A>]
@@ -510,15 +512,16 @@
                 <BR>In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
                 <BR>Extended version in arXiv report
                 <A href="https://arxiv.org/pdf/1703.04780.pdf">1703.04780</A>. </LI>
-              <a name="os-demo"></a>
-              <LI class="g-mb-15"><STRONG>F: Regression Models over Factorized Views</STRONG>.
+
+              <LI class="g-mb-15" id="os-pvldb16"><STRONG>F: Regression Models
+                over Factorized Views</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">pdf</A>,
                 <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
                 <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
                 <BR>Dan Olteanu and Maximilian Schleich.
-                <BR>To appear in PVLDB 9(13), New Delhi, Sept 2016. </LI>
-              <a name="soc16"></a>
-              <LI class="g-mb-15"><STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>.
+                <BR>In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016. </LI>
+
+              <LI id="soc16" class="g-mb-15"><STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>.
                 [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
                   updated version</A>,
                 <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
