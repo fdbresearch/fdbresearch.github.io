@@ -170,14 +170,14 @@
 
       <div class="container g-pb-20">
         <div class="row justify-content-between">
-          <!-- left panel -->
-          <div class="col-lg-1 g-mb-80"></div>
-          <!-- end left panel -->
+          <!-- <\!-- left panel -\-> -->
+          <!-- <div class="col-lg-1 g-mb-80"></div> -->
+          <!-- <\!-- end left panel -\-> -->
           <!-- Articles Content -->
-          <div class="col-lg-10 g-mb-50 g-mb-0--lg">
+          
+          <div class="col-lg-9 g-mb-50 g-mb-0--lg">
             <article class="g-mb-60">
               
-
               <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
 
                 <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Motivation</h3>
@@ -197,7 +197,7 @@
                 <div class="text-center g-width-90x--md mx-auto g-my-40">
                   <h3 class="g-color-primary">We unify database and analytics engines into one highly optimised in-database analytics engine. </h3>
                 </div>
-                  <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
+                <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
 
                 <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">Why in-database analytics?</h3>
 
@@ -207,14 +207,14 @@
                   matrix, which means that the distinct data sources need to be joined into a single
                   relation.
 
-                <!-- <p  class="example g-color-black-opacity-0_8"> -->
-                <!--   <strong>Example: </strong> (TBD) <br> -->
-                <!--   For instance, a retailer wants to be a model which predicts whether a customer -->
-                <!--   buys a certain product. The model would be based on information about this -->
-                <!--   customer and product, but also external factors such as the current weather -->
-                <!--   conditions, demographics, and more. In a relational DBMS, these data sources are -->
-                <!--   stored in different relations. (different example: perhaps signals from sensors?) -->
-                <!-- </p>  -->
+                  <!-- <p  class="example g-color-black-opacity-0_8"> -->
+                  <!--   <strong>Example: </strong> (TBD) <br> -->
+                  <!--   For instance, a retailer wants to be a model which predicts whether a customer -->
+                  <!--   buys a certain product. The model would be based on information about this -->
+                  <!--   customer and product, but also external factors such as the current weather -->
+                  <!--   conditions, demographics, and more. In a relational DBMS, these data sources are -->
+                  <!--   stored in different relations. (different example: perhaps signals from sensors?) -->
+                  <!-- </p>  -->
 
                 <p> In a conventional technology stack, the join is computed in a DBMS and the join
                   result is then exported into a specialised analytics system that computes the
@@ -222,25 +222,25 @@
                   has several non-trivial benefits over the conventional approach with specialized
                   systems:
 
-                <ol>
-                  <br>
-                  <li>
-                    <strong>
-                      <font class="g-color-primary">In-database analytics brings analytics
-                        closer to the data.
-                      </font>
-                    </strong>
+                  <ol>
+                    <br>
+                    <li>
+                      <strong>
+                        <font class="g-color-primary">In-database analytics brings analytics
+                          closer to the data.
+                        </font>
+                      </strong>
 
-                    <br> Computing the machine learning model directly in an optimized DBMS implies
-                        that we can avoid the time-consuming import/export step between the
-                        specialised systems in a conventional technology stack.
-                  </li> <br>
-                  <li>
-                    <strong> <font class="g-color-primary"> In-database analytics can exploit the
-                        benefits of factorised join computation. </font> </strong> <br>
+                      <br> Computing the machine learning model directly in an optimized DBMS implies
+                      that we can avoid the time-consuming import/export step between the
+                      specialised systems in a conventional technology stack.
+                    </li> <br>
+                    <li>
+                      <strong> <font class="g-color-primary"> In-database analytics can exploit the
+                          benefits of factorised join computation. </font> </strong> <br>
 
-                    As shown in the <a href="principles.html"> Principles of Factorised
-                      Databases</a> project, listing representations of relational data are known to
+                      As shown in the <a href="principles.html"> Principles of Factorised
+                        Databases</a> project, listing representations of relational data are known to
                       require a high degree of redundancy for data representation and computation,
                       especially in the case of relations representing joins. This redundancy is not
                       necessary for subsequent processing, such as learning regression or
@@ -250,57 +250,57 @@
                       follows the low complexity guarantees of factorised query processing. In
                       fact, computing the model over the factorised joins can take less time
                       than computing the conventional listing representation of the join only!
-                  </li> <br> 
-                  <li>
-                    <strong>
-                      <font class="g-color-primary"> In-database analytics can exploit relational
-                      structures in the underlying data.
-                      </font>
-                    </strong> <br>
+                    </li> <br> 
+                    <li>
+                      <strong>
+                        <font class="g-color-primary"> In-database analytics can exploit relational
+                          structures in the underlying data.
+                        </font>
+                      </strong> <br>
 
-                    When computing a machine learning model inside a database engine, it is possible
-                    to exploit relational structures in the underlying data to compute machine
-                    learning models faster. For instance, we can exploit functional dependencies to
-                    decrease the dimensionality of a machine learning model, which leads to
-                    significant performance improvements (see our <a href="#annos-pods">PODS'18</a>
-                    paper).
-                    <!-- In our algorithms, we use structure in the data, such as the schema -->
-                    <!-- or functional dependencies between variables, to avoid redundant computation for -->
-                    <!-- the analytics task.  This is along the lines of the factorized join computation -->
-                    <!-- that has been described in the Principles project. -->
-                  </li>
-                </ol>
+                      When computing a machine learning model inside a database engine, it is possible
+                      to exploit relational structures in the underlying data to compute machine
+                      learning models faster. For instance, we can exploit functional dependencies to
+                      decrease the dimensionality of a machine learning model, which leads to
+                      significant performance improvements (see our <a href="#annos-pods">PODS'18</a>
+                      paper).
+                      <!-- In our algorithms, we use structure in the data, such as the schema -->
+                      <!-- or functional dependencies between variables, to avoid redundant computation for -->
+                      <!-- the analytics task.  This is along the lines of the factorized join computation -->
+                      <!-- that has been described in the Principles project. -->
+                    </li>
+                  </ol>
 
-                
-                <!-- Since state-of-the-art analytics systems are inherently suboptimal, data scientists -->
-                <!-- are often forced to omit relevant data sources from their models, which means that -->
-                <!-- the models can miss important patterns in the data. miss important patterns in -->
-                <!-- the data and, thus, do not reach their full potential. Computing the machine -->
-                <!-- learning models directly inside a database engine mitigates these insufficiencies -->
-                <!-- and thus cannot only scale the computation of the models but also lead to the -->
-                <!-- computation of more accurate models. It is for this reason, that there is increasing -->
-                <!-- interest in academia and industry in building systems that integrate databases and -->
-                <!-- machine learning. -->
-                
-                <!-- The conventional technology stack leads to poor integration of analytics and -->
-                <!-- databases, and misses crucial optimization opportunities. More importantly, however, -->
-                <!-- specialised analytics systems that require a listing representation of the join as -->
-                <!-- input are inherently inefficient and often lead to the omission of relevant data -->
-                <!-- sources. This implies that the machine learning models miss important patterns in -->
-                <!-- the data and, thus, do not reach their full potential. Computing the machine -->
-                <!-- learning models directly inside a database engine mitigates these insufficiencies -->
-                <!-- and thus cannot only scale the computation of the models but also lead to the -->
-                <!-- computation of more accurate models. It is for this reason, that there is increasing -->
-                <!-- interest in academia and industry in building systems that integrate databases and -->
-                <!-- machine learning. -->
+                  
+                  <!-- Since state-of-the-art analytics systems are inherently suboptimal, data scientists -->
+                  <!-- are often forced to omit relevant data sources from their models, which means that -->
+                  <!-- the models can miss important patterns in the data. miss important patterns in -->
+                  <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+                  <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+                  <!-- and thus cannot only scale the computation of the models but also lead to the -->
+                  <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+                  <!-- interest in academia and industry in building systems that integrate databases and -->
+                  <!-- machine learning. -->
+                  
+                  <!-- The conventional technology stack leads to poor integration of analytics and -->
+                  <!-- databases, and misses crucial optimization opportunities. More importantly, however, -->
+                  <!-- specialised analytics systems that require a listing representation of the join as -->
+                  <!-- input are inherently inefficient and often lead to the omission of relevant data -->
+                  <!-- sources. This implies that the machine learning models miss important patterns in -->
+                  <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+                  <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+                  <!-- and thus cannot only scale the computation of the models but also lead to the -->
+                  <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+                  <!-- interest in academia and industry in building systems that integrate databases and -->
+                  <!-- machine learning. -->
 
-                <!-- <div class="text-center g-width-90x--md mx-auto g-my-40"> -->
-                <!--   <h3 class="g-color-primary"> We propose a unified in-database analytics -->
-                <!--     solution for a host of optimization problems. </h3> -->
-                <!-- </div> -->
-                
-                <br>
-                <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
+                  <!-- <div class="text-center g-width-90x--md mx-auto g-my-40"> -->
+                  <!--   <h3 class="g-color-primary"> We propose a unified in-database analytics -->
+                  <!--     solution for a host of optimization problems. </h3> -->
+                  <!-- </div> -->
+                  
+                  <br>
+                  <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Our Approach to In-Database Analytics</h3>
 
                 <p>
                   The data-intensive computations of a large class of machine learning models can be
@@ -321,7 +321,7 @@
                     <img class="img-fluid w-100" src="assets/projects/analytics.png"
                          alt="Image Description">
                     <em> The <font color="red">conventional technology stack</font> compared to our
-                    approach to <font color="green">in-database analytics </font>. </em>
+                      approach to <font color="green">in-database analytics </font>. </em>
                   </figure>
                   
                 <p  class="example g-color-black-opacity-0_8">
@@ -356,323 +356,346 @@
                   <!-- compute ✓⇤, without ever having to go back to the original data tables. -->
                 </p> 
 
-                  The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
+                The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
 
-                  <ol>
-                    <li> We can efficiently capture categorical variables, without any an
-                      intermediate encoding of the input data. Typically, categorical variables are
-                      one-hot encoded, which leads to a significant blow-up of the input data. We
-                      avoid such intermediate encodings by treating categorical variables as group-by
-                      variables in our aggregate queries (see <a href="#annos-pods"> PODS'18 paper </a>
-                      for details).</li>
-                    <li> We can exploit functional dependencies to decrease the dimensionality
-                      of the model (see our <a href="#annos-pods"> PODS'18 paper </a> for details). </li>
-                    <li> Aggregates computed for a model can be re-used to compute models over any
-                      subset of the original features, which means we can efficiently explore the
-                      feature space for the best model (see <a href="#os-pvldb16"> VLDB'16 demo
+                <ol>
+                  <li> We can efficiently capture categorical variables, without any an
+                    intermediate encoding of the input data. Typically, categorical variables are
+                    one-hot encoded, which leads to a significant blow-up of the input data. We
+                    avoid such intermediate encodings by treating categorical variables as group-by
+                    variables in our aggregate queries (see <a href="#annos-pods"> PODS'18 paper </a>
+                    for details).</li>
+                  <li> We can exploit functional dependencies to decrease the dimensionality
+                    of the model (see our <a href="#annos-pods"> PODS'18 paper </a> for details). </li>
+                  <li> Aggregates computed for a model can be re-used to compute models over any
+                    subset of the original features, which means we can efficiently explore the
+                    feature space for the best model (see <a href="#os-pvldb16"> VLDB'16 demo
                       paper </a> for details).</li>
-                    <li> The aggregates that capture the data-intensive computations of the model
-                      are distributive, which means these computations can be easily parallelized and
-                      distributed (see <a href="#soc16"> SIGMOD'16 paper </a> for details).</li>
-                  </ol>
+                  <li> The aggregates that capture the data-intensive computations of the model
+                    are distributive, which means these computations can be easily parallelized and
+                    distributed (see <a href="#soc16"> SIGMOD'16 paper </a> for details).</li>
+                </ol>
 
 
-                  <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3> -->
-                  <!-- <p> -->
-                  <!--   Rewriting the data-intensive computations into aggregates over joins has -->
-                  <!--   additional benefits. One such advantage is that we can efficiently treat -->
-                  <!--   categorical variables as group-by variables. -->
-                  <!--   TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables.  -->
-                  
-                  <!-- we can treat categorical variables as group-by variables, and compute -->
-                  <!-- models over such variables without any intermediate encoding of the input data, -->
-                  <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
-                  <!--   [2] </a>. -->
+                <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3> -->
+                <!-- <p> -->
+                <!--   Rewriting the data-intensive computations into aggregates over joins has -->
+                <!--   additional benefits. One such advantage is that we can efficiently treat -->
+                <!--   categorical variables as group-by variables. -->
+                <!--   TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables.  -->
+                
+                <!-- we can treat categorical variables as group-by variables, and compute -->
+                <!-- models over such variables without any intermediate encoding of the input data, -->
+                <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
+                <!--   [2] </a>. -->
 
-                  <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3> -->
-                  
-                  <!-- Also, we can exploit functional dependencies to decrease the -->
-                  <!-- dimensionality of the model [1]; -->
+                <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3> -->
+                
+                <!-- Also, we can exploit functional dependencies to decrease the -->
+                <!-- dimensionality of the model [1]; -->
 
-                  
-                  <!-- Our observation is that the data-intensive computations of analytics problems can be -->
-                  <!-- rewritten into aggregates over joins. -->
-                  <!-- - Factorized aggregate computation. -->
-                  <!-- - One hot encoding is turned into group-by aggregates. -->
-                  <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
+                
+                <!-- Our observation is that the data-intensive computations of analytics problems can be -->
+                <!-- rewritten into aggregates over joins. -->
+                <!-- - Factorized aggregate computation. -->
+                <!-- - One hot encoding is turned into group-by aggregates. -->
+                <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
 
-                  <!-- Further benefits: (3) aggregates computed for a model can be re-used to compute -->
-                  <!-- models over any subset of the original features, which means we can efficiently -->
-                  <!-- explore the feature space for the best model [5]; and (4) the aggregates that -->
-                  <!-- capture the data-intensive computations of the model are distributive, which means -->
-                  <!-- these computations can be easily parallelized and distributed [8]. -->
-                  
-                  <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
-                  <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
+                <!-- Further benefits: (3) aggregates computed for a model can be re-used to compute -->
+                <!-- models over any subset of the original features, which means we can efficiently -->
+                <!-- explore the feature space for the best model [5]; and (4) the aggregates that -->
+                <!-- capture the data-intensive computations of the model are distributive, which means -->
+                <!-- these computations can be easily parallelized and distributed [8]. -->
+                
+                <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
+                <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
 
-                  <!-- <ul> -->
-                  <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
-                  <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
-                  <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
-                  <!--     - Use scalable systems and low complexity for query processing </li> -->
-                  <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
-                  <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
-                  <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
-                  <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
-                  <!-- </ul> -->
-                  <!-- (1) Poor integration of analytics and databases, which are -->
-                  <!-- traditionally confined to distinct specialized systems in the -->
-                  <!-- ever-growing technology stack [2]; -->
-                  <!-- (2) poor efficiency already for few data sources; and -->
-                  <!-- (3) insufficient accuracy due to omission of further relevant -->
-                  <!-- data sources. -->
-                  <!-- <br> -->
+                <!-- <ul> -->
+                <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
+                <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
+                <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
+                <!--     - Use scalable systems and low complexity for query processing </li> -->
+                <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
+                <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
+                <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
+                <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
+                <!-- </ul> -->
+                <!-- (1) Poor integration of analytics and databases, which are -->
+                <!-- traditionally confined to distinct specialized systems in the -->
+                <!-- ever-growing technology stack [2]; -->
+                <!-- (2) poor efficiency already for few data sources; and -->
+                <!-- (3) insufficient accuracy due to omission of further relevant -->
+                <!-- data sources. -->
+                <!-- <br> -->
 
-                  <!-- <p class="g-color-black-opacity-0_8"> -->
-                  <!--   Due to ever growing technology stacks, it is common for -->
-                  <!--   companies to have two distinct systems for data management -->
-                  <!--   and data analytics workloads.  This distinction is (up to a -->
-                  <!--   few exceptions) also predominate in academic -->
-                  <!--   literature. In-database analytics is a research field that -->
-                  <!--   aims to unify data management and data analytics workloads in -->
-                  <!--   one database engine. Combining both types of workloads in one -->
-                  <!--   systems engine can have many advantages:   -->
-                  <!--   <ol> -->
-                  <!--     <li> <font class="g-color-primary">In-database analytics -->
-                  <!--         brings analytics closer to the data </font><br> -->
+                <!-- <p class="g-color-black-opacity-0_8"> -->
+                <!--   Due to ever growing technology stacks, it is common for -->
+                <!--   companies to have two distinct systems for data management -->
+                <!--   and data analytics workloads.  This distinction is (up to a -->
+                <!--   few exceptions) also predominate in academic -->
+                <!--   literature. In-database analytics is a research field that -->
+                <!--   aims to unify data management and data analytics workloads in -->
+                <!--   one database engine. Combining both types of workloads in one -->
+                <!--   systems engine can have many advantages:   -->
+                <!--   <ol> -->
+                <!--     <li> <font class="g-color-primary">In-database analytics -->
+                <!--         brings analytics closer to the data </font><br> -->
 
-                  <!--       In many real world scenarios, data is stored in a relation -->
-                  <!--       database management system. To complete an analytics task, -->
-                  <!--       the data is then exported from the DBMS and imported in a -->
-                  <!--       statistical analytics package, which is inefficient. Save -->
-                  <!--       non-trivial export/import time </li> -->
-                  <!--     <li> <font class="g-color-primary"> Database management -->
-                  <!--         systems have structural information that can be useful for -->
-                  <!--         analytics workloads. </font><br> -->
+                <!--       In many real world scenarios, data is stored in a relation -->
+                <!--       database management system. To complete an analytics task, -->
+                <!--       the data is then exported from the DBMS and imported in a -->
+                <!--       statistical analytics package, which is inefficient. Save -->
+                <!--       non-trivial export/import time </li> -->
+                <!--     <li> <font class="g-color-primary"> Database management -->
+                <!--         systems have structural information that can be useful for -->
+                <!--         analytics workloads. </font><br> -->
 
-                  <!--       In our algorithms, we use structure in the data, such as -->
-                  <!--       the schema or functional dependencies between variables, -->
-                  <!--       to avoid redundant computation for the analytics task. -->
-                  <!--       This is along the lines of the factorized join computation -->
-                  <!--       that has been described in the Principles project. -->
+                <!--       In our algorithms, we use structure in the data, such as -->
+                <!--       the schema or functional dependencies between variables, -->
+                <!--       to avoid redundant computation for the analytics task. -->
+                <!--       This is along the lines of the factorized join computation -->
+                <!--       that has been described in the Principles project. -->
 
-                  <!--       (Using schema information to factorize the computation and -->
-                  <!--       avoid redundant computation ) -->
-                  <!--     </li> -->
-                  <!--     <li> -->
-                  <!--       <font class="g-color-primary"> Large chunks of analytics -->
-                  <!--         code can be rewritten into aggregates over joins </font> -->
-                  <!--       <br> -->
+                <!--       (Using schema information to factorize the computation and -->
+                <!--       avoid redundant computation ) -->
+                <!--     </li> -->
+                <!--     <li> -->
+                <!--       <font class="g-color-primary"> Large chunks of analytics -->
+                <!--         code can be rewritten into aggregates over joins </font> -->
+                <!--       <br> -->
 
-                  <!--       Use scalable systems and low complexity for query -->
-                  <!--       processing -->
-                  <!--     </li> -->
-                  <!--   </ol> -->
-                  <!-- </p> -->
+                <!--       Use scalable systems and low complexity for query -->
+                <!--       processing -->
+                <!--     </li> -->
+                <!--   </ol> -->
+                <!-- </p> -->
 
-                  <!-- (1) Poor integration of analytics and databases, which are -->
-                  <!-- traditionally confined to distinct specialized systems in the -->
-                  <!-- ever-growing technology stack [2]; -->
-                  <!-- (2) poor efficiency already for few data sources; and -->
-                  <!-- (3) insufficient accuracy due to omission of further relevant -->
-                  <!-- data sources. -->
+                <!-- (1) Poor integration of analytics and databases, which are -->
+                <!-- traditionally confined to distinct specialized systems in the -->
+                <!-- ever-growing technology stack [2]; -->
+                <!-- (2) poor efficiency already for few data sources; and -->
+                <!-- (3) insufficient accuracy due to omission of further relevant -->
+                <!-- data sources. -->
 
+              </div>
             </article>
-
-            <a name="publications"></a>
-            <div class="g-mb-30">
-              <div class="u-heading-v3-1 g-mb-30">
-                <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
-              </div>
-            </div>
-            
-            <ol>
-              <a name="annos-pods"></a>
-              <LI class="g-mb-15"><STRONG>In-Database Learning with Sparse Tensors</STRONG>.
-                [<A href="https://arxiv.org/pdf/1703.04780.pdf">arxiv</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">slides</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and
-                Maximilian Schleich. <BR>To appear in ACM Principles of Database
-                Systems (PODS), Houston, June 2018. <BR>arXiv report 1703.04780,
-                March 2017. </LI>
-
-              <LI class="g-mb-15" id="no-sigmod18"><STRONG>Incremental View Maintenance with Triple Lock Factorisation Benefits</STRONG>.
-                [<!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Milos Nikolic and Dan Olteanu.
-                <BR>To appear in ACM SIGMOD, Houston (USA), June 2018.
-                <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1703.07484">
-                  arXiv technical report 1703.07484</A>, March 2017. </LI>
-              <a name="nnos-amw"></a>
-              <LI class="g-mb-15"><STRONG>In-Database Factorized Learning</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">local</A>]
-                <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-                <BR>Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-                <BR>In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
-                <BR>Extended version in arXiv report
-                <A href="https://arxiv.org/pdf/1703.04780.pdf">1703.04780</A>. </LI>
-
-              <LI class="g-mb-15" id="os-pvldb16"><STRONG>F: Regression Models
-                over Factorized Views</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">pdf</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
-                <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-                <BR>Dan Olteanu and Maximilian Schleich.
-                <BR>In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016. </LI>
-
-              <LI id="soc16" class="g-mb-15"><STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>.
-                [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
-                  updated version</A>,
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
-                <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-                <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
-                <BR>In SIGMOD, San Francisco, June 2016. </LI>
-            </ol>
-
-            <div id="stickyblock-end"></div>
           </div>
-          <!-- End Articles Content -->
+            
+            <!-- right panel -->
+            <div class="col-lg-3 g-mb-80">
+              <div class="g-mb-50">
+                <div class="u-heading-v3-1 g-mb-30">
+                  <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Additional Information</h2>
+                </div>
 
-          <!-- right panel -->
-          <div class="col-lg-1 g-mb-80"></div>
-          <!-- end right panel -->
-
-        </div>
-
-
-
-
-      </div>
-      <!-- End Blog Minimal Blocks -->
-
-      <!-- Footer -->
-      <div class="g-pt-50">
-        <footer class="g-bg-secondary">
-          <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
-          
-          <div class="container">
-            <!-- Footer - Bottom Section -->
-            <div class="row align-items-center">
-              <div class="col-md-2 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-                <!-- Copyright -->
-                <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017 All Rights Reserved.</p>
-                <!-- End Copyright -->
-              </div>
-              
-              <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-                <!-- Links -->
-                <ul class="list-inline mb-0">
-                  <li class="list-inline-item g-pl-0 g-pr-10">
-                    <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
-                  </li>
-                  <li class="list-inline-item g-px-10">
-                    <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" >Last modified: 25 Oct 2017</a>
+                <ul class="list-unstyled">
+                  <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                    <h4 class="h6">
+                      <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                      <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="analytics/vision.html">Vision of the project</a>
+                    </h4>
                   </li>
                 </ul>
-                <!-- End Links -->
               </div>
-              
-              
             </div>
-            <!-- End Footer - Bottom Section -->
+            <!-- end right panel -->
           </div>
-        </footer>
+        
+        
+        <a name="publications"></a>
+        <div class="g-mb-30">
+          <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
+          </div>
+        </div>
+        
+        <ol>
+          <a name="annos-pods"></a>
+          <LI class="g-mb-15"><STRONG>In-Database Learning with Sparse Tensors</STRONG>.
+            [<A href="https://arxiv.org/pdf/1703.04780.pdf">arxiv</A>,
+            <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">slides</A>]
+            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+            <BR>Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and
+            Maximilian Schleich. <BR>To appear in ACM Principles of Database
+            Systems (PODS), Houston, June 2018. <BR>arXiv report 1703.04780,
+            March 2017. </LI>
+
+          <LI class="g-mb-15" id="no-sigmod18"><STRONG>Incremental View Maintenance with Triple Lock Factorisation Benefits</STRONG>.
+            [<!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
+            <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</A>]
+            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+            <BR>Milos Nikolic and Dan Olteanu.
+            <BR>To appear in ACM SIGMOD, Houston (USA), June 2018.
+            <BR> Prior version (strict subset of results) in <A href="http://arxiv.org/abs/1703.07484">
+              arXiv technical report 1703.07484</A>, March 2017. </LI>
+          <a name="nnos-amw"></a>
+          <LI class="g-mb-15"><STRONG>In-Database Factorized Learning</STRONG>.
+            [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">local</A>]
+            <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
+            <BR>Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+            <BR>In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
+            <BR>Extended version in arXiv report
+            <A href="https://arxiv.org/pdf/1703.04780.pdf">1703.04780</A>. </LI>
+
+          <LI class="g-mb-15" id="os-pvldb16"><STRONG>F: Regression Models
+              over Factorized Views</STRONG>.
+            [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">pdf</A>,
+            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
+            <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
+            <BR>Dan Olteanu and Maximilian Schleich.
+            <BR>In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016. </LI>
+
+          <LI id="soc16" class="g-mb-15"><STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>.
+            [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
+              updated version</A>,
+            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
+            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+            <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
+            <BR>In SIGMOD, San Francisco, June 2016. </LI>
+        </ol>
+
+        <div id="stickyblock-end"></div>
       </div>
-      <!-- End Footer -->
-      
+      <!-- End Articles Content -->
+
+      <!-- right panel -->
+      <div class="col-lg-1 g-mb-80"></div>
+      <!-- end right panel -->
+
+</div>
 
 
 
 
-    </main>
+</div>
+<!-- End Blog Minimal Blocks -->
 
-    <!-- JS Global Compulsory -->
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-    <script src="assets/vendor/jquery.easing/js/jquery.easing.js"></script>
-    <script src="assets/vendor/popper.min.js"></script>
-    <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-    <!-- JS Implementing Plugins -->
-    <script src="assets/vendor/appear.js"></script>
-    <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-    <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
-    <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-
-    <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
-
-    <!-- JS Unify -->
-    <script src="assets/js/hs.core.js"></script>
-    <script src="assets/js/components/hs.header.js"></script>
-    <script src="assets/js/helpers/hs.hamburgers.js"></script>
-    <script src="assets/js/components/hs.dropdown.js"></script>
-    <script src="assets/js/components/hs.tabs.js"></script>
-    <script src="assets/js/components/hs.cubeportfolio.js"></script>
-    <script src="assets/js/components/hs.onscroll-animation.js"></script>
-    <script src="assets/js/components/hs.go-to.js"></script>
-    <script src="assets/js/components/hs.carousel.js"></script>
-
-    <!-- JS Customization -->
-    <script src="assets/js/custom.js"></script>
-
-    <!-- JS Plugins Init. -->
-    <script>
-      $(document).on('ready', function () {
-      // initialization of tabs
-      $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-      // initialization of scroll animation
-      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-      // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
-
-      // initialization of HSDropdown component
-      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-      afterOpen: function () {
-      $(this).find('input[type="search"]').focus();
-      }
-      });
-
-      });
+<!-- Footer -->
+<div class="g-pt-50">
+  <footer class="g-bg-secondary">
+    <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
+    
+    <div class="container">
+      <!-- Footer - Bottom Section -->
+      <div class="row align-items-center">
+        <div class="col-md-2 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+          <!-- Copyright -->
+          <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017 All Rights Reserved.</p>
+          <!-- End Copyright -->
+        </div>
+        
+        <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+          <!-- Links -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item g-pl-0 g-pr-10">
+              <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
+            </li>
+            <li class="list-inline-item g-px-10">
+              <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" >Last modified: 25 Oct 2017</a>
+            </li>
+          </ul>
+          <!-- End Links -->
+        </div>
+        
+        
+      </div>
+      <!-- End Footer - Bottom Section -->
+    </div>
+  </footer>
+</div>
+<!-- End Footer -->
 
 
 
-      $(window).on('load', function () {
-      // initialization of header
-      $.HSCore.components.HSHeader.init($('#js-header'));
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
 
-      // initialization of HSMegaMenu component
-      $('.js-mega-menu').HSMegaMenu({
-      event: 'hover',
-      pageContainer: $('.container'),
-      breakpoint: 991
-      });
 
-      // initialization of masonry
-      $('.masonry-grid').imagesLoaded().then(function () {
-      $('.masonry-grid').masonry({
-      columnWidth: '.masonry-grid-sizer',
-      itemSelector: '.masonry-grid-item',
-      percentPosition: true
-      });
-      });
+</main>
 
-      // initialization of cubeportfolio
-      $.HSCore.components.HSCubeportfolio.init('.cbp');
-      });
+<!-- JS Global Compulsory -->
+<script src="assets/vendor/jquery/jquery.min.js"></script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
+<script src="assets/vendor/jquery.easing/js/jquery.easing.js"></script>
+<script src="assets/vendor/popper.min.js"></script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
 
-      $(window).on('resize', function () {
-      setTimeout(function () {
-      $.HSCore.components.HSTabs.init('[role="tablist"]');
-      }, 200);
-      });
-    </script>
+<!-- JS Implementing Plugins -->
+<script src="assets/vendor/appear.js"></script>
+<script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
+<script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
-  </body>
+<script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+
+<!-- JS Unify -->
+<script src="assets/js/hs.core.js"></script>
+<script src="assets/js/components/hs.header.js"></script>
+<script src="assets/js/helpers/hs.hamburgers.js"></script>
+<script src="assets/js/components/hs.dropdown.js"></script>
+<script src="assets/js/components/hs.tabs.js"></script>
+<script src="assets/js/components/hs.cubeportfolio.js"></script>
+<script src="assets/js/components/hs.onscroll-animation.js"></script>
+<script src="assets/js/components/hs.go-to.js"></script>
+<script src="assets/js/components/hs.carousel.js"></script>
+
+<!-- JS Customization -->
+<script src="assets/js/custom.js"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+  $(document).on('ready', function () {
+  // initialization of tabs
+  $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+  // initialization of scroll animation
+  $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+  // initialization of go to
+  $.HSCore.components.HSGoTo.init('.js-go-to');
+
+  // initialization of HSDropdown component
+  $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+  afterOpen: function () {
+  $(this).find('input[type="search"]').focus();
+  }
+  });
+
+  });
+
+
+
+  $(window).on('load', function () {
+  // initialization of header
+  $.HSCore.components.HSHeader.init($('#js-header'));
+  $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+  // initialization of HSMegaMenu component
+  $('.js-mega-menu').HSMegaMenu({
+  event: 'hover',
+  pageContainer: $('.container'),
+  breakpoint: 991
+  });
+
+  // initialization of masonry
+  $('.masonry-grid').imagesLoaded().then(function () {
+  $('.masonry-grid').masonry({
+  columnWidth: '.masonry-grid-sizer',
+  itemSelector: '.masonry-grid-item',
+  percentPosition: true
+  });
+  });
+
+  // initialization of cubeportfolio
+  $.HSCore.components.HSCubeportfolio.init('.cbp');
+  });
+
+  $(window).on('resize', function () {
+  setTimeout(function () {
+  $.HSCore.components.HSTabs.init('[role="tablist"]');
+  }, 200);
+  });
+</script>
+
+</body>
 
 </html>
