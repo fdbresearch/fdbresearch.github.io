@@ -151,6 +151,131 @@ const visitors_data = [{
     `The talk will conclude with current insights on ongoing research on how Dyn can be extended to also allow processing of more general classes of queries, in particular queries that feature in-equality joins rather than equality joins. Such in-equality joins are important in relational-style queries, but are also prominently present in the area of Complex Event Recognition.`
   ],
   oxford_url: "http://www.cs.ox.ac.uk/seminars/1928.html",
+}, {
+  id: "modal-1932",
+  title: "Decision-theoretic planning via probabilistic programming",
+  name: "Vaishak Belle ( Edinburgh )",
+  author_url: "http://vaishakbelle.com/",
+  date: "14:00 13 Nov 2017",
+  place: "LTB",
+  abstract: [
+    'We study planning in Markov decision processes involving discrete and continuous states and actions, and an unknown number of objects. Planning in such domains is notoriously challenging and often requires restrictive assumptions. We introduce HYPE: a sample-based planner for hybrid domains that is very general, which combines model-based approaches with state abstraction. Most significantly, the domains where such planners are deployed are usually very complex with deep structural and geometric constraints. HYPE is instantiated in a probabilistic programming language that allows compact codification of such constraints.',
+    'In our empirical evaluations, we show that HYPE is a general and widely applicable planner in domains ranging from strictly discrete to strictly continuous to hybrid ones. Moreover, empirical results showed that abstraction provides significant improvements.',
+    'In the final part of the talk, we turn to the question of whether there is any hope of developing computational methodologies that are not based on sampling. In particular, it is tricky in hybrid domains to deal with low-probability observations, and most sampling-based schemes only provide asymptotic guarantees.',
+    'This talk is based on a Machine Learning Journal article (2017), and is joint work with Davide Nitti, Tinne De Laet and Luc De Raedt.',
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1932.html",
+}, {
+  id: "modal-1884",
+  title: "Shannon-type inequalities, submodular width, and disjunctive datalog",
+  name: "Hung Ngo ( stealth mode )",
+  author_url: "https://www.cse.buffalo.edu/~hungngo/",
+  date: "11:00 11 Nov 2017",
+  place: "LTB",
+  abstract: [
+    'This talk overviews recent results on bounding the output size and on efficiently evaluating a disjunctive datalog rule, given input statistics such as relation sizes, functional dependencies, and degree bounds. These are the kind of statistics prevalent in database query evaluation, and our results apply to aggregate queries as well. The disjunctive datalog query evaluation problem is fairly general, as both conjunctive query evaluation and the basic constraint satisfaction problem are special cases. These new combinatorial and algorithmic results are built up on a fundamental connection between query evaluation and Shannon-type inequalities. It was observed in different contexts over the past 40 years that information-theoretic inequalities can be used to bound combinatorial quantities. First, one can derive (sometimes tight) output size bounds of conjunctive queries and disjunctive datalog rules using Shannon-type inequalities. This talk discusses these bounds and techniques. Second, we show how one can turn a proof of an information-inequality into an efficient algorithm to evaluate such queries. The algorithm’s runtime is bounded by a generalized version of the submodular width of the query, which is optimal modulo complexity-theoretic assumptions. ',
+    'The talk is based on joint works with Mahmoud Abo Khamis and Dan Suciu.',
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1884.html",
+}, {
+  id: "modal-1922",
+  title: "Toward a Principled Framework for Clustering Techniques",
+  name: "Shuai Li ( Cambridge )",
+  author_url: "https://sites.google.com/site/shuailidotsli/",
+  date: "13:00 11 Oct 2017",
+  place: "441",
+  abstract: [
+    `I will talk about algorithmic and theoretical aspects of an adaptive clustering framework for the content recommendation based on exploration-exploitation strategies in the multi-armed bandit scenarios. First, I'll give an introduction to the centralized clustering methods  in a standard stochastic noise setting for networked users on the graph.  Next, in the decentralized clustering setting I'll describe two distributed efficient algorithms for solving linear regression based problems in peer to peer networks with limited communication capabilities. Last, I'll establish upper bounds on the generalized collaborative filtering applications combined with clustered models. In all cases, the technically sound theoretical guarantees are provided, and extensive real-world data sets based experiments demonstrated the significantly increased performance compared to the state-of-the-art approaches.`,
+    `Dr Shuai Li is currently a postdoctoral researcher in the Engineering Design Centre of the Department of Engineering, at the University of Cambridge. He has 7+ years professional experience across Europe, North America, Middle East, and Asia Pacific; and 19+ years project experience in Computer Science and Information Engineering; also he served as CEO for the industry and released several successful products. He has been engaged in internationally leading research in the analysis of complex, dynamic data at scale, and brought cutting-edge data mining and machine learning to the heart of industrial-scale big data analytics and data science. As the academic service he has been involved in a number of international prestigious conferences and journals including SIGIR, SIGKDD, ICDM, SDM, NIPS, UAI, AISTATS, WWW, WSDM, IJCAI, etc.`,
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1922.html",
+}, {
+  id: "modal-1712",
+  title: "High-Performance Incremental Processing of Complex Analytical Queries",
+  name: "Milos Nikolic",
+  author_url: "#",
+  date: "11:30 15 Nov 2016",
+  place: "051",
+  abstract: [
+    `Many of today's popular computing applications require real-time analytics over large and dynamic datasets, from social web applications to online data warehousing, network monitoring, and algorithmic trading. These applications have long-lived analysis queries that require low latency processing over rapidly changing datasets. `,
+    `In this talk, I will present techniques for efficient incremental processing of complex analytical queries, ranging from classical SQL queries to linear algebra programs. Our system, called DBToaster, compiles declarative database queries into high-performance stream processing engines that keep query results (views) fresh at very high update rates. DBToaster uses a recursive  query compilation algorithm that materializes a supporting set of higher-order delta views to achieve a substantially lower view maintenance cost. Our implementation supports batched processing in local and distributed environments and can deliver up to 5 orders of magnitude better performance than existing DBMS and stream engines.`,
+    `The LINVIEW system focuses on the incremental computation of iterative linear algebra programs that consist of the standard matrix operations. LINVIEW uses matrix factorization techniques to make the incremental computation of standard machine learning algorithms, like linear regression, practical and usually substantially cheaper than re-evaluation. LINVIEW generates parallel incremental programs that outperform re-evaluation techniques by more than an order of magnitude. `,
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1712.html",
+}, {
+  id: "modal-mihnea-andrei",
+  title: "Darwinian evolution: 3 implementations of snapshot isolation in SAP HANA",
+  name: "Mihnea Andrei ( SAP )",
+  author_url: "#",
+  date: "14:00 11 Mar 2016",
+  place: "051",
+  abstract: [
+    `The talk presents the HANA column store, then focuses on 3 historical version of snapshot isolation implementation, presenting for each what was working well and why we evolved to the next one.`,
+    `Mihnea Andrei`,
+    `MS in computer science in 1988; the Bucharest Polytechnic Institute, Automatic Control and Computers engineering school; Prof. Cristian Giumale`,
+    `DEA in Machine Learning in 1990; Universite Paris 6; Prof. Jean-Gabriel Ganascia`,
+    `Joined Sybase in 1993; currently working at SAP, which has acquired Sybase in 2010.`,
+    `Worked on the core engine of several RDBMs (Sybase ASE and IQ; SAP HANA): query optimization, Abstract Plans (optimizer hints), query compilation and execution, eager-lazy aggregation, shared-disk and shared-nothing scale-out. Current focus: database stores (in-memory and on-disk, row and column oriented), transaction processing, data lifecycle.`,
+  ],
+  oxford_url: "#",
+}, {
+  id: "modal-bart-samwel",
+  title: "F1 - The Distributed SQL Database Supporting Google's Ad Business",
+  name: "Bart Samwel ( Google )",
+  author_url: "#",
+  date: "14:00 19 Feb 2016",
+  place: "051",
+  abstract: [
+    `Large scale internet operations such as Google, Facebook, and Amazon manage amazing amounts of data. Doing so requires databases that are distributed across multiple servers or even multiple data centers, with high throughput, strong latency requirements, "five nines" of availability, and often with strict data consistency requirements. This talk starts by introducing relational SQL databases, NoSQL databases, and the current state of the art in such databases as deployed in industry. It then provides an introduction to Google F1, a SQL database based on Google's Spanner distributed storage system. F1 is used to store the data for AdWords, Google's search advertising product, as well as several other major products in the Ads & Commerce area. F1 and Spanner represent a new, hybrid approach to distributed databases that combines the scalability and availability of NoSQL storage systems like Google's Bigtable and Amazon's DynamoDB, with the convenience and consistency guarantees provided by traditional SQL relational databases.`,
+    `Bart Samwel is a senior staff software engineer at Google. He is infamous at his alma mater Leiden University for completing his Master's degree with honors (and with several peer-reviewed publications on his resume), but more importantly for taking a full twelve years to do this. It is rumored that this discrepancy has caused him to be excluded as an outlier from the Computer Science department graduation statistics. At Google, Bart is a core member of the F1 team, working mostly on the F1 SQL query engine.`
+  ],
+  oxford_url: "#",
+}, {
+  id: "modal-paul-beame",
+  title: "Parallel Query Evaluation",
+  name: "Paul Beame and Paris Koutris",
+  author_url: "#",
+  date: "14:00 5 Nov 2015",
+  place: "LTB",
+  abstract: [
+    `Fix a full, conjunctive query, and consider the following problem: what is the amount of communication required to compute the query in parallel, on p servers, over a large database instance?  We define the Massively Parallel Communication (MPC) model, where the computation proceeds in rounds consisting of local computations followed by a global reshuffling of the data.  Servers have unlimited computational power and are allowed to exchange any data, the only cost parameters are the number of rounds and the maximum amount of communication per server.  I will describe tight bounds on the amount of communication for the case of a single round and data without skew, then discuss extensions to skewed data and multiround.`,
+    `Joint work with Paul Beame and Paris Koutris`,
+  ],
+  oxford_url: "#",
+}, {
+  id: "modal-dan-suciu",
+  title: "Query Compilation: the View from the Database Side",
+  name: "Dan Suciu",
+  author_url: "#",
+  date: "6 Nov 2015",
+  place: "#",
+  abstract: [
+    `We study knowledge compilation for Boolean formulas that are given as
+    groundings of First Order formulas.  This problem is motivated by
+    probabilistic databases, where each record in the database is an
+    independent probabilistic event, and the query is given by a SQL
+    expression or, equivalently, a First Order formula.  The query's
+    probability can be computed in linear time in the size of the
+    compilation representation, hence the interest in studying the size of
+    such a representation.  We consider the "data complexity" setting,
+    where the query is fixed, and the input to the problem consists only
+    of the database instance.  We consider several compilation targets, of
+    increasing expressive power: OBDDs, FBDDs, and decision-DNNFs (a
+    subclass of d-DNNFs).  For the case of OBDDs we establish a dichotomy
+    theorem for queries in restricted languages FO(\exists, \wedge, \vee)
+    and FO(\forall, \wedge, \vee): for each such query the OBDD is either
+    linear in the size of the database, or grows exponentially, and the
+    complexity can be determined through a simple analysis of the query
+    expression.  For the other targets we describe a class of queries for
+    which (a) the decision-DNNF is exponentially large in the size of the
+    database, and (b) the probability of the query can be computed in
+    polynomial time in the size of the database.  This suggests that the
+    compilation target decision-DNNF is too weak to capture all tractable
+    cases of probabilistic inference.  Our lower bound for decision-DNNF's
+    relies on a translation into FBDD's, which is of independent interest.`,
+    `Joint work with Paul Beame, Abhay Jha, Jerry Li, and Sudeepa Roy`,
+  ],
+  oxford_url: "#",
 }]
 
 var news_app = new Vue({
