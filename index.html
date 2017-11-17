@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109826838-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109826838-1');
+  </script>
+
   <!-- Title -->
   <title>FDB Research</title>
 
@@ -41,6 +54,8 @@
 
   <!-- CSS Customization -->
   <link rel="stylesheet" href="assets/css/custom.css">
+
+
 </head>
 
 <body>
@@ -213,7 +228,9 @@
                   <h3 class="h4 g-mb-15">
                     <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles.html">Principles of Factorised Databases</a>
                   </h3>
-                  <p>Principled approach to avoiding redundancy in the representation and computation of query results in relational databases. Worst-case optimal computation of compressed, <em>factorised</em> representations for join query results.                  </p>
+                  <p>Principled approach to avoiding redundancy in the representation and computation of query results in relational
+                    databases. Worst-case optimal computation of compressed,
+                    <em>factorised</em> representations for join query results. </p>
                   <a class="g-font-size-12" href="principles.html">Read More..</a>
                 </div>
                 <!-- End Article Content -->
@@ -240,8 +257,8 @@
                   <h3 class="h4 g-mb-15">
                     <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="analytics.html">In-Database Analytics</a>
                   </h3>
-                  <p>Scalable techniques for machine learning over databases that exploit the relational structure, push the learning task inside the database
-                    query engine, and factorise its computation.
+                  <p>Scalable techniques for machine learning over databases that exploit the relational structure, push the
+                    learning task inside the database query engine, and factorise its computation.
                   </p>
                   <a class="g-font-size-12" href="analytics.html">Read More..</a>
                 </div>
