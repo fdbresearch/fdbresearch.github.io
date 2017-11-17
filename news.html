@@ -259,45 +259,6 @@
         <div class="col-lg-6 g-mb-80">
           <div class="u-heading-v3-1 g-mb-30">
             <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                       g-brd-primary">Project Visitors</h2>
-          </div>
-          <article v-for="visitor in visitors">
-            <span class="g-font-size-12">
-              <h5 class="h5 g-mb-15">
-                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">{{visitor.title}}</a>
-              </h5>
-              <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
-                <li class="list-inline-item">
-                  <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" :href="visitor.author_url">{{visitor.name}}</a>
-                </li>
-                <li class="list-inline-item">/</li>
-                <li class="list-inline-item">
-                  {{visitor.date}}
-                </li>
-                <li class="list-inline-item">/</li>
-                <li class="list-inline-item">
-                  Room {{visitor.place}}
-                </li>
-              </ul>
-
-            </span>
-
-            <p class="g-color-gray-dark-v1">
-              {{visitor.abstract[0].split(' ').slice(0, 25).join(' ')}}...
-              <br>
-              <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
-            </p>
-
-            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-          </article>
-
-
-
-          <br>
-          <br>
-          <br>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
                        g-brd-primary">Student Awards</h2>
           </div>
           <!-- Awards content -->
@@ -328,6 +289,46 @@
       <!-- end row -->
 
       <!-- row -->
+      <div class="row justify-content-between">
+          
+          <div class="col-lg-12 g-mb-80">
+              <div class="u-heading-v3-1 g-mb-30">
+                <h2 class="u-heading-v3__title g-color-gray-dark-v1
+                           g-brd-primary">Project Visitors</h2>
+              </div>
+              <article v-for="visitor in visitors">
+                <span class="g-font-size-12">
+                  <h5 class="h5 g-mb-15">
+                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">{{visitor.title}}</a>
+                  </h5>
+                  <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
+                    <li class="list-inline-item">
+                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" :href="visitor.author_url">{{visitor.name}}</a>
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                      {{visitor.date}}
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                      Room {{visitor.place}}
+                    </li>
+                  </ul>
+    
+                </span>
+    
+                <p class="g-color-gray-dark-v1">
+                  {{visitor.abstract[0].split(' ').slice(0, 100).join(' ')}}...
+                  <br>
+                  <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
+                </p>
+    
+                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+              </article>
+      </div>
+      <!-- End row -->
+
+      
 
     </div>
 
