@@ -46,6 +46,9 @@
 
   <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
 
+  <!-- CSS Implementing Plugins -->
+  <link  rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
+
   <!-- CSS Unify -->
   <link rel="stylesheet" href="assets/css/unify-core.css">
   <link rel="stylesheet" href="assets/css/unify-components.css">
@@ -57,7 +60,7 @@
 </head>
 
 <body>
-  <main>
+  <main id="fdb-app" >
 
     <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-shadow-v19">
@@ -161,7 +164,7 @@
 
 
     <!-- Blog Minimal Blocks -->
-    <div id="fdb-app" class="container g-pb-20">
+    <div class="container g-pb-20">
 
       <!-- row -->
       <div class="row justify-content-between">
@@ -261,7 +264,7 @@
           <article v-for="visitor in visitors">
             <span class="g-font-size-12">
               <h5 class="h5 g-mb-15">
-                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="visitor.oxford_url">{{visitor.title}}</a>
+                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">{{visitor.title}}</a>
               </h5>
               <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
                 <li class="list-inline-item">
@@ -280,9 +283,9 @@
             </span>
 
             <p class="g-color-gray-dark-v1">
-              {{visitor.abstract.split(' ').slice(0, 25).join(' ')}}...
+              {{visitor.abstract[0].split(' ').slice(0, 25).join(' ')}}...
               <br>
-              <a class="g-font-size-12" :href="visitor.oxford_url">Read More..</a>
+              <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
             </p>
 
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
@@ -370,8 +373,16 @@
     </div>
     <!-- End Footer -->
 
-
-
+    <!-- Demo modal window -->
+    <div v-for="visitor in visitors" :id="visitor.id" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+      <button type="button" class="close" onclick="Custombox.modal.close();">
+        <i class="hs-icon hs-icon-close"></i>
+      </button>
+      <h4 class="g-mb-20"><a :href="visitor.oxford_url">{{visitor.title}}</a></h4>
+      <p v-for="line in visitor.abstract">{{line}}</p>
+      Source: <a :href="visitor.oxford_url">{{visitor.oxford_url}}</a>
+    </div>
+    <!-- End Demo modal window -->
 
 
   </main>
@@ -395,6 +406,7 @@
   <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
   <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="assets/vendor/custombox/custombox.min.js"></script>
 
   <!-- JS Unify -->
   <script src="assets/js/hs.core.js"></script>
@@ -406,6 +418,7 @@
   <script src="assets/js/components/hs.onscroll-animation.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
   <script src="assets/js/components/hs.carousel.js"></script>
+  <script src="assets/js/components/hs.modal-window.js"></script>
 
   <!-- JS Customization -->
   <script src="assets/js/custom.js"></script>
@@ -413,6 +426,9 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
