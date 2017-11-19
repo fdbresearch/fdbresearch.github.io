@@ -143,8 +143,7 @@ const visitors_data = [{
   title: "The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing Under Updates",
   name: "Stijn Vansummeren (Université Libre de Bruxelles)",
   author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
-  date: "11:30 21 Nov 2017",
-  place: "051",
+  date: "21-22 Nov 2017"
   abstract: [
     `Modern computing tasks such as real-time analytics require refresh of query results under high update rates. Incremental View Maintenance (IVM) approaches this problem by materializing results in order to avoid recomputation. IVM naturally induces a trade-off between the space needed to maintain the materialized results and the time used to process updates.`,
     `In this talk, we show that the full materialization of results is a barrier for more general optimization strategies. In particular, we present a new approach for evaluating queries under updates. Instead of the materialization of results, we require a data structure that allows: (1) linear time maintenance under updates, (2) constant-delay enumeration of the output, (3) constant-time lookups in the output, while (4) using only linear space in the size of the database. We call such a structure a Dynamic Constant delay Linear Representation (DCLR) for the query. We show that Dyn, a dynamic version of the Yannakakis algorithm, yields DCLRs for the class of free-connex acyclic CQs. We show that this is optimal in the sense that no DCLR can exist for CQs that are not free-connex acyclic. Moreover, we identify a sub-class of queries for which Dyn features constant-time update per tuple and show that this class is maximal. An experimental validation of Dyn shows that it is highly effective in practice.`,
@@ -154,10 +153,9 @@ const visitors_data = [{
 }, {
   id: "modal-1932",
   title: "Decision-theoretic planning via probabilistic programming",
-  name: "Vaishak Belle ( Edinburgh )",
+  name: "Vaishak Belle ( Edinburgh and Alan Turing Institute)",
   author_url: "http://vaishakbelle.com/",
-  date: "14:00 13 Nov 2017",
-  place: "LTB",
+  date: "13 Nov 2017"
   abstract: [
     'We study planning in Markov decision processes involving discrete and continuous states and actions, and an unknown number of objects. Planning in such domains is notoriously challenging and often requires restrictive assumptions. We introduce HYPE: a sample-based planner for hybrid domains that is very general, which combines model-based approaches with state abstraction. Most significantly, the domains where such planners are deployed are usually very complex with deep structural and geometric constraints. HYPE is instantiated in a probabilistic programming language that allows compact codification of such constraints.',
     'In our empirical evaluations, we show that HYPE is a general and widely applicable planner in domains ranging from strictly discrete to strictly continuous to hybrid ones. Moreover, empirical results showed that abstraction provides significant improvements.',
