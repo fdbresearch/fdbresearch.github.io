@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109826838-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109826838-1');
+  </script>
   <!-- Title -->
   <title>FDB Research</title>
 
@@ -176,278 +188,278 @@
       <div class="row justify-content-between">
 
 
-      <!-- <div class="col-lg-1 g-mb-80"></div> -->
+        <!-- <div class="col-lg-1 g-mb-80"></div> -->
 
-      <!-- Articles Content -->
-      <div class="col-lg-8 g-mb-50 g-mb-0--lg">
-        <article class="g-mb-60">
+        <!-- Articles Content -->
+        <div class="col-lg-8 g-mb-50 g-mb-0--lg">
+          <article class="g-mb-60">
 
-          <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-            <p class="g-color-black-opacity-0_8">
-              State-of-the-art relational data representation and processing are highly redundant. This project investigates the sources
-              of this redundancy and proposes alternatives that avoid it.
-            </p>
-          </div>
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p class="g-color-black-opacity-0_8">
+                State-of-the-art relational data representation and processing are highly redundant. This project investigates the sources
+                of this redundancy and proposes alternatives that avoid it.
+              </p>
+            </div>
 
-          <!--div class="text-center g-width-60x--md mx-auto g-my-40">
+            <!--div class="text-center g-width-60x--md mx-auto g-my-40">
               <h3 class="text-uppercase g-color-primary">
                 How much redundancy is there in the representation and computation of join results?
               </h3>
             </div-->
 
-          <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-            <p class="g-color-black-opacity-0_8">
-              For relational join processing, the culprit behind this redundancy is the Cartesian product lurking within every database
-              join. By avoiding the listing (enumeration) of the output of these products, we can lower the space and computational
-              costs for joins. See first this simple
-              <a href="principles/first-example.html">example</a> and then the second more insightful
-              <a href="principles/second-example.html">example</a>.
-            </p>
-          </div>
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p class="g-color-black-opacity-0_8">
+                For relational join processing, the culprit behind this redundancy is the Cartesian product lurking within every database
+                join. By avoiding the listing (enumeration) of the output of these products, we can lower the space and computational
+                costs for joins. See first this simple
+                <a href="principles/first-example.html">example</a> and then the second more insightful
+                <a href="principles/second-example.html">example</a>.
+              </p>
+            </div>
 
-          <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-            <p>
-              <span class="text-uppercase g-color-primary">This redundancy can be avoided via factorisation</span>
-            </p>
-            <p>
-              We developed three distinct lossless factorised representations for join queries and even the more general functional aggregate
-              queries:
-            </p>
-            <ul>
-              <li>
-                The
-                <strong>f-representations</strong> (see
-                <a href="#oz-icdt12">ICDT'12 paper
-                  <a/>) are to the listing representation what nested formulas are to formulas in disjunctive normal form. They
-                  are relational algebra expressions with operators union and product over singleton relations (relations
-                  with one column and one row). They exploit the distributivity of the product over union to factor out common
-                  subexpressions.
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p>
+                <span class="text-uppercase g-color-primary">This redundancy can be avoided via factorisation</span>
+              </p>
+              <p>
+                We developed three distinct lossless factorised representations for join queries and even the more general functional aggregate
+                queries:
+              </p>
+              <ul>
+                <li>
+                  The
+                  <strong>f-representations</strong> (see
+                  <a href="#oz-icdt12">ICDT'12 paper
+                    <a/>) are to the listing representation what nested formulas are to formulas in disjunctive normal form.
+                    They are relational algebra expressions with operators union and product over singleton relations (relations
+                    with one column and one row). They exploit the distributivity of the product over union to factor out
+                    common subexpressions.
+                </li>
+                <li>
+                  The
+                  <strong>d-representations</strong> (see
+                  <a href="#oz-tods15">TODS'15 article
+                    <a/>) are
+                    <strong>f-representations</strong> with definitions: A recurring subexpression can be given a name and referenced
+                    several times by name instead of content. They correspond to circuits.
+                </li>
+                <li>
+                  The
+                  <strong>covers</strong> (see
+                  <a href="#ko-icdt18">ICDT'18 paper
+                    <a/>) of a query result is a minimal subset of this result from which we can losslessly reconstruct it entirely.
+                </li>
+              </ul>
+              <p>
+                Compression by factorisation can also be applied to query provenance or lineage (
+                <a href="#oz-icdt12">ICDT'12
+                  <a/> and
+                  <a href="#oz-tapp11">TAPP'11
+                    <a/> papers).
+              </p>
+
+              <p>
+                <span class="text-uppercase g-color-primary">Analytics can be computed directly over factorised data</span>
+              </p>
+              <p>
+                The factorised representations of a join result allow for the enumeration of the result tuples with constant delay, which
+                is as efficient as enumerating them from the listing representation of the result. This is a prerequisite
+                for the computation of aggregates (and more complex analytics) in one pass over factorised data.
+                <br/> In case the materialisation of the factorised join result is not desirable, aggregates can be computed on
+                the fly. In this case, the
+                <em>trace</em> of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially)
+                pushing aggregates past joins.
+                <br/> To explore more on: constant-delay enumeration and worst-case optimal join factorisation see the
+                <a href="#oz-tods15">TODS'15 article</a>; factorised join plans see the
+                <a href="#boz-vldb12">VLDB'12</a> paper; aggregates over factorised joins see the
+                <a href="#os-sigrec16">SIGMOD Record'16</a> and
+                <a href="#bkoz-vldb13">VLDB'13</a> papers; machine learning over factorised joins see the
+                <a href="publications.html#soc-sigmod16">SIGMOD'16</a> and
+                <a href="publications.html#annos-pods18">PODS'18</a> papers.
+              </p>
+            </div>
+
+
+            <!-- Sources & Tags -->
+            <div class="g-mb-30">
+              <h6 class="g-color-gray-dark-v1">
+                <strong class="g-mr-5">Tags:</strong>
+                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                  href="#">factorisation</a>
+                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                  href="#">joins</a>
+                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                  href="#">aggregates</a>
+              </h6>
+            </div>
+            <!-- End Sources & Tags -->
+
+            <!-- <hr class="g-brd-gray-light-v4"> -->
+
+
+
+          </article>
+        </div>
+        <!-- End Articles Content -->
+
+
+        <!-- right panel -->
+        <div class="col-lg-3 g-mb-80">
+          <div class="g-mb-50">
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Demystifying Factorisation and Related Work</h2>
+            </div>
+
+            <ul class="list-unstyled">
+              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                <h4 class="h6">
+                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/first-example.html">Simple Factorised Join</a>
+                </h4>
               </li>
-              <li>
-                The
-                <strong>d-representations</strong> (see
-                <a href="#oz-tods15">TODS'15 article
-                  <a/>) are
-                  <strong>f-representations</strong> with definitions: A recurring subexpression can be given a name and referenced
-                  several times by name instead of content. They correspond to circuits.
-              </li>
-              <li>
-                The
-                <strong>covers</strong> (see
-                <a href="#ko-icdt18">ICDT'18 paper
-                  <a/>) of a query result is a minimal subset of this result from which we can losslessly reconstruct it entirely.
+              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                <h4 class="h6">
+                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/second-example.html">Aggregates over Factorised Joins</a>
+                </h4>
               </li>
             </ul>
-            <p>
-              Compression by factorisation can also be applied to query provenance or lineage (
-              <a href="#oz-icdt12">ICDT'12
-                <a/> and
-                <a href="#oz-tapp11">TAPP'11
-                  <a/> papers).
-            </p>
-
-            <p>
-              <span class="text-uppercase g-color-primary">Analytics can be computed directly over factorised data</span>
-            </p>
-            <p>
-              The factorised representations of a join result allow for the enumeration of the result tuples with constant delay, which
-              is as efficient as enumerating them from the listing representation of the result. This is a prerequisite for
-              the computation of aggregates (and more complex analytics) in one pass over factorised data.
-              <br/> In case the materialisation of the factorised join result is not desirable, aggregates can be computed on
-              the fly. In this case, the
-              <em>trace</em> of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially)
-              pushing aggregates past joins.
-              <br/> To explore more on: constant-delay enumeration and worst-case optimal join factorisation see the
-              <a href="#oz-tods15">TODS'15 article</a>; factorised join plans see the
-              <a href="boz-vldb12">VLDB'12</a> paper; aggregates over factorised joins see the
-              <a href="os-sigrec16">SIGMOD Record'16</a> and
-              <a href="bkoz-vldb13">VLDB'13</a> papers; machine learning over factorised joins see the
-              <a href="publications.html#soc-sigmod16">SIGMOD'16</a> and
-              <a href="publications.html#annos-pods18">PODS'18</a> papers.
-            </p>
           </div>
+        </div>
+        <!-- end right panel -->
+      </div>
 
 
-          <!-- Sources & Tags -->
+      <!-- Publications section -->
+      <div class="row">
+        <!-- <div class="col-lg-1 g-mb-80"></div> -->
+        <div class="col-lg-12 g-mb-50 g-mb-0--lg">
           <div class="g-mb-30">
-            <h6 class="g-color-gray-dark-v1">
-              <strong class="g-mr-5">Tags:</strong>
-              <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                href="#">factorisation</a>
-              <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                href="#">joins</a>
-              <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                href="#">aggregates</a>
-            </h6>
-          </div>
-          <!-- End Sources & Tags -->
-
-          <!-- <hr class="g-brd-gray-light-v4"> -->
-
-
-
-        </article>
-      </div>
-      <!-- End Articles Content -->
-
-
-      <!-- right panel -->
-      <div class="col-lg-3 g-mb-80">
-        <div class="g-mb-50">
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Resources</h2>
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
+            </div>
           </div>
 
-          <ul class="list-unstyled">
-            <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-              <h4 class="h6">
-                <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/first-example.html">First Example</a>
-              </h4>
-            </li>
-            <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-              <h4 class="h6">
-                <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/second-example.html">Second Example</a>
-              </h4>
-            </li>
-          </ul>
+          <H3>Overviews</H3>
+
+          <UL>
+            <LI id="os-sigrec16" class="g-mb-15">
+              <STRONG>Factorized Databases</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">preliminary version
+              </A>]
+              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+              <BR>Dan Olteanu and Maximilian Schleich.
+              <BR>In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016. </LI>
+            <LI id="o-beyondnp16" class="g-mb-15">
+              <STRONG>Factorized Databases: A Knowledge Compilation Perspective</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">pdf</A>]
+              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
+              <BR>Dan Olteanu.
+              <BR>In BeyondNP, AAAI workshop, Phoenix, April 2016. </LI>
+          </UL>
+          <H3>Factorised Representations for Data and Provenance</H3>
+          <UL>
+            <LI id="ko-icdt18">
+              <STRONG>Covers of Query Results</STRONG>. [
+              <A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
+              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+              <BR>Ahmet Kara and Dan Olteanu.
+              <BR>To appear in Int Conf on Database Theory (ICDT), Vienna, March 2018.
+              <BR>arXiv report 1709.01600, March 2017. </LI>
+          </UL>
+          <UL>
+            <LI id="co-tr15">
+              <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+              <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
+              <BR>Radu Ciucanu and Dan Olteanu.
+              <BR>Technical report, November 2015. </LI>
+          </UL>
+          <UL>
+            <LI id="oz-tods15">
+              <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
+              </A>]
+              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+              <BR> Dan Olteanu and Jakub Závodný.
+              <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
+          </UL>
+          <UL>
+            <LI id="oz-icdt12">
+              <STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
+              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+              <BR>Dan Olteanu and Jakub Závodný.
+              <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
+              <BR> Prior version (strict subset of results) in
+              <A href="http://arxiv.org/abs/1104.0867">
+                arXiv technical report 1104.0867</A>, April 2011. </LI>
+          </UL>
+          <UL>
+            <LI id="oz-tap11">
+              <STRONG>On Factorisation of Provenance Polynomials</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
+              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
+              <BR>Dan Olteanu and Jakub Závodný.
+              <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
+            </LI>
+          </UL>
+
+          <H3>Factorised Query Processing</H3>
+
+          <UL>
+            <LI id="co-tr15">
+              <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+              <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
+              <BR>Radu Ciucanu and Dan Olteanu.
+              <BR>Technical report, November 2015. </LI>
+          </UL>
+          <UL>
+            <LI id="oz-tods15">
+              <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
+              </A>]
+              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+              <BR> Dan Olteanu and Jakub Závodný.
+              <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
+          </UL>
+          <UL>
+            <LI id="bkoz-vldb13">
+              <STRONG>Aggregation and Ordering in Factorised Databases</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
+              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
+              <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
+              <BR>March 2013.
+              <BR> In Very Large Data Bases (PVLDB), vol 6, 2013.
+              <BR> Complementary information available in
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas'thesis</A>
+            </LI>
+          </UL>
+          <UL>
+            <LI>
+              <STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>;
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
+              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
+              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+              <BR>System demonstration. In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
+          </UL>
+          <UL>
+            <LI id="boz-vldb12">
+              <STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>. [
+              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
+              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
+              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+              <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+              <BR>Prior version in
+              <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A>
+            </LI>
+          </UL>
+
+          <div id="stickyblock-end"></div>
         </div>
       </div>
-      <!-- end right panel -->
-    </div>
-
-
-    <!-- Publications section -->
-    <div class="row">
-      <!-- <div class="col-lg-1 g-mb-80"></div> -->
-      <div class="col-lg-12 g-mb-50 g-mb-0--lg">
-        <div class="g-mb-30">
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
-          </div>
-        </div>
-
-        <H3>Overviews</H3>
-
-        <UL>
-          <LI id="os-sigrec16" class="g-mb-15">
-            <STRONG>Factorized Databases</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">preliminary version
-            </A>]
-            <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-            <BR>Dan Olteanu and Maximilian Schleich.
-            <BR>In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016. </LI>
-          <LI id="o-beyondnp16" class="g-mb-15">
-            <STRONG>Factorized Databases: A Knowledge Compilation Perspective</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">pdf</A>]
-            <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-            <BR>Dan Olteanu.
-            <BR>In BeyondNP, AAAI workshop, Phoenix, April 2016. </LI>
-        </UL>
-        <H3>Factorised Representations for Data and Provenance</H3>
-        <UL>
-          <LI id="ko-icdt18">
-            <STRONG>Covers of Query Results</STRONG>. [
-            <A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
-            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-            <BR>Ahmet Kara and Dan Olteanu.
-            <BR>To appear in Int Conf on Database Theory (ICDT), Vienna, March 2018.
-            <BR>arXiv report 1709.01600, March 2017. </LI>
-        </UL>
-        <UL>
-          <LI id="co-tr15">
-            <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
-            <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
-            <BR>Radu Ciucanu and Dan Olteanu.
-            <BR>Technical report, November 2015. </LI>
-        </UL>
-        <UL>
-          <LI id="oz-tods15">
-            <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
-            </A>]
-            <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-            <BR> Dan Olteanu and Jakub Závodný.
-            <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
-        </UL>
-        <UL>
-          <LI id="oz-icdt12">
-            <STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-            <BR>Dan Olteanu and Jakub Závodný.
-            <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-            <BR> Prior version (strict subset of results) in
-            <A href="http://arxiv.org/abs/1104.0867">
-              arXiv technical report 1104.0867</A>, April 2011. </LI>
-        </UL>
-        <UL>
-          <LI>
-            <STRONG>On Factorisation of Provenance Polynomials</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
-            <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-            <BR>Dan Olteanu and Jakub Závodný.
-            <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
-          </LI>
-        </UL>
-
-        <H3>Factorised Query Processing</H3>
-
-        <UL>
-          <LI id="co-tr15">
-            <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
-            <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
-            <BR>Radu Ciucanu and Dan Olteanu.
-            <BR>Technical report, November 2015. </LI>
-        </UL>
-        <UL>
-          <LI id="oz-tods15">
-            <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
-            </A>]
-            <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-            <BR> Dan Olteanu and Jakub Závodný.
-            <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
-        </UL>
-        <UL>
-          <LI id="bkoz-vldb13">
-            <STRONG>Aggregation and Ordering in Factorised Databases</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
-            <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-            <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
-            <BR>March 2013.
-            <BR> In Very Large Data Bases (PVLDB), vol 6, 2013.
-            <BR> Complementary information available in
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas'thesis</A>
-          </LI>
-        </UL>
-        <UL>
-          <LI>
-            <STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>;
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
-            <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-            <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-            <BR>System demonstration. In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
-        </UL>
-        <UL>
-          <LI>
-            <STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>. [
-            <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
-            <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-            <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-            <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-            <BR>Prior version in
-            <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A>
-          </LI>
-        </UL>
-
-        <div id="stickyblock-end"></div>
-      </div>
-    </div>
 
     </div>
 

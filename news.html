@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109826838-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-109826838-1');
+  </script>
   <!-- Title -->
   <title>FDB Research</title>
 
@@ -34,6 +46,9 @@
 
   <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
 
+  <!-- CSS Implementing Plugins -->
+  <link  rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
+
   <!-- CSS Unify -->
   <link rel="stylesheet" href="assets/css/unify-core.css">
   <link rel="stylesheet" href="assets/css/unify-components.css">
@@ -45,7 +60,7 @@
 </head>
 
 <body>
-  <main>
+  <main id="fdb-app" >
 
     <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-shadow-v19">
@@ -91,16 +106,16 @@
 
                   <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
                     id="nav-submenu--features" aria-labelledby="nav-link--features">
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="principles.html">
-                          Principles of Factorised Databases</a>
-                      </li>
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="analytics.html">In-Database Analytics</a>
-                      </li>
-                      <li class="dropdown-item ">
-                        <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
-                      </li>
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases</a>
+                    </li>
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="analytics.html">In-Database Analytics</a>
+                    </li>
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
+                    </li>
                   </ul>
                 </li>
                 <!-- End Projects -->
@@ -149,7 +164,7 @@
 
 
     <!-- Blog Minimal Blocks -->
-    <div id="fdb-app" class="container g-pb-20">
+    <div class="container g-pb-20">
 
       <!-- row -->
       <div class="row justify-content-between">
@@ -163,19 +178,78 @@
           </div>
           <!-- News Feed -->
           <div class="g-mb-40">
-
-            <!-- Article -->
-            <article v-for="new_content in news">
+            <article>
               <span class="g-font-size-12">
-                <a class="u-link-v5 g-color-gray-dark-v4" href="#">{{new_content.date}}</a>
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">Sep 31, 2017</a>
               </span>
-
-              <h3 class="h6" v-html="new_content.html"></h3>
-
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">Research positions available in our research group! Please contact Professor Dan Olteanu (dan.olteanu@cs.ox.ac.uk)
+                  for details.</p>
+                <p>
+                </p>
+                <ul>
+                  <li>
+                    <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1379-full.html">Senior Researcher on in-database analytics</a>
+                  </li>
+                  <li>
+                    <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1372-full.html">Fully-Funded Doctoral Studentship in Databases, partially sponsored by Ordnance Survey</a>
+                  </li>
+                  <li>
+                    <span class="g-font-weight-700 g-font-size-13">Several ERC-Funded Doctoral Studentships to start any term in the academic year</span>
+                  </li>
+                </ul>
+                <p></p>
+              </h3>
               <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
             </article>
-            <!-- End Article -->
-
+            <article>
+              <span class="g-font-size-12">
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">Sep 2017</a>
+              </span>
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">Ahmet helped out at the European Researcher's
+                  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/curiosity-carnival/whats-on?utm_source=ox.ac.uk&amp;utm_medium=referral">Curiosity Festival</a> in Oxford.</p>
+              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+            </article>
+            <article>
+              <span class="g-font-size-12">
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">March 2017</a>
+              </span>
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">The CS department and Oxford celebrated ERC on its 10th anniversary, see
+                  <a class="g-font-weight-700 g-font-size-13" href="http://www.cs.ox.ac.uk/news/1273-full.html">here</a> and
+                  <a class="g-font-weight-700 g-font-size-13" href="http://www.ox.ac.uk/news-and-events/european-research-council-anniversary">here</a>.</p>
+              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+            </article>
+            <article>
+              <span class="g-font-size-12">
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">March 2016</a>
+              </span>
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">FDB featured in a series of three interviews with Dan on Romanian National Radio (Radio Romania Cultural).</p>
+              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+            </article>
+            <article>
+              <span class="g-font-size-12">
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">November 2013</a>
+              </span>
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">Congratulations to Jakub, who successfully defended his PhD and joined Google Zurich!</p>
+              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+            </article>
+            <article>
+              <span class="g-font-size-12">
+                <a href="#" class="u-link-v5 g-color-gray-dark-v4">June 2012</a>
+              </span>
+              <h3 class="h6">
+                <p class="g-color-gray-dark-v1">Jakub started his summer internship at Google Zurich.</p>
+              </h3>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+            </article>
           </div>
           <!-- End News Feed -->
         </div>
@@ -215,6 +289,46 @@
       <!-- end row -->
 
       <!-- row -->
+      <div class="row justify-content-between">
+          
+          <div class="col-lg-12 g-mb-80">
+              <div class="u-heading-v3-1 g-mb-30">
+                <h2 class="u-heading-v3__title g-color-gray-dark-v1
+                           g-brd-primary">Project Visitors</h2>
+              </div>
+              <article v-for="visitor in visitors">
+                <span class="g-font-size-12">
+                  <h5 class="h5 g-mb-15">
+                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">{{visitor.title}}</a>
+                  </h5>
+                  <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
+                    <li class="list-inline-item">
+                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" :href="visitor.author_url">{{visitor.name}}</a>
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                      {{visitor.date}}
+                    </li>
+                    <li class="list-inline-item">/</li>
+                    <li class="list-inline-item">
+                      Room {{visitor.place}}
+                    </li>
+                  </ul>
+    
+                </span>
+    
+                <p class="g-color-gray-dark-v1">
+                  {{visitor.abstract[0].split(' ').slice(0, 100).join(' ')}}...
+                  <br>
+                  <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
+                </p>
+    
+                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+              </article>
+      </div>
+      <!-- End row -->
+
+      
 
     </div>
 
@@ -260,8 +374,16 @@
     </div>
     <!-- End Footer -->
 
-
-
+    <!-- Demo modal window -->
+    <div v-for="visitor in visitors" :id="visitor.id" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+      <button type="button" class="close" onclick="Custombox.modal.close();">
+        <i class="hs-icon hs-icon-close"></i>
+      </button>
+      <h4 class="g-mb-20"><a :href="visitor.oxford_url">{{visitor.title}}</a></h4>
+      <p v-for="line in visitor.abstract">{{line}}</p>
+      Source: <a :href="visitor.oxford_url">{{visitor.oxford_url}}</a>
+    </div>
+    <!-- End Demo modal window -->
 
 
   </main>
@@ -285,6 +407,7 @@
   <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
   <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="assets/vendor/custombox/custombox.min.js"></script>
 
   <!-- JS Unify -->
   <script src="assets/js/hs.core.js"></script>
@@ -296,6 +419,7 @@
   <script src="assets/js/components/hs.onscroll-animation.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
   <script src="assets/js/components/hs.carousel.js"></script>
+  <script src="assets/js/components/hs.modal-window.js"></script>
 
   <!-- JS Customization -->
   <script src="assets/js/custom.js"></script>
@@ -303,6 +427,9 @@
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
