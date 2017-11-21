@@ -177,18 +177,6 @@ const visitors_data = [{
   ],
   oxford_url: "http://www.cs.ox.ac.uk/seminars/1932.html",
 }, {
-  id: "modal-1884",
-  title: "Shannon-type inequalities, submodular width, and disjunctive datalog",
-  name: "Hung Ngo ( stealth mode )",
-  author_url: "https://www.cse.buffalo.edu/~hungngo/",
-  date: "11:00 11 Nov 2017",
-  place: "LTB",
-  abstract: [
-    'This talk overviews recent results on bounding the output size and on efficiently evaluating a disjunctive datalog rule, given input statistics such as relation sizes, functional dependencies, and degree bounds. These are the kind of statistics prevalent in database query evaluation, and our results apply to aggregate queries as well. The disjunctive datalog query evaluation problem is fairly general, as both conjunctive query evaluation and the basic constraint satisfaction problem are special cases. These new combinatorial and algorithmic results are built up on a fundamental connection between query evaluation and Shannon-type inequalities. It was observed in different contexts over the past 40 years that information-theoretic inequalities can be used to bound combinatorial quantities. First, one can derive (sometimes tight) output size bounds of conjunctive queries and disjunctive datalog rules using Shannon-type inequalities. This talk discusses these bounds and techniques. Second, we show how one can turn a proof of an information-inequality into an efficient algorithm to evaluate such queries. The algorithm’s runtime is bounded by a generalized version of the submodular width of the query, which is optimal modulo complexity-theoretic assumptions. ',
-    'The talk is based on joint works with Mahmoud Abo Khamis and Dan Suciu.',
-  ],
-  oxford_url: "http://www.cs.ox.ac.uk/seminars/1884.html",
-}, {
   id: "modal-1922",
   title: "Toward a Principled Framework for Clustering Techniques",
   name: "Shuai Li ( Cambridge )",
@@ -200,6 +188,18 @@ const visitors_data = [{
     `Dr Shuai Li is currently a postdoctoral researcher in the Engineering Design Centre of the Department of Engineering, at the University of Cambridge. He has 7+ years professional experience across Europe, North America, Middle East, and Asia Pacific; and 19+ years project experience in Computer Science and Information Engineering; also he served as CEO for the industry and released several successful products. He has been engaged in internationally leading research in the analysis of complex, dynamic data at scale, and brought cutting-edge data mining and machine learning to the heart of industrial-scale big data analytics and data science. As the academic service he has been involved in a number of international prestigious conferences and journals including SIGIR, SIGKDD, ICDM, SDM, NIPS, UAI, AISTATS, WWW, WSDM, IJCAI, etc.`,
   ],
   oxford_url: "http://www.cs.ox.ac.uk/seminars/1922.html",
+},  {
+  id: "modal-1884",
+  title: "Shannon-type inequalities, submodular width, and disjunctive datalog",
+  name: "Hung Ngo ( stealth mode )",
+  author_url: "https://www.cse.buffalo.edu/~hungngo/",
+  date: "11:00 11 Sept 2017",
+  place: "LTB",
+  abstract: [
+    'This talk overviews recent results on bounding the output size and on efficiently evaluating a disjunctive datalog rule, given input statistics such as relation sizes, functional dependencies, and degree bounds. These are the kind of statistics prevalent in database query evaluation, and our results apply to aggregate queries as well. The disjunctive datalog query evaluation problem is fairly general, as both conjunctive query evaluation and the basic constraint satisfaction problem are special cases. These new combinatorial and algorithmic results are built up on a fundamental connection between query evaluation and Shannon-type inequalities. It was observed in different contexts over the past 40 years that information-theoretic inequalities can be used to bound combinatorial quantities. First, one can derive (sometimes tight) output size bounds of conjunctive queries and disjunctive datalog rules using Shannon-type inequalities. This talk discusses these bounds and techniques. Second, we show how one can turn a proof of an information-inequality into an efficient algorithm to evaluate such queries. The algorithm’s runtime is bounded by a generalized version of the submodular width of the query, which is optimal modulo complexity-theoretic assumptions. ',
+    'The talk is based on joint works with Mahmoud Abo Khamis and Dan Suciu.',
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1884.html",
 }, {
   id: "modal-1712",
   title: "High-Performance Incremental Processing of Complex Analytical Queries",
