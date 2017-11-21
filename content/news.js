@@ -152,7 +152,7 @@ const visitors_data = [{
 }, {
   id: "modal-1928",
   title: "The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing Under Updates",
-  name: "FWA project partner Stijn Vansummeren (Université Libre de Bruxelles) is visiting with his postdocs Martin Ugarte and Iman Elghandour on Nov 21-22, 2017",
+  name: "FWA project partner Stijn Vansummeren (Université Libre de Bruxelles) is visiting with his postdocs Martin Ugarte and Iman Elghandour on Nov 20-21, 2017",
   author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
   date: "21 Nov 2017",
   place: "051",
