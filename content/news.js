@@ -139,6 +139,17 @@ const awards_data = [{
 ]
 
 const visitors_data = [{
+  id: "modal-2000",
+  title: "Adding Path-Functional Dependencies to the Guarded Two-Variable Fragment with Counting",
+  name: "Dr. George Kourtis (Manchester U.) is visiting on Nov 23, 2017 to talk about factorized databases and his work on path-functional dependencies",
+  author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
+  date: "22 Nov 2017",
+  place: "441",
+  abstract: [
+    `The satisfiability and finite satisfiability problems for the two-variable guarded fragment of first-order logic with counting quantifiers, a database, and path-functional dependencies are both ExpTime-complete.`
+  ],
+  oxford_url: "#",
+}, {
   id: "modal-1928",
   title: "The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing Under Updates",
   name: "FWA project partner Stijn Vansummeren (Université Libre de Bruxelles) is visiting with his postdocs Martin Ugarte and Iman Elghandour on Nov 21-22, 2017",
