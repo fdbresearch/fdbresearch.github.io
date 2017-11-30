@@ -47,7 +47,7 @@
   <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
 
   <!-- CSS Implementing Plugins -->
-  <link  rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
+  <link rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
 
   <!-- CSS Unify -->
   <link rel="stylesheet" href="assets/css/unify-core.css">
@@ -60,7 +60,7 @@
 </head>
 
 <body>
-  <main id="fdb-app" >
+  <main id="fdb-app">
 
     <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-shadow-v19">
@@ -290,48 +290,38 @@
 
       <!-- row -->
       <div class="row justify-content-between">
-          
-          <div class="col-lg-12 g-mb-80">
-              <div class="u-heading-v3-1 g-mb-30">
-                <h2 class="u-heading-v3__title g-color-gray-dark-v1
+        
+        <div class="col-lg-12 g-mb-80">
+          <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="u-heading-v3__title g-color-gray-dark-v1
                            g-brd-primary">Project Visitors</h2>
-              </div>
-              <article v-for="visitor in visitors">
-                <span class="g-font-size-12">
-                  <h5 class="h5 g-mb-15">
-                    <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">{{visitor.title}}</a>
-                  </h5>
-                  <ul class="list-inline g-color-gray-dark-v4 g-font-size-12">
-                    <li class="list-inline-item">
-                      <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" :href="visitor.author_url">{{visitor.name}}</a>
-                    </li>
-                    <li class="list-inline-item">/</li>
-                    <li class="list-inline-item">
-                      {{visitor.date}}
-                    </li>
-                    <li class="list-inline-item">/</li>
-                    <li class="list-inline-item">
-                      Room {{visitor.place}}
-                    </li>
-                  </ul>
-    
-                </span>
-    
-                <p class="g-color-gray-dark-v1">
-                  {{visitor.abstract[0].split(' ').slice(0, 100).join(' ')}}...
-                  <br>
-                  <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
-                </p>
-    
-                <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
-              </article>
+          </div>
+          <article v-for="visitor in visitors">
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                  {{visitor.date}}: Visited by <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="visitor.author_url">{{visitor.name}}</a>
+                <!-- <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id"
+                  data-modal-effect="fadein">{{visitor.title}}</a> -->
+              </h5>
+            </span>
+            <h5><a class="g-font-weight-700" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id"
+            data-modal-effect="fadein">{{visitor.title}}</a></h5>
+            <p class="g-color-gray-dark-v1">
+              {{visitor.abstract[0].split(' ').slice(0, 100).join(' ')}}...
+              <br>
+              <a class="g-font-size-12" :href="'#'+visitor.id" :data-modal-target="'#'+visitor.id" data-modal-effect="fadein">Read More..</a>
+            </p>
+
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+          </article>
+        </div>
+
+
+
+
+
       </div>
-      <!-- End row -->
-
-      
-
-    </div>
-
+        <!-- End row -->
 
 
 
@@ -360,7 +350,7 @@
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
                 </li>
                 <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 25 Oct 2017</a>
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 30 Nov 2017</a>
                 </li>
               </ul>
               <!-- End Links -->
@@ -375,13 +365,17 @@
     <!-- End Footer -->
 
     <!-- Demo modal window -->
-    <div v-for="visitor in visitors" :id="visitor.id" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+    <div v-for="visitor in visitors" :id="visitor.id" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20"
+      style="display: none;">
       <button type="button" class="close" onclick="Custombox.modal.close();">
         <i class="hs-icon hs-icon-close"></i>
       </button>
-      <h4 class="g-mb-20"><a :href="visitor.oxford_url">{{visitor.title}}</a></h4>
+      <h4 class="g-mb-20">
+        <a :href="visitor.oxford_url">{{visitor.title}}</a>
+      </h4>
       <p v-for="line in visitor.abstract">{{line}}</p>
-      Source: <a :href="visitor.oxford_url">{{visitor.oxford_url}}</a>
+      Source:
+      <a :href="visitor.oxford_url">{{visitor.oxford_url}}</a>
     </div>
     <!-- End Demo modal window -->
 

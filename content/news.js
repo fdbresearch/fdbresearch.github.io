@@ -139,20 +139,9 @@ const awards_data = [{
 ]
 
 const visitors_data = [{
-  id: "modal-2000",
-  title: "Adding Path-Functional Dependencies to the Guarded Two-Variable Fragment with Counting",
-  name: "Dr. George Kourtis (Manchester U.) is visiting on Nov 23, 2017 to talk about factorized databases and his work on path-functional dependencies",
-  author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
-  date: "22 Nov 2017",
-  place: "441",
-  abstract: [
-    `The satisfiability and finite satisfiability problems for the two-variable guarded fragment of first-order logic with counting quantifiers, a database, and path-functional dependencies are both ExpTime-complete.`
-  ],
-  oxford_url: "#",
-}, {
   id: "modal-1928",
   title: "The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing Under Updates",
-  name: "FWA project partner Stijn Vansummeren (Université Libre de Bruxelles) is visiting with his postdocs Martin Ugarte and Iman Elghandour on Nov 20-21, 2017",
+  name: "Stijn Vansummeren (Université Libre de Bruxelles)",
   author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
   date: "21 Nov 2017",
   place: "051",
@@ -165,7 +154,7 @@ const visitors_data = [{
 }, {
   id: "modal-1932",
   title: "Decision-theoretic planning via probabilistic programming",
-  name: "Vaishak Belle ( Edinburgh and Alan Turing Institute)",
+  name: "Vaishak Belle ( Edinburgh )",
   author_url: "http://vaishakbelle.com/",
   date: "13 Nov 2017",
   place: "LTB",
@@ -177,23 +166,11 @@ const visitors_data = [{
   ],
   oxford_url: "http://www.cs.ox.ac.uk/seminars/1932.html",
 }, {
-  id: "modal-1922",
-  title: "Toward a Principled Framework for Clustering Techniques",
-  name: "Shuai Li ( Cambridge )",
-  author_url: "https://sites.google.com/site/shuailidotsli/",
-  date: "13:00 11 Oct 2017",
-  place: "441",
-  abstract: [
-    `I will talk about algorithmic and theoretical aspects of an adaptive clustering framework for the content recommendation based on exploration-exploitation strategies in the multi-armed bandit scenarios. First, I'll give an introduction to the centralized clustering methods  in a standard stochastic noise setting for networked users on the graph.  Next, in the decentralized clustering setting I'll describe two distributed efficient algorithms for solving linear regression based problems in peer to peer networks with limited communication capabilities. Last, I'll establish upper bounds on the generalized collaborative filtering applications combined with clustered models. In all cases, the technically sound theoretical guarantees are provided, and extensive real-world data sets based experiments demonstrated the significantly increased performance compared to the state-of-the-art approaches.`,
-    `Dr Shuai Li is currently a postdoctoral researcher in the Engineering Design Centre of the Department of Engineering, at the University of Cambridge. He has 7+ years professional experience across Europe, North America, Middle East, and Asia Pacific; and 19+ years project experience in Computer Science and Information Engineering; also he served as CEO for the industry and released several successful products. He has been engaged in internationally leading research in the analysis of complex, dynamic data at scale, and brought cutting-edge data mining and machine learning to the heart of industrial-scale big data analytics and data science. As the academic service he has been involved in a number of international prestigious conferences and journals including SIGIR, SIGKDD, ICDM, SDM, NIPS, UAI, AISTATS, WWW, WSDM, IJCAI, etc.`,
-  ],
-  oxford_url: "http://www.cs.ox.ac.uk/seminars/1922.html",
-},  {
   id: "modal-1884",
   title: "Shannon-type inequalities, submodular width, and disjunctive datalog",
   name: "Hung Ngo ( stealth mode )",
   author_url: "https://www.cse.buffalo.edu/~hungngo/",
-  date: "11:00 11 Sept 2017",
+  date: "11 Nov 2017",
   place: "LTB",
   abstract: [
     'This talk overviews recent results on bounding the output size and on efficiently evaluating a disjunctive datalog rule, given input statistics such as relation sizes, functional dependencies, and degree bounds. These are the kind of statistics prevalent in database query evaluation, and our results apply to aggregate queries as well. The disjunctive datalog query evaluation problem is fairly general, as both conjunctive query evaluation and the basic constraint satisfaction problem are special cases. These new combinatorial and algorithmic results are built up on a fundamental connection between query evaluation and Shannon-type inequalities. It was observed in different contexts over the past 40 years that information-theoretic inequalities can be used to bound combinatorial quantities. First, one can derive (sometimes tight) output size bounds of conjunctive queries and disjunctive datalog rules using Shannon-type inequalities. This talk discusses these bounds and techniques. Second, we show how one can turn a proof of an information-inequality into an efficient algorithm to evaluate such queries. The algorithm’s runtime is bounded by a generalized version of the submodular width of the query, which is optimal modulo complexity-theoretic assumptions. ',
@@ -201,11 +178,23 @@ const visitors_data = [{
   ],
   oxford_url: "http://www.cs.ox.ac.uk/seminars/1884.html",
 }, {
+  id: "modal-1922",
+  title: "Toward a Principled Framework for Clustering Techniques",
+  name: "Shuai Li ( Cambridge )",
+  author_url: "https://sites.google.com/site/shuailidotsli/",
+  date: "11 Oct 2017",
+  place: "441",
+  abstract: [
+    `I will talk about algorithmic and theoretical aspects of an adaptive clustering framework for the content recommendation based on exploration-exploitation strategies in the multi-armed bandit scenarios. First, I'll give an introduction to the centralized clustering methods  in a standard stochastic noise setting for networked users on the graph.  Next, in the decentralized clustering setting I'll describe two distributed efficient algorithms for solving linear regression based problems in peer to peer networks with limited communication capabilities. Last, I'll establish upper bounds on the generalized collaborative filtering applications combined with clustered models. In all cases, the technically sound theoretical guarantees are provided, and extensive real-world data sets based experiments demonstrated the significantly increased performance compared to the state-of-the-art approaches.`,
+    `Dr Shuai Li is currently a postdoctoral researcher in the Engineering Design Centre of the Department of Engineering, at the University of Cambridge. He has 7+ years professional experience across Europe, North America, Middle East, and Asia Pacific; and 19+ years project experience in Computer Science and Information Engineering; also he served as CEO for the industry and released several successful products. He has been engaged in internationally leading research in the analysis of complex, dynamic data at scale, and brought cutting-edge data mining and machine learning to the heart of industrial-scale big data analytics and data science. As the academic service he has been involved in a number of international prestigious conferences and journals including SIGIR, SIGKDD, ICDM, SDM, NIPS, UAI, AISTATS, WWW, WSDM, IJCAI, etc.`,
+  ],
+  oxford_url: "http://www.cs.ox.ac.uk/seminars/1922.html",
+},{
   id: "modal-1712",
   title: "High-Performance Incremental Processing of Complex Analytical Queries",
   name: "Milos Nikolic",
   author_url: "#",
-  date: "11:30 15 Nov 2016",
+  date: "15 Nov 2016",
   place: "051",
   abstract: [
     `Many of today's popular computing applications require real-time analytics over large and dynamic datasets, from social web applications to online data warehousing, network monitoring, and algorithmic trading. These applications have long-lived analysis queries that require low latency processing over rapidly changing datasets. `,
@@ -218,7 +207,7 @@ const visitors_data = [{
   title: "Darwinian evolution: 3 implementations of snapshot isolation in SAP HANA",
   name: "Mihnea Andrei ( SAP )",
   author_url: "#",
-  date: "14:00 11 Mar 2016",
+  date: "11 Mar 2016",
   place: "051",
   abstract: [
     `The talk presents the HANA column store, then focuses on 3 historical version of snapshot isolation implementation, presenting for each what was working well and why we evolved to the next one.`,
@@ -242,11 +231,27 @@ const visitors_data = [{
   ],
   oxford_url: "#",
 }, {
+  id: "modal-1466",
+  title: "Functional Aggregate Queries Asked Frequently (FAQAF)",
+  name: "Hung Ngo ( LogicBlox and SUNY-Buffalo )",
+  author_url: "#",
+  date: "17 Nov 2015",
+  place: "051",
+  abstract: [
+    `We show how a variety of problems from database, logic, probabilistic graphical model (PGM) inference, matrix computation, constraint satisfaction (CSP), etc. can be formulated as instances of the same problem called the Functional Aggregate Query (FAQ) problem. Then, we explain how a pair of very simple algorithms called OutsideIn and InsideOut can be used in concert to solve the FAQ problem. OutsideIn is a slightly more general version of recent worst-case optimal join algorithms. InsideOut is a slightly more general version of the classic variable elimination algorithm. 
+    `,
+    `As is the case with constraint programming and graphical model inference, to make InsideOut run efficiently we need to solve an optimization problem to compute an appropriate variable ordering. The main technical contribution of this work is a precise characterization of when a variable ordering is "semantically equivalent" to the variable ordering given by the input FAQ expression. Then, we design an approximation algorithm to find an equivalent variable ordering that has the best "fractional FAQ-width". Our results imply a host of known and a few new results in graphical model inference, matrix operations, relational joins, and logic.
+    `,
+    `This is joint work with Mahmoud Abo Khamis and Atri Rudra.
+    `
+  ],
+  oxford_url: "https://www.cs.ox.ac.uk/seminars/1466.html",
+}, {
   id: "modal-paul-beame",
   title: "Parallel Query Evaluation",
   name: "Paul Beame and Paris Koutris",
   author_url: "#",
-  date: "14:00 5 Nov 2015",
+  date: "5 Nov 2015",
   place: "LTB",
   abstract: [
     `Fix a full, conjunctive query, and consider the following problem: what is the amount of communication required to compute the query in parallel, on p servers, over a large database instance?  We define the Massively Parallel Communication (MPC) model, where the computation proceeds in rounds consisting of local computations followed by a global reshuffling of the data.  Servers have unlimited computational power and are allowed to exchange any data, the only cost parameters are the number of rounds and the maximum amount of communication per server.  I will describe tight bounds on the amount of communication for the case of a single round and data without skew, then discuss extensions to skewed data and multiround.`,
@@ -303,7 +308,7 @@ var news_app = new Vue({
       return news_data.slice(0, Math.min(3, news_data.length))
     },
     acknowledgement_logos: function () {
-      return acknowledgements_data.sort((a,b) => a.tag > b.tag)
+      return acknowledgements_data.sort((a, b) => a.tag > b.tag)
     },
   }
 })
