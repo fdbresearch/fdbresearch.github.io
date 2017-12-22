@@ -139,30 +139,6 @@ const awards_data = [{
 ]
 
 const visitors_data = [{
-  id: "modal-1944",
-  title: "How to Architect a Query Compiler",
-  name: "Amir Shaikhha (EPFL)",
-  author_url: "https://people.epfl.ch/amir.shaikhha",
-  date: "5 January 2018",
-  place: "051",
-  abstract: [
-    `In this talk, we study architecting query compilers. The state of the art in query compiler construction is lagging behind that in the compilers field. We attempt to remedy this by exploring the key causes of technical challenges in need of well-founded solutions, and by gathering the most relevant ideas and approaches from the PL and compilers communities for easy digestion by database researchers. All query compilers known to us are more or less monolithic template expanders that do the bulk of the compilation task in one large leap. Such systems are hard to build and maintain. We propose to use a stack of multiple DSLs on different levels of abstraction with lowering in multiple steps to make query compilers easier to build and extend, ultimately allowing us to create more convincing and sustainable compiler-based data management systems. We attempt to derive our advice for creating such DSL stacks from widely accepted principles. We have also re-created a well-known query compiler following these ideas and report on this effort.`,
-    `Amir Shaikhha is a 5th year Ph.D. student at EPFL. His research aims to build efficient data analytics systems using high-level languages. More specifically, he is interested in using compilation techniques for generating efficient low-level code (e.g. C code) from the high-level specification (e.g. Scala code) of performance-critical systems (e.g. database systems). He received his M.Sc. from EPFL and B.S. from the Sharif University of Technology.`,
-  ],
-  oxford_url: "http://www.cs.ox.ac.uk/seminars/1944.html",
-},  id: "modal-1928",
-  title: "The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing Under Updates",
-  name: "Stijn Vansummeren (Université Libre de Bruxelles)",
-  author_url: "http://cs.ulb.ac.be/members/stijn/index.html",
-  date: "21 Nov 2017",
-  place: "051",
-  abstract: [
-    `Modern computing tasks such as real-time analytics require refresh of query results under high update rates. Incremental View Maintenance (IVM) approaches this problem by materializing results in order to avoid recomputation. IVM naturally induces a trade-off between the space needed to maintain the materialized results and the time used to process updates.`,
-    `In this talk, we show that the full materialization of results is a barrier for more general optimization strategies. In particular, we present a new approach for evaluating queries under updates. Instead of the materialization of results, we require a data structure that allows: (1) linear time maintenance under updates, (2) constant-delay enumeration of the output, (3) constant-time lookups in the output, while (4) using only linear space in the size of the database. We call such a structure a Dynamic Constant delay Linear Representation (DCLR) for the query. We show that Dyn, a dynamic version of the Yannakakis algorithm, yields DCLRs for the class of free-connex acyclic CQs. We show that this is optimal in the sense that no DCLR can exist for CQs that are not free-connex acyclic. Moreover, we identify a sub-class of queries for which Dyn features constant-time update per tuple and show that this class is maximal. An experimental validation of Dyn shows that it is highly effective in practice.`,
-    `The talk will conclude with current insights on ongoing research on how Dyn can be extended to also allow processing of more general classes of queries, in particular queries that feature in-equality joins rather than equality joins. Such in-equality joins are important in relational-style queries, but are also prominently present in the area of Complex Event Recognition.`
-  ],
-  oxford_url: "http://www.cs.ox.ac.uk/seminars/1928.html",
-}, {
   id: "modal-1932",
   title: "Decision-theoretic planning via probabilistic programming",
   name: "Vaishak Belle ( Edinburgh )",
