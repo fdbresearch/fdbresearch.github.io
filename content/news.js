@@ -143,7 +143,7 @@ const visitors_data = [{
   title: "How to Architect a Query Compiler",
   name: "Amir Shaikhha (EPFL)",
   author_url: "https://people.epfl.ch/amir.shaikhha",
-  date: "January 3-5, 2018",
+  date: "5 January 2018",
   place: "051",
   abstract: [
     `In this talk, we study architecting query compilers. The state of the art in query compiler construction is lagging behind that in the compilers field. We attempt to remedy this by exploring the key causes of technical challenges in need of well-founded solutions, and by gathering the most relevant ideas and approaches from the PL and compilers communities for easy digestion by database researchers. All query compilers known to us are more or less monolithic template expanders that do the bulk of the compilation task in one large leap. Such systems are hard to build and maintain. We propose to use a stack of multiple DSLs on different levels of abstraction with lowering in multiple steps to make query compilers easier to build and extend, ultimately allowing us to create more convincing and sustainable compiler-based data management systems. We attempt to derive our advice for creating such DSL stacks from widely accepted principles. We have also re-created a well-known query compiler following these ideas and report on this effort.`,
