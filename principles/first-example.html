@@ -200,27 +200,32 @@
               as a tree that has a subtree for each $a_i$ with $i \in [n]$.
               The subtree of each $a_i$
               lists all values in $R_i$ and $S_i$ at its leaves.
+              </p>
               
               <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="simple_f_tree.png">
                       </figure>
               
-              We can also represent the join result succinctly by one of its subsets, called cover of the join result. To construct a cover of $R \Join S$,
+              <p class="example g-color-black-opacity-0_8">
+              We can also represent the join result by only taking a linear-size subset of it that contains enough information to reconstruct the entire join result. Such a subset is called a cover of the join result.
+              To construct a cover of $R \Join S$,
               we consider the bipartite graph of $R \Join S$.
               The nodes of this graph are the tuples
               in $R$ and $S$ and the edges connect joinable tuples.
               We take an arbitrary  minimal edge cover of this graph.
               A cover of $R \Join S$ contains one tuple for each edge in such a minimal edge cover of the graph of $R \Join S$.
-              The follwoing picture shows a possible minimal edge cover of the graph of $R \Join S$ in case
+              The following picture shows a possible minimal edge cover of the graph of $R \Join S$
+              and the corresponding cover of $R \Join S$
+              in case
               $R_i \leq S_i$ for each $i \in [n]$.
+              </p>
               <figure class="u-shadow-v25 g-mb-30">
                   <img class="img-fluid w-100" src="simple_cover.png">
-                      </figure>
-              
-              <br/> These simple ideas can be applied to arbitrary join queries, albeit with a bit more effort. The complexity
-              gap between sizes (and times) for the listing representation on one hand, and the sizes (and times) for our
-              succinct representations on the other hand can be ${\cal O}(N^q)$, where $N$ is the size of the database
-              and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude
+            </figure>
+              <p class="example g-color-black-opacity-0_8">
+               These simple ideas can be applied to arbitrary join queries, albeit with a bit more effort. There exist queries and databases for which the sizes (and computation times) for our succinct representations of the query results is ${\cal O}(N)$, while
+               the sizes (and computation times) for the listing representations is ${\cal O}(N^q)$,
+               where $N$ is the size of the database and $q$ is the number of relations in the join query. This can lead in practice to many orders of magnitude
               improvement in performance for query processing in our approach versus the state-of-the-art!
               </p>
 
@@ -306,7 +311,7 @@
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="../contacts.html">Contact Us</a>
                 </li>
                 <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 3 Nov 2017</a>
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 5 Feb 2018</a>
                 </li>
               </ul>
               <!-- End Links -->
