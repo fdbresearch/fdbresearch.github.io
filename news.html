@@ -295,6 +295,45 @@
             <h2 class="u-heading-v3__title g-color-gray-dark-v1
             g-brd-primary">Visitors</h2>
           </div>
+
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                22 March 2018: 
+                <a href="http://pages.cs.wisc.edu/~paris/" class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover">Paris Koutris (University of Wisconsin-Madison)</a>
+              </h5>
+            </span>
+            <h5>
+              <a href="#modal-1998" data-modal-target="#modal-1998" data-modal-effect="fadein" class="g-font-weight-700">Compressed Representations of Conjunctive Query Results</a>
+            </h5>
+            <p class="g-color-gray-dark-v1">
+              Relational queries, and in particular join queries, often generate large output results when executed over a huge dataset. In such cases, it is often infeasible to store the whole materialized output if we plan to reuse it further down a data processing pipeline. In this talk, we consider the problem of constructing space-efficient compressed representations of the output of conjunctive queries, with the goal of supporting the efficient access of the intermediate compressed result for a given access pattern...
+              <br>
+              <a href="#modal-1998" data-modal-target="#modal-1998" data-modal-effect="fadein" class="g-font-size-12">Read More..</a>
+            </p>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+          </article>
+          
+          
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                20 March 2018: 
+                <a href="http://pages.cs.wisc.edu/~paris/" class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover">Kurt Stirewalt (Vice President of Software Development, Infor Retail)</a>
+              </h5>
+            </span>
+            <h5>
+              <a href="#modal-1990" data-modal-target="#modal-1990" data-modal-effect="fadein" class="g-font-weight-700">Using LogicBlox to build large retail analytics applications</a>
+            </h5>
+            <p class="g-color-gray-dark-v1">
+LogiQL is a declarative modeling language for concisely expressing rich data models with powerful constraints and business rules. The declarative nature and simple syntax of LogiQL makes it amenable to many different implementation strategies...
+              <br>
+              <a href="#modal-1990" data-modal-target="#modal-1990" data-modal-effect="fadein" class="g-font-size-12">Read More..</a>
+            </p>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10">
+          </article>
+          
+          
           
           <article>
             <span class="g-font-size-12">
@@ -602,7 +641,7 @@
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
                 </li>
                 <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 7 Feb 2018</a>
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 28 Feb 2018</a>
                 </li>
               </ul>
               <!-- End Links -->
@@ -618,6 +657,60 @@
 
     <!-- modal window -->
     <div>
+
+
+      <div id="modal-1998" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+        <button type="button" onclick="Custombox.modal.close();" class="close">
+          <i class="hs-icon hs-icon-close"></i>
+        </button>
+        <h4 class="g-mb-20">
+          <a>Compressed Representations of Conjunctive Query Results</a>
+        </h4>
+        <p>
+Relational queries, and in particular join queries, often generate large output results when executed over a huge dataset. In such cases, it is often infeasible to store the whole materialized output if we plan to reuse it further down a data processing pipeline. In this talk, we consider the problem of constructing space-efficient compressed representations of the output of conjunctive queries, with the goal of supporting the efficient access of the intermediate compressed result for a given access pattern. In particular, we will study of an important tradeoff : minimizing the space necessary to store the compressed result, versus minimizing the answer time and delay for an access request over the result. We present a novel parameterized data structure, which can be tuned to trade off space for answer time. This tradeoff allows us to control the space requirement of the data structure precisely, and depends both on the structure of the query and the access pattern. We then show how we can use the data structure in conjunction with query decomposition techniques, in order to efficiently represent the outputs for several classes of conjunctive queries. Finally, we conclude with some exciting open problems in this area.
+</p>
+
+<p>This is joint work with Shaleen Deep.</p>
+        <p>
+Short Bio: Paris Koutris is an assistant professor at the University of Wisconsin-Madison, where he started in Fall 2015. He completed his Ph.D. in the Computer Science & Engineering Department at the University of Washington, advised by Dan Suciu. His research focuses on the theoretical aspects of data management. He is particularly interested in applying formal methods to various problems of modern data management systems: data processing in massively parallel systems and at scale, data pricing, and managing data with uncertainty. For his Ph.D. thesis, he received the 2016 SIGMOD Jim Gray Doctoral Dissertation Award.
+</p>
+        </div>
+
+      <div id="modal-1990" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
+        <button type="button" onclick="Custombox.modal.close();" class="close">
+          <i class="hs-icon hs-icon-close"></i>
+        </button>
+        <h4 class="g-mb-20">
+          <a>Using LogicBlox to build large retail analytics applications</a>
+        </h4>
+        <p>
+LogiQL is a declarative modeling language for concisely expressing rich data models with powerful constraints and business rules. The declarative nature and simple syntax of LogiQL makes it amenable to many different implementation strategies, including:
+</p>
+<ul>
+<li>
+allowing the database to determine how data are stored and indexed;
+</li>
+<li>
+deciding how queries are evaluated and results cached;
+</li>
+<li>
+evaluating concurrent transactions to maximize throughput; and even
+</li>
+<li>
+employing powerful constraint optimization solvers to solve linear and integer programming problems.
+</li>
+</ul>
+<p>
+This ability to declare a model in a manner that is abstract with respect to implementation strategy is powerful. As a simple example, it removes much of the complexity of multi-core programming. It also enables a new approach to programming large database applications, especially those requiring complex prescriptive and descriptive analytics. Infor Retail has adopted LogiQL (and the LogicBlox platform) to build out our suite of retail forecasting and supply-chain optimization products. This talk gives a brief introduction to LogiQL and LogicBlox in the context of several common modeling problems in the retail domain.
+</p>
+
+        <p>
+Short Bio: Kurt Stirewalt joined LogicBlox in 2009 and has since served as Dev Lead, Chief Application Architect, and eventually VP of Software Development for Infor Retail, which acquired LogicBlox by acquisition in 2016. Previously, he was a professor of computer science and engineering at Michigan State University, where he specialized in model-based software development, generative programming, and software reuse. Kurt received his PhD in computer science from the Georgia Institute of Technology in 1997.
+</p>
+        </div>
+
+
+
       <div id="modal-1976" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" style="display: none;">
         <button type="button" onclick="Custombox.modal.close();" class="close">
           <i class="hs-icon hs-icon-close"></i>
