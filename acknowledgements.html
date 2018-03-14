@@ -4,19 +4,22 @@
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109826838-1"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-111495058-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111495058-1');
+  </script>
 
 
-  
+
   <!-- Title -->
   <title>FDB Research</title>
 
@@ -93,9 +96,22 @@
                     <a href="index.html" class="nav-link g-py-7 g-px-0">Home</a>
                   </li>
                   <!-- End Home -->
-                  <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                    <a href="news.html" class="nav-link g-py-7 g-px-0">News</a>
-                  </li>
+                  <!-- Projects -->
+                  <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                      <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">News</a>
+    
+                      <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                        id="nav-submenu--features" aria-labelledby="nav-link--features">
+                        <li class="dropdown-item ">
+                          <a class="nav-link" href="events.html">
+                            Events</a>
+                        </li>
+                        <li class="dropdown-item ">
+                          <a class="nav-link" href="awards.html">Awards</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <!-- End Projects -->
                   <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                     <a href="people.html" class="nav-link g-py-7 g-px-0">People</a>
                   </li>
@@ -187,7 +203,9 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">June 2017</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">We received a Microsoft Azure research grant via The Alan Turing Institute. Thank you Microsoft and Turing! This grant supports our extensive experimentation for the systems developed in our project, including F-IVM for incremental maintenance and F for in-database analytics.
+                <h4 class="g-font-size-13 mb-0">We received a Microsoft Azure research grant via The Alan Turing Institute. Thank you Microsoft and Turing!
+                  This grant supports our extensive experimentation for the systems developed in our project, including F-IVM
+                  for incremental maintenance and F for in-database analytics.
                 </h4>
               </div>
             </article>
@@ -203,7 +221,8 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">July 2016</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">We received a Fondation Wiener Anspach grant jointly with Sijn Vansummeren of Free University of Brussels. This grant supports the postdoc Ahmet Kara (Oct 2017 - Sept 2018).</h4>
+                <h4 class="g-font-size-13 mb-0">We received a Fondation Wiener Anspach grant jointly with Sijn Vansummeren of Free University of Brussels.
+                  This grant supports the postdoc Ahmet Kara (Oct 2017 - Sept 2018).</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -218,7 +237,8 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">April 2015</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">The postdoctoral researcher Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (June 2015 - June 2016).</h4>
+                <h4 class="g-font-size-13 mb-0">The postdoctoral researcher Radu Ciucanu has been supported by the DBOnto EPSRC platform grant (June 2015
+                  - June 2016).</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -234,7 +254,9 @@
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">December 2015</a>
                 </span>
                 <h4 class="g-font-size-13 mb-0">We received a prestigious ERC Consolidator Grant worth almost 2 Million Euro to work on foundations of factorized
-                  data management systems. This grant supports Professor Dan Olteanu from June 2016 to May 2021, PhD student Max Schleich (starting June 2016), PhD student Haozhe Zhang (starting Oct 2017), Postdoc Ahmet Kara (starting Sept 2016), Postdoc Amir Payberach (April-Aug 2017), Lecturer Milos Nikolic (starting Oct 2016).</h4>
+                  data management systems. This grant supports Professor Dan Olteanu from June 2016 to May 2021, PhD student
+                  Max Schleich (starting June 2016), PhD student Haozhe Zhang (starting Oct 2017), Postdoc Ahmet Kara (starting
+                  Sept 2016), Postdoc Amir Payberach (April-Aug 2017), Lecturer Milos Nikolic (starting Oct 2016).</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -264,7 +286,8 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">January 2015</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">We received an AWS in Education Research grant. Thank you Amazon! This award supported some of our experiments on in-database analytics during summer and fall of 2015.</h4>
+                <h4 class="g-font-size-13 mb-0">We received an AWS in Education Research grant. Thank you Amazon! This award supported some of our experiments
+                  on in-database analytics during summer and fall of 2015.</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -280,7 +303,9 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">September 2014</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">LogicBlox has supported our project from September 2014 to August 2017 via our continuous collaboration, exposure to real-world technical challenges, real-world datasets, and support for some of our research visits to their North-American labs.
+                <h4 class="g-font-size-13 mb-0">LogicBlox has supported our project from September 2014 to August 2017 via our continuous collaboration,
+                  exposure to real-world technical challenges, real-world datasets, and support for some of our research
+                  visits to their North-American labs.
                 </h4>
               </div>
             </article>
@@ -296,7 +321,8 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">August 2014</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">We received a Google Research Award. Thank you Google! This award has supported Maximilian Schleich for his first PhD year (Oct 2015-June 2016) and also a series of visits by collaborators.</h4>
+                <h4 class="g-font-size-13 mb-0">We received a Google Research Award. Thank you Google! This award has supported Maximilian Schleich for his
+                  first PhD year (Oct 2015-June 2016) and also a series of visits by collaborators.</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -311,7 +337,8 @@
                 <span class="g-font-size-14">
                   <a href="#" class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">April 2013</a>
                 </span>
-                <h4 class="g-font-size-13 mb-0">Dan Olteanu acknowledges the support of an Astor Travel Fund grant used to cover his August 2013 - July 2014 travel costs for talks at universities and companies on the US West Coast.</h4>
+                <h4 class="g-font-size-13 mb-0">Dan Olteanu acknowledges the support of an Astor Travel Fund grant used to cover his August 2013 - July 2014
+                  travel costs for talks at universities and companies on the US West Coast.</h4>
               </div>
             </article>
             <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15">
@@ -340,39 +367,39 @@
 
     <!-- Footer -->
     <div class="g-pt-50">
-        <footer class="g-bg-secondary">
-          <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
-  
-          <div class="container">
-            <!-- Footer - Bottom Section -->
-            <div class="row align-items-center">
-              <div class="col-md-2 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-                <!-- Copyright -->
-                <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017 All Rights Reserved.</p>
-                <!-- End Copyright -->
-              </div>
-  
-              <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-                <!-- Links -->
-                <ul class="list-inline mb-0">
-                  <li class="list-inline-item g-pl-0 g-pr-10">
-                    <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
-                  </li>
-                  <li class="list-inline-item g-px-10">
-                      <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" >Last modified: 25 Oct 2017</a>
-                  </li>
-                </ul>
-                <!-- End Links -->
-              </div>
-  
-  
+      <footer class="g-bg-secondary">
+        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
+
+        <div class="container">
+          <!-- Footer - Bottom Section -->
+          <div class="row align-items-center">
+            <div class="col-md-2 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Copyright -->
+              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017 All Rights Reserved.</p>
+              <!-- End Copyright -->
             </div>
-            <!-- End Footer - Bottom Section -->
+
+            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Links -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item g-pl-0 g-pr-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
+                </li>
+                <li class="list-inline-item g-px-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 25 Oct 2017</a>
+                </li>
+              </ul>
+              <!-- End Links -->
+            </div>
+
+
           </div>
-        </footer>
-      </div>
-      <!-- End Footer -->
-  
+          <!-- End Footer - Bottom Section -->
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
+
 
   </main>
 
