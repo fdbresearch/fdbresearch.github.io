@@ -1,0 +1,62 @@
+Misconceptions about Factorized Databases
+
+.. collected from various research papers
+
+
+
+
+Factorized databases can be useful in a number of scenarios such as: classical relational query processing; incremental view maintenance; provenance and probabilistic databases; and in-database machine learning. By "useful" we mean here lower worst-case time and space complexity and several orders of magnitude performance speedups for some real and synthetic datasets than the state-of-the-art.
+
+
+As motivation for factorized databases, we emphasized in our papers several settings where they particularly shine:
+
+* Computation of analytics (that is: aggregates, various linear algebra tasks, and machine learning) over many-to-many or cyclic database joins; and
+
+* Compressed lossless representations of results to queries with such joins to support view materialization scenarios.
+
+Follow-up papers by colleagues in database systems were however quick to wrongly assume that these are the only interesting settings where factorization can make a difference to performance in practice. Below, we distilled 
+
+In research (database systems research at least), it is often the case that 
+
+
+When writing research papers
+
+
+This led involuntarily to misconceptions 
+
+
+
+
+
+1. There is no benefit of factorized computation for key-foreign key acyclic joins, since they have no computational redundancy 
+
+
+Retailer dataset used in many of our papers (SIGMOD'16, ..):
+
+- Inventory key: (locn, date, ksn) determine the number of inventory units
+- Weather key: (locn, date)
+- Items key: ksn 
+- Location key: locn   +  (zip is a foreign key)
+- Census key: zip 
+
+
+0. There is no difference between factorized in-database learning done by us and factorized learning done by Arun Kumar et al. Afterall, they share the same naming.
+
+
+
+
+Our FDB work has been trialled in the LogicBlox system, before it got acquired by Infor. 
+
+
+
+Further misconceptions
+
+x1. "their techniques apply only to in-memory datasets."
+
+
+x2. "factorized learning reduces compu- tation cost by creating large intermediate states to avoid computational redundancy. In our case, there is likely no computational redundancy (the join is key-key), while large intermediate states could raise communication cost."
+
+it creates 
+
+
+
