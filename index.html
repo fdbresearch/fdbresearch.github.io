@@ -64,7 +64,6 @@
 <body>
   <main>
 
-
     <!-- Header -->
     <header id="js-header" class="u-header u-header--static u-shadow-v19">
       <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
@@ -144,9 +143,21 @@
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                   <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
                 </li>
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="code.html" class="nav-link g-py-7 g-px-0">Code</a>
+
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu--features">Code</a>
+
+                  <ul class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features" aria-labelledby="nav-link--features">
+                    <li class="dropdown-item ">
+                      <a class="nav-link" href="fivm-code.html">
+                        F-IVM</a>
+                    </li>
+                  </ul>
                 </li>
+                <!-- End Code -->
+
                 <li class="nav-item  g-mx-10--lg g-mx-15--xl">
                   <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
                 </li>
@@ -237,7 +248,7 @@
               <a href="#" class="u-link-v5 g-color-gray-dark-v4">January 2019</a>
             </span>
             <h3 class="h6">
-              <p class="g-color-gray-dark-v1"><a href="./ivm.html">FIVM</a> 1.0 is now released to the public. [<a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-sigmod18.pdf">pdf</a>, <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</a>, <a href="https://github.com/fdbresearch/FIVM">repository</a>]</p>
+              <p class="g-color-gray-dark-v1"><a href="https://github.com/fdbresearch/FIVM">F-IVM</a> 1.0 is now released to the public. [<a href="https://github.com/fdbresearch/FIVM">repository</a>]</p>
             </h3>
             <!-- <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10"> -->
           </article>
