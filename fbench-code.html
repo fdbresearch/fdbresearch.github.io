@@ -3,17 +3,15 @@
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-111495058-1');
-  </script>
+  gtag('config', 'UA-111495058-1');
+</script>
 
   <!-- Title -->
   <title>FDB Research</title>
@@ -22,16 +20,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="keywords" content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
-  <meta name="description" content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <!-- <link rel="manifest" href="manifest.json"> -->
+  <link rel="manifest" href="manifest.json">
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4270a9">
   <meta name="theme-color" content="#ffffff">
+  <meta name="keywords" content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
+  <meta name="description" content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
@@ -57,14 +55,10 @@
   <!-- CSS Customization -->
   <link rel="stylesheet" href="assets/css/custom.css">
 
-  <style>
-    #map {
-      width: 100%;
-      height: 400px;
-      background-color: grey;
-    }
-  </style>
-
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
 </head>
 
 <body>
@@ -198,15 +192,13 @@
     </header>
     <!-- End Header -->
 
-
     <!-- Breadcrumbs -->
     <section class="g-bg-gray-light-v5 g-py-50">
       <div class="container">
         <div class="d-sm-flex text-center">
           <div class="align-self-center">
-            <h2 class="h3 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">Contact</h2>
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">FBENCH</h2>
           </div>
-
 
         </div>
       </div>
@@ -217,62 +209,53 @@
 
 
     <!-- Blog Minimal Blocks -->
-    <div id="fdb-app" class="container">
 
-      <!-- row -->
-      <div class="row">
-        <a name="News"></a>
-        <a name="Awards"></a>
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
         <!-- left panel -->
-        <div class="col-lg-7">
-          <div id="map"></div>
-
-        </div>
+        <div class="col-lg-1 g-mb-80"></div>
         <!-- end left panel -->
+        <!-- Articles Content -->
+        <div class="col-lg-10 g-mb-50 g-mb-0--lg">
+          <article class="g-mb-60">
 
-        <div class="col-lg-1 "></div>
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p class="g-color-black-opacity-0_8">
+                FBENCH is an open-source software for factorized join computation and computing compression ratio of factorization over listing representation. Used for benchmarks reported in various research papers.
+              </p>
+              <p class="g-color-black-opacity-0_8">
+                  <a href="#">FBENCH</a> 1.0 is now released to the public.
+              </p>
+          </article>
+          <div class="g-mb-30">
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Code</h2>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <strong>FBENCH 1.0 Repository</strong>
+              <!-- <a href="https://github.com/fdbresearch/FIVM">https://github.com/fdbresearch/FIVM</a> -->
+            </li>
+          </ul>
+
+
+          <div id="stickyblock-end"></div>
+        </div>
+        <!-- End Articles Content -->
 
         <!-- right panel -->
-        <div class="col-lg-4 ">
-
-          <h2 class="g-font-weight-300 mb-5">FDB research group</h2>
-
-          <div class="mb-4">
-            <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Address:</h2>
-            <p class="g-color-gray-dark-v4 g-font-size-16">Wolfson Building
-              <br>Department of Computer Science
-              <br>University of Oxford
-              <br>Parks Rd
-              <br>Oxford
-              <br>OX1 3QD
-              <br>United Kingdom</p>
-          </div>
-
-          <div class="mb-4">
-            <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Email us:</h2>
-            <p class="g-color-gray-dark-v4">Email:
-              <a class="g-color-gray-dark-v2" href="#">dan.olteanu@cs.ox.ac.uk</a>
-            </p>
-          </div>
-
-
-
-        </div>
+        <div class="col-lg-1 g-mb-80"></div>
         <!-- end right panel -->
 
+
       </div>
-      <!-- end row -->
-
-      <!-- row -->
-
-    </div>
 
 
 
 
     </div>
     <!-- End Blog Minimal Blocks -->
-
 
 
     <!-- Footer -->
@@ -296,7 +279,7 @@
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
                 </li>
                 <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 25 October 2017</a>
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 29 January 2019</a>
                 </li>
               </ul>
               <!-- End Links -->
@@ -314,31 +297,7 @@
 
 
 
-
   </main>
-
-  <script>
-    function initMap() {
-      var department = {
-        lat: 51.759821,
-        lng: -1.258473
-      };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: department
-      });
-      var marker = new google.maps.Marker({
-        position: department,
-        map: map
-      });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4DNfudn3O5OTiRduQT7-GmYqAdKgdgvc&callback=initMap">
-  </script>
-
-  <!-- Vue.js part -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
-  <script src="./content/news.js"></script>
 
   <!-- JS Global Compulsory -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
