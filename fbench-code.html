@@ -160,7 +160,7 @@
                     id="nav-submenu--features" aria-labelledby="nav-link--features">
                     <li class="dropdown-item ">
                       <a class="nav-link" href="fivm-code.html">
-                        F-IVM</a>
+                        FIVM</a>
                     </li>
                     <li class="dropdown-item ">
                       <a class="nav-link" href="fbench-code.html">
@@ -221,10 +221,19 @@
 
             <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
               <p class="g-color-black-opacity-0_8">
-                FBENCH is an open-source software for factorized join computation and computing compression ratio of factorization over listing representation. Used for benchmarks reported in various research papers.
+                This repository contains an implementation of factorised databases focused on computing the size of a join result and the resulting compression factor.
               </p>
+              <p class="g-color-black-opacity-0_8">The aim of factorised databases is to reduce the redundancy appearing in query results of conjunctive queries. By distributing the products over unions it is often possible to avoid enumerating Cartesian products that appear in a join result. This is achieved using analysis of the query given an order of the variables used (d-tree). This representation is amenable for further computation and can be used o achieve significant performance improvements when training certain machine learning models directly on the database. See the TODS 2015 paper 
+              <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">Size Bounds for Factorised Representations of Query Results</a> for more details on this method.</p>
+              <p class="g-color-black-opacity-0_8">The implementation in this repository focuses on computing the size of a factorised representation given a database and a query/variable order. It returns a compression factor computed as C = (A*T)/V where</p>
+              <ul>
+                <li>A is the number of attributes in the query result (i.e., the number of variables),</li>
+                <li>T is the number of tuples in the query result, and</li>
+                <li>V is the number of singleton values in the factorised representation of the result.</li>
+              </ul>
+              <p class="g-color-black-opacity-0_8">More information on the principles of factorised databases can be found on the main page.</p>
               <p class="g-color-black-opacity-0_8">
-                  <a href="#">FBENCH</a> 1.0 is now released to the public.
+                  <a href="https://github.com/fdbresearch/FBENCH">FBENCH</a> 1.0 is now released to the public.
               </p>
           </article>
           <div class="g-mb-30">
@@ -235,7 +244,7 @@
           <ul>
             <li>
               <strong>FBENCH 1.0 Repository</strong>
-              <!-- <a href="https://github.com/fdbresearch/FIVM">https://github.com/fdbresearch/FIVM</a> -->
+              <a href="https://github.com/fdbresearch/FBENCH">https://github.com/fdbresearch/FBENCH</a>
             </li>
           </ul>
 
@@ -279,7 +288,7 @@
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
                 </li>
                 <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 29 January 2019</a>
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: 6 February 2019</a>
                 </li>
               </ul>
               <!-- End Links -->
