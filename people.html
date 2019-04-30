@@ -56,6 +56,10 @@
   <!-- CSS Customization -->
   <link rel="stylesheet" href="assets/css/custom.css">
   <link rel="stylesheet" href="assets/vendor/academicons/css/academicons.css" />
+
+  <!-- image-slider -->
+  <link rel="stylesheet" href="./bower_components/ideal-image-slider/ideal-image-slider.css">
+  <link rel="stylesheet" href="./bower_components/ideal-image-slider/themes/default/default.css">
 </head>
 
 <body>
@@ -226,36 +230,40 @@
 
     <div class="container g-pb-20">
 
-      <div class="row justify-content-between">
-        <!-- Group block -->
-        <div class="col-lg-12 col-sm-12">
-          <!-- Team Block -->
-          <div class="u-info-v1-2">
-            <!-- Figure -->
-            <figure class="u-block-hover">
-              <!-- Figure Image -->
-              <img class="w-100" src="assets/people/group.JPG" alt="FDB Group Picture">
-              <!-- End Figure Image-->
 
-              <figcaption class="g-pos-abs g-top-20 g-left-20">
-                <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">10 Oct 2018</a>
-              </figcaption>
-            </figure>
-            <!-- End Figure -->
-
-            <!-- Figure Info -->
-            <div class="g-bg-white g-py-25" id="group-members">
-              <div class="g-mb-15">
-                <h4 class="h5 g-color-black g-mb-5">FDB Group</h4>
-                <em class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary"></em>
+        <div class="row justify-content-between">
+            <!-- Group block -->
+            <div class="col-lg-12 col-sm-12">
+              <!-- Team Block -->
+              <div class="u-info-v1-2">
+                <!-- Figure -->
+                <figure class="u-block-hover">
+                  <!-- Figure Image -->
+                  <div id="slider">
+                      <img src="./assets/group/group3.jpg" title="14 March 2019" alt="Department of Computer Science">
+                      <img data-src="./assets/group/group4.jpg" src="" title="14 March 2019" alt="Department of Computer Science">
+                      <img data-src="./assets/group/group.jpg" src="" title="10 October 2018" alt="Oxford University Parks">
+                      <img data-src="./assets/group/group2.jpg" src="" title="25 October 2017" alt="Oxford University Parks">
+                  </div>
+    
+                 </figure>
+                <!-- End Figure -->
+    
+                <!-- Figure Info -->
+                <div class="g-bg-white g-py-25" id="group-members">
+                  <div class="g-mb-15">
+                    <h4 class="h5 g-color-black g-mb-5">FDB Group</h4>
+                    <em class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary"></em>
+                  </div>
+    
+                </div>
+                <!-- End Figure Info-->
               </div>
-
+              <!-- End Team Block -->
             </div>
-            <!-- End Figure Info-->
-          </div>
-          <!-- End Team Block -->
-        </div>
-        <!-- End Group block -->
+            <!-- End Group block -->
+
+
 
         <!-- People -->
         <section class="container g-pb-40" id="Karen">
@@ -1094,36 +1102,6 @@
       </UL>
 
 
-      <br><br>
-      <div class="g-mb-30" id="alumni">
-        <div class="u-heading-v3-1 g-mb-30">
-          <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Previous Photos</h2>
-        </div>
-      </div>
-      <div class="row justify-content-between">
-        <!-- Group block -->
-        <div class="col-lg-12 col-sm-12">
-          <!-- Team Block -->
-          <div class="u-info-v1-2">
-            <!-- Figure -->
-            <figure class="u-block-hover">
-              <!-- Figure Image -->
-              <img class="w-100" src="assets/people/group2.jpeg" alt="FDB Group Picture">
-              <!-- End Figure Image-->
-
-              <figcaption class="g-pos-abs g-top-20 g-left-20">
-                <a class="btn btn-xs u-btn-teal text-uppercase rounded-0" href="#">25 Oct 2017</a>
-              </figcaption>
-            </figure>
-            <!-- End Figure -->
-
-          </div>
-          <!-- End Team Block -->
-        </div>
-        <!-- End Group block -->
-      </div>
-
-
     </div>
     <!-- End Blog Minimal Blocks -->
 
@@ -1195,6 +1173,21 @@
   <script src="assets/js/components/hs.onscroll-animation.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
   <script src="assets/js/components/hs.carousel.js"></script>
+
+  <!-- slider -->
+  <script src="./bower_components/ideal-image-slider/ideal-image-slider.min.js"></script>
+  <script src="./bower_components/ideal-image-slider/extensions/captions/iis-captions.js"></script>
+  <script src="./bower_components/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js"></script>
+
+  <script>
+    var slider = new IdealImageSlider.Slider({
+      selector: '#slider',
+      interval: 4000
+    });
+    slider.addBulletNav();
+    slider.addCaptions();
+    slider.start();
+  </script>
 
   <!-- JS Customization -->
   <script src="assets/js/custom.js"></script>
