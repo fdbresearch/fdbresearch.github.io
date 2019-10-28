@@ -55,13 +55,6 @@ class Node {
 
     let resulted_variable_orders = []
 
-    // add as the child node of the current node
-    resulted_variable_orders.push(
-      new Node(this._variable,
-        [...this.child_nodes, new Node(variable, [], intersection([...this.anc, this._variable], query.dep[variable]), [...this.anc, this._variable])],
-        this.key_set, this.anc)
-    )
-
     // add to child nodes
     const res = this.child_nodes.flatMap((child_node, i) => {
       const other_child_nodes = this.child_nodes.filter(n => n._variable != child_node._variable)
@@ -77,12 +70,27 @@ class Node {
         return self
       })
     })
-
-
     resulted_variable_orders = resulted_variable_orders.concat(res)
+
+
+    // add as the child node of the current node
+    // check whether the position is ok
+    if (!this.child_nodes.some(child_node => child_node.contains_variables(query.dep[variable])))
+      resulted_variable_orders.push(
+        new Node(this._variable,
+          [...this.child_nodes, new Node(variable, [], intersection([...this.anc, this._variable], query.dep[variable]), [...this.anc, this._variable])],
+          this.key_set, this.anc)
+      )
 
     return resulted_variable_orders
 
+  }
+
+  contains_variables(variables) {
+    if (variables.includes(this._variable))
+      return true
+
+    return this.child_nodes.some(child_node => child_node.contains_variables(variables))
   }
 }
 
@@ -162,16 +170,16 @@ class Query {
 
   // TODO: remove non-join variables
   reduce() {
-    console.log('reduce')
+    // console.log('reduce')
   }
 }
 
-const R = new Atom('R', ['A', 'B', 'C', 'D', 'E'])
-const S = new Atom('S', ['A', 'B', 'C', 'D'])
-const T = new Atom('T', ['A', 'B'])
-const U = new Atom('U', ['A'])
+const R = new Atom('R', ['A', 'B', 'D'])
+const S = new Atom('S', ['A', 'B', 'E'])
+const T = new Atom('T', ['A', 'C', 'F'])
+const U = new Atom('U', ['A', 'C'])
 
-const Q = new Query('Q', new Set(['A', 'E']), [R, S, T, U])
+const Q = new Query('Q', new Set(['E', 'F']), [R, S, T, U])
 
 const trees = Q.get_free_top_variable_orders()
 
