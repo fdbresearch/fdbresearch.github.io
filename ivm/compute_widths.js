@@ -18,6 +18,36 @@ function intersection(setA, setB) {
   return _intersection;
 }
 
+function difference(setA, setB) {
+  const _difference = new Set(setA);
+  const _setA = new Set(setA)
+  const _setB = new Set(setB)
+  for (const elem of _setB) {
+    _difference.delete(elem);
+  }
+  return _difference;
+}
+
+function is_superset(set, subset) {
+  const _set = new Set(set)
+  for (const elem of subset) {
+    if (!_set.has(elem)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function union(setA, setB) {
+  const _union = new Set(setA);
+  const _setA = new Set(setA)
+  const _setB = new Set(setB)
+  for (const elem of _setB) {
+    _union.add(elem);
+  }
+  return _union;
+}
+
 
 class Atom {
   constructor(name, variables) {
@@ -116,12 +146,28 @@ class Node {
     return this.child_nodes.some(child_node => child_node.contains_variables(variables))
   }
 
-  get_static_width() {
-    return Math.max(this.key_set.length, Math.max(this.child_nodes.map(child_node => child_node.get_static_width())))
+  rho_star(query, key_set) {
+    const subsets = (arr) => arr.reduce(
+        (subsets, value) => subsets.concat(
+          subsets.map(set => [value,...set])
+        ),
+        [[]]
+      );
+    const cover_sets = subsets(query.atoms.map(atom => atom.variables))
+    const valid_cover_sets = cover_sets.filter(cover_set => is_superset(new Set(cover_set.flatMap(s => s)), key_set))
+    console.assert(valid_cover_sets.length > 0)
+    return Math.min(...valid_cover_sets.map(s => s.length))
   }
 
-  get_delta_width() {
+  static_width(query) {
+    return Math.max(this.rho_star(query, this.key_set), ...this.child_nodes.map(child_node => child_node.static_width(query)))
+  }
 
+  delta_width(query) {
+    return Math.max(...query.atoms.map(atom => this.delta_width_helper(query, atom)))
+  }
+  delta_width_helper(query, atom) {
+    return Math.max(this.rho_star(query, difference(this.key_set, atom.variables)), ...this.child_nodes.map(child_node => child_node.delta_width_helper(query, atom)))
   }
 }
 
@@ -169,10 +215,24 @@ class Query {
     return constructed_variable_orders
   }
 
-  get_delta_width() {
+  widths() {
     const free_top_variable_orders = this.get_free_top_variable_orders()
+    const delta_widths = free_top_variable_orders.map(vo => vo.delta_width(this))
+    const static_widths = free_top_variable_orders.map(vo => vo.static_width(this))
 
+    const target_delta_width = Math.min(...delta_widths)
+    const target_static_width = Math.min(...static_widths)
 
+    for (let i = 0; i < free_top_variable_orders.length; i++) {
+      if (delta_widths[i] == target_delta_width && static_widths[i] == target_static_width) {
+        return {
+          delta_width: delta_widths[i],
+          static_width: static_widths[i],
+          variable_order: free_top_variable_orders[i],
+        }
+      }
+    }
+    console.assert(false, 'Should not reach here')
   }
 
   /*
@@ -226,15 +286,19 @@ const S = new Atom('S', ['A', 'B', 'E'])
 const T = new Atom('T', ['A', 'C', 'F'])
 const U = new Atom('U', ['A', 'C', 'G'])
 
-const Q = new Query('Q', new Set(['E', 'F']), [R, S, T, U])
+const Q = new Query('Q', new Set(['A', 'C', 'D', 'E', 'F', 'G']), [R, S, T, U])
 
-const trees = Q.get_free_top_variable_orders()
+const widths = Q.widths()
+console.log('static width: ', widths.static_width)
+console.log('delta width: ', widths.delta_width)
+console.log(draw_tree(widths.variable_order, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
 
-
-trees.forEach(tree => {
-  console.log(draw_tree(tree, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
-  console.log('')
-})
-
-console.log("Total number: ", trees.length)
+// const trees = Q.get_free_top_variable_orders()
+// trees.forEach(tree => {
+//   console.log(draw_tree(tree, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
+//   console.log('static width:', tree.static_width(Q))
+//   console.log('dynamic width:', tree.delta_width(Q))
+//   console.log('')
+// })
+// console.log("Total number: ", trees.length)
 
