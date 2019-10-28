@@ -286,7 +286,7 @@ const S = new Atom('S', ['A', 'B', 'E'])
 const T = new Atom('T', ['A', 'C', 'F'])
 const U = new Atom('U', ['A', 'C', 'G'])
 
-const Q = new Query('Q', new Set(['A', 'C', 'D', 'E', 'F', 'G']), [R, S, T, U])
+const Q = new Query('Q', new Set(['C', 'D']), [R, S, T, U])
 
 const widths = Q.widths()
 console.log('static width: ', widths.static_width)
