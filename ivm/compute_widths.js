@@ -6,26 +6,6 @@ Array.prototype.flatMap = function(lambda) {
   return Array.prototype.concat.apply([], this.map(lambda));
 };
 
-const permutator = (inputArr) => {
-  let result = [];
-
-  const permute = (arr, m = []) => {
-    if (arr.length === 0) {
-      result.push(m)
-    } else {
-      for (let i = 0; i < arr.length; i++) {
-        let curr = arr.slice();
-        let next = curr.splice(i, 1);
-        permute(curr.slice(), m.concat(next))
-      }
-    }
-  }
-
-  permute(inputArr)
-
-  return result;
-}
-
 class Atom {
   constructor(name, variables) {
     this.name = name
@@ -114,15 +94,15 @@ class Query {
 
     const constructed_variable_orders = []
 
-    const frontier = [init_state]
+    let frontier = [init_state]
     while (frontier.length > 0) {
 
       const state = frontier.pop()
       if (state.remaining_variables.length == 0) {
         constructed_variable_orders.push(state.variable_order)
-        break
+        continue
       }
-      frontier.concat(this.expand(state))
+      frontier = frontier.concat(this.expand(state))
     }
 
     return constructed_variable_orders
@@ -137,7 +117,10 @@ class Query {
       return []
     }
 
-    const res = remaining_variables.flatMap(v => {
+    const free_remaining_variables = remaining_variables.filter(v => this.free_variables.has(v))
+    const target_variables = free_remaining_variables.length == 0 ? remaining_variables : free_remaining_variables
+
+    const res = target_variables.flatMap(v => {
 
       return variable_order.add_node(v).map(vo => {
         return {
@@ -160,15 +143,20 @@ class Query {
   }
 }
 
-const R = new Atom('R', ['A', 'B'])
-const S = new Atom('S', ['A'])
+const R = new Atom('R', ['A', 'B', 'C', 'D', 'E'])
+const S = new Atom('S', ['A', 'B', 'C', 'D'])
+const T = new Atom('T', ['A', 'B'])
+const U = new Atom('U', ['A'])
 
-const Q = new Query('Q', ['A'], [R, S])
+const Q = new Query('Q', new Set(['A']), [R, S, T, U])
 
 const trees = Q.get_free_top_variable_orders()
 
 
 trees.forEach(tree => {
   console.log(draw_tree(tree, node => `${node._variable}`, node => node.child_nodes))
+  console.log('')
 })
+
+console.log("Total number: ", trees.length)
 
