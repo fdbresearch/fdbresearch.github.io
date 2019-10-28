@@ -49,7 +49,7 @@ class Node {
 
     // if the current node is empty, add to the current node
     if (!this._variable) {
-      // TODO: key sets
+      // root node
       return [new Node(variable, this.child_nodes, this.key_set, this.anc)]
     }
 
@@ -74,16 +74,39 @@ class Node {
 
 
     // add as the child node of the current node
-    // check whether the position is ok
-    if (!this.child_nodes.some(child_node => child_node.contains_variables(query.dep[variable])))
-      resulted_variable_orders.push(
-        new Node(this._variable,
-          [...this.child_nodes, new Node(variable, [], intersection([...this.anc, this._variable], query.dep[variable]), [...this.anc, this._variable])],
-          this.key_set, this.anc)
-      )
+    resulted_variable_orders.push(
+      new Node(this._variable,
+        [...this.child_nodes, new Node(variable, [], intersection([...this.anc, this._variable], query.dep[variable]), [...this.anc, this._variable])],
+        this.key_set, this.anc)
+    )
 
     return resulted_variable_orders
 
+  }
+
+  path_to_variable(target_variable) {
+    if (this._variable == target_variable)
+      return {
+        found: true,
+        path: [this]
+      }
+    if (this.child_nodes.length == 0)
+      return {
+        found: false
+      }
+
+    for (let i = 0; i < this.child_nodes.length; i++) {
+      const {found, path} = this.child_nodes[i].path_to_variable(target_variable)
+      if (found)
+        return {
+          found,
+          path: [this, ...path],
+        }
+    }
+
+    return {
+      found: false
+    }
   }
 
   contains_variables(variables) {
@@ -92,6 +115,14 @@ class Node {
 
     return this.child_nodes.some(child_node => child_node.contains_variables(variables))
   }
+
+  get_static_width() {
+    return Math.max(this.key_set.length, Math.max(this.child_nodes.map(child_node => child_node.get_static_width())))
+  }
+
+  get_delta_width() {
+
+  }
 }
 
 class Query {
@@ -99,7 +130,6 @@ class Query {
     this.name = name
     this.free_variables = free_variables
     this.atoms = atoms
-    this.reduce()
     this.variables = this.get_variables()
 
     this.dep = {} // dependent set
@@ -139,6 +169,12 @@ class Query {
     return constructed_variable_orders
   }
 
+  get_delta_width() {
+    const free_top_variable_orders = this.get_free_top_variable_orders()
+
+
+  }
+
   /*
    * expand the state
    */
@@ -153,7 +189,22 @@ class Query {
 
     const res = target_variables.flatMap(v => {
 
-      return variable_order.add_node(v, this).map(vo => {
+      const result_variable_orders = variable_order.add_node(v, this)
+        .filter(vo => {
+        // check whether the position is ok
+        const {_, path} = vo.path_to_variable(v)
+        for (let i = 0; i < path.length - 1; i++) {
+          const node = path[i]
+          const next_node = path[i+1]
+          const found_incorrect = node.child_nodes.filter(child_node => child_node._variable != next_node._variable)
+            .some(child_node => child_node.contains_variables(this.dep[v]))
+          if (found_incorrect)
+            return false
+        }
+        return true
+      })
+
+      return result_variable_orders.map(vo => {
         return {
           variable_order: vo,
           remaining_variables: remaining_variables.filter(_v => _v != v) // remaining_variables - v
@@ -168,16 +219,12 @@ class Query {
     return new Set([...set1].filter(x => !set2.has(x)));
   }
 
-  // TODO: remove non-join variables
-  reduce() {
-    // console.log('reduce')
-  }
 }
 
 const R = new Atom('R', ['A', 'B', 'D'])
 const S = new Atom('S', ['A', 'B', 'E'])
 const T = new Atom('T', ['A', 'C', 'F'])
-const U = new Atom('U', ['A', 'C'])
+const U = new Atom('U', ['A', 'C', 'G'])
 
 const Q = new Query('Q', new Set(['E', 'F']), [R, S, T, U])
 
