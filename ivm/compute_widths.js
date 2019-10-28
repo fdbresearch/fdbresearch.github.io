@@ -1,6 +1,6 @@
 'use strict';
 
-const draw_tree = require('asciitree')
+// const draw_tree = require('asciitree')
 
 Array.prototype.flatMap = function (lambda) {
   return Array.prototype.concat.apply([], this.map(lambda));
@@ -180,8 +180,12 @@ class Query {
 
     this.dep = {} // dependent set
     this.variables.forEach(v => {
-      this.dep[v] = this.atoms.filter(atom => atom.variables.includes(v)).flatMap(atom => atom.variables)
+      this.dep[v] = [...new Set(this.atoms.filter(atom => atom.variables.includes(v)).flatMap(atom => atom.variables))]
     })
+  }
+
+  toString() {
+    return `${this.name}(${[...this.free_variables].join(',')}) = ${this.atoms.map(atom => atom.toString()).join(', ')}`
   }
 
   get_variables() {
@@ -228,7 +232,7 @@ class Query {
         return {
           delta_width: delta_widths[i],
           static_width: static_widths[i],
-          variable_order: free_top_variable_orders[i],
+          variable_order: draw_tree(free_top_variable_orders[i], node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes),
         }
       }
     }
@@ -281,17 +285,17 @@ class Query {
 
 }
 
-const R = new Atom('R', ['A', 'B', 'D'])
-const S = new Atom('S', ['A', 'B', 'E'])
-const T = new Atom('T', ['A', 'C', 'F'])
-const U = new Atom('U', ['A', 'C', 'G'])
-
-const Q = new Query('Q', new Set(['C', 'D']), [R, S, T, U])
-
-const widths = Q.widths()
-console.log('static width: ', widths.static_width)
-console.log('delta width: ', widths.delta_width)
-console.log(draw_tree(widths.variable_order, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
+// const R = new Atom('R', ['A', 'B', 'D'])
+// const S = new Atom('S', ['A', 'B', 'E'])
+// const T = new Atom('T', ['A', 'C', 'F'])
+// const U = new Atom('U', ['A', 'C', 'G'])
+//
+// const Q = new Query('Q', new Set(['C', 'D']), [R, S, T, U])
+//
+// const widths = Q.widths()
+// console.log('static width: ', widths.static_width)
+// console.log('delta width: ', widths.delta_width)
+// console.log(draw_tree(widths.variable_order, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
 
 // const trees = Q.get_free_top_variable_orders()
 // trees.forEach(tree => {
