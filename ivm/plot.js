@@ -1,7 +1,12 @@
 $(document).on('ready', function () {
 
-  const static_width = 3
-  const delta_width = 2
+  const static_width = 4
+  const delta_width = 3
+
+  const update_delay_intersect = 1 / (delta_width + 1)
+  const update_1_intersect = 1 / delta_width
+
+  let steps = [...new Set([0, update_delay_intersect, update_1_intersect, 1])];
 
   window.chartColors = {
     red: 'rgb(255, 99, 132)',
@@ -14,20 +19,19 @@ $(document).on('ready', function () {
   };
 
 
-
   var ctx = document.getElementById('myChart').getContext('2d');
 
-  Chart.defaults.LineWithLine = Chart.defaults.line;
-  Chart.controllers.LineWithLine = Chart.controllers.line.extend({
-    draw: function(ease) {
-      Chart.controllers.line.prototype.draw.call(this, ease);
+  Chart.defaults.ScatterWithLine = Chart.defaults.scatter;
+  Chart.controllers.ScatterWithLine = Chart.controllers.scatter.extend({
+    draw: function (ease) {
+      Chart.controllers.scatter.prototype.draw.call(this, ease);
 
       if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
         var activePoint = this.chart.tooltip._active[0],
           ctx = this.chart.ctx,
           x = activePoint.tooltipPosition().x,
-          topY = this.chart.scales['y-axis-0'].top,
-          bottomY = this.chart.scales['y-axis-0'].bottom;
+          topY = this.chart.scales['y-axis-1'].top,
+          bottomY = this.chart.scales['y-axis-1'].bottom;
 
         // draw line
         ctx.save();
@@ -43,42 +47,75 @@ $(document).on('ready', function () {
   });
 
   var chart = new Chart(ctx, {
-    type: 'LineWithLine',
+    type: 'ScatterWithLine',
     data: {
-          labels: [0, 0.5, 1].map(x => `EPS = ${x}`),
-          datasets: [{
-            label: 'Enumeration Delay',
-            borderColor: window.chartColors.red,
-            data: [1, 0.5, 0],
-            fill: false,
-          }, {
-            label: 'Update Time',
-            borderColor: window.chartColors.blue,
-            data: [0, 0.5, 1],
-            fill: false,
-          }, {
-            label: 'Preprocessing Time',
-            borderColor: window.chartColors.green,
-            data: [1, 1.5, 2],
-            fill: false,
-          }]
-        },
+      // labels: steps,
+      // steps.map(x => `EPS = ${x}`),
+      labels: ['Enumeration Delay', 'Update Time', 'Preprocessing Time'],
+      datasets: [{
+        label: 'Enumeration Delay',
+        borderColor: window.chartColors.red,
+        showLine: true,
+        data: steps.map((e => {
+          return {
+            x: e,
+            y: 1 - e
+          }
+        })),
+        fill: false,
+      },
+        {
+          label: 'Update Time',
+          borderColor: window.chartColors.blue,
+          showLine: true,
+          data: steps.map(e => {
+            return {
+              x: e,
+              y: delta_width * e
+            }
+          }),
+          fill: false,
+        }, {
+          label: 'Preprocessing Time',
+          showLine: true,
+          borderColor: window.chartColors.green,
+          data: steps.map(e => {
+            return {
+              x: e,
+              y: 1 + (static_width - 1) * e
+            }
+          }),
+          fill: false,
+        }
+      ]
+    },
     options: {
+      tooltips: {
+        intersect: false,
+        callbacks: {
+          label: function(tooltipItem, data) {
+            var label = data.labels[tooltipItem.datasetIndex];
+            return `EPS: ${tooltipItem.xLabel.toFixed(2)}\r\n${label}: ${tooltipItem.yLabel.toFixed(2)}`
+
+          }
+        }
+      },
       responsive: true,
       title: {
         display: true,
         text: 'Q(A) = R(A,B), S(B)'
       },
       aspectRatio: 1.5,
-      tooltips: {
-        intersect: false
-      },
       scales: {
         xAxes: [{
           display: true,
           scaleLabel: {
             display: false,
             labelString: 'EPS'
+          },
+          ticks: {
+            min: 0,
+            stepSize: 0.1
           }
         }],
         yAxes: [{
@@ -95,64 +132,5 @@ $(document).on('ready', function () {
     }
   });
 
-  // Chart.defaults.LineWithLine = Chart.defaults.line;
-  // Chart.controllers.LineWithLine = Chart.controllers.line.extend({
-  //   draw: function(ease) {
-  //     Chart.controllers.line.prototype.draw.call(this, ease);
-  //
-  //     if (this.chart.tooltip._active && this.chart.tooltip._active.length) {
-  //       var activePoint = this.chart.tooltip._active[0],
-  //         ctx = this.chart.ctx,
-  //         x = activePoint.tooltipPosition().x,
-  //         topY = this.chart.scales['y-axis-0'].top,
-  //         bottomY = this.chart.scales['y-axis-0'].bottom;
-  //
-  //       // draw line
-  //       ctx.save();
-  //       ctx.beginPath();
-  //       ctx.moveTo(x, topY);
-  //       ctx.lineTo(x, bottomY);
-  //       ctx.lineWidth = 2;
-  //       ctx.strokeStyle = '#07C';
-  //       ctx.stroke();
-  //       ctx.restore();
-  //     }
-  //   }
-  // });
-  //
-  // var chart = new Chart(ctx, {
-  //   // The type of chart we want to create
-  //   type: 'line',
-  //
-  //   // The data for our dataset
-  //   data: {
-  //     labels: [0, 0.5, 1],
-  //     datasets: [{
-  //       label: 'Enumeration Delay',
-  //       borderColor: window.chartColors.red,
-  //       data: [1, 0.5, 0],
-  //       fill: false,
-  //     }, {
-  //       label: 'Update Time',
-  //       borderColor: window.chartColors.blue,
-  //       data: [0, 0.5, 1],
-  //       fill: false,
-  //     }]
-  //   },
-  //
-  //   // Configuration options go here
-  //   options: {
-  //     tooltips: {
-  //       intersect: false
-  //     },
-  //     scales: {
-  //       yAxes: [{
-  //         ticks: {
-  //           beginAtZero: true
-  //         }
-  //       }]
-  //     }
-  //   }
-  // });
 
 });
