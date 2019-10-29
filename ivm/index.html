@@ -210,10 +210,10 @@
         <div class="row">
             <!-- <div class="row justify-content-between"> -->
 
-            <div class="col-lg-7">
+            <div class="col-lg-6">
                 <canvas id="myChart"></canvas>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-6">
                 <br><br><br>
                 <h4 class="h5 g-color-black g-mb-5">Please enter an hierarchical query:</h4>
                 <textarea v-model="query_text" rows="3" class="form-control w-100 g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 g-font-size-18 rounded g-px-20 g-py-12" type="textarea" placeholder="E.g. Q(A) = R(A,B), S(B)"></textarea>
@@ -247,8 +247,10 @@
                       </div>
                     </div>
                     <div class="row">
+                      <div class="col-lg-12">
                         <h4 class="h5 g-color-black g-mb-5">Enter target values</h4>
                         <div class="row">
+                          
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">$\epsilon$:</h4>
                           </div>
@@ -279,6 +281,7 @@
                         </div>
                         <br><br>
                         <h4 class="h5 g-color-red g-mb-5">{{error_message}}</h4>
+                    </div>
                     </div>
                     
                 </div>
