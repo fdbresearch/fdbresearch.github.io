@@ -1,7 +1,5 @@
 'use strict';
 
-// const draw_tree = require('asciitree')
-
 Array.prototype.flatMap = function (lambda) {
   return Array.prototype.concat.apply([], this.map(lambda));
 };
@@ -146,29 +144,34 @@ class Node {
     return this.child_nodes.some(child_node => child_node.contains_variables(variables))
   }
 
-  rho_star(query, key_set) {
+  rho_star(atoms, key_set) {
     const subsets = (arr) => arr.reduce(
         (subsets, value) => subsets.concat(
           subsets.map(set => [value,...set])
         ),
         [[]]
       );
-    const cover_sets = subsets(query.atoms.map(atom => atom.variables))
+    const cover_sets = subsets(atoms.map(atom => atom.variables))
     const valid_cover_sets = cover_sets.filter(cover_set => is_superset(new Set(cover_set.flatMap(s => s)), key_set))
-    console.assert(valid_cover_sets.length > 0)
+    console.assert(valid_cover_sets.length >= 0)
     return Math.min(...valid_cover_sets.map(s => s.length))
   }
 
   static_width(query) {
-    return Math.max(this.rho_star(query, this.key_set), ...this.child_nodes.map(child_node => child_node.static_width(query)))
+    return Math.max(this.rho_star(query.atoms, this.key_set), ...this.child_nodes.map(child_node => child_node.static_width(query)))
   }
 
   delta_width(query) {
-    return Math.max(...query.atoms.map(atom => this.delta_width_helper(query, atom)))
+    const res = Math.max(this.delta_width_of_this_node(query), ...this.child_nodes.map(child_node => child_node.delta_width(query)))
+    return res
   }
-  delta_width_helper(query, atom) {
-    return Math.max(this.rho_star(query, difference(this.key_set, atom.variables)), ...this.child_nodes.map(child_node => child_node.delta_width_helper(query, atom)))
+
+  delta_width_of_this_node(query) {
+    const res = Math.max(...query.atoms_of_variables[this._variable].map(atom => this.rho_star(query.atoms, difference(this.key_set, atom.variables))))
+    // console.log(this._variable, res)
+    return res
   }
+
 }
 
 class Query {
@@ -178,14 +181,19 @@ class Query {
     this.atoms = atoms
     this.variables = this.get_variables()
 
+    this.atoms_of_variables = {}
+    this.variables.forEach(v => {
+      this.atoms_of_variables[v] = this.atoms.filter(atom => atom.variables.includes(v))
+    })
+
     this.dep = {} // dependent set
     this.variables.forEach(v => {
-      this.dep[v] = [...new Set(this.atoms.filter(atom => atom.variables.includes(v)).flatMap(atom => atom.variables))]
+      this.dep[v] = [...new Set(this.atoms_of_variables[v].flatMap(atom => atom.variables))]
     })
   }
 
   toString() {
-    return `${this.name}(${[...this.free_variables].join(',')}) = ${this.atoms.map(atom => atom.toString()).join(', ')}`
+    return `${this.name}(${[...this.free_variables].join(' ,')}) = ${this.atoms.map(atom => atom.toString()).join(', ')}`
   }
 
   get_variables() {
@@ -195,6 +203,17 @@ class Query {
     }))
     return [..._variables]
   }
+
+  // get_canonical_variable_orders() {
+  //   const subsets = (arr) => arr.reduce(
+  //     (subsets, value) => subsets.concat(
+  //       subsets.map(set => [value,...set])
+  //     ),
+  //     [[]]
+  //   );
+  //
+  //   subsets()
+  // }
 
   get_free_top_variable_orders() {
     // DFS ..
@@ -290,12 +309,15 @@ class Query {
 // const T = new Atom('T', ['A', 'C', 'F'])
 // const U = new Atom('U', ['A', 'C', 'G'])
 //
-// const Q = new Query('Q', new Set(['C', 'D']), [R, S, T, U])
+// const Q = new Query('Q', new Set(['C', 'D', 'E', 'F']), [R, S, T, U])
+
+// console.log(Q.toString())
+// console.log(Q.dep)
 //
 // const widths = Q.widths()
 // console.log('static width: ', widths.static_width)
 // console.log('delta width: ', widths.delta_width)
-// console.log(draw_tree(widths.variable_order, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes))
+// console.log(widths.variable_order)
 
 // const trees = Q.get_free_top_variable_orders()
 // trees.forEach(tree => {
@@ -305,4 +327,3 @@ class Query {
 //   console.log('')
 // })
 // console.log("Total number: ", trees.length)
-

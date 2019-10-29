@@ -22,17 +22,17 @@ var app = new Vue({
   },
   methods: {
     clear_target_values: function() {
-      this.epsilon = null
-      this.preprocessing = null
-      this.update = null
-      this.delay = null
+      // this.epsilon = null
+      // this.preprocessing = null
+      // this.update = null
+      // this.delay = null
     },
     epsilon_handler: function(new_epsilon) {
       if (new_epsilon == "" || new_epsilon == null) {
         this.clear_target_values()
         return 
       }
-      if (isNaN(new_epsilon) || new_epsilon < 0 || new_epsilon > 1) {
+      if (new_epsilon < 0 || new_epsilon > 1) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
         return
@@ -48,7 +48,7 @@ var app = new Vue({
         this.clear_target_values()
         return 
       }
-      if (isNaN(new_preprocessing) || new_preprocessing < 1) {
+      if (new_preprocessing < 1) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
         return
@@ -62,7 +62,7 @@ var app = new Vue({
         this.clear_target_values()
         return 
       }
-      if (isNaN(new_update) || new_update < 0) {
+      if (new_update < 0) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
         return
@@ -76,7 +76,7 @@ var app = new Vue({
         this.clear_target_values()
         return 
       }
-      if (isNaN(new_delay) || new_delay < 0) {
+      if (new_delay < 0) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
         return
