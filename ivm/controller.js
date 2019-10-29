@@ -4,7 +4,9 @@ var app = new Vue({
   data: {
     Q: null,
     query_text: "Q(A,C) = R(A, B), S(B,C)",
-    widths: {},
+    widths: {
+      static_width: 1,
+    },
     computing: false,
     chart: null,
   },
@@ -13,6 +15,9 @@ var app = new Vue({
     this.refresh_plot()
   },
   methods: {
+    updateMathContent: function () {
+      MathJax.typeset();
+    },
     parse_query_text: function(new_query_text) {
       let [query_part, atom_part] = new_query_text.replace(/\s/g, '').split('=')
 
@@ -43,6 +48,7 @@ var app = new Vue({
       this.Q = query
 
       this.refresh_plot()
+      this.updateMathContent()
 
       this.computing = false
     },
