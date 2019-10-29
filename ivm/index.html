@@ -248,35 +248,35 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <h4 class="h5 g-color-black g-mb-5">Enter target values</h4>
+                        <h4 class="h5 g-color-black g-mb-5">Enter target values and press Enter</h4>
                         <div class="row">
                           
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">$\epsilon$:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="epsilon" v-on:input="epsilon_handler(epsilon)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " placeholder="any constant between 0 and 1" />
+                              <input v-model="epsilon" @change="epsilon_handler(epsilon)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " placeholder="any constant between 0 and 1" />
                           </div>
                           <br><br>
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">Preprocessing time:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="preprocessing" v-on:input="preprocessing_handler(preprocessing)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="preprocessing" @change="preprocessing_handler(preprocessing)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
                           </div>
                           <br><br>
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">Update time:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="update" style="width: 80%;" v-on:input="update_handler(update)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="update" style="width: 80%;" @change="update_handler(update)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
                           </div>
                           <br><br>
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">Enumeration delay:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="delay" style="width: 80%;" v-on:input="delay_handler(delay)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="delay" style="width: 80%;" @change="delay_handler(delay)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
                           </div>
                         </div>
                         <br><br>
