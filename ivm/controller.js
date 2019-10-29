@@ -22,19 +22,22 @@ var app = new Vue({
   },
   methods: {
     clear_target_values: function() {
-      // this.epsilon = null
-      // this.preprocessing = null
-      // this.update = null
-      // this.delay = null
+      this.epsilon = null
+      this.preprocessing = null
+      this.update = null
+      this.delay = null
     },
     epsilon_handler: function(new_epsilon) {
-      if (new_epsilon == "" || new_epsilon == null) {
+      
+      if (new_epsilon === "" || new_epsilon === null) {
         this.clear_target_values()
         return 
       }
+      new_epsilon = parseFloat(new_epsilon).toPrecision(2)
       if (new_epsilon < 0 || new_epsilon > 1) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
+        this.epsilon = new_epsilon
         return
       }
       const {static_width, delta_width} = this.widths
@@ -44,53 +47,69 @@ var app = new Vue({
       this.error_message = ""
     },
     preprocessing_handler: function(new_preprocessing) {
-      
-      if (new_preprocessing == "" || new_preprocessing == null) {
+      console.log(new_preprocessing)
+      if (new_preprocessing === "" || new_preprocessing === null) {
         this.clear_target_values()
         return 
       }
-      if (new_preprocessing < 1) {
+      
+      const parsed_new_preprocessing = parseFloat(new_preprocessing).toPrecision(2)
+      console.log(parsed_new_preprocessing)
+      if (parsed_new_preprocessing < 1) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
+        this.preprocessing = new_preprocessing
         return
       }
+      console.log(parsed_new_preprocessing)
       const {static_width, delta_width} = this.widths
       if (static_width == 1) {
         return
       }
-      this.epsilon = (new_preprocessing - 1) / (static_width - 1)
+      this.epsilon = (parsed_new_preprocessing - 1) / (static_width - 1)
       this.epsilon_handler(this.epsilon)
+      this.preprocessing = new_preprocessing
     },
     update_handler: function(new_update) {
-      if (new_update == "" || new_update == null) {
+      console.log(new_update)
+      
+      if (new_update === "" || new_update === null) {
         this.clear_target_values()
         return 
       }
-      if (new_update < 0) {
+      const parsed_new_update = parseFloat(new_update).toPrecision(2)
+      if (parsed_new_update < 0) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
+        this.update = new_update
         return
       }
       const {static_width, delta_width} = this.widths
       if (delta_width == 0) {
         return
       }
-      this.epsilon = new_update / delta_width
+      this.epsilon = parsed_new_update / delta_width
+      console.log(this.epsilon)
       this.epsilon_handler(this.epsilon)
+      this.update = new_update
     },
     delay_handler: function(new_delay) {
-      if (new_delay == "" || new_delay == null) {
+      
+      if (new_delay === "" || new_delay === null) {
         this.clear_target_values()
         return 
       }
-      if (new_delay < 0) {
+      const parsed_new_delay = parseFloat(new_delay).toPrecision(2)
+      if (parsed_new_delay < 0) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
+        this.delay = new_delay
         return
       }
       const {static_width, delta_width} = this.widths
-      this.epsilon = 1 - new_delay
+      this.epsilon = 1 - parsed_new_delay
       this.epsilon_handler(this.epsilon)
+      this.delay = new_delay
     },
     updateMathContent: function () {
       MathJax.typeset();
@@ -228,7 +247,7 @@ var app = new Vue({
             callbacks: {
               label: function(tooltipItem, data) {
                 var label = data.labels[tooltipItem.datasetIndex];
-                return `EPS: ${tooltipItem.xLabel.toFixed(2)}\r\n${label}: ${tooltipItem.yLabel.toFixed(2)}`
+                return `EPS: ${tooltipItem.xLabel.toPrecision(2)}\r\n${label}: ${tooltipItem.yLabel.toPrecision(2)}`
 
               }
             }
