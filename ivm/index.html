@@ -233,7 +233,7 @@
                     <div class="row">
                       <div class="col-lg-6">
                         <h4 class="h5 g-color-black g-mb-5">Static width $\mathsf{w}$ = {{widths.static_width}}</h4>
-                        <h4 class="h5 g-color-black g-mb-5">Delta width: $\delta$ = {{widths.delta_width}}</h4>
+                        <h4 class="h5 g-color-black g-mb-5">Dynamic width: $\delta$ = {{widths.delta_width}}</h4>
                         <br>
                         <h4 class="h5 g-color-black g-mb-5">Preprocessing time: {{(1 + (widths.static_width - 1)) == 1 ? '' : (1 + (widths.static_width - 1))}}$\epsilon$</h4>
                           <h4 class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
@@ -248,7 +248,7 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
-                        <h4 class="h5 g-color-black g-mb-5">Enter target values and press Enter</h4>
+                        <h4 class="h5 g-color-black g-mb-5">Enter target values</h4>
                         <div class="row">
                           
                           <div class="col-lg-4">
@@ -262,21 +262,21 @@
                               <h4 class="h5 g-color-black g-mb-5">Preprocessing time:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="preprocessing" v-on:input="preprocessing_handler(preprocessing)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="preprocessing" v-on:input="preprocessing_handler(preprocessing)" style="width: 80%;" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " :placeholder="widths.static_width == 1 ? 'preprocessing time is 1 for any epsilon' : `any constant between 1 and ${widths.static_width}`"/>
                           </div>
                           <br><br>
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">Update time:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="update" style="width: 80%;" v-on:input="update_handler(update)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="update" style="width: 80%;" v-on:input="update_handler(update)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " :placeholder="widths.delta_width == 0 ? `update time is 0 for any epsilon` : `any constant between 0 and ${widths.delta_width}`"/>
                           </div>
                           <br><br>
                           <div class="col-lg-4">
                               <h4 class="h5 g-color-black g-mb-5">Enumeration delay:</h4>
                           </div>
                           <div class="col-lg-8">
-                              <input v-model="delay" style="width: 80%;" v-on:input="delay_handler(delay)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " />
+                              <input v-model="delay" style="width: 80%;" v-on:input="delay_handler(delay)" type="text" class="form-control g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 rounded " placeholder="any constant between 0 and 1"/>
                           </div>
                         </div>
                         <br><br>

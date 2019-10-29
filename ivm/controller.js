@@ -44,6 +44,7 @@ var app = new Vue({
       this.error_message = ""
     },
     preprocessing_handler: function(new_preprocessing) {
+      
       if (new_preprocessing == "" || new_preprocessing == null) {
         this.clear_target_values()
         return 
@@ -54,6 +55,9 @@ var app = new Vue({
         return
       }
       const {static_width, delta_width} = this.widths
+      if (static_width == 1) {
+        return
+      }
       this.epsilon = (new_preprocessing - 1) / (static_width - 1)
       this.epsilon_handler(this.epsilon)
     },
@@ -68,6 +72,9 @@ var app = new Vue({
         return
       }
       const {static_width, delta_width} = this.widths
+      if (delta_width == 0) {
+        return
+      }
       this.epsilon = new_update / delta_width
       this.epsilon_handler(this.epsilon)
     },
