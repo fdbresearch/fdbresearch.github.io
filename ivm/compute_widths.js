@@ -48,6 +48,13 @@ function union(setA, setB) {
   return _union;
 }
 
+const subsets = (arr) => arr.reduce(
+  (subsets, value) => subsets.concat(
+    subsets.map(set => [value,...set])
+  ),
+  [[]]
+);
+
 
 class Atom {
   constructor(name, variables) {
@@ -168,12 +175,7 @@ class Node {
   }
 
   rho_star(atoms, key_set) {
-    const subsets = (arr) => arr.reduce(
-        (subsets, value) => subsets.concat(
-          subsets.map(set => [value,...set])
-        ),
-        [[]]
-      );
+
     const cover_sets = subsets(atoms.map(atom => atom.variables))
     const valid_cover_sets = cover_sets.filter(cover_set => is_superset(new Set(cover_set.flatMap(s => s)), key_set))
     console.assert(valid_cover_sets.length >= 0)
@@ -239,17 +241,18 @@ class Query {
   }
 
   is_hierarchical() {
+    const topo_nodes = this.variables.map(v => new TopoNode(v, [], []))
+    return subsets(topo_nodes).filter(nodes => nodes.length == 2).every(([n1, n2]) => {
+      // any two topo nodes
+      const atoms1 = this.atoms_of_variables[n1._variable].map(atom => atom.name)
+      const atoms2 = this.atoms_of_variables[n2._variable].map(atom => atom.name)
 
+      // is it hierarchical?
+      return is_superset(atoms1, atoms2) || is_superset(atoms2, atoms1) || intersection(atoms1, atoms2).size == 0
+    })
   }
 
   get_canonical_variable_order() {
-
-    const subsets = (arr) => arr.reduce(
-      (subsets, value) => subsets.concat(
-        subsets.map(set => [value,...set])
-      ),
-      [[]]
-    );
 
     this.dominate_sets = {}
     this.variables.forEach(v => {
@@ -316,11 +319,7 @@ class Query {
       canonical_variable_order.add_canonical_node(atom.name, this)
     })
 
-
-
-
     return canonical_variable_order
-
   }
 
   get_free_top_variable_orders() {
@@ -423,6 +422,7 @@ const U = new Atom('U', ['A', 'C', 'G'])
 
 const Q = new Query('Q', new Set(['C', 'D', 'E', 'F']), [R, S, T, U])
 
+console.log(Q.is_hierarchical())
 console.log(draw_tree(Q.get_canonical_variable_order(), node => `${node}`, node => node.child_nodes))
 
 // console.log(Q.toString())
