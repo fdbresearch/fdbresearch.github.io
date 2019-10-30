@@ -143,6 +143,8 @@ var app = new Vue({
       this.widths = query.widths()
       this.Q = query
 
+      console.log(this.widths.variable_order)
+
       this.refresh_plot()
       this.updateMathContent()
       this.clear_target_values()

@@ -231,7 +231,7 @@
                 <div v-if="!computing">
                     <hr>
                     <div class="row">
-                      <div class="col-lg-6">
+                      <div class="col-lg-4">
                         <h4 class="h5 g-color-black g-mb-5">Static width $\mathsf{w}$ = {{widths.static_width}}</h4>
                         <h4 class="h5 g-color-black g-mb-5">Dynamic width: $\delta$ = {{widths.delta_width}}</h4>
                         <br>
@@ -240,10 +240,10 @@
                           <h4 class="h5 g-color-black g-mb-5">Enumeration delay: 1 $-$ $\epsilon$</h4>
                           <br><br>
                       </div>
-                      <div class="col-lg-6">
-                          <h4 class="h5 g-color-black g-mb-5">Variable order:</h4>
+                      <div class="col-lg-8">
+                          <h4 class="h5 g-color-black g-mb-5">Canonical variable order:</h4>
                         <br>
-                        <h4 style="white-space: pre-wrap" class="h5 g-color-black g-mb-5">{{widths.variable_order}}</h4>
+                        <h4 class="h5 g-color-black g-mb-5"><pre style="white-space: pre">{{widths.variable_order}}</pre></h4>
                       </div>
                     </div>
                     <div class="row">
