@@ -63,7 +63,7 @@ class Atom {
   }
 
   toString() {
-    return `${this.name}(${this.variables.join(', ')})`
+    return `${this.name}(${this.variables.join(',')})`
   }
 
 }
@@ -229,7 +229,7 @@ class Query {
   }
 
   toString() {
-    return `${this.name}(${[...this.free_variables].join(' ,')}) = ${this.atoms.map(atom => atom.toString()).join(', ')}`
+    return `${this.name}(${[...this.free_variables].join(',')}) = ${this.atoms.map(atom => atom.toString()).join(',')}`
   }
 
   get_variables() {
@@ -345,7 +345,7 @@ class Query {
     return constructed_variable_orders
   }
 
-  widths() {
+  widths_new() {
     const valid_atom_combinations = subsets(this.atoms).filter(atom_combinations => {
       return is_superset(atom_combinations.flatMap(atom => atom.variables), this.free_variables)
     })
@@ -367,7 +367,7 @@ class Query {
     }
   }
 
-  widths_exhausted() {
+  widths() {
     const free_top_variable_orders = this.get_free_top_variable_orders()
     const delta_widths = free_top_variable_orders.map(vo => vo.delta_width(this))
     const static_widths = free_top_variable_orders.map(vo => vo.static_width(this))
