@@ -100,6 +100,28 @@ class Node {
   }
 
   /*
+   * return the list of possible free variable sets
+   */
+  get_target_free_variable_sets(query) {
+    if (!query.free_variables.has(this._variable)) // this is bound
+      return [{
+        anchor_bound_variable: this._variable,
+        variables: this.get_descendant_free_variables(query)
+      }]
+
+    // this is free
+    return this.child_nodes.filter(child_node => query.variables.includes(child_node._variable))
+      .flatMap(child_node => child_node.get_target_free_variable_sets(query))
+  }
+
+  get_descendant_free_variables(query) {
+    if (query.free_variables.has(this._variable))
+      return [this._variable].concat(this.child_nodes.flatMap(child_node => child_node.get_descendant_free_variables(query)))
+    else
+      return this.child_nodes.flatMap(child_node => child_node.get_descendant_free_variables(query))
+  }
+
+  /*
    * return a list of variable orders
    * create a new copy of the node as long as itself or its decedents are modified
    */
@@ -345,29 +367,36 @@ class Query {
     return constructed_variable_orders
   }
 
-  widths_new() {
-    const valid_atom_combinations = subsets(this.atoms).filter(atom_combinations => {
-      return is_superset(atom_combinations.flatMap(atom => atom.variables), this.free_variables)
-    })
+  widths() {
 
-    const res = this.atoms.map(atom => {
-      const other_atoms = this.atoms.filter(a => a.name != atom.name)
-      const target_free_variables = difference(this.free_variables, atom.variables)
-      return Math.min(...subsets(other_atoms).filter(atom_combinations => {
-        return is_superset(atom_combinations.flatMap(atom => atom.variables), target_free_variables)
-      }).map(c => c.length))
-    })
+    const canonical_variable_order = this.get_canonical_variable_order()
+    // console.log(canonical_variable_order.get_target_free_variable_sets(this))
+    const target_free_variable_sets = canonical_variable_order.get_target_free_variable_sets(this)
+
+    const rho_star = new Node().rho_star
+
+    // const valid_atom_combinations =
+    const static_width = Math.max(...target_free_variable_sets.map(target_free_variable_set => rho_star(this.atoms, target_free_variable_set.variables)))
+
+    // const delta_width =
 
 
+    const delta_width = Math.max(...target_free_variable_sets.map(target_free_variable_set => {
+      const related_atoms = this.atoms.filter(atom => atom.variables.includes(target_free_variable_set.anchor_bound_variable))
+      return Math.max(...related_atoms.map(atom => {
+        const other_atoms = related_atoms.filter(a => a.name != atom.name)
+        return rho_star(other_atoms, difference(target_free_variable_set.variables, atom.variables))
+      }))
+    }))
 
     return {
-      delta_width: Math.max(...res),
-      static_width: Math.min(...valid_atom_combinations.map(c => c.length)),
+      delta_width,
+      static_width,
       variable_order: draw_tree(this.get_canonical_variable_order(), node => (this.free_variables.has(node.toString()) ? `(${node})` : `${node}`), node => node.child_nodes),
     }
   }
 
-  widths() {
+  widths_exhausted() {
     const free_top_variable_orders = this.get_free_top_variable_orders()
     const delta_widths = free_top_variable_orders.map(vo => vo.delta_width(this))
     const static_widths = free_top_variable_orders.map(vo => vo.static_width(this))
@@ -433,21 +462,21 @@ class Query {
 
 }
 
-// const R = new Atom('R', ['A', 'B', 'D'])
-// const S = new Atom('S', ['A', 'B', 'E'])
-// const T = new Atom('T', ['A', 'C', 'F'])
-// const U = new Atom('U', ['A', 'C', 'G'])
-// const V = new Atom('V', ['A', 'C'])
-//
-// const Q = new Query('Q', new Set(['C', 'D', 'E', 'F']), [R, S, T, U, V])
-//
-// console.log(Q.is_hierarchical())
-// // console.log(draw_tree(Q.get_canonical_variable_order(), node => `${node}`, node => node.child_nodes))
-//
-// const widths = Q.widths()
-// console.log('static width: ', widths.static_width)
-// console.log('delta width: ', widths.delta_width)
-// console.log(widths.variable_order)
+const R = new Atom('R', ['A', 'B', 'D'])
+const S = new Atom('S', ['A', 'B', 'E'])
+const T = new Atom('T', ['A', 'C', 'F'])
+const U = new Atom('U', ['A', 'C', 'G'])
+const V = new Atom('V', ['A', 'C'])
+
+const Q = new Query('Q', new Set(['A', 'C', 'D', 'E', 'F']), [R, S, T, U, V])
+
+console.log(Q.is_hierarchical())
+// console.log(draw_tree(Q.get_canonical_variable_order(), node => `${node}`, node => node.child_nodes))
+
+const widths = Q.widths()
+console.log('static width: ', widths.static_width)
+console.log('delta width: ', widths.delta_width)
+console.log(widths.variable_order)
 
 // const trees = Q.get_free_top_variable_orders()
 // trees.forEach(tree => {
