@@ -3,7 +3,7 @@ var app = new Vue({
   el: '#app',
   data: {
     Q: null,
-    query_text: "Q(A,C) = R(A, B), S(B,C)",
+    query_text: "Q(A,C) = R(A, B),S(B,C)",
     widths: {
     },
     computing: false,
@@ -141,9 +141,10 @@ var app = new Vue({
       console.log(query)
 
       this.widths = query.widths()
+      // console.log(query.widths_exhausted())
       this.Q = query
 
-      console.log(this.widths.variable_order)
+
 
       this.refresh_plot()
       this.updateMathContent()
