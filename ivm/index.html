@@ -235,7 +235,7 @@
                         <h4 class="h5 g-color-black g-mb-5">Static width $\mathsf{w}$ = {{widths.static_width}}</h4>
                         <h4 class="h5 g-color-black g-mb-5">Dynamic width: $\delta$ = {{widths.delta_width}}</h4>
                         <br>
-                        <h4 class="h5 g-color-black g-mb-5">Preprocessing time: {{(1 + (widths.static_width - 1)) == 1 ? '' : (1 + (widths.static_width - 1))}}$\epsilon$</h4>
+                        <h4 class="h5 g-color-black g-mb-5">Preprocessing time: {{((widths.static_width - 1)) == 1 ? '1 + ' : '1 + ' + ((widths.static_width - 1))}}$\epsilon$</h4>
                           <h4 class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
                           <h4 class="h5 g-color-black g-mb-5">Enumeration delay: 1 $-$ $\epsilon$</h4>
                           <br><br>
