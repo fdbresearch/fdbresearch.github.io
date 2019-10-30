@@ -1,5 +1,7 @@
 'use strict';
 
+const draw_tree = require('asciitree')
+
 Array.prototype.flatMap = function (lambda) {
   return Array.prototype.concat.apply([], this.map(lambda));
 };
@@ -67,6 +69,27 @@ class Node {
     this.child_nodes = child_nodes
     this.key_set = key_set
     this.anc = anc
+  }
+
+  /*
+   * return the canonical variable order after adding the variable
+   */
+  add_canonical_node(variable, query) {
+
+    if (!this._variable) {
+      this._variable = variable
+      return
+    }
+
+    const target_child_node = this.child_nodes.find(child_node => query.dominate_sets[child_node._variable].includes(variable))
+
+    if (target_child_node == null) {
+      // append to the current variable
+      this.child_nodes.push(new Node(variable, [], [], [...this.anc, this._variable]))
+    } else {
+      // append to the target child node
+      target_child_node.add_canonical_node(variable, query)
+    }
   }
 
   /*
@@ -172,6 +195,17 @@ class Node {
     return res
   }
 
+  toString() {
+    return `${this._variable}`
+  }
+}
+
+class TopoNode {
+  constructor(variable, children, parents) {
+    this._variable = variable
+    this.children = children
+    this.parents = parents
+  }
 }
 
 class Query {
@@ -204,16 +238,90 @@ class Query {
     return [..._variables]
   }
 
-  // get_canonical_variable_orders() {
-  //   const subsets = (arr) => arr.reduce(
-  //     (subsets, value) => subsets.concat(
-  //       subsets.map(set => [value,...set])
-  //     ),
-  //     [[]]
-  //   );
-  //
-  //   subsets()
-  // }
+  is_hierarchical() {
+
+  }
+
+  get_canonical_variable_order() {
+
+    const subsets = (arr) => arr.reduce(
+      (subsets, value) => subsets.concat(
+        subsets.map(set => [value,...set])
+      ),
+      [[]]
+    );
+
+    this.dominate_sets = {}
+    this.variables.forEach(v => {
+      this.dominate_sets[v] = []
+    })
+
+    // construct topological DAG
+    const topo_nodes = this.variables.map(v => new TopoNode(v, [], []))
+    subsets(topo_nodes).filter(nodes => nodes.length == 2).forEach(([n1, n2]) => {
+      // any two topo nodes
+      const atoms1 = this.atoms_of_variables[n1._variable].map(atom => atom.name)
+      const atoms2 = this.atoms_of_variables[n2._variable].map(atom => atom.name)
+
+      if (intersection(atoms1, atoms2).size == 0)
+        return
+
+      if (is_superset(atoms1, atoms2)) {
+        n1.children.push(n2)
+        n2.parents.push(n1)
+      } else {
+        n2.children.push(n1)
+        n1.parents.push(n2)
+      }
+
+      // construct the dominate sets
+      if (is_superset(atoms1, atoms2)) {
+        this.dominate_sets[n1._variable].push(n2._variable)
+      }
+      if (is_superset(atoms2, atoms1)) {
+        this.dominate_sets[n2._variable].push(n1._variable)
+      }
+
+    })
+
+    // topological sorting: Kahn's algorithm
+    let frontier = topo_nodes.filter(topo_node => topo_node.parents.length == 0)
+    console.assert(frontier.length == 1, "Only one connected components")
+
+    const canonical_variable_order = new Node(null, [], new Set([]), [])
+
+    while (frontier.length > 0) {
+      const n = frontier.pop()
+      canonical_variable_order.add_canonical_node(n._variable, this)
+
+      topo_nodes.forEach(m => {
+        if (n.children.map(c => c._variable).includes(m._variable)) {
+          // remove the edge
+          n.children = n.children.filter(c => c._variable != m._variable)
+          m.parents = m.parents.filter(p => p._variable != n._variable)
+
+          if (m.parents.length == 0)
+            frontier.push(m)
+        }
+      })
+
+    }
+
+    // append atoms
+    this.atoms.forEach(atom => {
+      atom.variables.forEach(v => {
+        this.dominate_sets[v].push(atom.name)
+      })
+
+      canonical_variable_order.add_canonical_node(atom.name, this)
+    })
+
+
+
+
+    return canonical_variable_order
+
+  }
 
   get_free_top_variable_orders() {
     // DFS ..
@@ -304,12 +412,18 @@ class Query {
 
 }
 
-// const R = new Atom('R', ['A', 'B', 'D'])
-// const S = new Atom('S', ['A', 'B', 'E'])
-// const T = new Atom('T', ['A', 'C', 'F'])
-// const U = new Atom('U', ['A', 'C', 'G'])
-//
-// const Q = new Query('Q', new Set(['C', 'D', 'E', 'F']), [R, S, T, U])
+const draw = (tree) => {
+  draw_tree(tree, node => `${node._variable} {${[...node.key_set]}}`, node => node.child_nodes)
+}
+
+const R = new Atom('R', ['A', 'B', 'D'])
+const S = new Atom('S', ['A', 'B', 'E'])
+const T = new Atom('T', ['A', 'C', 'F'])
+const U = new Atom('U', ['A', 'C', 'G'])
+
+const Q = new Query('Q', new Set(['C', 'D', 'E', 'F']), [R, S, T, U])
+
+console.log(draw_tree(Q.get_canonical_variable_order(), node => `${node}`, node => node.child_nodes))
 
 // console.log(Q.toString())
 // console.log(Q.dep)
