@@ -1,6 +1,6 @@
 'use strict';
 
-// const draw_tree = require('asciitree')
+
 
 Array.prototype.flatMap = function (lambda) {
   return Array.prototype.concat.apply([], this.map(lambda));
@@ -88,7 +88,10 @@ class Node {
       return
     }
 
-    const target_child_node = this.child_nodes.find(child_node => query.dominate_sets[child_node._variable].includes(variable))
+    const target_child_node = this.child_nodes.find(child_node => {
+      if (!query.dominate_sets[child_node._variable]) return false
+      return query.dominate_sets[child_node._variable].includes(variable)
+    })
 
     if (target_child_node == null) {
       // append to the current variable
@@ -235,9 +238,9 @@ class TopoNode {
 class Query {
   constructor(name, free_variables, atoms) {
     this.name = name
-    this.free_variables = free_variables
+    this.free_variables = new Set([...free_variables].filter(v => v != ""))
     this.atoms = atoms
-    this.variables = this.get_variables()
+    this.variables = this.get_variables().filter(v => v != '')
 
     this.atoms_of_variables = {}
     this.variables.forEach(v => {
@@ -248,6 +251,13 @@ class Query {
     this.variables.forEach(v => {
       this.dep[v] = [...new Set(this.atoms_of_variables[v].flatMap(atom => atom.variables))]
     })
+  }
+
+  is_valid() {
+    if (this.atoms.length == 0) return false
+    if (this.variables.length == 0) return false
+    if (!is_superset(this.variables, this.free_variables)) return false
+    return true
   }
 
   toString() {
@@ -335,10 +345,10 @@ class Query {
     // append atoms
     this.atoms.forEach(atom => {
       atom.variables.forEach(v => {
-        this.dominate_sets[v].push(atom)
+        this.dominate_sets[v].push(atom.toString())
       })
 
-      canonical_variable_order.add_canonical_node(atom, this)
+      canonical_variable_order.add_canonical_node(atom.toString(), this)
     })
 
     return canonical_variable_order
@@ -381,7 +391,7 @@ class Query {
     // const delta_width =
 
 
-    const delta_width = Math.max(...target_free_variable_sets.map(target_free_variable_set => {
+    const delta_width = Math.max(0, ...target_free_variable_sets.map(target_free_variable_set => {
       const related_atoms = this.atoms.filter(atom => atom.variables.includes(target_free_variable_set.anchor_bound_variable))
       return Math.max(...related_atoms.map(atom => {
         const other_atoms = related_atoms.filter(a => a.name != atom.name)
@@ -462,13 +472,35 @@ class Query {
 
 }
 
-// const R = new Atom('R', ['A', 'B', 'D'])
-// const S = new Atom('S', ['A', 'B', 'E'])
-// const T = new Atom('T', ['A', 'C', 'F'])
-// const U = new Atom('U', ['A', 'C', 'G'])
-// const V = new Atom('V', ['A', 'C'])
+// const parse_query_text = function(new_query_text) {
+//   let [query_part, atom_part] = new_query_text.replace(/\s/g, '').split('=')
+//   if (!query_part || !atom_part) {
+//     return
+//   }
 //
-// const Q = new Query('Q', new Set(['A', 'C', 'D', 'E', 'F']), [R, S, T, U, V])
+//   if (query_part.split('(').length <= 1) return
+//   const query_name = query_part.split('(')[0]
+//   const free_variables = query_part.split('(')[1].replace(')', '').split(',')
+//
+//   if (atom_part.split('),').length == 0) return
+//   const atoms = atom_part.split('),').map(atom_text => {
+//
+//     if (atom_text.split('(').length <= 1) return
+//     const atom_name = atom_text.split('(')[0]
+//     const variables = atom_text.split('(')[1].replace(')', '').split(',')
+//
+//     return new Atom(atom_name, variables)
+//   })
+//
+//   if (atoms.some(atom => !atom)) return
+//
+//   return new Query(query_name, new Set(free_variables), atoms)
+// }
+//
+// const draw_tree = require('asciitree')
+// const Q = parse_query_text('Q() = R(A,B)')
+// console.log(Q)
+//
 //
 // console.log(Q.is_hierarchical())
 // // console.log(draw_tree(Q.get_canonical_variable_order(), node => `${node}`, node => node.child_nodes))

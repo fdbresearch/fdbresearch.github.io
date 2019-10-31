@@ -13,6 +13,7 @@ var app = new Vue({
     update: null,
     delay: null,
     error_message: "",
+    incorrect_query: false,
   },
   mounted: function() {
     this.get_widths(this.query_text)
@@ -116,17 +117,25 @@ var app = new Vue({
     },
     parse_query_text: function(new_query_text) {
       let [query_part, atom_part] = new_query_text.replace(/\s/g, '').split('=')
+      if (!query_part || !atom_part) {
+        return
+      }
 
+      if (query_part.split('(').length <= 1) return
       const query_name = query_part.split('(')[0]
       const free_variables = query_part.split('(')[1].replace(')', '').split(',')
 
+      if (atom_part.split('),').length == 0) return
       const atoms = atom_part.split('),').map(atom_text => {
 
+        if (atom_text.split('(').length <= 1) return
         const atom_name = atom_text.split('(')[0]
         const variables = atom_text.split('(')[1].replace(')', '').split(',')
 
         return new Atom(atom_name, variables)
       })
+
+      if (atoms.some(atom => !atom)) return
 
       return new Query(query_name, new Set(free_variables), atoms)
     },
@@ -134,6 +143,14 @@ var app = new Vue({
       this.computing = true
 
       const query = this.parse_query_text(new_query_text)
+      if (!query || !query.is_valid() || !query.is_hierarchical()) {
+        // console.log(query, query.is_valid(), query.is_hierarchical())
+        this.incorrect_query = true
+        this.computing = false
+        return
+      }
+
+      this.incorrect_query = false
 
       // TODO: hierarchical queries sanity check
 

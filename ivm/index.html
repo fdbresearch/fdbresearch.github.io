@@ -215,10 +215,12 @@
             </div>
             <div class="col-lg-6">
                 <br><br><br>
-                <h4 class="h5 g-color-black g-mb-5">Please enter an hierarchical query:</h4>
+                <h4 class="h5 g-color-black g-mb-5">Please enter an hierarchical query (with one connected component):</h4>
                 <textarea v-model="query_text" rows="3" class="form-control w-100 g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 g-font-size-18 rounded g-px-20 g-py-12" type="textarea" placeholder="E.g. Q(A) = R(A,B), S(B)"></textarea>
                 <br>
-                <button @click="get_widths(query_text)" class="btn u-btn-white g-color-primary--hover g-bg-secondary g-font-weight-600 g-font-size-13 text-uppercase rounded g-py-12 g-px-20" ><span class="g-hidden-md-down">Check</span></button>
+                <h4 v-if="incorrect_query" class="h5 g-color-red g-mb-5">The input query is not a valid hierarchical query. </h4>
+                <button :disabled="computing" @click="get_widths(query_text)" class="btn u-btn-white g-color-primary--hover g-bg-secondary g-font-weight-600 g-font-size-13 text-uppercase rounded g-py-12 g-px-20" ><span class="g-hidden-md-down">{{computing ? 'Checking...' : 'Check'}}</span></button>
+
                 <br><br>
                 <h4 class="h5 g-color-black g-mb-5">Sample queries:</h4>
                 <ul>
@@ -228,15 +230,18 @@
                     <li><h4 class="h6 g-color-black g-mb-5">Q(C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)</h4></li>
                     <li><h4 class="h6 g-color-black g-mb-5">Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)</h4></li>
                 </ul>
-                <div v-if="!computing">
+                <div v-if="true">
                     <hr>
                     <div class="row">
                       <div class="col-lg-4">
                         <h4 class="h5 g-color-black g-mb-5">Static width $\mathsf{w}$ = {{widths.static_width}}</h4>
                         <h4 class="h5 g-color-black g-mb-5">Dynamic width: $\delta$ = {{widths.delta_width}}</h4>
                         <br>
-                        <h4 class="h5 g-color-black g-mb-5">Preprocessing time: {{((widths.static_width - 1)) == 1 ? '1 + ' : '1 + ' + ((widths.static_width - 1))}}$\epsilon$</h4>
-                          <h4 class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
+                        <h4 v-if="widths.static_width > 1" class="h5 g-color-black g-mb-5">Preprocessing time: {{widths.static_width == 2 ? '1 + ' : '1 + ' + (widths.static_width - 1)}}$\epsilon$</h4>
+                        <h4 v-else class="h5 g-color-black g-mb-5">Preprocessing time: 1</h4>
+
+                          <h4 v-if="widths.delta_width > 0" class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
+                          <h4 v-else class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}</h4>
                           <h4 class="h5 g-color-black g-mb-5">Enumeration delay: 1 $-$ $\epsilon$</h4>
                           <br><br>
                       </div>
