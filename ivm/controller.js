@@ -17,11 +17,27 @@ var app = new Vue({
     sample_queries: ['Q(A,C) = R(A, B),S(B,C)', 'Q(A) = R(A, B), S(B)',
     'Q(A, D, E) = R(A, B,C),S(A, B, D),T(A, E)',
     'Q(C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)',
-    'Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)']
+    'Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)'],
+    window_width: window.innerWidth
   },
   mounted: function() {
     this.get_widths(this.query_text)
     this.refresh_plot()
+
+    const self = this
+    window.addEventListener("resize", function(e) {
+
+      this.console.log(self.window_width, window.innerWidth)
+      if (self.window_width < 550 && window.innerWidth >= 550) {
+        self.window_width = window.innerWidth
+        self.refresh_plot()
+      }
+      if (self.window_width >= 550 && window.innerWidth < 550) {
+        self.window_width = window.innerWidth
+        self.refresh_plot()
+      }
+      self.window_width = window.innerWidth
+    });
   },
   watch: {
   },
@@ -173,6 +189,7 @@ var app = new Vue({
       this.computing = false
     },
     refresh_plot: function() {
+      const ratio = this.window_width < 550 ? 0.8 : 1.5
       const static_width = this.widths.static_width
       const delta_width = this.widths.delta_width
 
@@ -280,7 +297,7 @@ var app = new Vue({
             display: true,
             text: this.Q.toString()
           },
-          aspectRatio: 1.5,
+          aspectRatio: ratio,
           scales: {
             xAxes: [{
               display: true,

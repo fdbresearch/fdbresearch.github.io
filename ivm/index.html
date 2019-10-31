@@ -210,7 +210,7 @@
         <div class="row">
             <!-- <div class="row justify-content-between"> -->
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-12">
                 <canvas id="myChart"></canvas>
             </div>
             <div class="col-lg-6">
@@ -219,8 +219,7 @@
                 <textarea v-model="query_text" rows="3" class="form-control w-100 g-brd-secondary-light-v2 g-brd-primary--focus g-color-secondary-dark-v1 g-placeholder-secondary-dark-v1 g-bg-white g-font-weight-400 g-font-size-18 rounded g-px-20 g-py-12" type="textarea" placeholder="E.g. Q(A) = R(A,B), S(B)"></textarea>
                 <br>
                 <h4 v-if="incorrect_query" class="h5 g-color-red g-mb-5">The input query is not a valid hierarchical query. </h4>
-                <button :disabled="computing" @click="get_widths(query_text)" class="btn u-btn-white g-color-primary--hover g-bg-secondary g-font-weight-600 g-font-size-13 text-uppercase rounded g-py-12 g-px-20" ><span class="g-hidden-md-down">{{computing ? 'Checking...' : 'Check'}}</span></button>
-
+                <button :disabled="computing" @click="get_widths(query_text)" class="btn u-btn-white g-color-primary--hover g-bg-secondary g-font-weight-600 g-font-size-13 text-uppercase rounded g-py-12 g-px-20" >Check</button>
                 <br><br>
                 <h4 class="h5 g-color-black g-mb-5">Click to check the following sample queries:</h4>
                 <ul>
@@ -229,7 +228,7 @@
                 <div v-if="true">
                     <hr>
                     <div class="row">
-                      <div class="col-lg-4">
+                      <div class="col-xl-5 col-lg-12">
                         <h4 class="h5 g-color-black g-mb-5">Static width $\mathsf{w}$ = {{widths.static_width}}</h4>
                         <h4 class="h5 g-color-black g-mb-5">Dynamic width: $\delta$ = {{widths.delta_width}}</h4>
                         <br>
@@ -239,9 +238,8 @@
                           <h4 v-if="widths.delta_width > 0" class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
                           <h4 v-else class="h5 g-color-black g-mb-5">Update time: {{widths.delta_width == 1 ? '' : widths.delta_width}}</h4>
                           <h4 class="h5 g-color-black g-mb-5">Enumeration delay: 1 $-$ $\epsilon$</h4>
-                          <br><br>
                       </div>
-                      <div class="col-lg-8">
+                      <div class="col-xl-7 col-lg-12">
                           <h4 class="h5 g-color-black g-mb-5">Canonical variable order:</h4>
                         <br>
                         <h4 class="h5 g-color-black g-mb-5"><pre style="white-space: pre">{{widths.variable_order}}</pre></h4>
@@ -249,6 +247,7 @@
                     </div>
                     <div class="row">
                       <div class="col-lg-12">
+                          <hr>
                         <h4 class="h5 g-color-black g-mb-5">Enter target values</h4>
                         <div class="row">
                           
