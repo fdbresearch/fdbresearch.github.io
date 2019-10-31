@@ -222,13 +222,9 @@
                 <button :disabled="computing" @click="get_widths(query_text)" class="btn u-btn-white g-color-primary--hover g-bg-secondary g-font-weight-600 g-font-size-13 text-uppercase rounded g-py-12 g-px-20" ><span class="g-hidden-md-down">{{computing ? 'Checking...' : 'Check'}}</span></button>
 
                 <br><br>
-                <h4 class="h5 g-color-black g-mb-5">Sample queries:</h4>
+                <h4 class="h5 g-color-black g-mb-5">Click to check the following sample queries:</h4>
                 <ul>
-                    <li><h4 class="h6 g-color-black g-mb-5">Q(A,C) = R(A, B),S(B,C)</h4></li>
-                    <li><h4 class="h6 g-color-black g-mb-5">Q(A) = R(A, B), S(B)</h4></li>
-                    <li><h4 class="h6 g-color-black g-mb-5">Q(A, D, E) = R(A, B,C),S(A, B, D),T(A, E)</h4></li>
-                    <li><h4 class="h6 g-color-black g-mb-5">Q(C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)</h4></li>
-                    <li><h4 class="h6 g-color-black g-mb-5">Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)</h4></li>
+                    <li :key="i" v-for="(sample_query, i) in sample_queries"><h4 class="h6 g-color-black g-mb-5"><a @click="get_widths(sample_query)" href="javascript:void(0)">{{sample_query}}</a></h4></li>
                 </ul>
                 <div v-if="true">
                     <hr>

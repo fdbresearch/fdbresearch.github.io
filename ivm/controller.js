@@ -14,6 +14,10 @@ var app = new Vue({
     delay: null,
     error_message: "",
     incorrect_query: false,
+    sample_queries: ['Q(A,C) = R(A, B),S(B,C)', 'Q(A) = R(A, B), S(B)',
+    'Q(A, D, E) = R(A, B,C),S(A, B, D),T(A, E)',
+    'Q(C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)',
+    'Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)']
   },
   mounted: function() {
     this.get_widths(this.query_text)
@@ -152,14 +156,13 @@ var app = new Vue({
 
       this.incorrect_query = false
 
-      // TODO: hierarchical queries sanity check
-
       console.log("Query text parsed")
       console.log(query)
 
       this.widths = query.widths()
       // console.log(query.widths_exhausted())
       this.Q = query
+      this.query_text = query.toString()
 
 
 
