@@ -285,8 +285,8 @@ var app = new Vue({
             xAxes: [{
               display: true,
               scaleLabel: {
-                display: false,
-                labelString: 'EPS'
+                display: true,
+                labelString: 'Epsilon'
               },
               ticks: {
                 min: 0,
@@ -297,7 +297,7 @@ var app = new Vue({
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Complexity'
+                labelString: 'Complexity O(|D|^y)'
               },
               ticks: {
                 beginAtZero: true
