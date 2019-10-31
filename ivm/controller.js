@@ -179,7 +179,7 @@ var app = new Vue({
       const update_delay_intersect = 1 / (delta_width + 1)
       const update_1_intersect = 1 / delta_width
 
-      let steps = [...new Set([0, update_delay_intersect, update_1_intersect, 1])];
+      let steps = [...new Set([...[...Array(20).keys()].map(x => x * 0.05), update_delay_intersect, update_1_intersect, 1].sort())];
 
       window.chartColors = {
         red: 'rgb(255, 99, 132)',
