@@ -14,10 +14,11 @@ var app = new Vue({
     delay: null,
     error_message: "",
     incorrect_query: false,
-    sample_queries: ['Q(A,C) = R(A, B),S(B,C)', 'Q(A) = R(A, B), S(B)',
+    sample_queries: ['Q(A,C) = R(A, B),S(B,C)', 'Q(A,B,C) = R(A, B),S(B,C)', 'Q(A) = R(A, B), S(B)', 'Q(B) = R(A, B), S(B)',
     'Q(A, D, E) = R(A, B,C),S(A, B, D),T(A, E)',
     'Q(C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)',
-    'Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)'],
+    'Q(A, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)',
+    'Q(A, B, C, D, E, F) = R(A, B, D),S(A, B, E),T(A,C, F),U (A,C,G)'],
     window_width: window.innerWidth
   },
   mounted: function() {
@@ -58,7 +59,7 @@ var app = new Vue({
         this.clear_target_values()
         return 
       }
-      new_epsilon = parseFloat(new_epsilon).toPrecision(2)
+      new_epsilon = parseFloat(new_epsilon).toPrecision(3)
       if (new_epsilon < 0 || new_epsilon > 1) {
         this.error_message = "Invalid input or the target values cannot be achieved."
         this.clear_target_values()
