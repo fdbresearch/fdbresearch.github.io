@@ -48,8 +48,12 @@ var app = new Vue({
       this.update = null
       this.delay = null
     },
+    get_precision: function(a) {
+      var e = 1;
+      while (Math.round(a * e) / e !== a) e *= 10;
+      return Math.log(e) / Math.LN10;
+    },
     epsilon_handler: function(new_epsilon) {
-      
       if (new_epsilon === "" || new_epsilon === null) {
         this.clear_target_values()
         return 
@@ -62,9 +66,9 @@ var app = new Vue({
         return
       }
       const {static_width, delta_width} = this.widths
-      this.preprocessing = 1 + (static_width-1) * new_epsilon
-      this.update = delta_width * new_epsilon
-      this.delay = 1 - new_epsilon
+      this.preprocessing = (1 + (static_width-1) * new_epsilon).toPrecision(3)
+      this.update = (delta_width * new_epsilon).toPrecision(3)
+      this.delay = (1 - new_epsilon).toPrecision(3)
       this.error_message = ""
     },
     preprocessing_handler: function(new_preprocessing) {
