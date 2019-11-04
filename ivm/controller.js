@@ -318,7 +318,7 @@ var app = new Vue({
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Complexity O(|D|^y)'
+                labelString: 'Complexity O(N^y)'
               },
               ticks: {
                 beginAtZero: true
