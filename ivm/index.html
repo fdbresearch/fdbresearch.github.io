@@ -256,9 +256,9 @@
                                 </h4>
                                 <h4 v-else class="h5 g-color-black g-mb-5">Preprocessing time: 1</h4>
 
-                                <h4 v-if="widths.delta_width > 0" class="h5 g-color-black g-mb-5">Update time:
+                                <h4 v-if="widths.delta_width > 0" class="h5 g-color-black g-mb-5">Amortized update time:
                                     {{widths.delta_width == 1 ? '' : widths.delta_width}}$\epsilon$</h4>
-                                <h4 v-else class="h5 g-color-black g-mb-5">Update time:
+                                <h4 v-else class="h5 g-color-black g-mb-5">Amortized update time:
                                     {{widths.delta_width == 1 ? '' : widths.delta_width}}</h4>
                                 <h4 class="h5 g-color-black g-mb-5">Enumeration delay: 1 $-$ $\epsilon$</h4>
                             </div>
@@ -297,7 +297,7 @@
                                     </div>
                                     <br><br>
                                     <div class="col-lg-4">
-                                        <h4 class="h5 g-color-black g-mb-5">Update time:</h4>
+                                        <h4 class="h5 g-color-black g-mb-5">Amortized update time:</h4>
                                     </div>
                                     <div class="col-lg-8">
                                         <input v-model="update" style="width: 80%;" v-on:input="update_handler(update)"
