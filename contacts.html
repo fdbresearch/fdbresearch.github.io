@@ -22,8 +22,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="keywords" content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
-  <meta name="description" content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
+  <meta name="keywords"
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
+  <meta name="description"
+    content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -64,6 +66,26 @@
       background-color: grey;
     }
   </style>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4DNfudn3O5OTiRduQT7-GmYqAdKgdgvc&callback=initMap">
+  </script>
+
+  <script>
+    let map;
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: {
+          lat: 47.3740245,
+          lng: 8.5439417
+        },
+        zoom: 14
+      });
+    }
+  </script>
+
 
 </head>
 
@@ -155,7 +177,7 @@
                   <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
                 </li>
 
-                
+
 
                 <!-- Code -->
                 <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
@@ -209,7 +231,7 @@
       <div class="container">
         <div class="d-sm-flex text-center">
           <div class="align-self-center">
-            <h2 class="h3 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">Contact</h2>
+            <h2 class="h3 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">FDB Research Group Contact</h2>
           </div>
 
 
@@ -224,49 +246,84 @@
     <!-- Blog Minimal Blocks -->
     <div id="fdb-app" class="container">
 
-      <!-- row -->
       <div class="row">
-        <a name="News"></a>
-        <a name="Awards"></a>
-        <!-- left panel -->
-        <div class="col-lg-7">
-          <div id="map"></div>
-
-        </div>
-        <!-- end left panel -->
-
-        <div class="col-lg-1 "></div>
-
-        <!-- right panel -->
-        <div class="col-lg-4 ">
-
-          <h2 class="g-font-weight-300 mb-5">FDB research group</h2>
-
-          <div class="mb-4">
-            <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Address:</h2>
-            <p class="g-color-gray-dark-v4 g-font-size-16">Wolfson Building
-              <br>Department of Computer Science
-              <br>University of Oxford
-              <br>Parks Rd
-              <br>Oxford
-              <br>OX1 3QD
-              <br>United Kingdom</p>
-          </div>
+        <div class="col-lg-12">
 
           <div class="mb-4">
             <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Email us:</h2>
             <p class="g-color-gray-dark-v4">Email:
-              <a class="g-color-gray-dark-v2" href="#">dan.olteanu@cs.ox.ac.uk</a>
+              <a class="g-color-gray-dark-v2" href="#">dast@ifi.uzh.ch</a>
             </p>
           </div>
-
-
-
         </div>
-        <!-- end right panel -->
+
+      </div>
+
+
+      <!-- row -->
+      <div class="row">
+
+        <div class="col-md-3">
+          <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Main address:</h2>
+
+          <div class="mb-4">
+
+            <p class="g-color-gray-dark-v4 g-font-size-16">
+              DAST Group <br>
+              Department of Informatics <br>
+              University of Zurich <br>
+              Andreasstr. 15 <br>
+              8050 Zürich <br>
+              Switzerland <br>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <h2 class="h5 g-color-gray-dark-v2 g-font-weight-600">Addresses of other team members:</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="mb-4">
+                <p class="g-color-gray-dark-v4 g-font-size-16">Department of Computer Science
+                  <br>University of Oxford
+                  <br>Parks Rd
+                  <br>Oxford
+                  <br>OX1 3QD
+                  <br>United Kingdom</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-4">
+                <p class="g-color-gray-dark-v4 g-font-size-16">School of Informatics
+                  <br>University of Edinburgh
+                  <br>10 Crichton St
+                  <br>Edinburgh
+                  <br>EH8 9AB
+                  <br>United Kingdom</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="mb-4">
+                <p class="g-color-gray-dark-v4 g-font-size-16">
+                  Paul G. Allen School of Computer Science & Engineering
+                  <br> University of Washington
+                  <br> 3800 E Stevens Way NE
+                  <br> Seattle, WA
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
 
       </div>
       <!-- end row -->
+
+      <div style="margin-top: 50px" class="row">
+        <div class="col-lg-12">
+          <div id="map"></div>
+        </div>
+      </div>
 
       <!-- row -->
 
@@ -322,24 +379,7 @@
 
   </main>
 
-  <script>
-    function initMap() {
-      var department = {
-        lat: 51.759821,
-        lng: -1.258473
-      };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: department
-      });
-      var marker = new google.maps.Marker({
-        position: department,
-        map: map
-      });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4DNfudn3O5OTiRduQT7-GmYqAdKgdgvc&callback=initMap">
-  </script>
+
 
   <!-- Vue.js part -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
