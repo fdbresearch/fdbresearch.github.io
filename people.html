@@ -7,11 +7,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-111495058-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111495058-1');
+  </script>
 
   <!-- Title -->
   <title>FDB Research</title>
@@ -28,8 +31,10 @@
   <link rel="manifest" href="manifest.json">
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4270a9">
   <meta name="theme-color" content="#ffffff">
-  <meta name="keywords" content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
-  <meta name="description" content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
+  <meta name="keywords"
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
+  <meta name="description"
+    content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
 
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
@@ -47,6 +52,9 @@
   <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
 
   <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="assets/vendor/custombox/custombox.min.css">
 
   <!-- CSS Unify -->
   <link rel="stylesheet" href="assets/css/unify-core.css">
@@ -149,7 +157,7 @@
                   <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
                 </li>
 
-                
+
 
                 <!-- Code -->
                 <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
@@ -236,83 +244,40 @@
     <div class="container g-pb-20">
 
 
-        <div class="row justify-content-between">
-            <!-- Group block -->
-            <div class="col-lg-12 col-sm-12">
-              <!-- Team Block -->
-              <div class="u-info-v1-2">
-                <!-- Figure -->
-                <figure class="u-block-hover">
-                  <!-- Figure Image -->
-                  <div id="slider">
-                      <img src="./assets/group/group3.jpg" title="14 March 2019" alt="Department of Computer Science, University of Oxford">
-                      <img data-src="./assets/group/group4.jpg" src="" title="14 March 2019" alt="Department of Computer Science, University of Oxford">
-                      <img data-src="./assets/group/group.jpg" src="" title="10 October 2018" alt="Oxford University Parks">
-                      <img data-src="./assets/group/group2.jpg" src="" title="25 October 2017" alt="Oxford University Parks">
-                  </div>
-    
-                 </figure>
-                <!-- End Figure -->
-    
-                <!-- Figure Info -->
-                <div class="g-bg-white g-py-25" id="group-members">
-                  <div class="g-mb-15">
-                    <h4 class="h5 g-color-black g-mb-5">FDB Group</h4>
-                    <em class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary"></em>
-                  </div>
-    
-                </div>
-                <!-- End Figure Info-->
-              </div>
-              <!-- End Team Block -->
-            </div>
-            <!-- End Group block -->
-
-
-
-        <!-- People -->
-        <section class="container g-pb-40" id="Karen">
-          <figure class="row">
-            <!-- Figure Image -->
-            <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0 g-mb-30">
-              <img class="w-100" src="assets/people/Karen.jpg" alt="Picture of Karen Barnes">
-            </div>
-            <!-- End Figure Image -->
-
-            <!-- Figure Body -->
-            <div class="col-lg-8">
-              <div class="d-flex justify-content-between g-mb-10">
-                <div class="g-mb-20">
-                  <h2 class="h2 g-mb-5">Karen Barnes</h2>
-                </div>
-
-                <!-- Figure Social Icons -->
-                <ul class="list-inline">
-                  <li class="list-inline-item g-mx-2">
-                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"
-                      href="https://www.cs.ox.ac.uk/people/karen.barnes/">
-                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-university"></i>
-                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-university"></i>
-                    </a>
-                  </li>
-
-                </ul>
-                <!-- End Figure Social Icons -->
+      <div class="row justify-content-between">
+        <!-- Group block -->
+        <div class="col-lg-12 col-sm-12">
+          <!-- Team Block -->
+          <div class="u-info-v1-2">
+            <!-- Figure -->
+            <figure class="u-block-hover">
+              <!-- Figure Image -->
+              <div id="slider">
+                <img src="./assets/group/group3.jpg" title="14 March 2019"
+                  alt="Department of Computer Science, University of Oxford">
+                <img data-src="./assets/group/group4.jpg" src="" title="14 March 2019"
+                  alt="Department of Computer Science, University of Oxford">
+                <img data-src="./assets/group/group.jpg" src="" title="10 October 2018" alt="Oxford University Parks">
+                <img data-src="./assets/group/group2.jpg" src="" title="25 October 2017" alt="Oxford University Parks">
               </div>
 
-              <!-- Figure Info -->
-              <div class="g-mb-25">
-                <p>Karen is the official project administrator.
+            </figure>
+            <!-- End Figure -->
 
-                </p>
+            <!-- Figure Info -->
+            <div class="g-bg-white g-py-25" id="group-members">
+              <div class="g-mb-15">
+                <h4 class="h5 g-color-black g-mb-5">FDB Group</h4>
+                <em
+                  class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary"></em>
               </div>
-              <!-- End Info -->
 
             </div>
-            <!-- End Figure Body -->
-          </figure>
-        </section>
-        <!-- End People -->
+            <!-- End Figure Info-->
+          </div>
+          <!-- End Team Block -->
+        </div>
+        <!-- End Group block -->
 
 
         <!-- People -->
@@ -461,8 +426,10 @@
                   <li class="list-inline-item g-mx-2">
                     <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"
                       href="https://scholar.google.co.uk/citations?user=Wl0VFMEAAAAJ&hl=en">
-                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
-                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
                     </a>
                   </li>
                   <li class="list-inline-item g-mx-2">
@@ -479,7 +446,8 @@
               <!-- Figure Info -->
               <div class="g-mb-25">
                 Milos earned his PhD from EPFL in 2016 in database systems and in particular efficient incremental
-                maintenance. He has been a departmental lecturer in Computer Science at Oxford from Sept 2016 to Aug 2018 before joining the University of Edinburgh as a tenure-track lecturer in Databases.
+                maintenance. He has been a departmental lecturer in Computer Science at Oxford from Sept 2016 to Aug
+                2018 before joining the University of Edinburgh as a tenure-track lecturer in Databases.
                 Milos'
                 research focuses on the design and implementation of data-intensive systems. His work studies the
                 incremental
@@ -534,8 +502,10 @@
                   <li class="list-inline-item g-mx-2">
                     <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"
                       href="https://scholar.google.co.uk/citations?user=4eeIj2gAAAAJ&hl=en">
-                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
-                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
                     </a>
                   </li>
                   <li class="list-inline-item g-mx-2">
@@ -552,7 +522,8 @@
               <!-- Figure Info -->
               <div class="g-mb-25">
                 <p>
-                  Dan earned his PhD from the University of Munich. He joined Oxford in Sept 2007, where he is now a full
+                  Dan earned his PhD from the University of Munich. He joined Oxford in Sept 2007, where he is now a
+                  full
                   professor. He
                   has had further professional roles including: Turing Fellow since 2016; consultant for the database
                   company
@@ -571,50 +542,6 @@
         </section>
         <!-- End People -->
 
-        <!-- People -->
-        <section class="container g-pt-50 g-pb-40" id="Fabian">
-          <figure class="row">
-            <!-- Figure Image -->
-            <div class="col-md-8 offset-md-2 col-lg-4 offset-lg-0 g-mb-30">
-              <img class="w-100" src="assets/people/Fabian.jpg" alt="Picture of Fabian Peternek">
-            </div>
-            <!-- End Figure Image -->
-
-            <!-- Figure Body -->
-            <div class="col-lg-8">
-              <div class="d-flex justify-content-between g-mb-10">
-                <div class="g-mb-20">
-                  <h2 class="h2 g-mb-5">Fabian Peternek</h2>
-                </div>
-
-                <!-- Figure Social Icons -->
-                <!-- <ul class="list-inline">
-                  <li class="list-inline-item g-mx-2">
-                    <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"
-                      href="https://www.cs.ox.ac.uk/people/fabian.peternek/">
-                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular fa fa-university"></i>
-                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover fa fa-university"></i>
-                    </a>
-                  </li>
-
-                </ul> -->
-                <!-- End Figure Social Icons -->
-              </div>
-
-              <!-- Figure Info -->
-              <div class="g-mb-25">
-                <p>
-                  Fabian earned his PhD from the University of Edinburgh in 2018 in the area of grammar-based
-                  compression of graphs. After completion he joined the FDB project as a postdoc in March 2018.
-                </p>
-              </div>
-              <!-- End Info -->
-
-            </div>
-            <!-- End Figure Body -->
-          </figure>
-        </section>
-        <!-- End People -->
 
 
 
@@ -646,8 +573,10 @@
                   <li class="list-inline-item g-mx-2">
                     <a class="u-icon-v1 u-icon-size--sm u-icon-slide-up--hover g-color-gray-light-v1 g-bg-gray-light-v5 g-color-gray-light-v1--hover rounded-circle"
                       href="https://scholar.google.com/citations?user=MpQWxk8AAAAJ&hl=en">
-                      <i class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
-                      <i class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-1 u-icon__elem-regular ai ai-google-scholar ai-3x"></i>
+                      <i
+                        class="g-font-size-default g-line-height-0_8 u-icon__elem-hover ai ai-google-scholar ai-3x"></i>
                     </a>
                   </li>
                   <li class="list-inline-item g-mx-2">
@@ -700,7 +629,10 @@
               <!-- Figure Info -->
               <div class="g-mb-50">
                 <p>
-                  Amir earned his PhD from EPFL in 2018. He is a departmental lecturer in Computer Science at Oxford from Jan 2019. His research focuses on the design and implementation of data-analytics systems by using techniques from the databases, programming languages, compilers, and machine learning communities. He is a recipient of the Google Ph.D. Fellowship in structured data analysis.
+                  Amir earned his PhD from EPFL in 2018. He is a departmental lecturer in Computer Science at Oxford
+                  from Jan 2019. His research focuses on the design and implementation of data-analytics systems by
+                  using techniques from the databases, programming languages, compilers, and machine learning
+                  communities. He is a recipient of the Google Ph.D. Fellowship in structured data analysis.
                 </p>
               </div>
               <!-- End Info -->
@@ -795,7 +727,9 @@
               <!-- Figure Info -->
               <div class="g-mb-50">
                 <p>
-                  Djordje Zivanovic earned his MSc in Electrical engineering and Computer Science and BSc in Electrical engineering from University of Belgrade, Serbia. He is a first year PhD student and contributes to In-Database Linear Algebra. 
+                  Djordje Zivanovic earned his MSc in Electrical engineering and Computer Science and BSc in Electrical
+                  engineering from University of Belgrade, Serbia. He is a first year PhD student and contributes to
+                  In-Database Linear Algebra.
                 </p>
               </div>
               <!-- End Info -->
@@ -807,7 +741,7 @@
         </section>
         <!-- End People -->
 
-        
+
 
       </div>
 
@@ -877,8 +811,8 @@
           <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Project Students</h2>
         </div>
       </div> -->
-      
-      
+
+
 
 
       <div class="g-pb-20"></div>
@@ -891,7 +825,7 @@
 
 
 
-   
+
       <UL>
         <LI>
           <strong>Jakub Závodný</strong> (DPhil, October 2010 - Jan 2014).
@@ -1010,7 +944,8 @@
         <LI>
           <strong>Nofar Carmeli</strong> (visiting researcher, January 2019 - February 2019)
           <br />
-          Nofar was a visiting researcher in the FDB group. She is a PhD student in the Data and Knowledge group at the Technion, advised by Prof. Benny Kimelfeld.
+          Nofar was a visiting researcher in the FDB group. She is a PhD student in the Data and Knowledge group at the
+          Technion, advised by Prof. Benny Kimelfeld.
         </LI>
       </UL>
 
@@ -1032,7 +967,7 @@
         </LI>
       </UL>
 
-      
+
 
       <UL>
         <LI>
@@ -1044,7 +979,7 @@
         </LI>
       </UL>
 
-      
+
 
       <UL>
         <LI>
@@ -1067,14 +1002,33 @@
 
       <UL>
         <LI>
-          <strong>George Chichirim</strong> (3rd year, Oct 2019 - May 2020)
+          <a href="#modal-fabian" data-modal-target="#modal-fabian" data-modal-effect="fadein"><strong>Fabian
+              Peternek</strong></a>
+          (PostDoc, March 2018 - April 2020)
         </LI>
       </UL>
-      
+
+      <UL>
+        <LI>
+          <strong>George Chichirim</strong> (3rd year, October 2019 - May 2020)
+        </LI>
+      </UL>
+
+
+
 
 
     </div>
     <!-- End Blog Minimal Blocks -->
+
+    <div id="modal-fabian" class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20"
+      style="display: none;">
+      <button type="button" onclick="Custombox.modal.close();" class="close">
+        <i class="hs-icon hs-icon-close"></i>
+      </button>
+      <br>
+      <img width="100%" src="assets/people/Fabian.jpg" alt="">
+    </div>
 
 
     <!-- Footer -->
@@ -1133,6 +1087,7 @@
   <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
   <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
+  <script src="assets/vendor/custombox/custombox.min.js"></script>
 
   <!-- JS Unify -->
   <script src="assets/js/hs.core.js"></script>
@@ -1144,6 +1099,10 @@
   <script src="assets/js/components/hs.onscroll-animation.js"></script>
   <script src="assets/js/components/hs.go-to.js"></script>
   <script src="assets/js/components/hs.carousel.js"></script>
+  <script src="assets/js/components/hs.modal-window.js"></script>
+
+  <!-- JS Customization -->
+  <script src="assets/js/custom.js"></script>
 
   <!-- slider -->
   <script src="./bower_components/ideal-image-slider/ideal-image-slider.min.js"></script>
@@ -1160,12 +1119,14 @@
     slider.start();
   </script>
 
-  <!-- JS Customization -->
-  <script src="assets/js/custom.js"></script>
+
 
   <!-- JS Plugins Init. -->
   <script>
     $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
