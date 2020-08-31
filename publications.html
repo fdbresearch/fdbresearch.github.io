@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
+  </script>
   <script>
-    window.dataLayer = window.dataLayer || [];
+   window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
@@ -15,949 +15,1545 @@
 
     gtag('config', 'UA-111495058-1');
   </script>
-
   <!-- Title -->
-  <title>FDB Research</title>
-
+  <title>
+   FDB Research
+  </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4270a9">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="keywords"
-    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
-  <meta name="description"
-    content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
-
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="manifest.json" rel="manifest"/>
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science" name="keywords"/>
+  <meta content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data." name="description"/>
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
   <!-- CSS Global Icons -->
-  <link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/vendor/icon-line/css/simple-line-icons.css">
-  <link rel="stylesheet" href="assets/vendor/icon-etlinefont/style.css">
-  <link rel="stylesheet" href="assets/vendor/icon-line-pro/style.css">
-  <link rel="stylesheet" href="assets/vendor/icon-hs/style.css">
-  <link rel="stylesheet" href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
-  <link rel="stylesheet" href="assets/vendor/animate.css">
-  <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
-  <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
-
-  <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
-
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/animate.css" rel="stylesheet"/>
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
   <!-- CSS Unify -->
-  <link rel="stylesheet" href="assets/css/unify-core.css">
-  <link rel="stylesheet" href="assets/css/unify-components.css">
-  <link rel="stylesheet" href="assets/css/unify-globals.css">
-
+  <link href="assets/css/unify-core.css" rel="stylesheet"/>
+  <link href="assets/css/unify-components.css" rel="stylesheet"/>
+  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
   <!-- CSS Customization -->
-  <link rel="stylesheet" href="assets/css/custom.css">
-</head>
-
-<body>
+  <link href="assets/css/custom.css" rel="stylesheet"/>
+ </head>
+ <body>
   <main>
-
-    <!-- Header -->
-    <header id="js-header" class="u-header u-header--static u-shadow-v19">
-      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-        <nav class="js-mega-menu navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Responsive Toggle Button -->
-            <button
-              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
-              type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
-              data-toggle="collapse" data-target="#navBar">
-              <span class="hamburger hamburger--slider">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-              </span>
-            </button>
-            <!-- End Responsive Toggle Button -->
-
-            <!-- Logo -->
-            <a href="index.html" class="navbar-brand">
-              <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
-            </a>
-
-            <!-- End Logo -->
-
-            <!-- Navigation -->
-            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
-              id="navBar">
-
-              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-                <!-- Projects -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">News</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="visitors.html">
-                        Visitors</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="events.html">
-                        Events</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="awards.html">Awards</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Projects -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="people.html" class="nav-link g-py-7 g-px-0">People</a>
-                </li>
-
-                <!-- Projects -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">Projects</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="principles.html">
-                        Principles of Factorised Databases</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="analytics.html">In-Database Analytics</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Projects -->
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
-                </li>
-
-
-
-                <!-- Code -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">Code</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="fivm-code.html">
-                        FIVM</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="fbench-code.html">
-                        FBENCH</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Code -->
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
-                </li>
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="videos.html" class="nav-link g-py-7 g-px-0">Videos</a>
-                </li>
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="acknowledgements.html" class="nav-link g-py-7 g-px-0">ACK</a>
-                </li>
-
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contact</a>
-                </li>
-
-              </ul>
-            </div>
-            <!-- End Navigation -->
-
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- End Header -->
-
-
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-50">
+   <!-- Header -->
+   <header class="u-header u-header--static u-shadow-v19" id="js-header">
+    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+     <nav class="js-mega-menu navbar navbar-expand-lg">
       <div class="container">
-        <div class="d-sm-flex text-center">
-          <div class="align-self-center">
-            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">Publications & Student Theses</h2>
-          </div>
-
-          <div class="align-self-center ml-auto">
-            <div class="px-4">
-              <ul class="u-list-inline">
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2020">2020</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2019">2019</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2018">2018</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2017">2017</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2016">2016</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item g-mr-5">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#pre2016">Pre 2016</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
-                </li>
-                <li class="list-inline-item">
-                  <a class="u-link-v5 g-color-main g-color-primary--hover" href="#Theses">Theses</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
+       <!-- Responsive Toggle Button -->
+       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
+        <span class="hamburger hamburger--slider">
+         <span class="hamburger-box">
+          <span class="hamburger-inner">
+          </span>
+         </span>
+        </span>
+       </button>
+       <!-- End Responsive Toggle Button -->
+       <!-- Logo -->
+       <a class="navbar-brand" href="index.html">
+        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
+       </a>
+       <!-- End Logo -->
+       <!-- Navigation -->
+       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+         <!-- Projects -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           News
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="visitors.html">
+             Visitors
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="events.html">
+             Events
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="awards.html">
+             Awards
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Projects -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="people.html">
+           People
+          </a>
+         </li>
+         <!-- Projects -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           Projects
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="principles.html">
+             Principles of Factorised Databases
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="analytics.html">
+             In-Database Analytics
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="ivm.html">
+             Incremental Maintenance for Analytics
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Projects -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="publications.html">
+           Publications
+          </a>
+         </li>
+         <!-- Code -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           Code
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="fivm-code.html">
+             FIVM
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="fbench-code.html">
+             FBENCH
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Code -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="talks.html">
+           Talks
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="videos.html">
+           Videos
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+           ACK
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+           Contact
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- End Navigation -->
       </div>
-    </section>
-    <!-- End Breadcrumbs -->
-
-    <div class="g-pt-50"></div>
-
-    <!-- Blog Minimal Blocks -->
-
-    <div class="container g-pb-20">
-      <div class="row justify-content-between">
-        <!-- left panel -->
-        <!-- <div class="col-lg-1 g-mb-80"></div> -->
-        <!-- end left panel -->
-        <!-- Articles Content -->
-        <div class="col-lg-10 ">
-
-          <a name="2020"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                           g-brd-primary">2020</h2>
-          </div>
-
-          <ul>
-            <li><strong>The Relational Data Borg is Learning (<a
-                  href="https://vldb2020.org/keynote.html">Keynote</a>)</strong> [<a
-                href="https://arxiv.org/abs/2008.07864">arxiv</a>] <span
-                class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span><br />
-              Dan Olteanu.<br />
-              In PVLDB 13(12): 3503 - 3516, 2020.</li>
-          </ul>
-
-          <ul>
-            <li><strong>LMFAO: An Engine for Batches of Group-By Aggregates</strong> [<a
-                href="https://arxiv.org/abs/2008.08657">arxiv</a>, <a
-                href="https://www.youtube.com/watch?v=D-u4kR6z2nk">video</a>] <span
-                class="g-bg-pink g-ml-5 g-rounded-3 u-label">Demo</span><br />
-              Maximilian Schleich, Dan Olteanu.<br />
-              In PVLDB 13(12): 2945 - 2948, 2020.</li>
-          </ul>
-
-          <UL>
-            <LI id="2004.03716">
-              <STRONG>Maintaining Triangle Queries under Updates</STRONG>.
-              [<A href="https://arxiv.org/abs/2004.03716">arxiv</A>
-              ]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Ahmet Kara, Hung Q. Ngo, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
-              <BR>To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted April 2020)
-              <BR>Special issue of best papers at ICDT 2019
-              <BR><a href="https://arxiv.org/abs/2004.03716">arXiv report 2004.03716</a>, April 2020.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1910.04939">
-              <STRONG>Rk-means: Fast Clustering for Relational Data</STRONG>.
-              [<A href="https://arxiv.org/abs/1910.04939">arxiv</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Ryan Curtin, Ben Moseley, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, Maximilian Schleich.
-              <BR>In Artificial Intelligence and Statistics (AISTATS), Palermo, Italy, June, 2020.
-              <BR><a href="https://arxiv.org/abs/1910.04939">arXiv report 1910.04939</a>, October 2019.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="2006.00694">
-              <STRONG>F-IVM: Learning over Fast Evolving Relational Data</STRONG>.
-              [<A href="https://arxiv.org/abs/2006.00694">arixv</A>, <A
-                href="https://www.youtube.com/watch?v=xbXCm14szH0">video</A>]
-              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-              <BR>Milos Nikolic, Haozhe Zhang, Ahmet Kara, Dan Olteanu.
-              <BR>In ACM SIGMOD, Portland, Oregon, June, 2020.
-              <BR><a href="https://arxiv.org/abs/2006.00694">arXiv report 2006.00694</a>, Junes 2020.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1907.01988">
-              <STRONG>Trade-offs in Static and Dynamic Evaluation of Hierarchical Queries</STRONG>.
-              [<A href="https://arxiv.org/abs/1907.01988">arxiv</A>,
-              <a href="./slides/pods20.pdf">slides</a>,
-              <a href="https://www.youtube.com/watch?v=_teavPgp5pQ">video</a>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Ahmet Kara, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
-              <BR>In ACM Principles of Database Systems (PODS), Portland, Oregon, June, 2020.
-              <BR><a href="https://arxiv.org/abs/1907.01988">arXiv report 1907.01988</a>, July 2019.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="2001.03541">
-              <STRONG>Multi-Layer Optimizations for End-to-End Data Analytics</STRONG>.
-              [<A href="https://arxiv.org/abs/2001.03541">arxiv</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Amir Shaikhha, Maximilian Schleich, Alexandru Ghita, and Dan Olteanu.
-              <BR>In Code Generation and Optimization (CGO), San Diego, February 2020.
-              <BR><A href="https://arxiv.org/abs/2001.03541">arXiv report 2001.03541</A>, January 2020.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1907.10444">
-              <STRONG>Constant Delay Traversal of Grammar-Compressed Graphs with Bounded Rank</STRONG>.
-              [<A href="https://arxiv.org/abs/1907.10444">arxiv</A>
-              ]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Sebastian Maneth, Fabian Peternek.
-              <BR>In Information and Computation, 2020 (accepted Dec 2019)
-              <BR>Special issue on Computation over Compressed Data (DCC'17 and DCC'18)
-              <BR><a href="https://arxiv.org/abs/1907.10444">arXiv report 1907.10444</a>, July 2019.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1703.04780">
-              <STRONG>Learning Models over Relational Data
-                using Sparse Tensors and Functional Dependencies</STRONG>.
-              [<A href="https://arxiv.org/pdf/1703.04780.pdf">arxiv</A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-              <BR>To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted Dec 2019)
-              <BR>Special issue of best papers at PODS 2018
-              <BR>arXiv report <A href="https://arxiv.org/abs/1703.04780">1703.04780</a>, Nov 2018. </LI>
-          </UL>
-
-
-          <a name="2019"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">2019</h2>
-          </div>
-
-
-          <UL>
-            <LI id="sum19">
-              <STRONG>Learning Models over Relational Data: A Brief Tutorial</STRONG>. [<A
-                href="https://arxiv.org/abs/1911.06577">arxiv</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Maximilian Schleich, Dan Olteanu, Mahmoud Abo-Khamis, Hung Q. Ngo, and XuanLong Nguyen.
-              <BR>In Scalable Uncertainty Management (SUM), Compiègne, December 2019.
-              <BR><A href="https://arxiv.org/abs/1911.06577">arXiv report 1911.06577</A>, December 2019.
-            </LI>
-          </UL>
-
-
-
-
-          <UL>
-            <LI id="1812.09526">
-              <STRONG>A Layered Aggregate Engine for Analytics Workloads</STRONG>.
-              [<A href="http://arxiv.org/pdf/1906.08687">arxiv</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-talk.pdf">slides</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-poster.pdf">poster</A>,
-              <a href="https://player.vimeo.com/video/345922861#t=3h10m">video</a> ]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>M. Schleich, D. Olteanu, M. Abo Khamis, H. Ngo and X. Nguyen.
-              <BR>In ACM SIGMOD, Amsterdam, July 2019.
-              <BR>Updated version in <a href="http://arxiv.org/abs/1906.08687">arXiv report 1906.08687</a>, June 2019.
-            </LI>
-          </UL>
-
-
-          <UL>
-            <LI id="1812.09526">
-              <STRONG>On Functional Aggregate Queries with Additive Inequalities</STRONG>.
-              [<A href="https://arxiv.org/pdf/1812.09526">arxiv</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-talk.pdf">slides</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-poster.pdf">poster</A>,
-              <a href="https://player.vimeo.com/video/345869555#t=6m3s">video</a>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>M. Abo Khamis, R. Curtin, B. Moseley, H. Ngo, X. Nguyen, D. Olteanu and M. Schleich.
-              <BR>In ACM Principles of Database Systems (PODS), Amsterdam, July 2019.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1812.09526">arXiv report 1812.09526</a>, April
-              2019.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1712.07445">
-              <STRONG>Boolean Tensor Decomposition for Conjunctive Queries with Negation</STRONG>.
-              [<A href="https://arxiv.org/pdf/1712.07445">arxiv</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/anos-icdt19-talk.pdf">slides</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Mahmoud Abo Khamis, Hung Ngo, Dan Olteanu, and Dan Suciu.
-              <BR>In Int Conf on Database Theory (ICDT), Lisbon, March 2019.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1712.07445">arXiv report 1712.07445</a>, December
-              2017.
-            </LI>
-          </UL>
-
-
-          <UL>
-            <LI id="ivme-icdt19">
-              <STRONG> Counting Triangles under Updates in Worst-Case Optimal Time</STRONG>.
-              [<A href="./papers/TriangleCount.html">accepted version</A>, <A
-                href="https://arxiv.org/pdf/1804.02780">arxiv</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/knnoz-icdt19-talk.pdf">slides</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <span class="u-label g-bg-red g-rounded-3 g-ml-5">Best Paper Award</span>
-              <BR>Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
-              <BR>In Int Conf on Database Theory (ICDT), Lisbon, March 2019.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1804.02780">arXiv report 1804.02780</a>, April
-              2018.
-            </LI>
-          </UL>
-
-
-
-          <br><br>
-
-          <a name="2018"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">2018</h2>
-          </div>
-
-
-          <UL>
-            <LI id="ekov-cikm18">
-              <STRONG>Incremental Techniques for Large-Scale Dynamic Query Processing</STRONG>.
-              [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/ekov-cikm18.pdf">pdf</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Iman Elghandour, Ahmet Kara, Dan Olteanu, and Stijn Vansummeren.
-              <BR>Tutorial In Int Conf on Information and Knowledge Management (CIKM), Turin (Italy), Oct 2018.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1902.00585">arXiv report 1804.02780</a>, February
-              2019.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="1703.04780">
-              <STRONG>In-Database Learning with Sparse Tensors</STRONG>.
-              [<A href="https://arxiv.org/pdf/1703.04780v3.pdf">arxiv</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">slides</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-              <BR>In ACM Principles of Database Systems (PODS), Houston, June 2018.
-              <BR>arXiv report 1703.04780, March 2017. </LI>
-          </UL>
-
-          <UL>
-            <LI id="no-sigmod18">
-              <STRONG>Incremental View Maintenance with Triple Lock Factorisation Benefits</STRONG>.
-              [<a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-sigmod18.pdf">pdf</a>, <a
-                href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">slides</a>, <a
-                href="https://github.com/fdbresearch/FIVM">repository</a>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Milos Nikolic and Dan Olteanu.
-              <BR>In ACM SIGMOD, Houston (USA), June 2018.
-              <BR> Prior version (strict subset of results) in
-              <A href="http://arxiv.org/abs/1703.07484">
-                arXiv technical report 1703.07484</A>, March 2017. </LI>
-          </UL>
-
-          <UL>
-            <LI id="1709.01600">
-              <STRONG>Covers of Query Results</STRONG>.
-              [<A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Ahmet Kara and Dan Olteanu.
-              <BR>In Int Conf on Database Theory (ICDT), Vienna, March 2018.
-              <BR>arXiv report 1709.01600, March 2017. </LI>
-          </UL>
-
-
-          <UL>
-            <LI id="1804.02780">
-              <STRONG>Counting Triangles under Updates (short informal paper)</STRONG>.
-              [<A href="https://arxiv.org/pdf/1804.02780">arxiv</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
-              <BR>In Conférence sur la Gestion de Données – Principes, Technologies et Applications (BDA), Bucarest
-              (Romania), Oct 2018.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1804.02780">arXiv report 1804.02780</a>, April
-              2018.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="ivme-amw18">
-              <STRONG>Counting Triangles under Updates (short paper)</STRONG>.
-              [<A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/knnoz-amw18.pdf">paper</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/ivme-amw18.pdf">slides</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/ivme-poster.pdf">poster</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
-              <BR>In Alberto Mendelzon Workshop (AMW), Cali (Colombia), May 2018.
-              <BR>Extended version in <a href="https://arxiv.org/abs/1804.02780">arxiv 1804.02780</a>.
-            </LI>
-          </UL>
-
-
-          <UL>
-            <LI id="1803.07480">
-              <STRONG>AC/DC: In-Database Learning Thunderstruck</STRONG>.
-              [<A href="https://arxiv.org/pdf/1803.07480">arxiv</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Mahmoud Abo Khamis, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-              <BR>In 2nd Workshop on Data Management for End-to-End Machine Learning (DEEM@SIGMOD), Houston, June 2018.
-              <BR>arXiv report 1803.07480, March 2018.
-            </LI>
-          </UL>
-
-
-          <br><br>
-
-          <a name="2017"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">2017</h2>
-          </div>
-
-
-
-          <UL>
-            <LI id="nnos-amw17">
-              <STRONG>In-Database Factorized Learning</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">pdf</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-              <BR>In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
-              <BR>Extended version in arXiv report
-              <A href="https://arxiv.org/pdf/1703.04780.pdf">1703.04780</A>. </LI>
-          </UL>
-
-          <br><br>
-
-          <a name="2016"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">2016</h2>
-          </div>
-
-          <UL>
-            <LI id="os-sigrec16">
-              <STRONG>Factorized Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">accepted version
-              </A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Dan Olteanu and Maximilian Schleich.
-              <BR>In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016. </LI>
-          </UL>
-
-          <UL>
-            <LI id="soc-sigmod16">
-              <STRONG>Learning Linear Regression Models over Factorized Joins</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
-                updated version</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
-              <BR>In SIGMOD, San Francisco, June 2016. </LI>
-          </UL>
-
-          <UL>
-            <LI id="o-beyondnp16">
-              <STRONG>Factorized Databases: A Knowledge Compilation Perspective</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">pdf</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Dan Olteanu.
-              <BR>In BeyondNP, AAAI workshop, Phoenix, April 2016. </LI>
-          </UL>
-
-          <UL>
-            <LI>
-              <STRONG id="os-pvldb16">F: Regression Models over Factorized Views</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">poster</A>]
-              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-              <BR>Dan Olteanu and Maximilian Schleich.
-              <BR>In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016. </LI>
-          </UL>
-
-          <UL>
-            <LI>
-              <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
+     </nav>
+    </div>
+   </header>
+   <!-- End Header -->
+   <!-- Breadcrumbs -->
+   <section class="g-bg-gray-light-v5 g-py-50">
+    <div class="container">
+     <div class="d-sm-flex text-center">
+      <div class="align-self-center">
+       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+        Publications &amp; Student Theses
+       </h2>
+      </div>
+      <div class="align-self-center ml-auto">
+       <div class="px-4">
+        <ul class="u-list-inline">
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2020">
+           2020
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2019">
+           2019
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2018">
+           2018
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2017">
+           2017
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#2016">
+           2016
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item g-mr-5">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#pre2016">
+           Pre 2016
+          </a>
+          <i class="g-color-gray-light-v2 g-ml-5">
+           /
+          </i>
+         </li>
+         <li class="list-inline-item">
+          <a class="u-link-v5 g-color-main g-color-primary--hover" href="#Theses">
+           Theses
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- End Breadcrumbs -->
+   <div class="g-pt-50">
+   </div>
+   <!-- Blog Minimal Blocks -->
+   <div class="container g-pb-20">
+    <div class="row justify-content-between">
+     <!-- left panel -->
+     <!-- <div class="col-lg-1 g-mb-80"></div> -->
+     <!-- end left panel -->
+     <!-- Articles Content -->
+     <div class="col-lg-10">
+      <a name="2020">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        2020
+       </h2>
+      </div>
+      <ul>
+       <li>
+        <strong>
+         The Relational Data Borg is Learning (
+         <a href="https://vldb2020.org/keynote.html">
+          Keynote
+         </a>
+         )
+        </strong>
+        [
+        <a href="https://arxiv.org/abs/2008.07864">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu.
+        <br/>
+        In PVLDB 13(12): 3503 - 3516, 2020.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <strong>
+         LMFAO: An Engine for Batches of Group-By Aggregates
+        </strong>
+        [
+        <a href="https://arxiv.org/abs/2008.08657">
+         arxiv
+        </a>
+        ,
+        <a href="https://www.youtube.com/watch?v=D-u4kR6z2nk">
+         video
+        </a>
+        ]
+        <span class="g-bg-pink g-ml-5 g-rounded-3 u-label">
+         Demo
+        </span>
+        <br/>
+        Maximilian Schleich, Dan Olteanu.
+        <br/>
+        In PVLDB 13(12): 2945 - 2948, 2020.
+       </li>
+      </ul>
+      <ul>
+       <li id="2004.03716">
+        <strong>
+         Maintaining Triangle Queries under Updates
+        </strong>
+        .
               [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/co-tr16.pdf">pdf
-              </A>]
-              <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
-              <BR>Radu Ciucanu and Dan Olteanu.
-              <BR>Technical report. First version: Nov 2015. Latest version: March 2016. </LI>
-          </UL>
-
-
-
-          <br><br>
-
-          <a name="pre2016"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">Pre 2016</h2>
-          </div>
-
-          <UL>
-            <LI id="oz-tods15">
-              <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">accepted version
-              </A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR> Dan Olteanu and Jakub Závodný.
-              <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. (submitted July 2013)</LI>
-          </UL>
-
-
-          <UL>
-            <LI id="bkoz-vldb13-with-response">
-              <STRONG>Aggregation and Ordering in Factorised Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
-              <BR> In Very Large Data Bases (PVLDB), vol 6, 2013. (submitted March 2013)
-              <BR> Complementary information available in
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas's thesis</A>
-            </LI>
-          </UL>
-
-
-
-          <UL>
-            <LI id="boz-vldb12">
-              <STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-              <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-              <BR>Prior version in
-              <A href="http://arxiv.org/abs/1203.2672">arXiv technical report abs/1203.2672.</A>
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="oz-icdt12">
-              <STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Dan Olteanu and Jakub Závodný.
-              <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-              <BR> Prior version (strict subset of results) in
-              <A href="http://arxiv.org/abs/1104.0867">
-                arXiv technical report 1104.0867</A>, April 2011. </LI>
-          </UL>
-
-          <UL>
-            <LI id="oz-tap11">
-              <STRONG>On Factorisation of Provenance Polynomials</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Dan Olteanu and Jakub Závodný.
-              <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
-            </LI>
-          </UL>
-
-          <UL>
-            <LI id="boz-vldb12b">
-              <STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
-              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-              <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
-          </UL>
-
-          <br><br>
-
-          <a name="Theses"></a>
-          <div class="u-heading-v3-1 g-mb-30">
-            <h2 class="u-heading-v3__title g-color-gray-dark-v1
-                         g-brd-primary">Theses</h2>
-          </div>
-
-          <UL>
-            <LI>George Chichirim:
-              <EM>
-                  Structured Sum-Product Networks.</EM>
-              <BR> 3rd year in CS, Oxford 2020.</LI>
-          </UL>
-
-          <UL>
-            <LI>Gabriel-Robert Ineluş:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Gabriel-Robert.Inelus.pdf">
-                  Quadratically Regularised Principal Component Analysis over Multi-Relational Databases</A>.</EM>
-              <BR> 4th year in CS, Oxford 2019.</LI>
-          </UL>
-
-          <UL>
-            <LI>Alexandru Valeanu:
-              <EM>
-                Query Optimization using Variable Orders.</EM>
-              <BR> 4th year in CS, Oxford 2019.</LI>
-          </UL>
-
-          <UL>
-            <LI>Guansu Wang:
-              <EM>
-                Computing Queries with Aggregates and Inequality Joins.</EM>
-              <BR> 4th year in CS, Oxford 2019.</LI>
-          </UL>
-
-          <UL>
-            <LI id="Bas.vanGeffen">Bas van Geffen:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Bas.vanGeffen.pdf">
-                  QR Decomposition of Normalised Relational Data</A>.</EM>
-              <BR> MSc in CS, Oxford 2018.</LI>
-          </UL>
-
-          <UL>
-            <LI id="Wouter.Verlaek">Wouter Verlaek:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Wouter.Verlaek.pdf">
-                  Query Solvers on Database Covers</A>.</EM>
-              <BR> MSc in CS, Oxford 2018.</LI>
-          </UL>
-
-
-          <UL>
-            <LI id="Radu.Berteanu">Radu-Bogdan Berteanu:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Radu.Berteanu.pdf">
-                  Computing Covers of Query Results</A>.</EM>
-              <BR> 4th year in CS, Oxford 2018.</LI>
-          </UL>
-
-
-          <UL>
-            <LI id="Alexandru.Valueanu">Alexandru Valeanu:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Alexandru.Valeanu.pdf">
-                  An SQL-to-M3 compiler for Factorized Incremental View Maintenance</A>.</EM>
-              <BR> BSc in CS, Oxford 2018.</LI>
-          </UL>
-
-          <UL>
-            <LI id="Ruth.Wells">Ruth Wells:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Ruth.Wells.pdf">
-                  Learning Linear Regression Models using Ring Computation over Factorised Databases</A>.</EM>
-              <BR> MSc in CS, Oxford 2017.</LI>
-          </UL>
-
-          <UL>
-            <LI id="Lukas.Kobis">Lukas Köbis:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Lukas.Kobis.pdf">
-                  Learning Decision Trees over Factorized Joins
-                </A>.</EM>
-              <BR> 4th year in CS, Oxford 2017.</LI>
-          </UL>
-
-          <UL>
-            <LI id="Denis.Rochau">Denis Rochau:
-              <EM>
-                HL-IVM: Incremental View Maintenance based on Heavy-Light Partitioning.</EM>
-              <BR> MSc in CS, Oxford 2017.</LI>
-          </UL>
-
-          <UL>
-            <LI id="PY.Bigourdan">Pierre-Yves Bigourdan:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/PY.Bigourdan.pdf">
-                  Distributed and Multi-Threaded Learning of Regression Models</A>.
-              </EM>
-              <BR> MSc in CS, Oxford 2016.</LI>
-          </UL>
-          <UL>
-            <LI>Nadezda Knorozova:
-              <EM>
-                Queries with Equality and Disequality Joins over Factorised Databases.
-              </EM>
-              <BR> MSc in CS, Oxford 2016.</LI>
-          </UL>
-          <UL>
-            <LI>Antonio Lombardo:
-              <EM>Storage Layer for Factorized Data.</EM>
-              <BR> MSc in CS, Oxford 2016.</LI>
-          </UL>
-          <UL>
-            <LI id="Max.Schleich">Maximilian Schleich:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Max.Schleich.pdf">
-                  Learning Linear Regression Models over Factorised Joins</A>.</EM>
-              <BR> MSc in CS, Oxford 2015.</LI>
-          </UL>
-          <UL>
-            <LI>Joe Kirk:
-              <EM>
-                Worst-Case Optimal Join At A Time.</EM>
-              <BR> MSc in CS, Oxford 2015.</LI>
-          </UL>
-          <UL>
-            <LI id="Lambros.Petrou">Lambros Petrou:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Lambros.Petrou.pdf">
-                  Single-Round vs. Multi-Round Distributed Query Processing in Factorised Databases</A>.
-              </EM>
-              <BR> MSc in CS, Oxford 2015.</LI>
-          </UL>
-          <UL>
-            <LI id="Jakub.Zavodny">Jakub Závodný:
-              <EM>
-                <A href="https://ora.ox.ac.uk/objects/uuid:54c9a3a7-caac-40d9-90fb-83797ced9c5a">
-                  Factorisation in Relational Databases</A>.
-              </EM>
-              <BR>DPhil in CS, Oxford 2013.</LI>
-          </UL>
-          <UL>
-            <LI id="Laura.Draghici">Laura Draghici:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Laura.Draghici.pdf">
-                  Updates in Factorised Databases</A>.</EM>
-              <BR> MSc in CS, Oxford 2013.</LI>
-          </UL>
-          <UL>
-            <LI>Szymon Wyleżoł:
-              <EM>Cost-based Query Optimisation for Factorised Databases.</EM>
-              <BR> MSc in Maths and CS, Oxford 2012.</LI>
-          </UL>
-          <UL>
-            <LI id="Tomas.Kocisky">Tomáš Kočiský:
-              <EM>
-                <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">
-                  Queries with Aggregates and Order-By on Factorised Databases</A>.
-              </EM>
-              <BR> MSc in Maths and CS, Oxford 2012. </LI>
-          </UL>
-          <UL>
-            <LI> Nurzhan Bakibayev:
-              <EM>A Query Engine for Factorised Databases</EM>
-              <BR> MSc in CS, Oxford 2011. </LI>
-          </UL>
-
-        </div>
-
-
-        <!-- right panel -->
-        <div class="col-lg-1 g-mb-80"></div>
-        <!-- end right panel -->
+        <a href="https://arxiv.org/abs/2004.03716">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Ahmet Kara, Hung Q. Ngo, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
+        <br/>
+        To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted April 2020)
+        <br/>
+        Special issue of best papers at ICDT 2019
+        <br/>
+        <a href="https://arxiv.org/abs/2004.03716">
+         arXiv report 2004.03716
+        </a>
+        , April 2020.
+       </li>
+      </ul>
+      <ul>
+       <li id="1910.04939">
+        <strong>
+         Rk-means: Fast Clustering for Relational Data
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/abs/1910.04939">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Ryan Curtin, Ben Moseley, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, Maximilian Schleich.
+        <br/>
+        In Artificial Intelligence and Statistics (AISTATS), Palermo, Italy, June, 2020.
+        <br/>
+        <a href="https://arxiv.org/abs/1910.04939">
+         arXiv report 1910.04939
+        </a>
+        , October 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="2006.00694">
+        <strong>
+         F-IVM: Learning over Fast Evolving Relational Data
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/abs/2006.00694">
+         arixv
+        </a>
+        ,
+        <a href="https://www.youtube.com/watch?v=xbXCm14szH0">
+         video
+        </a>
+        ]
+        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+         Demo
+        </span>
+        <br/>
+        Milos Nikolic, Haozhe Zhang, Ahmet Kara, Dan Olteanu.
+        <br/>
+        In ACM SIGMOD, Portland, Oregon, June, 2020.
+        <br/>
+        <a href="https://arxiv.org/abs/2006.00694">
+         arXiv report 2006.00694
+        </a>
+        , Junes 2020.
+       </li>
+      </ul>
+      <ul>
+       <li id="1907.01988">
+        <strong>
+         Trade-offs in Static and Dynamic Evaluation of Hierarchical Queries
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/abs/1907.01988">
+         arxiv
+        </a>
+        ,
+        <a href="./slides/pods20.pdf">
+         slides
+        </a>
+        ,
+        <a href="https://www.youtube.com/watch?v=_teavPgp5pQ">
+         video
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Ahmet Kara, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
+        <br/>
+        In ACM Principles of Database Systems (PODS), Portland, Oregon, June, 2020.
+        <br/>
+        <a href="https://arxiv.org/abs/1907.01988">
+         arXiv report 1907.01988
+        </a>
+        , July 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="2001.03541">
+        <strong>
+         Multi-Layer Optimizations for End-to-End Data Analytics
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/abs/2001.03541">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Amir Shaikhha, Maximilian Schleich, Alexandru Ghita, and Dan Olteanu.
+        <br/>
+        In Code Generation and Optimization (CGO), San Diego, February 2020.
+        <br/>
+        <a href="https://arxiv.org/abs/2001.03541">
+         arXiv report 2001.03541
+        </a>
+        , January 2020.
+       </li>
+      </ul>
+      <ul>
+       <li id="1907.10444">
+        <strong>
+         Constant Delay Traversal of Grammar-Compressed Graphs with Bounded Rank
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/abs/1907.10444">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Sebastian Maneth, Fabian Peternek.
+        <br/>
+        In Information and Computation, 2020 (accepted Dec 2019)
+        <br/>
+        Special issue on Computation over Compressed Data (DCC'17 and DCC'18)
+        <br/>
+        <a href="https://arxiv.org/abs/1907.10444">
+         arXiv report 1907.10444
+        </a>
+        , July 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="1703.04780">
+        <strong>
+         Learning Models over Relational Data
+                using Sparse Tensors and Functional Dependencies
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1703.04780.pdf">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+        <br/>
+        To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted Dec 2019)
+        <br/>
+        Special issue of best papers at PODS 2018
+        <br/>
+        arXiv report
+        <a href="https://arxiv.org/abs/1703.04780">
+         1703.04780
+        </a>
+        , Nov 2018.
+       </li>
+      </ul>
+      <a name="2019">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        2019
+       </h2>
       </div>
-
-
+      <ul>
+       <li id="sum19">
+        <strong>
+         Learning Models over Relational Data: A Brief Tutorial
+        </strong>
+        . [
+        <a href="https://arxiv.org/abs/1911.06577">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Maximilian Schleich, Dan Olteanu, Mahmoud Abo-Khamis, Hung Q. Ngo, and XuanLong Nguyen.
+        <br/>
+        In Scalable Uncertainty Management (SUM), Compiègne, December 2019.
+        <br/>
+        <a href="https://arxiv.org/abs/1911.06577">
+         arXiv report 1911.06577
+        </a>
+        , December 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="1812.09526">
+        <strong>
+         A Layered Aggregate Engine for Analytics Workloads
+        </strong>
+        .
+              [
+        <a href="http://arxiv.org/pdf/1906.08687">
+         arxiv
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-talk.pdf">
+         slides
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-poster.pdf">
+         poster
+        </a>
+        ,
+        <a href="https://player.vimeo.com/video/345922861#t=3h10m">
+         video
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        M. Schleich, D. Olteanu, M. Abo Khamis, H. Ngo and X. Nguyen.
+        <br/>
+        In ACM SIGMOD, Amsterdam, July 2019.
+        <br/>
+        Updated version in
+        <a href="http://arxiv.org/abs/1906.08687">
+         arXiv report 1906.08687
+        </a>
+        , June 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="1812.09526">
+        <strong>
+         On Functional Aggregate Queries with Additive Inequalities
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1812.09526">
+         arxiv
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-talk.pdf">
+         slides
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-poster.pdf">
+         poster
+        </a>
+        ,
+        <a href="https://player.vimeo.com/video/345869555#t=6m3s">
+         video
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        M. Abo Khamis, R. Curtin, B. Moseley, H. Ngo, X. Nguyen, D. Olteanu and M. Schleich.
+        <br/>
+        In ACM Principles of Database Systems (PODS), Amsterdam, July 2019.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1812.09526">
+         arXiv report 1812.09526
+        </a>
+        , April
+              2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="1712.07445">
+        <strong>
+         Boolean Tensor Decomposition for Conjunctive Queries with Negation
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1712.07445">
+         arxiv
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/anos-icdt19-talk.pdf">
+         slides
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Mahmoud Abo Khamis, Hung Ngo, Dan Olteanu, and Dan Suciu.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Lisbon, March 2019.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1712.07445">
+         arXiv report 1712.07445
+        </a>
+        , December
+              2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="ivme-icdt19">
+        <strong>
+         Counting Triangles under Updates in Worst-Case Optimal Time
+        </strong>
+        .
+              [
+        <a href="./papers/TriangleCount.html">
+         accepted version
+        </a>
+        ,
+        <a href="https://arxiv.org/pdf/1804.02780">
+         arxiv
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/knnoz-icdt19-talk.pdf">
+         slides
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <span class="u-label g-bg-red g-rounded-3 g-ml-5">
+         Best Paper Award
+        </span>
+        <br/>
+        Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Lisbon, March 2019.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1804.02780">
+         arXiv report 1804.02780
+        </a>
+        , April
+              2018.
+       </li>
+      </ul>
+      <br/>
+      <br/>
+      <a name="2018">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        2018
+       </h2>
+      </div>
+      <ul>
+       <li id="ekov-cikm18">
+        <strong>
+         Incremental Techniques for Large-Scale Dynamic Query Processing
+        </strong>
+        .
+              [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/ekov-cikm18.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Iman Elghandour, Ahmet Kara, Dan Olteanu, and Stijn Vansummeren.
+        <br/>
+        Tutorial In Int Conf on Information and Knowledge Management (CIKM), Turin (Italy), Oct 2018.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1902.00585">
+         arXiv report 1804.02780
+        </a>
+        , February
+              2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="1703.04780">
+        <strong>
+         In-Database Learning with Sparse Tensors
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1703.04780v3.pdf">
+         arxiv
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">
+         slides
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+        <br/>
+        In ACM Principles of Database Systems (PODS), Houston, June 2018.
+        <br/>
+        arXiv report 1703.04780, March 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="no-sigmod18">
+        <strong>
+         Incremental View Maintenance with Triple Lock Factorisation Benefits
+        </strong>
+        .
+              [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-sigmod18.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
+         slides
+        </a>
+        ,
+        <a href="https://github.com/fdbresearch/FIVM">
+         repository
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Milos Nikolic and Dan Olteanu.
+        <br/>
+        In ACM SIGMOD, Houston (USA), June 2018.
+        <br/>
+        Prior version (strict subset of results) in
+        <a href="http://arxiv.org/abs/1703.07484">
+         arXiv technical report 1703.07484
+        </a>
+        , March 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="1709.01600">
+        <strong>
+         Covers of Query Results
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1709.01600.pdf">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Ahmet Kara and Dan Olteanu.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Vienna, March 2018.
+        <br/>
+        arXiv report 1709.01600, March 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="1804.02780">
+        <strong>
+         Counting Triangles under Updates (short informal paper)
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1804.02780">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
+        <br/>
+        In Conférence sur la Gestion de Données – Principes, Technologies et Applications (BDA), Bucarest
+              (Romania), Oct 2018.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1804.02780">
+         arXiv report 1804.02780
+        </a>
+        , April
+              2018.
+       </li>
+      </ul>
+      <ul>
+       <li id="ivme-amw18">
+        <strong>
+         Counting Triangles under Updates (short paper)
+        </strong>
+        .
+              [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/knnoz-amw18.pdf">
+         paper
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/ivme-amw18.pdf">
+         slides
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/ivme-poster.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
+        <br/>
+        In Alberto Mendelzon Workshop (AMW), Cali (Colombia), May 2018.
+        <br/>
+        Extended version in
+        <a href="https://arxiv.org/abs/1804.02780">
+         arxiv 1804.02780
+        </a>
+        .
+       </li>
+      </ul>
+      <ul>
+       <li id="1803.07480">
+        <strong>
+         AC/DC: In-Database Learning Thunderstruck
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1803.07480">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Mahmoud Abo Khamis, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+        <br/>
+        In 2nd Workshop on Data Management for End-to-End Machine Learning (DEEM@SIGMOD), Houston, June 2018.
+        <br/>
+        arXiv report 1803.07480, March 2018.
+       </li>
+      </ul>
+      <br/>
+      <br/>
+      <a name="2017">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        2017
+       </h2>
+      </div>
+      <ul>
+       <li id="nnos-amw17">
+        <strong>
+         In-Database Factorized Learning
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+        <br/>
+        In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
+        <br/>
+        Extended version in arXiv report
+        <a href="https://arxiv.org/pdf/1703.04780.pdf">
+         1703.04780
+        </a>
+        .
+       </li>
+      </ul>
+      <br/>
+      <br/>
+      <a name="2016">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        2016
+       </h2>
+      </div>
+      <ul>
+       <li id="os-sigrec16">
+        <strong>
+         Factorized Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">
+         accepted version
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu and Maximilian Schleich.
+        <br/>
+        In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016.
+       </li>
+      </ul>
+      <ul>
+       <li id="soc-sigmod16">
+        <strong>
+         Learning Linear Regression Models over Factorized Joins
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
+         updated version
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
+        <br/>
+        In SIGMOD, San Francisco, June 2016.
+       </li>
+      </ul>
+      <ul>
+       <li id="o-beyondnp16">
+        <strong>
+         Factorized Databases: A Knowledge Compilation Perspective
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Dan Olteanu.
+        <br/>
+        In BeyondNP, AAAI workshop, Phoenix, April 2016.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <strong id="os-pvldb16">
+         F: Regression Models over Factorized Views
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+         Demo
+        </span>
+        <br/>
+        Dan Olteanu and Maximilian Schleich.
+        <br/>
+        In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <strong>
+         Worst-Case Optimal Join At A Time
+        </strong>
+        .
+              [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/co-tr16.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">
+         Tech Report
+        </span>
+        <br/>
+        Radu Ciucanu and Dan Olteanu.
+        <br/>
+        Technical report. First version: Nov 2015. Latest version: March 2016.
+       </li>
+      </ul>
+      <br/>
+      <br/>
+      <a name="pre2016">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        Pre 2016
+       </h2>
+      </div>
+      <ul>
+       <li id="oz-tods15">
+        <strong>
+         Size Bounds for Factorised Representations of Query Results
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">
+         accepted version
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        ACM Transactions on Database Systems (TODS) 40(1):2, 2015. (submitted July 2013)
+       </li>
+      </ul>
+      <ul>
+       <li id="bkoz-vldb13-with-response">
+        <strong>
+         Aggregation and Ordering in Factorised Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
+        <br/>
+        In Very Large Data Bases (PVLDB), vol 6, 2013. (submitted March 2013)
+        <br/>
+        Complementary information available in
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">
+         Tomas's thesis
+        </a>
+       </li>
+      </ul>
+      <ul>
+       <li id="boz-vldb12">
+        <strong>
+         FDB: A Query Engine for Factorised Relational Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+        <br/>
+        In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+        <br/>
+        Prior version in
+        <a href="http://arxiv.org/abs/1203.2672">
+         arXiv technical report abs/1203.2672.
+        </a>
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-icdt12">
+        <strong>
+         Factorised Representations of Query Results: Size Bounds and Readability
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">
+         slides
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Berlin, 2012.
+        <br/>
+        Prior version (strict subset of results) in
+        <a href="http://arxiv.org/abs/1104.0867">
+         arXiv technical report 1104.0867
+        </a>
+        , April 2011.
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-tap11">
+        <strong>
+         On Factorisation of Provenance Polynomials
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
+       </li>
+      </ul>
+      <ul>
+       <li id="boz-vldb12b">
+        <strong>
+         Demonstration of the FDB Query Engine for Factorised Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+         Demo
+        </span>
+        <br/>
+        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+        <br/>
+        In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+       </li>
+      </ul>
+      <br/>
+      <br/>
+      <a name="Theses">
+      </a>
+      <div class="u-heading-v3-1 g-mb-30">
+       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+        Theses
+       </h2>
+      </div>
+      <ul>
+       <li>
+        George Chichirim:
+        <em>
+         Structured Sum-Product Networks.
+        </em>
+        <br/>
+        3rd year in CS, Oxford 2020.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Gabriel-Robert Ineluş:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Gabriel-Robert.Inelus.pdf">
+          Quadratically Regularised Principal Component Analysis over Multi-Relational Databases
+         </a>
+         .
+        </em>
+        <br/>
+        4th year in CS, Oxford 2019.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Alexandru Valeanu:
+        <em>
+         Query Optimization using Variable Orders.
+        </em>
+        <br/>
+        4th year in CS, Oxford 2019.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Guansu Wang:
+        <em>
+         Computing Queries with Aggregates and Inequality Joins.
+        </em>
+        <br/>
+        4th year in CS, Oxford 2019.
+       </li>
+      </ul>
+      <ul>
+       <li id="Bas.vanGeffen">
+        Bas van Geffen:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Bas.vanGeffen.pdf">
+          QR Decomposition of Normalised Relational Data
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2018.
+       </li>
+      </ul>
+      <ul>
+       <li id="Wouter.Verlaek">
+        Wouter Verlaek:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Wouter.Verlaek.pdf">
+          Query Solvers on Database Covers
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2018.
+       </li>
+      </ul>
+      <ul>
+       <li id="Radu.Berteanu">
+        Radu-Bogdan Berteanu:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Radu.Berteanu.pdf">
+          Computing Covers of Query Results
+         </a>
+         .
+        </em>
+        <br/>
+        4th year in CS, Oxford 2018.
+       </li>
+      </ul>
+      <ul>
+       <li id="Alexandru.Valueanu">
+        Alexandru Valeanu:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Alexandru.Valeanu.pdf">
+          An SQL-to-M3 compiler for Factorized Incremental View Maintenance
+         </a>
+         .
+        </em>
+        <br/>
+        BSc in CS, Oxford 2018.
+       </li>
+      </ul>
+      <ul>
+       <li id="Ruth.Wells">
+        Ruth Wells:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Ruth.Wells.pdf">
+          Learning Linear Regression Models using Ring Computation over Factorised Databases
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="Lukas.Kobis">
+        Lukas Köbis:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Lukas.Kobis.pdf">
+          Learning Decision Trees over Factorized Joins
+         </a>
+         .
+        </em>
+        <br/>
+        4th year in CS, Oxford 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="Denis.Rochau">
+        Denis Rochau:
+        <em>
+         HL-IVM: Incremental View Maintenance based on Heavy-Light Partitioning.
+        </em>
+        <br/>
+        MSc in CS, Oxford 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="PY.Bigourdan">
+        Pierre-Yves Bigourdan:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/PY.Bigourdan.pdf">
+          Distributed and Multi-Threaded Learning of Regression Models
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2016.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Nadezda Knorozova:
+        <em>
+         Queries with Equality and Disequality Joins over Factorised Databases.
+        </em>
+        <br/>
+        MSc in CS, Oxford 2016.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Antonio Lombardo:
+        <em>
+         Storage Layer for Factorized Data.
+        </em>
+        <br/>
+        MSc in CS, Oxford 2016.
+       </li>
+      </ul>
+      <ul>
+       <li id="Max.Schleich">
+        Maximilian Schleich:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Max.Schleich.pdf">
+          Learning Linear Regression Models over Factorised Joins
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2015.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Joe Kirk:
+        <em>
+         Worst-Case Optimal Join At A Time.
+        </em>
+        <br/>
+        MSc in CS, Oxford 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="Lambros.Petrou">
+        Lambros Petrou:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Lambros.Petrou.pdf">
+          Single-Round vs. Multi-Round Distributed Query Processing in Factorised Databases
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="Jakub.Zavodny">
+        Jakub Závodný:
+        <em>
+         <a href="https://ora.ox.ac.uk/objects/uuid:54c9a3a7-caac-40d9-90fb-83797ced9c5a">
+          Factorisation in Relational Databases
+         </a>
+         .
+        </em>
+        <br/>
+        DPhil in CS, Oxford 2013.
+       </li>
+      </ul>
+      <ul>
+       <li id="Laura.Draghici">
+        Laura Draghici:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Laura.Draghici.pdf">
+          Updates in Factorised Databases
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in CS, Oxford 2013.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Szymon Wyleżoł:
+        <em>
+         Cost-based Query Optimisation for Factorised Databases.
+        </em>
+        <br/>
+        MSc in Maths and CS, Oxford 2012.
+       </li>
+      </ul>
+      <ul>
+       <li id="Tomas.Kocisky">
+        Tomáš Kočiský:
+        <em>
+         <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">
+          Queries with Aggregates and Order-By on Factorised Databases
+         </a>
+         .
+        </em>
+        <br/>
+        MSc in Maths and CS, Oxford 2012.
+       </li>
+      </ul>
+      <ul>
+       <li>
+        Nurzhan Bakibayev:
+        <em>
+         A Query Engine for Factorised Databases
+        </em>
+        <br/>
+        MSc in CS, Oxford 2011.
+       </li>
+      </ul>
+     </div>
+     <!-- right panel -->
+     <div class="col-lg-1 g-mb-80">
+     </div>
+     <!-- end right panel -->
     </div>
-    <!-- End Blog Minimal Blocks -->
-
-    <!-- Footer -->
-    <div class="g-pt-50">
-      <footer class="g-bg-secondary">
-        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
-
-        <div class="container">
-          <!-- Footer - Bottom Section -->
-          <div class="row align-items-center">
-            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-              <!-- Copyright -->
-              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017-2019 All Rights Reserved.</p>
-              <!-- End Copyright -->
-            </div>
-
-            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-              <!-- Links -->
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item g-pl-0 g-pr-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
-                </li>
-                <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: Auguest 2020</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-
-
-          </div>
-          <!-- End Footer - Bottom Section -->
-        </div>
-      </footer>
-    </div>
-    <!-- End Footer -->
-
+   </div>
+   <!-- End Blog Minimal Blocks -->
+   <!-- Footer -->
+   <div class="g-pt-50">
+    <footer class="g-bg-secondary">
+     <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+     </div>
+     <div class="container">
+      <!-- Footer - Bottom Section -->
+      <div class="row align-items-center">
+       <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+        <!-- Copyright -->
+        <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+         © 2017-2019 All Rights Reserved.
+        </p>
+        <!-- End Copyright -->
+       </div>
+       <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+        <!-- Links -->
+        <ul class="list-inline mb-0">
+         <li class="list-inline-item g-pl-0 g-pr-10">
+          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+           Contact Us
+          </a>
+         </li>
+         <li class="list-inline-item g-px-10">
+          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+           Last modified: August 2020
+          </a>
+         </li>
+        </ul>
+        <!-- End Links -->
+       </div>
+      </div>
+      <!-- End Footer - Bottom Section -->
+     </div>
+    </footer>
+   </div>
+   <!-- End Footer -->
   </main>
-
   <!-- JS Global Compulsory -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-  <script src="assets/vendor/jquery.easing/js/jquery.easing.js"></script>
-  <script src="assets/vendor/popper.min.js"></script>
-  <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
+  <script src="assets/vendor/jquery/jquery.min.js">
+  </script>
+  <script src="assets/vendor/jquery-migrate/jquery-migrate.min.js">
+  </script>
+  <script src="assets/vendor/jquery.easing/js/jquery.easing.js">
+  </script>
+  <script src="assets/vendor/popper.min.js">
+  </script>
+  <script src="assets/vendor/bootstrap/bootstrap.min.js">
+  </script>
   <!-- JS Implementing Plugins -->
-  <script src="assets/vendor/appear.js"></script>
-  <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-  <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-
-  <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
-
+  <script src="assets/vendor/appear.js">
+  </script>
+  <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js">
+  </script>
+  <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js">
+  </script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js">
+  </script>
+  <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js">
+  </script>
+  <script src="assets/vendor/slick-carousel/slick/slick.js">
+  </script>
   <!-- JS Unify -->
-  <script src="assets/js/hs.core.js"></script>
-  <script src="assets/js/components/hs.header.js"></script>
-  <script src="assets/js/helpers/hs.hamburgers.js"></script>
-  <script src="assets/js/components/hs.dropdown.js"></script>
-  <script src="assets/js/components/hs.tabs.js"></script>
-  <script src="assets/js/components/hs.cubeportfolio.js"></script>
-  <script src="assets/js/components/hs.onscroll-animation.js"></script>
-  <script src="assets/js/components/hs.go-to.js"></script>
-  <script src="assets/js/components/hs.carousel.js"></script>
-
+  <script src="assets/js/hs.core.js">
+  </script>
+  <script src="assets/js/components/hs.header.js">
+  </script>
+  <script src="assets/js/helpers/hs.hamburgers.js">
+  </script>
+  <script src="assets/js/components/hs.dropdown.js">
+  </script>
+  <script src="assets/js/components/hs.tabs.js">
+  </script>
+  <script src="assets/js/components/hs.cubeportfolio.js">
+  </script>
+  <script src="assets/js/components/hs.onscroll-animation.js">
+  </script>
+  <script src="assets/js/components/hs.go-to.js">
+  </script>
+  <script src="assets/js/components/hs.carousel.js">
+  </script>
   <!-- JS Customization -->
-  <script src="assets/js/custom.js"></script>
-
+  <script src="assets/js/custom.js">
+  </script>
   <!-- JS Plugins Init. -->
   <script>
-    $(document).on('ready', function () {
+   $(document).on('ready', function () {
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
@@ -1009,7 +1605,5 @@
       }, 200);
     });
   </script>
-
-</body>
-
+ </body>
 </html>

@@ -1,211 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+ <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-111495058-1');
-</script>
-
+  </script>
   <!-- Title -->
-  <title>FDB Research</title>
-
+  <title>
+   FDB Research
+  </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="manifest.json">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#4270a9">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="keywords" content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science">
-  <meta name="description" content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data.">
-  
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+  <link href="manifest.json" rel="manifest"/>
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
+  <meta content="#ffffff" name="theme-color"/>
+  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science" name="keywords"/>
+  <meta content="We investigate foundational and systems aspects of scalable data management at the confluence of compression, distribution, and approximation for mixed query and machine learning workloads on relational data." name="description"/>
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
   <!-- CSS Global Icons -->
-  <link rel="stylesheet" href="assets/vendor/icon-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/vendor/icon-line/css/simple-line-icons.css">
-  <link rel="stylesheet" href="assets/vendor/icon-etlinefont/style.css">
-  <link rel="stylesheet" href="assets/vendor/icon-line-pro/style.css">
-  <link rel="stylesheet" href="assets/vendor/icon-hs/style.css">
-  <link rel="stylesheet" href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css">
-  <link rel="stylesheet" href="assets/vendor/animate.css">
-  <link rel="stylesheet" href="assets/vendor/hs-megamenu/src/hs.megamenu.css">
-  <link rel="stylesheet" href="assets/vendor/hamburgers/hamburgers.min.css">
-
-  <link rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
-
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/animate.css" rel="stylesheet"/>
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
   <!-- CSS Unify -->
-  <link rel="stylesheet" href="assets/css/unify-core.css">
-  <link rel="stylesheet" href="assets/css/unify-components.css">
-  <link rel="stylesheet" href="assets/css/unify-globals.css">
-
+  <link href="assets/css/unify-core.css" rel="stylesheet"/>
+  <link href="assets/css/unify-components.css" rel="stylesheet"/>
+  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
   <!-- CSS Customization -->
-  <link rel="stylesheet" href="assets/css/custom.css">
-
+  <link href="assets/css/custom.css" rel="stylesheet"/>
   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"></script>
-</head>
-
-<body>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML" type="text/javascript">
+  </script>
+ </head>
+ <body>
   <main>
-
-    <!-- Header -->
-    <header id="js-header" class="u-header u-header--static u-shadow-v19">
-      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-        <nav class="js-mega-menu navbar navbar-expand-lg">
-          <div class="container">
-            <!-- Responsive Toggle Button -->
-            <button
-              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
-              type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar"
-              data-toggle="collapse" data-target="#navBar">
-              <span class="hamburger hamburger--slider">
-                <span class="hamburger-box">
-                  <span class="hamburger-inner"></span>
-                </span>
-              </span>
-            </button>
-            <!-- End Responsive Toggle Button -->
-
-            <!-- Logo -->
-            <a href="index.html" class="navbar-brand">
-              <img height="40px" src="assets/img/logo/logo-fdb.png" alt="Image Description">
-            </a>
-
-            <!-- End Logo -->
-
-            <!-- Navigation -->
-            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
-              id="navBar">
-
-              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-                <!-- Projects -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">News</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="visitors.html">
-                        Visitors</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="events.html">
-                        Events</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="awards.html">Awards</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Projects -->
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="people.html" class="nav-link g-py-7 g-px-0">People</a>
-                </li>
-
-                <!-- Projects -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">Projects</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="principles.html">
-                        Principles of Factorised Databases</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="analytics.html">In-Database Analytics</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="ivm.html">Incremental Maintenance for Analytics</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Projects -->
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="publications.html" class="nav-link g-py-7 g-px-0">Publications</a>
-                </li>
-
-                
-
-                <!-- Code -->
-                <li class="nav-item hs-has-sub-menu  g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
-                  data-animation-out="fadeOut">
-                  <a id="nav-link--features" class="nav-link g-py-7 g-px-0" href="#" aria-haspopup="true"
-                    aria-expanded="false" aria-controls="nav-submenu--features">Code</a>
-
-                  <ul
-                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
-                    id="nav-submenu--features" aria-labelledby="nav-link--features">
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="fivm-code.html">
-                        FIVM</a>
-                    </li>
-                    <li class="dropdown-item ">
-                      <a class="nav-link" href="fbench-code.html">
-                        FBENCH</a>
-                    </li>
-                  </ul>
-                </li>
-                <!-- End Code -->
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="talks.html" class="nav-link g-py-7 g-px-0">Talks</a>
-                </li>
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="videos.html" class="nav-link g-py-7 g-px-0">Videos</a>
-                </li>
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="acknowledgements.html" class="nav-link g-py-7 g-px-0">ACK</a>
-                </li>
-
-
-                <li class="nav-item  g-mx-10--lg g-mx-15--xl">
-                  <a href="contacts.html" class="nav-link g-py-7 g-px-0">Contact</a>
-                </li>
-
-              </ul>
-            </div>
-            <!-- End Navigation -->
-
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- End Header -->
-
-    <!-- Breadcrumbs -->
-    <section class="g-bg-gray-light-v5 g-py-50">
+   <!-- Header -->
+   <header class="u-header u-header--static u-shadow-v19" id="js-header">
+    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+     <nav class="js-mega-menu navbar navbar-expand-lg">
       <div class="container">
-        <div class="d-sm-flex text-center">
-          <div class="align-self-center">
-            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">Principles of Factorised Databases</h2>
-          </div>
-
-          <!--div class="align-self-center ml-auto">
+       <!-- Responsive Toggle Button -->
+       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
+        <span class="hamburger hamburger--slider">
+         <span class="hamburger-box">
+          <span class="hamburger-inner">
+          </span>
+         </span>
+        </span>
+       </button>
+       <!-- End Responsive Toggle Button -->
+       <!-- Logo -->
+       <a class="navbar-brand" href="index.html">
+        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
+       </a>
+       <!-- End Logo -->
+       <!-- Navigation -->
+       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
+        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+         <!-- Projects -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           News
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="visitors.html">
+             Visitors
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="events.html">
+             Events
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="awards.html">
+             Awards
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Projects -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="people.html">
+           People
+          </a>
+         </li>
+         <!-- Projects -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           Projects
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="principles.html">
+             Principles of Factorised Databases
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="analytics.html">
+             In-Database Analytics
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="ivm.html">
+             Incremental Maintenance for Analytics
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Projects -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="publications.html">
+           Publications
+          </a>
+         </li>
+         <!-- Code -->
+         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
+          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+           Code
+          </a>
+          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
+           <li class="dropdown-item">
+            <a class="nav-link" href="fivm-code.html">
+             FIVM
+            </a>
+           </li>
+           <li class="dropdown-item">
+            <a class="nav-link" href="fbench-code.html">
+             FBENCH
+            </a>
+           </li>
+          </ul>
+         </li>
+         <!-- End Code -->
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="talks.html">
+           Talks
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="videos.html">
+           Videos
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+           ACK
+          </a>
+         </li>
+         <li class="nav-item g-mx-10--lg g-mx-15--xl">
+          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+           Contact
+          </a>
+         </li>
+        </ul>
+       </div>
+       <!-- End Navigation -->
+      </div>
+     </nav>
+    </div>
+   </header>
+   <!-- End Header -->
+   <!-- Breadcrumbs -->
+   <section class="g-bg-gray-light-v5 g-py-50">
+    <div class="container">
+     <div class="d-sm-flex text-center">
+      <div class="align-self-center">
+       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+        Principles of Factorised Databases
+       </h2>
+      </div>
+      <!--div class="align-self-center ml-auto">
             <div class="px-4">
               <ul class="u-list-inline">
                 <li class="list-inline-item g-mr-5">
@@ -218,401 +208,621 @@
               </ul>
             </div>
           </div-->
-        </div>
-      </div>
-    </section>
-    <!-- End Breadcrumbs -->
-
-    <div class="g-pt-50"></div>
-
-
-    <!-- Blog Minimal Blocks -->
-
-    <div class="container g-pb-20">
-
-      <!-- <div class="row"> -->
-      <div class="row justify-content-between">
-
-
-        <!-- <div class="col-lg-1 g-mb-80"></div> -->
-
-        <!-- Articles Content -->
-        <div class="col-lg-8 g-mb-50 g-mb-0--lg">
-          <article class="g-mb-60">
-
-            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-              <p class="g-color-black-opacity-0_8">
-                State-of-the-art relational data representation and processing are highly redundant. This project investigates the sources
+     </div>
+    </div>
+   </section>
+   <!-- End Breadcrumbs -->
+   <div class="g-pt-50">
+   </div>
+   <!-- Blog Minimal Blocks -->
+   <div class="container g-pb-20">
+    <!-- <div class="row"> -->
+    <div class="row justify-content-between">
+     <!-- <div class="col-lg-1 g-mb-80"></div> -->
+     <!-- Articles Content -->
+     <div class="col-lg-8 g-mb-50 g-mb-0--lg">
+      <article class="g-mb-60">
+       <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+        <p class="g-color-black-opacity-0_8">
+         State-of-the-art relational data representation and processing are highly redundant. This project investigates the sources
                 of this redundancy and proposes alternatives that avoid it.
-              </p>
-            </div>
-
-            <!--div class="text-center g-width-60x--md mx-auto g-my-40">
+        </p>
+       </div>
+       <!--div class="text-center g-width-60x--md mx-auto g-my-40">
               <h3 class="text-uppercase g-color-primary">
                 How much redundancy is there in the representation and computation of join results?
               </h3>
             </div-->
-
-            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-              <p class="g-color-black-opacity-0_8">
-                For relational join processing, the culprit behind this redundancy is the Cartesian product lurking within every database
+       <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+        <p class="g-color-black-opacity-0_8">
+         For relational join processing, the culprit behind this redundancy is the Cartesian product lurking within every database
                 join. By avoiding the listing (enumeration) of the output of these products, we can lower the space and computational
                 costs for joins. See first this simple
-                <a href="principles/first-example.html">example</a> and then the second more insightful
-                <a href="principles/second-example.html">example</a>.
-              </p>
-            </div>
-
-            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-              <p>
-                <span class="text-uppercase g-color-primary">This redundancy can be avoided via factorisation</span>
-              </p>
-              <p>
-                We developed three distinct lossless factorised representations for join queries and even the more general functional aggregate
+         <a href="principles/first-example.html">
+          example
+         </a>
+         and then the second more insightful
+         <a href="principles/second-example.html">
+          example
+         </a>
+         .
+        </p>
+       </div>
+       <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+        <p>
+         <span class="text-uppercase g-color-primary">
+          This redundancy can be avoided via factorisation
+         </span>
+        </p>
+        <p>
+         We developed three distinct lossless factorised representations for join queries and even the more general functional aggregate
                 queries:
-              </p>
-              <ul>
-                <li>
-                  The
-                  <strong>f-representations</strong> (see
-                  <a href="#oz-icdt12">ICDT'12 paper
-                    <a/>) are to the listing representation what nested formulas are to formulas in disjunctive normal form.
+        </p>
+        <ul>
+         <li>
+          The
+          <strong>
+           f-representations
+          </strong>
+          (see
+          <a href="#oz-icdt12">
+           ICDT'12 paper
+           <a>
+           </a>
+           ) are to the listing representation what nested formulas are to formulas in disjunctive normal form.
                     They are relational algebra expressions with operators union and product over singleton relations (relations
                     with one column and one row). They exploit the distributivity of the product over union to factor out
                     common subexpressions.
-                </li>
-                <li>
-                  The
-                  <strong>d-representations</strong> (see
-                  <a href="#oz-tods15">TODS'15 article
-                    <a/>) are
-                    <strong>f-representations</strong> with definitions: A recurring subexpression can be given a name and referenced
+          </a>
+         </li>
+         <li>
+          The
+          <strong>
+           d-representations
+          </strong>
+          (see
+          <a href="#oz-tods15">
+           TODS'15 article
+           <a>
+           </a>
+           ) are
+           <strong>
+            f-representations
+           </strong>
+           with definitions: A recurring subexpression can be given a name and referenced
                     several times by name instead of content. They correspond to circuits.
-                </li>
-                <li>
-                  The
-                  <strong>covers</strong> (see
-                  <a href="#ko-icdt18">ICDT'18 paper
-                    <a/>) of a query result is a minimal subset of this result from which we can losslessly reconstruct it entirely.
-                </li>
-              </ul>
-              <p>
-                Compression by factorisation can also be applied to query provenance or lineage (
-                <a href="#oz-icdt12">ICDT'12
-                  <a/> and
-                  <a href="#oz-tapp11">TAPP'11
-                    <a/> papers).
-              </p>
-
-              <p>
-                <span class="text-uppercase g-color-primary">Analytics can be computed directly over factorised data</span>
-              </p>
-              <p>
-                The factorised representations of a join result allow for the enumeration of the result tuples with constant delay, which
+          </a>
+         </li>
+         <li>
+          The
+          <strong>
+           covers
+          </strong>
+          (see
+          <a href="#ko-icdt18">
+           ICDT'18 paper
+           <a>
+           </a>
+           ) of a query result is a minimal subset of this result from which we can losslessly reconstruct it entirely.
+          </a>
+         </li>
+        </ul>
+        <p>
+         Compression by factorisation can also be applied to query provenance or lineage (
+         <a href="#oz-icdt12">
+          ICDT'12
+          <a>
+          </a>
+          and
+          <a href="#oz-tapp11">
+           TAPP'11
+           <a>
+           </a>
+           papers).
+          </a>
+         </a>
+        </p>
+        <p>
+         <span class="text-uppercase g-color-primary">
+          Analytics can be computed directly over factorised data
+         </span>
+        </p>
+        <p>
+         The factorised representations of a join result allow for the enumeration of the result tuples with constant delay, which
                 is as efficient as enumerating them from the listing representation of the result. This is a prerequisite
                 for the computation of aggregates (and more complex analytics) in one pass over factorised data.
-                <br/> In case the materialisation of the factorised join result is not desirable, aggregates can be computed on
+         <br/>
+         In case the materialisation of the factorised join result is not desirable, aggregates can be computed on
                 the fly. In this case, the
-                <em>trace</em> of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially)
+         <em>
+          trace
+         </em>
+         of the aggregate-join computation is that of the underlying factorisation and corresponds to (partially)
                 pushing aggregates past joins.
-                <br/> To explore more on: constant-delay enumeration and worst-case optimal join factorisation see the
-                <a href="#oz-tods15">TODS'15 article</a>; factorised join plans see the
-                <a href="#boz-vldb12">VLDB'12</a> paper; aggregates over factorised joins see the
-                <a href="#os-sigrec16">SIGMOD Record'16</a> and
-                <a href="#bkoz-vldb13">VLDB'13</a> papers; machine learning over factorised joins see the
-                <a href="publications.html#soc-sigmod16">SIGMOD'16</a> and
-                <a href="publications.html#annos-pods18">PODS'18</a> papers.
-              </p>
-            </div>
-
-
-            <!-- Sources & Tags -->
-            <div class="g-mb-30">
-              <h6 class="g-color-gray-dark-v1">
-                <strong class="g-mr-5">Tags:</strong>
-                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                  href="#">factorisation</a>
-                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                  href="#">joins</a>
-                <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
-                  href="#">aggregates</a>
-              </h6>
-            </div>
-            <!-- End Sources & Tags -->
-
-            <!-- <hr class="g-brd-gray-light-v4"> -->
-
-
-
-          </article>
-        </div>
-        <!-- End Articles Content -->
-
-
-        <!-- right panel -->
-        <div class="col-lg-3 g-mb-80">
-          <div class="g-mb-50">
-            <div class="u-heading-v3-1 g-mb-30">
-              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Demystifying Factorisation and Related Work</h2>
-            </div>
-
-            <ul class="list-unstyled">
-              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-                <h4 class="h6">
-                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/first-example.html">Simple Factorised Join</a>
-                </h4>
-              </li>
-              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-                <h4 class="h6">
-                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5"></i>
-                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/second-example.html">Aggregates over Factorised Joins</a>
-                </h4>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- end right panel -->
+         <br/>
+         To explore more on: constant-delay enumeration and worst-case optimal join factorisation see the
+         <a href="#oz-tods15">
+          TODS'15 article
+         </a>
+         ; factorised join plans see the
+         <a href="#boz-vldb12">
+          VLDB'12
+         </a>
+         paper; aggregates over factorised joins see the
+         <a href="#os-sigrec16">
+          SIGMOD Record'16
+         </a>
+         and
+         <a href="#bkoz-vldb13">
+          VLDB'13
+         </a>
+         papers; machine learning over factorised joins see the
+         <a href="publications.html#soc-sigmod16">
+          SIGMOD'16
+         </a>
+         and
+         <a href="publications.html#annos-pods18">
+          PODS'18
+         </a>
+         papers.
+        </p>
+       </div>
+       <!-- Sources & Tags -->
+       <div class="g-mb-30">
+        <h6 class="g-color-gray-dark-v1">
+         <strong class="g-mr-5">
+          Tags:
+         </strong>
+         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
+          factorisation
+         </a>
+         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
+          joins
+         </a>
+         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
+          aggregates
+         </a>
+        </h6>
+       </div>
+       <!-- End Sources & Tags -->
+       <!-- <hr class="g-brd-gray-light-v4"> -->
+      </article>
+     </div>
+     <!-- End Articles Content -->
+     <!-- right panel -->
+     <div class="col-lg-3 g-mb-80">
+      <div class="g-mb-50">
+       <div class="u-heading-v3-1 g-mb-30">
+        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+         Demystifying Factorisation and Related Work
+        </h2>
+       </div>
+       <ul class="list-unstyled">
+        <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+         <h4 class="h6">
+          <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
+          </i>
+          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/first-example.html">
+           Simple Factorised Join
+          </a>
+         </h4>
+        </li>
+        <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+         <h4 class="h6">
+          <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
+          </i>
+          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="principles/second-example.html">
+           Aggregates over Factorised Joins
+          </a>
+         </h4>
+        </li>
+       </ul>
       </div>
-
-
-      <!-- Publications section -->
-      <div class="row">
-        <!-- <div class="col-lg-1 g-mb-80"></div> -->
-        <div class="col-lg-12 g-mb-50 g-mb-0--lg">
-          <div class="g-mb-30">
-            <div class="u-heading-v3-1 g-mb-30">
-              <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Publications</h2>
-            </div>
-          </div>
-
-          <H3>Overviews</H3>
-
-          <UL>
-            <LI id="os-sigrec16" class="g-mb-15">
-              <STRONG>Factorized Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">preliminary version
-              </A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Dan Olteanu and Maximilian Schleich.
-              <BR>In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016. </LI>
-            <LI id="o-beyondnp16" class="g-mb-15">
-              <STRONG>Factorized Databases: A Knowledge Compilation Perspective</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">pdf</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Dan Olteanu.
-              <BR>In BeyondNP, AAAI workshop, Phoenix, April 2016. </LI>
-          </UL>
-          <H3>Factorised Representations for Data and Provenance</H3>
-          <UL>
-            <LI id="ko-icdt18">
-              <STRONG>Covers of Query Results</STRONG>. [
-              <A href="https://arxiv.org/pdf/1709.01600.pdf">arxiv</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Ahmet Kara and Dan Olteanu.
-              <BR>In Int Conf on Database Theory (ICDT), Vienna, March 2018.
-              <BR>arXiv report 1709.01600, March 2017. </LI>
-          </UL>
-          <UL>
-            <LI id="co-tr15">
-              <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
-              <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
-              <BR>Radu Ciucanu and Dan Olteanu.
-              <BR>Technical report, November 2015. </LI>
-          </UL>
-          <UL>
-            <LI id="oz-tods15">
-              <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
-              </A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR> Dan Olteanu and Jakub Závodný.
-              <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
-          </UL>
-          <UL>
-            <LI id="oz-icdt12">
-              <STRONG>Factorised Representations of Query Results: Size Bounds and Readability</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">slides</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Dan Olteanu and Jakub Závodný.
-              <BR>In Int Conf on Database Theory (ICDT), Berlin, 2012.
-              <BR> Prior version (strict subset of results) in
-              <A href="http://arxiv.org/abs/1104.0867">
-                arXiv technical report 1104.0867</A>, April 2011. </LI>
-          </UL>
-          <UL>
-            <LI id="oz-tap11">
-              <STRONG>On Factorisation of Provenance Polynomials</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">pdf</A>,
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">poster</A>]
-              <span class="u-label g-bg-green g-rounded-3 g-ml-5">Workshop</span>
-              <BR>Dan Olteanu and Jakub Závodný.
-              <BR>In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
-            </LI>
-          </UL>
-
-          <H3>Factorised Query Processing</H3>
-
-          <UL>
-            <LI id="knos-17">
-              <STRONG>Boolean Tensor Decomposition for Conjunctive Queries with Negation</STRONG>.
-              [<A href="https://arxiv.org/pdf/1712.07445">arXiv</A>]              
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Tech Report</span>
-              <BR>Mahmoud Abo Khamis, Hung Ngo, Dan Olteanu, and Dan Suciu.
-              <BR>arXiv report 1712.07445, Dec 2017.
-            </LI>
-          </UL>
-          
-          <UL>
-            <LI id="co-tr15">
-              <STRONG>Worst-Case Optimal Join At A Time</STRONG>.
-              <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">Tech Report</span>
-              <BR>Radu Ciucanu and Dan Olteanu.
-              <BR>Technical report, November 2015. </LI>
-          </UL>
-          <UL>
-            <LI id="oz-tods15">
-              <STRONG>Size Bounds for Factorised Representations of Query Results</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">preliminary version
-              </A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR> Dan Olteanu and Jakub Závodný.
-              <BR>ACM Transactions on Database Systems (TODS) 40(1):2, 2015. </LI>
-          </UL>
-          <UL>
-            <LI id="bkoz-vldb13">
-              <STRONG>Aggregation and Ordering in Factorised Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">pdf</A>]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">Conference</span>
-              <BR>Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
-              <BR>March 2013.
-              <BR> In Very Large Data Bases (PVLDB), vol 6, 2013.
-              <BR> Complementary information available in
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">Tomas'thesis</A>
-            </LI>
-          </UL>
-          <UL>
-            <LI>
-              <STRONG>Demonstration of the FDB Query Engine for Factorised Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">pdf</A>;
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">poster</A>]
-              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">Demo</span>
-              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-              <BR>System demonstration. In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012. </LI>
-          </UL>
-          <UL>
-            <LI id="boz-vldb12">
-              <STRONG>FDB: A Query Engine for Factorised Relational Databases</STRONG>. [
-              <A href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">pdf</A>]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">Journal</span>
-              <BR>Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
-              <BR>In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-              <BR>Prior version in
-              <A href="http://arxiv.org/abs/1203.2672">arXiv technical report 1203.2672.</A>
-            </LI>
-          </UL>
-
-          <div class="g-mb-30">
-              <div class="u-heading-v3-1 g-mb-30">
-                <h2 id="publications" class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">Code</h2>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <strong>F-BENCH 1.0 Repository</strong>
-                <a href="https://github.com/fdbresearch/FBENCH">https://github.com/fdbresearch/FBENCH</a>
-              </li>
-            </ul>
-  
-
-          <div id="stickyblock-end"></div>
-        </div>
+     </div>
+     <!-- end right panel -->
+    </div>
+    <!-- Publications section -->
+    <div class="row">
+     <!-- <div class="col-lg-1 g-mb-80"></div> -->
+     <div class="col-lg-12 g-mb-50 g-mb-0--lg">
+      <div class="g-mb-30">
+       <div class="u-heading-v3-1 g-mb-30">
+        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
+         Publications
+        </h2>
+       </div>
       </div>
-
+      <h3>
+       Overviews
+      </h3>
+      <ul>
+       <li class="g-mb-15" id="os-sigrec16">
+        <strong>
+         Factorized Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">
+         preliminary version
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu and Maximilian Schleich.
+        <br/>
+        In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016.
+       </li>
+       <li class="g-mb-15" id="o-beyondnp16">
+        <strong>
+         Factorized Databases: A Knowledge Compilation Perspective
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Dan Olteanu.
+        <br/>
+        In BeyondNP, AAAI workshop, Phoenix, April 2016.
+       </li>
+      </ul>
+      <h3>
+       Factorised Representations for Data and Provenance
+      </h3>
+      <ul>
+       <li id="ko-icdt18">
+        <strong>
+         Covers of Query Results
+        </strong>
+        . [
+        <a href="https://arxiv.org/pdf/1709.01600.pdf">
+         arxiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Ahmet Kara and Dan Olteanu.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Vienna, March 2018.
+        <br/>
+        arXiv report 1709.01600, March 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="co-tr15">
+        <strong>
+         Worst-Case Optimal Join At A Time
+        </strong>
+        .
+        <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">
+         Tech Report
+        </span>
+        <br/>
+        Radu Ciucanu and Dan Olteanu.
+        <br/>
+        Technical report, November 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-tods15">
+        <strong>
+         Size Bounds for Factorised Representations of Query Results
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">
+         preliminary version
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        ACM Transactions on Database Systems (TODS) 40(1):2, 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-icdt12">
+        <strong>
+         Factorised Representations of Query Results: Size Bounds and Readability
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">
+         slides
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        In Int Conf on Database Theory (ICDT), Berlin, 2012.
+        <br/>
+        Prior version (strict subset of results) in
+        <a href="http://arxiv.org/abs/1104.0867">
+         arXiv technical report 1104.0867
+        </a>
+        , April 2011.
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-tap11">
+        <strong>
+         On Factorisation of Provenance Polynomials
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">
+         pdf
+        </a>
+        ,
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+         Workshop
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
+       </li>
+      </ul>
+      <h3>
+       Factorised Query Processing
+      </h3>
+      <ul>
+       <li id="knos-17">
+        <strong>
+         Boolean Tensor Decomposition for Conjunctive Queries with Negation
+        </strong>
+        .
+              [
+        <a href="https://arxiv.org/pdf/1712.07445">
+         arXiv
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Tech Report
+        </span>
+        <br/>
+        Mahmoud Abo Khamis, Hung Ngo, Dan Olteanu, and Dan Suciu.
+        <br/>
+        arXiv report 1712.07445, Dec 2017.
+       </li>
+      </ul>
+      <ul>
+       <li id="co-tr15">
+        <strong>
+         Worst-Case Optimal Join At A Time
+        </strong>
+        .
+        <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">
+         Tech Report
+        </span>
+        <br/>
+        Radu Ciucanu and Dan Olteanu.
+        <br/>
+        Technical report, November 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="oz-tods15">
+        <strong>
+         Size Bounds for Factorised Representations of Query Results
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">
+         preliminary version
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Dan Olteanu and Jakub Závodný.
+        <br/>
+        ACM Transactions on Database Systems (TODS) 40(1):2, 2015.
+       </li>
+      </ul>
+      <ul>
+       <li id="bkoz-vldb13">
+        <strong>
+         Aggregation and Ordering in Factorised Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+         Conference
+        </span>
+        <br/>
+        Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
+        <br/>
+        March 2013.
+        <br/>
+        In Very Large Data Bases (PVLDB), vol 6, 2013.
+        <br/>
+        Complementary information available in
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">
+         Tomas'thesis
+        </a>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <strong>
+         Demonstration of the FDB Query Engine for Factorised Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">
+         pdf
+        </a>
+        ;
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">
+         poster
+        </a>
+        ]
+        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+         Demo
+        </span>
+        <br/>
+        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+        <br/>
+        System demonstration. In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+       </li>
+      </ul>
+      <ul>
+       <li id="boz-vldb12">
+        <strong>
+         FDB: A Query Engine for Factorised Relational Databases
+        </strong>
+        . [
+        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">
+         pdf
+        </a>
+        ]
+        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+         Journal
+        </span>
+        <br/>
+        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+        <br/>
+        In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
+        <br/>
+        Prior version in
+        <a href="http://arxiv.org/abs/1203.2672">
+         arXiv technical report 1203.2672.
+        </a>
+       </li>
+      </ul>
+      <div class="g-mb-30">
+       <div class="u-heading-v3-1 g-mb-30">
+        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
+         Code
+        </h2>
+       </div>
+      </div>
+      <ul>
+       <li>
+        <strong>
+         F-BENCH 1.0 Repository
+        </strong>
+        <a href="https://github.com/fdbresearch/FBENCH">
+         https://github.com/fdbresearch/FBENCH
+        </a>
+       </li>
+      </ul>
+      <div id="stickyblock-end">
+      </div>
+     </div>
     </div>
-
-
-
-
-    </div>
-    <!-- End Blog Minimal Blocks -->
-
-
-    <!-- Footer -->
-    <div class="g-pt-50">
-      <footer class="g-bg-secondary">
-        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20 "></div>
-
-        <div class="container">
-          <!-- Footer - Bottom Section -->
-          <div class="row align-items-center">
-            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-              <!-- Copyright -->
-              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">&copy; 2017-2019 All Rights Reserved.</p>
-              <!-- End Copyright -->
-            </div>
-
-            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-              <!-- Links -->
-              <ul class="list-inline mb-0">
-                <li class="list-inline-item g-pl-0 g-pr-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">Contact Us</a>
-                </li>
-                <li class="list-inline-item g-px-10">
-                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">Last modified: Auguest 2020</a>
-                </li>
-              </ul>
-              <!-- End Links -->
-            </div>
-
-
-          </div>
-          <!-- End Footer - Bottom Section -->
-        </div>
-      </footer>
-    </div>
-    <!-- End Footer -->
-
-
-
-
-
+   </div>
   </main>
-
-  <!-- JS Global Compulsory -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-  <script src="assets/vendor/jquery.easing/js/jquery.easing.js"></script>
-  <script src="assets/vendor/popper.min.js"></script>
-  <script src="assets/vendor/bootstrap/bootstrap.min.js"></script>
-
-  <!-- JS Implementing Plugins -->
-  <script src="assets/vendor/appear.js"></script>
-  <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
-  <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-
-  <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
-
-  <!-- JS Unify -->
-  <script src="assets/js/hs.core.js"></script>
-  <script src="assets/js/components/hs.header.js"></script>
-  <script src="assets/js/helpers/hs.hamburgers.js"></script>
-  <script src="assets/js/components/hs.dropdown.js"></script>
-  <script src="assets/js/components/hs.tabs.js"></script>
-  <script src="assets/js/components/hs.cubeportfolio.js"></script>
-  <script src="assets/js/components/hs.onscroll-animation.js"></script>
-  <script src="assets/js/components/hs.go-to.js"></script>
-  <script src="assets/js/components/hs.carousel.js"></script>
-
-  <!-- JS Customization -->
-  <script src="assets/js/custom.js"></script>
-
-  <!-- JS Plugins Init. -->
-  <script>
-    $(document).on('ready', function () {
+ </body>
+</html>
+<!-- End Blog Minimal Blocks -->
+<!-- Footer -->
+<div class="g-pt-50">
+ <footer class="g-bg-secondary">
+  <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+  </div>
+  <div class="container">
+   <!-- Footer - Bottom Section -->
+   <div class="row align-items-center">
+    <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+     <!-- Copyright -->
+     <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+      © 2017-2019 All Rights Reserved.
+     </p>
+     <!-- End Copyright -->
+    </div>
+    <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+     <!-- Links -->
+     <ul class="list-inline mb-0">
+      <li class="list-inline-item g-pl-0 g-pr-10">
+       <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+        Contact Us
+       </a>
+      </li>
+      <li class="list-inline-item g-px-10">
+       <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+        Last modified: August 2020
+       </a>
+      </li>
+     </ul>
+     <!-- End Links -->
+    </div>
+   </div>
+   <!-- End Footer - Bottom Section -->
+  </div>
+ </footer>
+</div>
+<!-- End Footer -->
+<!-- JS Global Compulsory -->
+<script src="assets/vendor/jquery/jquery.min.js">
+</script>
+<script src="assets/vendor/jquery-migrate/jquery-migrate.min.js">
+</script>
+<script src="assets/vendor/jquery.easing/js/jquery.easing.js">
+</script>
+<script src="assets/vendor/popper.min.js">
+</script>
+<script src="assets/vendor/bootstrap/bootstrap.min.js">
+</script>
+<!-- JS Implementing Plugins -->
+<script src="assets/vendor/appear.js">
+</script>
+<script src="assets/vendor/hs-megamenu/src/hs.megamenu.js">
+</script>
+<script src="assets/vendor/masonry/dist/masonry.pkgd.min.js">
+</script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js">
+</script>
+<script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js">
+</script>
+<script src="assets/vendor/slick-carousel/slick/slick.js">
+</script>
+<!-- JS Unify -->
+<script src="assets/js/hs.core.js">
+</script>
+<script src="assets/js/components/hs.header.js">
+</script>
+<script src="assets/js/helpers/hs.hamburgers.js">
+</script>
+<script src="assets/js/components/hs.dropdown.js">
+</script>
+<script src="assets/js/components/hs.tabs.js">
+</script>
+<script src="assets/js/components/hs.cubeportfolio.js">
+</script>
+<script src="assets/js/components/hs.onscroll-animation.js">
+</script>
+<script src="assets/js/components/hs.go-to.js">
+</script>
+<script src="assets/js/components/hs.carousel.js">
+</script>
+<!-- JS Customization -->
+<script src="assets/js/custom.js">
+</script>
+<!-- JS Plugins Init. -->
+<script>
+ $(document).on('ready', function () {
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
@@ -663,8 +873,4 @@
         $.HSCore.components.HSTabs.init('[role="tablist"]');
       }, 200);
     });
-  </script>
-
-</body>
-
-</html>
+</script>
