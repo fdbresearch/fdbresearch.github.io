@@ -1,41 +1,155 @@
 from bs4 import BeautifulSoup
 import glob, os
 
-tagName = "footer"
+# change tagName and tag_doc
+tagName = "header"
 tag_doc = """
-<footer class="g-bg-secondary">
-      <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
+            </a>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
       </div>
-      <div class="container">
-       <!-- Footer - Bottom Section -->
-       <div class="row align-items-center">
-        <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-         <!-- Copyright -->
-         <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-          © 2017-2020 All Rights Reserved.
-         </p>
-         <!-- End Copyright -->
-        </div>
-        <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
-         <!-- Links -->
-         <ul class="list-inline mb-0">
-          <li class="list-inline-item g-pl-0 g-pr-10">
-           <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
-            Contact Us
-           </a>
-          </li>
-          <li class="list-inline-item g-px-10">
-           <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-            Last modified: August 2020
-           </a>
-          </li>
-         </ul>
-         <!-- End Links -->
-        </div>
-       </div>
-       <!-- End Footer - Bottom Section -->
-      </div>
-     </footer>
+    </header>
 """
 
 s = ""
