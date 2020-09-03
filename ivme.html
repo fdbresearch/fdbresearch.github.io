@@ -258,6 +258,7 @@
             We have studied the application of this idea to some popular queries, and published a series of papers.
           </p>
           <br />
+          
           <h2 class="h4 g-color-black">
             Triangle Queries
           </h2>
@@ -270,17 +271,19 @@
             mapping a tuple to a non-zero value (positive for inserts and negative for deletes).
           </p>
           <p>
-            We proposed IVM$^{\epsilon}$ to maintain the triangle count query $Q$ in $O({|D|^{\max{\{\epsilon,
+            Our algorithm IVM$^{\epsilon}$ uses an adaptive strategy to maintain 
+            the triangle count query $Q$ in $O({|D|^{\max{\{\epsilon,
             1-\epsilon\}}}})$ amortized time while using $O({|D|^{1+\min{\{\epsilon, 1-\epsilon\}}}})$ space where
             $\epsilon \in [0,1]$
-            as shown in Figure 1 below.
+            as shown in Figure 1 below (see 
+            <a href="https://fdbresearch.github.io/papers/TriangleCount.html">ICDT'19</a>).
           </p>
           <img alt="Figure of ivme" src="./ivm/figures/triangle_count.png"
             style="margin-bottom: 20px; width: 85%; margin-left: 4%;" />
           <p>
             IVM$^{\epsilon}$ defines a continuum of approaches exhibiting a tradeoff between space and time based on
             $\epsilon$
-            such that the classical first-order and the factorized IVM are extreme points in this continuum.
+            such that the existing approaches (classical first-order and factorized IVM) are extreme points in this continuum.
             By setting $\epsilon = 0.5$, IVM$^{\epsilon}$
             achieves its best update time $O({|D|^{0.5}})$,
             and we proved that this update time is worst-case optimal under the Online Matrix-Vector Multiplication
@@ -290,8 +293,8 @@
             IVM$^{\epsilon}$ achieves sublinear update time for all of them.
           </p>
           <p>
-            Triangle Queries with Arbitrary Free Variables --> just turn this into a paragraph saying: This idea can be
-            generalized to extensions of the triangle count query above -- and you cite/give the link
+            This idea can be generalized to extensions of the triangle count query above (see 
+            <a href="https://arxiv.org/abs/2004.03716">TODS'20</a>). 
           </p>
           <br />
 
@@ -299,14 +302,12 @@
             Hierarchical Queries
           </h2>
           <p>
-            under single-tuple updates to the input relations R, S and T. The relations are given
-            as functions mapping tuples to tuple multiplicities. A single-tuple update is a relation
+            functions mapping tuples to tuple multiplicities. A single-tuple update is a relation
             mapping a tuple to a non-zero value (positive for inserts and negative for deletes).
           </p>
           <img alt="Figure of ivme" src="./ivm/figures/hierarchical.png" style="margin-bottom: 20px; width: 100%;" />
           <p>
-            under single-tuple updates to the input relations R, S and T. The relations are given
-            as functions mapping tuples to tuple multiplicities. A single-tuple update is a relation
+            functions mapping tuples to tuple multiplicities. A single-tuple update is a relation
             mapping a tuple to a non-zero value (positive for inserts and negative for deletes).
           </p>
         </div>
