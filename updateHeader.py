@@ -89,7 +89,7 @@ tag_doc = """
                     </li>
                     <li class="dropdown-item">
                       <a class="nav-link" href="ivme.html">
-                        Adaptive Query Processing
+                        Adaptive Query Processing based on Degree Information
                       </a>
                     </li>
                   </ul>
