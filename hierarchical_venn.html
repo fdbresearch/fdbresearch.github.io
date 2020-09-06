@@ -244,247 +244,36 @@
     <!-- Content Block -->
     <div class="container g-pb-20">
       <div class="row justify-content-between">
-        <div class="col-lg-8 ">
+        <div class="col-lg-10 ">
           <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-            <p>
-              We investigate trade-offs in static and dynamic evaluation of queries. In the
-              static setting, the trade-off is between the time to partially compute the query result and the delay
-              needed
-              to enumerate its tuples. In the dynamic setting, we additionally consider the time needed to update the
-              query result under single-tuple inserts or deletes to the database.
-            </p>
-            <p>
-              The core idea is adaptive query processing:
-              We partition the databases according to the frequencies or the degrees of data values, and then use
-              different processing strategies to low-frequency (light) and high-frequency (heavy) data.
-              We have studied the application of this idea to some popular queries, and published a series of papers.
-            </p>
-            <br />
 
-            <h2 class="h4 g-color-black">
-              Triangle Queries
-            </h2>
-            <p>
-              Let us consider the maintenance of the count of triangles:
-              $$Q() = \sum_{A,B,C} R(A,B) \cdot S(B,C) \cdot T(C,A)$$
-              under single-tuple updates to the input relations R, S, and T.
-              The relations are given
-              as functions mapping tuples to their multiplicities. A single-tuple update is a relation
-              mapping a tuple to a non-zero value (positive for inserts and negative for deletes).
-            </p>
-            <p>
-              Our algorithm IVM$^{\epsilon}$ uses an adaptive strategy to maintain
-              the triangle count query $Q$ in $O({|D|^{\max{\{\epsilon,
-              1-\epsilon\}}}})$ amortized time while using $O({|D|^{1+\min{\{\epsilon, 1-\epsilon\}}}})$ space where
-              $\epsilon \in [0,1]$
-              as shown in Figure 1 below (see
-              <a href="https://fdbresearch.github.io/papers/TriangleCount.html">ICDT'19</a>).
-            </p>
-            <img alt="Figure of ivme" src="./ivm/figures/triangle_count.png"
-              style="margin-bottom: 20px; width: 85%; margin-left: 4%;" />
-            <p>
-              IVM$^{\epsilon}$ defines a continuum of approaches exhibiting a tradeoff between space and time based on
-              $\epsilon$
-              such that the existing approaches (classical first-order and factorized IVM) are extreme points in this
-              continuum.
-              By setting $\epsilon = 0.5$, IVM$^{\epsilon}$
-              achieves its best update time $O({|D|^{0.5}})$,
-              and we proved that this update time is worst-case optimal under the Online Matrix-Vector Multiplication
-              (OMv) conjecture.
-              The extended paper shows the application of IVM$^{\epsilon}$ to other count queries including
-              Lommis-Whitney, 4-path queries, and any query with three relations.
-              IVM$^{\epsilon}$ achieves sublinear update time for all of them.
-            </p>
-            <p>
-              This idea can be generalized to extensions of the triangle count query above (see
-              <a href="https://arxiv.org/abs/2004.03716">TODS'20</a>).
-            </p>
-            <br />
+            <p>This page explains the recovery of prior results. </p>
 
-            <h2 class="h4 g-color-black">
-              Hierarchical Queries
-            </h2>
+            <img alt="Figure of ivme" src="./ivm/figures/hierarchical_venn.png" style="margin-bottom: 20px; width: 100%;" />
             <p>
-              We extended IVM$^{\epsilon}$ to hierarchical queries (see
-              <a href="https://arxiv.org/abs/1907.01988">PODS'20</a>).
-              The figure below shows our results precisely.
+              The figure above depicts the landscapes
+              of the static and dynamic query evaluation, and the relationship of our results
+              with prior results.
             </p>
-            <img alt="Figure of ivme" src="./ivm/figures/hierarchical.png" style="margin-bottom: 20px; width: 100%;" />
+
             <p>
-              The left figure shows the preprocessing time, enumeration delay, and amortized update time for a
-              hierarchical query with static with $\mathsf{w}$ and dynamic width $\delta$ ($\delta$ can be $\mathsf{w}$
-              or
-              $\mathsf{w} - 1$, hence the two red lines for the update time).
-
-              The middle and right figure show the trade-offs in static and dynamic evaluation:
-              Given a hierarchical query with static width $\mathsf{w}$, delta width $\delta$, a database of size $|D|$,
-              and $\epsilon \in [0,1]$,
-              the query result can be enumerated with $O(|D|^{1-\epsilon})$ delay after $O(|D|^{1 + (\mathsf{w}
-              -1)\epsilon})$ preprocessing time,
-              and $O(|D|^{\delta \epsilon})$ amortized update time for single-tuple updates in the dynamic case.
-
-              Our approach achieves each blue point and each point on the blue lines.
-              Prior approaches are represented by one point in the trade-off space.
-
+              As shown in the left figure, our static result recovers the prior results for conjunctive queries by setting $\epsilon = 1$ and $\alpha$-acyclic queries [2] by setting $\epsilon = 0$; For free-connex queries, $\mathsf{w} = 1$
+              and the preprocessing time remains O(N) regardless of $\epsilon$; we then recover the
+              constant delay by choosing $\epsilon$ = 1. 
             </p>
             <p>
-              This paper has four main contributions:
-              <ul>
-                <li>
-                  Recovery of prior approaches: Our results recover prior results restricted to hierarchical queries by
-                  setting $\epsilon$ properly
-                  (<a href="./hierarchical_venn.html">read more</a>).
-                </li>
-                <li>
-                  Sublinear update time and delay: Our approach is the first one that allows
-                  sublinear amortized update time and sublinear enumeration delay for hierarchical
-                  queries.
-                </li>
-                <li>Optimality for hierarchical queries with delta width 1.</li>
-                <li>We show the gap between single-tuple and bulk tuple updates. </li>
-              </ul>
+              The right figure shows that
+              by setting $\epsilon = 1$, our dynamic result recovers prior work on conjunctive,
+              q-hierarchical and free-connex queries, where $\mathsf{w} = 1$ and $\delta \in \{0,1\}$ for
+              free-connex queries and $\mathsf{w} = 1$ and $\delta = 0$ for q-hierarchical queries.
             </p>
-          </div>
 
 
-        </div>
-        <!-- right panel -->
-        <div class="col-lg-3 g-mb-80">
-          <div class="g-mb-50">
-            <div class="u-heading-v3-1 g-mb-30">
-              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
-                Useful Links
-              </h2>
-            </div>
-            <ul class="list-unstyled">
-              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-                <h4 class="h6">
-                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
-                  </i>
-                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="./hierarchical_demo.html">
-                    PODS'20 Result Demo
-                  </a>
-                </h4>
-              </li>
-              
-            </ul>
           </div>
         </div>
-        <!-- end right panel -->
-
       </div>
 
-      <!-- publications row -->
-      <div class="row justify-content-between">
-        <!-- publications -->
-        <div>
-          <div class="g-mb-30">
-            <div class="u-heading-v3-1 g-mb-30">
-              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
-                Publications
-              </h2>
-            </div>
-          </div>
-          <ul>
-            <li id="2004.03716">
-              <strong>
-                Maintaining Triangle Queries under Updates
-              </strong>
-              .
-              [
-              <a href="https://arxiv.org/abs/2004.03716">
-                arxiv
-              </a>
-              ]
-              <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-                Journal
-              </span>
-              <br />
-              Ahmet Kara, Hung Q. Ngo, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
-              <br />
-              To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted April 2020)
-              <br />
-              Special issue of best papers at ICDT 2019
-              <br />
-              <a href="https://arxiv.org/abs/2004.03716">
-                arXiv report 2004.03716
-              </a>
-              , April 2020.
-            </li>
-          </ul>
-          <ul>
-            <li id="1907.01988">
-              <strong>
-                Trade-offs in Static and Dynamic Evaluation of Hierarchical Queries
-              </strong>
-              .
-              [
-              <a href="https://arxiv.org/abs/1907.01988">
-                arxiv
-              </a>
-              ,
-              <a href="./slides/pods20.pdf">
-                slides
-              </a>
-              ,
-              <a href="https://www.youtube.com/watch?v=_teavPgp5pQ">
-                video
-              </a>
-              ]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-                Conference
-              </span>
-              <br />
-              Ahmet Kara, Milos Nikolic, Dan Olteanu, Haozhe Zhang.
-              <br />
-              In ACM Principles of Database Systems (PODS), Portland, Oregon, June, 2020.
-              <br />
-              <a href="https://arxiv.org/abs/1907.01988">
-                arXiv report 1907.01988
-              </a>
-              , July 2019.
-            </li>
-          </ul>
-          <ul>
-            <li id="ivme-icdt19">
-              <strong>
-                Counting Triangles under Updates in Worst-Case Optimal Time
-              </strong>
-              .
-              [
-              <a href="./papers/TriangleCount.html">
-                accepted version
-              </a>
-              ,
-              <a href="https://arxiv.org/pdf/1804.02780">
-                arxiv
-              </a>
-              ,
-              <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/knnoz-icdt19-talk.pdf">
-                slides
-              </a>
-              ]
-              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-                Conference
-              </span>
-              <span class="u-label g-bg-red g-rounded-3 g-ml-5">
-                Best Paper Award
-              </span>
-              <br />
-              Ahmet Kara, Hung Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang.
-              <br />
-              In Int Conf on Database Theory (ICDT), Lisbon, March 2019.
-              <br />
-              Extended version in
-              <a href="https://arxiv.org/abs/1804.02780">
-                arXiv report 1804.02780
-              </a>
-              , April
-              2018.
-            </li>
-          </ul>
-        </div>
-      </div>
+
     </div>
     <!-- End Content Block -->
 
