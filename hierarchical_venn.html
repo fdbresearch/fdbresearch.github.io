@@ -247,25 +247,56 @@
         <div class="col-lg-10 ">
           <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
 
-            <p>This page explains the recovery of prior results. </p>
-
-            <img alt="Figure of ivme" src="./ivm/figures/hierarchical_venn.png" style="margin-bottom: 20px; width: 100%;" />
             <p>
-              The figure above depicts the landscapes
-              of the static and dynamic query evaluation, and the relationship of our results
+              This page depicts the landscapes
+              of the static and dynamic query evaluation, and the relationship of our results (<a
+                href="https://arxiv.org/abs/1907.01988">PODS'20</a>)
               with prior results.
             </p>
 
+            <img alt="Figure of ivme" src="./ivm/figures/hierarchical_venn.png"
+              style="margin-bottom: 20px; width: 100%;" />
             <p>
-              As shown in the left figure, our static result recovers the prior results for conjunctive queries by setting $\epsilon = 1$ and $\alpha$-acyclic queries [2] by setting $\epsilon = 0$; For free-connex queries, $\mathsf{w} = 1$
+              As shown in the left figure, our static result recovers the prior results for conjunctive queries [6] by
+              setting $\epsilon = 1$ and $\alpha$-acyclic queries [1] by setting $\epsilon = 0$; For free-connex
+              queries, $\mathsf{w} = 1$
               and the preprocessing time remains O(N) regardless of $\epsilon$; we then recover the
-              constant delay by choosing $\epsilon$ = 1. 
+              constant delay [1] by choosing $\epsilon$ = 1.
             </p>
             <p>
               The right figure shows that
-              by setting $\epsilon = 1$, our dynamic result recovers prior work on conjunctive,
-              q-hierarchical and free-connex queries, where $\mathsf{w} = 1$ and $\delta \in \{0,1\}$ for
+              by setting $\epsilon = 1$, our dynamic result recovers prior work on conjunctive [5],
+              q-hierarchical [2] and free-connex [3] queries, where $\mathsf{w} = 1$ and $\delta \in \{0,1\}$ for
               free-connex queries and $\mathsf{w} = 1$ and $\delta = 0$ for q-hierarchical queries.
+            </p>
+
+            
+            <br><br>
+            <h3>Reference</h3>
+            <p>
+              [1] Guillaume Bagan, Arnaud Durand, and Etienne Grandjean.
+              <em>On Acyclic Conjuntive Queries and Constant Delay Enumeration.</em> In CSL, pages 208-222, 2007.
+            </p>
+            <p>
+              [2] Christoph Berkholz, Jens Keppeler, and Nicole Schweikardt. <em>Answering Conjunctive Queries Under Updates. </em> In PODS, pages 303-318, 2017.
+            </p>
+            <p>
+              [3] Muhammad Idris, Martin Ugarte, and Stijn Vansummeren. 
+              <em>The Dynamic Yannakakis Algorithm: Compact and Effcient Query Processing Under Updates.</em>
+               In SIGMOD, pages 1259-1274, 2017.
+            </p>
+            <p>
+              [4] Ahmet Kara, Hung Q. Ngo, Milos Nikolic, Dan Olteanu, and Haozhe Zhang. <em>Counting triangles under updates in worst-case optimal time.</em> In ICDT, pages 4:1-4:18, 2019.
+            </p>
+            <p>
+              [5] Milos Nikolic and Dan Olteanu. 
+              <em>Incremental View Maintenance with Triple Lock Factorization Benefits.</em>
+               In SIGMOD, pages 365-380, 2018.
+            </p>
+            <p>
+              [6] Dan Olteanu and Jakub Zavodny. 
+              <em>Size Bounds for Factorised Representations of Query Results.</em>
+               ACM TODS, 40(1):2:1-2:44, 2015.
             </p>
 
 
