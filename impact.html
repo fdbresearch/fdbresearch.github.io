@@ -197,7 +197,7 @@
      <div class="d-sm-flex text-center">
       <div class="align-self-center">
        <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        Where are Factorized Database Principles Used?
+        Where are Factorized Databases Used?
        </h2>
       </div>
       <!--div class="align-self-center ml-auto">
@@ -229,28 +229,38 @@
       <article class="g-mb-60">
        <div class="text-center g-width-60x--md mx-auto g-my-40">
               <h3 class="text-uppercase g-color-primary">
-                How it started
+                The work
               </h3>
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p class="g-color-black-opacity-0_8">
-          The ICDT’12 paper [30] and its extended journal version [31] put forward a basic yet fundamental observation: 
-          the relational representation and computation of the answers to conjunctive queries entail redundancy that can be systematically avoided by a succinct lossless factorized representation. 
-          This representation gives a proper balance between compactness (elimination of redundancy) and efficiency. 
-          Specifically, the framework exploits the conditional independence in the data to compress relations such as those that constitute the results of database joins. 
-          In particular, a factorized representation can be viewed as a relational algebra query that involves data values and only two operators: union and Cartesian product. 
-          This work also gives effective tools for managing such factorized representations, including representation systems, their worst-case optimal size and computation, and constant-delay enumeration of the represented tuples. 
-          The fundamental contribution that mostly affected related work is the qualitative evaluation of the compact representation and its computation time by means of the fine-grained complexity of its data-structure operations.
+          The ICDT 2012 paper [30] and its extended version published in the ACM TODS 2015 journal [31], both by Olteanu and Z&aacute;vodn&yacute;, put forward a basic yet fundamental observation: 
+          <div><em>The relational representation and computation of the answers to conjunctive queries entail redundancy that can be systematically avoided by a succinct lossless <strong>factorized</strong> representation.</em></div>
         </p>
+        <p>
+          Such factorized representations give a proper balance between compactness (elimination of redundancy) and efficiency. They are a special form of compression: it factorizes data akin to factorization of polynomials (<em>a*b + a*c = a* (b+c)</em>). It is orthogonal to value-based compression techniques, such as run-length encoding, and it can be combined with the latter to achieve a greater compression factor.
+        </p>
+        <p>
+          Specifically, the framework exploits the conditional independence in the data to compress relations such as those that constitute the results of database joins.
+          In particular, a factorized representation can be viewed as a relational algebra query that involves data values and only two operators: union and Cartesian product. We also refer generally to such representations as <em>factorized databases.</em>
+        </p>
+        <p> 
+          This work also gives effective tools for managing such factorized representations, including:
+        </p>
+        <ul> 
+          <li>representation systems, </li>
+          <li>their worst-case optimal size and computation, and</li> 
+          <li>constant-delay enumeration of the represented tuples.</li>
+        </ul>
        </div>
        <div class="text-center g-width-60x--md mx-auto g-my-40">
         <h3 class="text-uppercase g-color-primary">
-          On-going Impact  
+          Impact  
         </h3>
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          Factorized databases had and are still having impact on subsequent research in both database systems and database theory, 
+          Factorized databases have impacted research in both database systems and database theory, 
           in particular on:
         </p>
         <ul>
@@ -261,10 +271,12 @@
           <li><a href="#learning">factorized machine learning</a>.</li>
         </ul>
         <p>
-          For this reason, the initial paper [30] on factorized databases published in ICDT'12 received the <strong>ICDT 2022 Test of Time Award.</strong>
+          For this reason, the ICDT 2012 paper [30] on factorized databases received the <strong>ICDT 2022 Test of Time Award.</strong>
+          This award <em><a href="https://databasetheory.org/ICDT/test-of-time">"recognizes a paper selected from the proceedings of the ICDT 2012 conference that has had the highest impact in terms of research, methodology, conceptual contribution, or transfer to practice over the past decade."</a></em>
+
         </p>
         <p>
-          In the sequel, I will highlight a number of research efforts that crucially use or build on the factorized database techniques. I will give citations from some corresponding publications to emphasize their pivotal reliance on factorized databases. I find remarkable the timeliness of the influence of this work, as a solid body of follow-up work has been published a decade after the initial work [30].
+          The rest of this note highlights a select number of research efforts that acknowledge their use of factorized database techniques. It gives citations from publications to emphasize their pivotal reliance on factorized databases. The timeliness of the influence of this work is remarkable, as a solid body of follow-up work has been published a decade after the initial ICDT 2012 work.
         </p>
        </div>
        <div class="text-center g-width-60x--md mx-auto g-my-40" id="graph">
@@ -274,41 +286,78 @@
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          As argued in the system-building efforts that follow, factorization is a natural fit for the representation and processing of graph data. Graph traversals call for joins that have large outputs that are representable succinctly in factorized form. Salihoglu et al. [14] revisit column-oriented storage and query processing techniques in the context of contemporary graph database management systems. A core decision in the design of such a system is to <strong>“adopt a factorized tuple set representation scheme”</strong> to <strong>“avoid repetitions of values.”</strong> It developed a new block-based processor that <strong>“uses factorized representation of intermediate tuples.”</strong> Salihoglu and his team also study the problem of optimizing one-time and continuous subgraph queries using worst-case optimal join plans [27]. They put forward a cache that <strong>“gives benefits similar to factorization”</strong>: whenever the matches of query vertices are independent, they can be done once for each match of further query vertices.
+          As argued in the system-building efforts that follow, factorization is a natural fit for the representation and processing of graph data. Graph traversals call for joins that have large outputs that are representable succinctly in factorized form. 
+        </p>
+        <p>Salihoglu et al. [14] revisit column-oriented storage and query processing techniques in the context of contemporary graph database management systems. A core decision in the design of such a system is to <strong>“adopt a factorized tuple set representation scheme”</strong> to <strong>“avoid repetitions of values.”</strong> It developed a new block-based processor that <strong>“uses factorized representation of intermediate tuples.”</strong> Salihoglu and his team also study the problem of optimizing one-time and continuous subgraph queries using worst-case optimal join plans [27]. They put forward a cache that <strong>“gives benefits similar to factorization”</strong>: whenever the matches of query vertices are independent, they can be done once for each match of further query vertices.
           </p>
           <p>
-          Deutsch et al. [34] present a scheme for parallel execution of SQL queries on top of a graph processing engine. This work uses an aggregation scheme <strong>“inspired by aggregation over hypertree decompositions in factorized databases.”</strong> The values received by different vertices in the system <strong>“correspond to the factorized representation of the join result.”</strong> Wu et al. [37] address the challenge of quickly finding homomorphic matches for hybrid patterns over large data graphs, which is fundamental to graph analytics. They introduce the concept of an answer graph to encode all the possible homomorphisms from a pattern to the graph. This answer graph represents results succinctly <strong>“similar to factorized representations of query results studied in the context of classical and probabilistic databases.”</strong> This property is useful, as in factorized databases, to <strong>“calculate the cardinality of the query answer [. . . ] without explicitly enumerating the occurrences.”</strong>
+          Deutsch et al. [34] present a scheme for parallel execution of SQL queries on top of a graph processing engine. This work uses an aggregation scheme <strong>“inspired by aggregation over hypertree decompositions in factorized databases.”</strong> The values received by different vertices in the system <strong>“correspond to the factorized representation of the join result.”</strong> 
+          </p>
+          <p>
+            Wu et al. [37] address the challenge of quickly finding homomorphic matches for hybrid patterns over large data graphs, which is fundamental to graph analytics. They introduce the concept of an answer graph to encode all the possible homomorphisms from a pattern to the graph. This answer graph represents results succinctly <strong>“similar to factorized representations of query results studied in the context of classical and probabilistic databases.”</strong> This property is useful, as in factorized databases, to <strong>“calculate the cardinality of the query answer [. . . ] without explicitly enumerating the occurrences.”</strong>
         <p>
         <p>
-          Godfrey et al. [2] (best short paper award at EDBT 2021) propose an answer-graph method for the evaluation of SPARQL conjunctive queries. This approach <strong>“finds a factorized answer set first, an answer graph, and then finds the embedding tuples from this.”</strong> They also point out that factorization can be effective for graph data: <strong>“While factorization is sometimes a significant win for evaluating relational queries, it is virtually always a win for evaluating graph CQs.”</strong> Vidal et al. [20] present <strong>“a solution to the problem of factorizing RDF graphs describing semantic sensor data.”</strong> A key contribution is an algorithm <strong>“that solves the problem of query evaluation on a factorized RDF graph.”</strong> This work builds on <strong>“factorization techniques [. . . ] for optimization of relational data and SQL query processing”</strong> and proposes <strong>“factorization technique tailored for semantically described sensor data.”</strong> The extended journal article [21] also investigates <strong>“the effectiveness of the proposed factorization techniques [...] as well as the impact of factorizing semantic sensor data on query processing using LinkedSensorData benchmark.”</strong>
+          Godfrey et al. [2] (best short paper award at EDBT 2021) propose an answer-graph method for the evaluation of SPARQL conjunctive queries. This approach <strong>“finds a factorized answer set first, an answer graph, and then finds the embedding tuples from this.”</strong> They also point out that factorization can be effective for graph data: <strong>“While factorization is sometimes a significant win for evaluating relational queries, it is virtually always a win for evaluating graph CQs.”</strong> 
+        </p>
+        <p>
+          Vidal et al. [20] present <strong>“a solution to the problem of factorizing RDF graphs describing semantic sensor data.”</strong> A key contribution is an algorithm <strong>“that solves the problem of query evaluation on a factorized RDF graph.”</strong> This work builds on <strong>“factorization techniques [. . . ] for optimization of relational data and SQL query processing”</strong> and proposes <strong>“factorization technique tailored for semantically described sensor data.”</strong> The extended journal article [21] also investigates <strong>“the effectiveness of the proposed factorization techniques [...] as well as the impact of factorizing semantic sensor data on query processing using LinkedSensorData benchmark.”</strong>
         </p>
        </div>
        <div class="text-center g-width-60x--md mx-auto g-my-40" id="enumeration">
         <h3 class="text-uppercase g-color-primary">
-          Enumeration for Static and Dynamic Query Evaluation 
+          Enumeration for Static Query Evaluation 
         </h3>
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          One key property of factorized representations of relations is that they allow to enumerate the tuples in these relations with constant delay. This gives a refinement of the computational complexity of a query that consists of two components: (1) The preprocessing time, which is essentially the construction of the factorized representation of the query result; and (2) the enumeration delay, which is the time between consecutive output tuples. The ICDT’12 paper [30] and its extended journal version [31] are the first to settle this refined complexity to <em>O(N^fhtw(Q))</em> for preprocessing time and <em>O(1)</em> for enumeration delay for any conjunctive query <em>Q</em>, where <em>fhtw</em> is the fractional hypertree width of <em>Q</em>. The prior work is mainly by Bagan, Durand, and Grandjean [5] that guarantees linear preprocessing time and constant delay for free-connex acyclic conjunctive queries. A number of follow-up publications considered more expressive queries, restricted databases, preprocessing-enumeration trade-offs for both static and dynamic query evaluation. Some of these efforts that directly use the results on constant-delay enumeration in factorized databases are highlighted below.
+          A key property of factorized representations is that they <em>allow tuple enumeration with constant delay</em> (that is, the time needed to output the first tuple as well as the time from outputting one tuple to outputting the next is constant in the size of the representation). This gives a refinement of the computational complexity of a query that consists of two components:
+        </p>
+        <ol>
+          <li>The preprocessing time, which is essentially the construction of the factorized representation of the query result.</li>
+          <li>The enumeration delay, which is the time between consecutive output tuples.</li>
+        </ol>
+        <p>
+          The ICDT 2012 paper [30] and its extended TODS version [31] are the first to settle this refined complexity to <em>O(N<sup>fhtw(Q)</sup>)</em> for preprocessing time and <em>O(1)</em> for enumeration delay for any conjunctive query <em>Q</em>, where <em>N</em> is the size of the database and  <em>fhtw</em> is the fractional hypertree width of <em>Q</em>. The acclaimed prior result by Bagan, Durand, and Grandjean [5] guarantees linear preprocessing time and constant delay for free-connex acyclic conjunctive queries. A number of follow-up publications considered more expressive queries, restricted databases, preprocessing-enumeration trade-offs for both static and dynamic query evaluation. Some of these efforts that directly use the results on constant-delay enumeration in factorized databases are highlighted below.
         <p>
         <p>
           In a series of papers, Amarilli et al. [3] developed circuits that are more general than factorizations and still allow for constant-delay enumeration. Their work focuses on efficient enumeration algorithms, such as that for factorized representations of query results, with strict requirements: the preprocessing must be linear in the input size, and the delay between successive solutions must be constant. It also shows how the d-DNNF circuits <strong>“generalize the deterministic factorized representations of relational instances.”</strong> It also <strong>“gives enumeration algorithms with linear preprocessing and constant delay for arbitrary deterministic d-representations [a form of factorized representation], extending the enumeration result [of factorized databases].”</strong> The work also describes <strong>“links to factorized databases and strengthens the enumeration result”</strong> in the original factorized database work. Amarilli and collaborators [4] further consider the problem of enumeration on trees under relabelings. It defines set-valued circuits, which <strong>“can also be seen to be isomorphic to arithmetic circuits, and generalize factorized representations.”</strong>
         </p>
         <p>
-          Torun ́czyk [35] proposes an algebraic framework for studying efficient algorithms for query evaluation, aggregation, enumeration, and maintenance under updates, on sparse databases. This work introduces circuits that <strong>“can be alternatively viewed as factorized representations (extended by suitable permanent operators) of query answers.”</strong>
+          Toru&nacute;czyk [35] proposes an algebraic framework for studying efficient algorithms for query evaluation, aggregation, enumeration, and maintenance under updates, on sparse databases. This work introduces circuits that <strong>“can be alternatively viewed as factorized representations (extended by suitable permanent operators) of query answers.”</strong>
         </p>
         <p>
-          Beyond the static setting, factorized representations have been used for dynamic query evaluation, that is, for view maintenance under data inserts and deletes. Schweikardt et al. [7] consider the task of enumerating and counting answers to conjunctive queries in the presence of tuple insertions and deletions. Essentially, <strong>“the dynamic data structure that is computed by our algorithm can be viewed as an f-representation [a form of factorized representation] of the query result, but not every f-representation can be efficiently maintained under database updates.”</strong> Salihoglu et al [27] point out that the Dynamic Constant-delay Linear Representation (DCLR) data structure and the Dynamic Yannakakis Algorithm [16] are <strong>“reminiscent of factorized database representation and processing.”</strong>
+            Koutris et al [12] investigate the trade-off between preprocessing time and delay guarantees for the enumeration of star and path queries with projections. Their further work considers similar trade-offs between compressed representation and answer time for queries with access patterns [13]. They say: <strong>“The key observation is that we can take advantage of the underlying logical structure in order to design algorithms that can compress the data effectively. This idea has been explored before in the context of factorized databases, which can be viewed as a form of logical compression. Our approach builds upon the idea of using query decompositions as a factorized representation, and we show that for certain access patterns it is possible to go below <em>|D|<sup>fhw</sup></em> space for constant delay enumeration.”</strong>
         </p>
         <p>
-          F-IVM is an open-source prototype that unifies maintenance for a variety of tasks, including gradient computation for learning linear regression models over joins, matrix chain multiplication, and factorized evaluation of conjunctive queries [28]. It is <strong>“the first approach to employ factorized computation for three aspects of incremental maintenance for queries with aggregates and joins: (1) it exploits insights from query evaluation algorithms with best known complexity and opti- mizations that push aggregates past joins; (2) it can process bulk updates expressed as low-rank decompositions; and (3) it can maintain compressed representation of query results.”</strong>
+          Further work considers the <em>enumeration of query result following a given order</em>. Bakybayev et al [6] revisits the enumeration on factorized databases and characterizes which factorization structures admit constant-delay enumeration for a given order-by clause. This is later generalized to complex enumeration orders used in ranked enumeration by Tziavelis et al [36] and Carmeli et al [9]. 
         </p>
         <p>
-          Kara et al. [19] introduce a preprocessing-enumeration-update trade-off map for the static and dynamic evaluation of hierarchical conjunctive queries. It recovers a large number of prior results, including the original result on factorized databases in the static setting. Koutris et al. [12] investigate the trade-off between preprocessing time and delay guarantees for the enumeration of star and path queries with projections. Their further work considers similar trade-offs between compressed representation and answer time for queries with access patterns [13]. They say: <strong>“The key observation is that we can take advantage of the underlying logical structure in order to design algorithms that can compress the data effectively. This idea has been explored before in the context of factorized databases, which can be viewed as a form of logical compression. Our approach builds upon the idea of using query decompositions as a factorized representation, and we show that for certain access patterns it is possible to go below <em>|D|^fhw</em> space for constant delay enumeration.”</strong>
+          Tziavelis et al [36] note that <strong>“factorized databases exploit the distributivity of product over union to represent query results compactly and generalize the results on bounded fhw to the non-Boolean case. Our encoding as a DP graph leverages the same principles and is at least as efficient space-wise.”</strong> 
         </p>
         <p>
-          Further work considers the ordered enumeration of query answers. Olteanu’s team revisits the enumeration on factorized databases and characterizes which factorization structures admit constant-delay enumeration for a given order-by clause [6]. This is later generalized to complex enumeration orders used in ranked enumeration by Tziavelis et al. [36] and Carmeli et al. [9]. Tziavelis et al. [36] note that <strong>“factorized databases exploit the distributivity of product over union to represent query results compactly and generalize the results on bounded fhw to the non-Boolean case. Our encoding as a DP graph leverages the same principles and is at least as efficient space-wise.”</strong> Carmeli et al. [9] conclude their paper with the statement that <strong>“we view this work as part of a bigger challenge that continues the line of research on factorized representations in databases: how can we represent the output of a query in a way that, compared to the explicit representation, is fundamentally more compact and efficiently computable, yet equally useful to downstream operations?”</strong>. The characterization of <em>disruptive trio</em> for the queries that do not admit constant access time for tuples in their results corresponds to the alternative complementary characterization for constant-delay enumeration from factorized representations over variable orders [6]: Constant-delay enumeration can be achieved for those factorized representations over variable orders where the order of the variables in the order-by clause is a prefix of a topological order of the variable order.
+          Carmeli et al [9] conclude their paper with the statement that <strong>“we view this work as part of a bigger challenge that continues the line of research on factorized representations in databases: how can we represent the output of a query in a way that, compared to the explicit representation, is fundamentally more compact and efficiently computable, yet equally useful to downstream operations?”</strong>. The non-<em>disruptive trio</em> characterization of queries that admit constant access time for tuples in their results corresponds to the alternative characterization for constant-delay enumeration from factorized representations over variable orders, put forward in [6]: Constant-delay enumeration can be achieved for those factorized representations over variable orders where the order of the variables in the order-by clause is a prefix of a topological order of the variable order.
+        </p>
+      </div>
+      <div class="text-center g-width-60x--md mx-auto g-my-40" id="enumeration">
+       <h3 class="text-uppercase g-color-primary">
+         Enumeration for Dynamic Query Evaluation 
+       </h3>
+      </div>
+      <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+        <p>
+          Beyond the static setting, factorized representations have been used for dynamic query evaluation, that is, for maintaining the results of queries  under inserts to and deletes from the input database. 
+        </p>
+        <p>  
+          Schweikardt et al [7] consider the task of enumerating and counting answers to conjunctive queries in the presence of tuple insertions and deletions. Essentially, <strong>“the dynamic data structure that is computed by our algorithm can be viewed as an f-representation [a form of factorized representation] of the query result, but not every f-representation can be efficiently maintained under database updates.”</strong> 
+        </p>
+        <p>
+          Salihoglu et al [27] point out that the Dynamic Constant-delay Linear Representation (DCLR) data structure and the Dynamic Yannakakis Algorithm [16] are <strong>“reminiscent of factorized database representation and processing.”</strong>
+        </p>
+        <p>
+          F-IVM is an <a href="https://github.com/fdbresearch/FIVM">open-source prototype</a> that unifies maintenance for a variety of tasks, including gradient computation for learning linear regression models over joins, matrix chain multiplication, and factorized evaluation of conjunctive queries [28]. It is <strong>“the first approach to employ factorized computation for three aspects of incremental maintenance for queries with aggregates and joins: (1) it exploits insights from query evaluation algorithms with best known complexity and opti- mizations that push aggregates past joins; (2) it can process bulk updates expressed as low-rank decompositions; and (3) it can maintain compressed representation of query results.”</strong>
+        </p>
+        <p>
+          Kara et al [19] introduce a <a href="https://fdbresearch.github.io/ivme.html">preprocessing-enumeration-update trade-off map</a> for the static and dynamic evaluation of hierarchical conjunctive queries. It recovers a large number of prior results, including the original result on factorized databases in the static setting. 
         </p>
        </div>
        <div class="text-center g-width-60x--md mx-auto g-my-40" id="provenance">
@@ -318,16 +367,16 @@
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          The ICDT’12 paper also introduces effective techniques for lossless compression of provenance polynomials for conjunctive queries. This has been used subsequently in a number of works, where the provenance information is too large to be stored and queried effectively.
+          The ICDT 2012 paper [30] also introduces effective techniques for the factorization of provenance polynomials of conjunctive queries. This has been used subsequently in a number of works, where the provenance information is too large to be stored and queried effectively.
         </p>
         <p>
-          Glavic et al. introduce a practical system for why and why-not provenance called PUG (Provenance Unification through Graphs) [28]. PUG takes a provenance question and Datalog query as input and generates a Datalog program that computes an explanation, i.e., the part of the provenance that is relevant to answer the question. It demonstrates “how a desirable factorization of provenance can be achieved by rewriting an input query .. This is akin to factorization of provenance polynomials in the semiring model and utilizes factorized databases techniques”. Section 9 of this work is devoted to provenance factorization and how to “extend our approach to produce concise, factorized representations of provenance”.
+          Glavic et al [28] introduce a practical system for why and why-not provenance called PUG (Provenance Unification through Graphs). PUG takes a provenance question and Datalog query as input and generates a Datalog program that computes an explanation, that is, the part of the provenance that is relevant to answer the question. It demonstrates <strong>“how a desirable factorization of provenance can be achieved by rewriting an input query .. This is akin to factorization of provenance polynomials in the semiring model and utilizes factorized databases techniques”.</strong> Section 9 of this work is devoted to provenance factorization and how to <strong>“extend our approach to produce concise, factorized representations of provenance”.</strong>
         </p>
         <p>
-          In work that received the VLDB 2017 best paper award [14] and follow-up journal articles [16, 15], Deutch and his team put forward a natural language (NL) interface for formulating database queries and an answering system that is based on the provenance of tuples in the query result, detailing not only the results but also their explanations. Since provenance is typically large, this work introduces “solutions for its effective presentation as NL text: one that is based on provenance factorization, with novel desiderata relevant to the NL case, and one that is based on summarization”. The core of their method is based on the observation underlying factorization: “As observed already in previous work, different assignments (explanations) may have significant parts in common, and this can be leveraged in a factorization that groups together multiple occurrences... Importantly, we impose a novel constraint on the factorizations that we look for (which we call compatibility), intuitively capturing that their structure is consistent with a partial order defined by the parse tree of the question”. The solutions put forward rely on provenance factorization: “We propose two solutions: the first based on the idea of provenance factorization, and the second leveraging factorization to provide a summarized form”.
+          In work that received the VLDB 2017 best paper award [14] and follow-up journal articles [16, 15], Deutch and his team put forward a natural language (NL) interface for formulating database queries and an answering system that is based on the provenance of tuples in the query result, detailing not only the results but also their explanations. Since provenance is typically large, this work introduces <strong>“solutions for its effective presentation as NL text: one that is based on provenance factorization, with novel desiderata relevant to the NL case, and one that is based on summarization”.</strong> The core of their method is based on the observation underlying factorization: <strong>“As observed already in previous work, different assignments (explanations) may have significant parts in common, and this can be leveraged in a factorization that groups together multiple occurrences... Importantly, we impose a novel constraint on the factorizations that we look for (which we call compatibility), intuitively capturing that their structure is consistent with a partial order defined by the parse tree of the question”.</strong> The solutions put forward rely on extensions of the original provenance factorization technique: <strong>“We propose two solutions: the first based on the idea of provenance factorization, and the second leveraging factorization to provide a summarized form”.</strong>
         </p>
         <p>
-          Ives et al. discuss solutions for storing fine-grained provenance in relational storage systems while both compressing and protecting it via cryptographic hashes [42]. The motivation is to facilitate reproducible data science and auditable data analyses, by tracking the processes and inputs responsible for each result of an analysis. A key technical contribution is a provenance archival system that efficiently stores provenance for computations computed over time. This system “opportunistically exploits shared subexpressions as they occur”, which is acknowledged as a form of factorization. It also points out that Bao et al. [7] developed strategies for factoring out provenance storage for common query expressions, following the original work on provenance factorization.
+          Ives et al [42] discuss solutions for storing fine-grained provenance in relational storage systems while both compressing and protecting it via cryptographic hashes. The motivation is to facilitate reproducible data science and auditable data analyses, by tracking the processes and inputs responsible for each result of an analysis. A key technical contribution is a provenance archival system that efficiently stores provenance for computations computed over time. This system <strong>“opportunistically exploits shared subexpressions as they occur”</strong>, which is acknowledged as a form of factorization. It also points out that Bao et al [7] developed strategies for factoring out provenance storage for common query expressions, following the original work on provenance factorization.
         </p>
 
        </div>
@@ -339,16 +388,19 @@
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          A distinct and rich line of work enabled by the ICDT’12 paper is on efficient computation over factorized data. A first approach appeared in a VLDB’13 paper by Bakibayev et al. [6]: the computation of group-by aggregates can benefit from factorized joins. Follow-up work on Functional Aggregate Queries by Ngo et al. [24] (PODS’20 best paper award) and on AJAR by R ́e et al. [17] established the same computational complexity. The FAQ paper notes about the relationship between their work and prior work on factorized databases: <strong>“Bakibayev et al. and Olteanu and Zavodny introduced the notion of factorized databases, and showed how one can efficiently compute join and aggregates over factorized databases. In hindsight there is much in common between their approach and InsideOut applied to the single semiring case. Both approaches have the same runtime complexity, because both are dynamic programming algorithms, InsideOut is bottom-up, and factorized database computation is top-down (memoized).”</strong>
-        <p>
-        <p>
-          The AJAR paper [17] also notes that <strong>“There is a standard modification to Yannakakis to handle aggregations, but the classic analysis provides only a <em>O(IN · OUT)</em> bound. Bakibayev, Kocisky, Olteanu, and Zavodny study aggregation-join queries in factorized databases, and later Olteanu and Zavodny connected factorized databases and GHDs/GHDJoin [the journal version of the ICDT’12 paper]. They develop the intuition that if output attributes are above non-output attributes, the +OUT runtime is preserved; we use the same intuition to develop and analyze AggroGHDJoin, a variant to GHDJoin for aggregate-join queries.”</strong> AJAR forms the basis of the EmptyHeaded system [1], which adopts factorized aggregate computation: <strong>“Previous work has investigated aggregations over hypertree decompositions [citations to factorized databases]. EmptyHeaded adopts this previous work in a straightforward way.”</strong>
+          A distinct and rich line of work enabled by the ICDT 2012 paper is on efficient computation over factorized data. A first approach appeared in the VLDB 2013 paper by Bakibayev et al [6], where it is shown that the computation of group-by aggregates can benefit from factorized joins. 
         </p>
         <p>
-          Wu et al. [15] adopted the factorized computational paradigm for the design and implementation of a query explanation system called Reptile. This system “computes a succinct factorised matrix rep- resentation that reduces the matrix representation by orders of magnitude” and “extend prior work, which developed model training procedures over factorised matrices derived from join queries, to matrices based on join-aggregation queries that exhibit fewer redundancies.” It “adapts factorized representations to compactly represent the feature matrix, and extend matrix operations to support factorized representations.” Capelli et al. [8] have recently proposed an approach to compute com- plex dependency weighted aggregations over factorized databases. They “based [their] approach on the framework of factorized databases of Olteanu and Zavodny.” The core of their algorithmic approach is to factorize the linear program, whose optimal solution is the dependency weighted aggregation, following the structure of the underlying factorized data join: “To solve ground linear programs efficiently, we will work on factorized representations of relations. We use a generalization of the framework of factorized databases introduced by Olteanu et al.”
+          Follow-up work on Functional Aggregate Queries by Ngo et al [24] (PODS’20 best paper award) and on AJAR by R&eacute; et al [17] established the same computational complexity. The FAQ paper notes about the relationship between their work and prior work on factorized databases: <strong>“Bakibayev et al and Olteanu and Z&aacute;vodn&yacute; introduced the notion of factorized databases, and showed how one can efficiently compute join and aggregates over factorized databases. In hindsight there is much in common between their approach and InsideOut applied to the single semiring case. Both approaches have the same runtime complexity, because both are dynamic programming algorithms, InsideOut is bottom-up, and factorized database computation is top-down (memoized).”</strong>
+        <p>
+        <p>
+          The AJAR paper [17] also notes that <strong>“There is a standard modification to Yannakakis to handle aggregations, but the classic analysis provides only a <em>O(IN · OUT)</em> bound. Bakibayev, Kocisky, Olteanu, and Zavodny study aggregation-join queries in factorized databases, and later Olteanu and Z&aacute;vodn&yacute; connected factorized databases and GHDs/GHDJoin [the TODS extended version of the ICDT 2012 paper]. They develop the intuition that if output attributes are above non-output attributes, the +OUT runtime is preserved; we use the same intuition to develop and analyze AggroGHDJoin, a variant to GHDJoin for aggregate-join queries.”</strong> AJAR forms the basis of the EmptyHeaded system [<a href="#1">1</a>], which adopts factorized aggregate computation: <strong>“Previous work has investigated aggregations over hypertree decompositions [citations to factorized databases]. EmptyHeaded adopts this previous work in a straightforward way.”</strong>
         </p>
         <p>
-          Capelli et al. [10] have recently proposed an approach to compute complex dependency weighted aggregations over factorized databases. They “based [their] approach on the framework of factorized databases of Olteanu and Zavodny”. The core of their computational approach is to factorize the linear program, whose optimal solution is the dependency weighted aggregation, following the structure of the underlying factorized data join: “To solve ground linear programs efficiently, we will work on factorized representations of relations. We use a generalization of the framework of factorized databases introduced by Olteanu et al.”
+          Wu et al [15] adopted the factorized computational paradigm for the design and implementation of a query explanation system called Reptile. This system <strong>“computes a succinct factorised matrix rep- resentation that reduces the matrix representation by orders of magnitude”</strong> and <strong>“extend prior work, which developed model training procedures over factorised matrices derived from join queries, to matrices based on join-aggregation queries that exhibit fewer redundancies.”</strong> It <strong>“adapts factorized representations to compactly represent the feature matrix, and extend matrix operations to support factorized representations.”</strong> 
+        </p>
+        <p>
+          Capelli et al [10] have recently proposed an approach to compute complex dependency weighted aggregations over factorized databases. They <strong>“based [their] approach on the framework of factorized databases of Olteanu and Z&aacute;vodn&yacute;”</strong>. The core of their computational approach is to factorize the linear program, whose optimal solution is the dependency weighted aggregation, following the structure of the underlying factorized data join: <strong>“To solve ground linear programs efficiently, we will work on factorized representations of relations. We use a generalization of the framework of factorized databases introduced by Olteanu et al”.</strong>
         </p>
        </div>
        <div class="text-center g-width-60x--md mx-auto g-my-40" id="learning">
@@ -358,36 +410,19 @@
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p>
-          Realizing that machine-learning computation (in particular model training) boils down to the evaluation of aggregates over joins, there followed a solid line of work on in-database factorized machine learning for a variety of models: linear regression [32]; polynomial regression, factorization machines, and principle component analysis [23]; support vector machines and arbitrary models trained using non-polynomial loss functions [22]; and k-means clustering [11]. This work led to several engines for factorized computation of batches of queries, the latest one is the open-source LMFAO system [33].
+          Realizing that model training in machine learning boils down to the evaluation of aggregates over joins, there followed a solid line of work on in-database factorized machine learning for a variety of models: linear regression [32]; polynomial regression, factorization machines, and principle component analysis [23]; support vector machines and arbitrary models trained using non-polynomial loss functions [22]; and k-means clustering [11]. This work led to several engines for factorized computation of batches of queries, the latest one is the <a href="https://github.com/fdbresearch/LMFAO">open-source LMFAO system</a> [33].
         <p>
         <p>
-          Inspired by this line of work going back to its factorized-database origin, Kumar coined the terms “factorized learning” [18, 25] and “factorized linear algebra” [10, 26] to emphasize the core aspect of computing aggregates over joins without materializing the joins explicitly: “We call our technique factorized learning, borrowing the terminology from “factorized” databases [. . . ] We extend the general idea of factorized computation to ML algorithms over joins” [25]; “Is it possible to generalize the idea of factorized ML and automate its application to a much wider variety of ML algorithms and platforms in a unified manner?” [10]. In recent years, factorized machine learning has become an accepted approach beyond the works of Kumar and Olteanu, with examples such as the factorized support vector machines [38].
+          Inspired by this line of work on factorized databases, Kumar coined the terms <strong>“factorized learning”</strong> [18, 25] and <strong>“factorized linear algebra”</strong> [10, 26] to emphasize the core aspect of computing aggregates over joins without materializing the joins explicitly: <strong>“We call our technique factorized learning, borrowing the terminology from “factorized” databases [. . . ] We extend the general idea of factorized computation to ML algorithms over joins”</strong> [25]; <strong>“Is it possible to generalize the idea of factorized ML and automate its application to a much wider variety of ML algorithms and platforms in a unified manner?”</strong> [10]. In recent years, factorized machine learning has become an accepted approach beyond the works co-auhtored by Kumar and Olteanu, with examples such as the factorized support vector machines [38].
         </p>
        </div>
 
-       <!-- Sources & Tags -->
-       <div class="g-mb-30">
-        <h6 class="g-color-gray-dark-v1">
-         <strong class="g-mr-5">
-          Tags:
-         </strong>
-         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-          factorisation
-         </a>
-         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-          joins
-         </a>
-         <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-          aggregates
-         </a>
-        </h6>
-       </div>
-       <!-- End Sources & Tags -->
        <!-- <hr class="g-brd-gray-light-v4"> -->
       </article>
      </div>
      <!-- End Articles Content -->
     </div>
+
     <!-- Publications section -->
     <div class="row">
      <!-- <div class="col-lg-1 g-mb-80"></div> -->
@@ -399,379 +434,408 @@
         </h2>
        </div>
       </div>
-      <h3>
-       Overviews
-      </h3>
-      <ul>
-       <li class="g-mb-15" id="os-sigrec16">
+
+      <ol>
+       <li class="g-mb-15" id="1">
         <strong>
-         Factorized Databases
+          <a href="">
+            Emptyheaded: A relational engine for graph processing
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-sigrec16.pdf">
-         preliminary version
-        </a>
-        ]
-        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-         Journal
-        </span>
         <br/>
-        Dan Olteanu and Maximilian Schleich.
+        C. R. Aberger, A. Lamb, S. Tu, A. N&ouml;tzli, K. Olukotun, and C. R&eacute;.
         <br/>
-        In SIGMOD Record (Database Principles Column), vol. 45, no. 2, June 2016.
-       </li>
-       <li class="g-mb-15" id="o-beyondnp16">
+        ACM Trans. Database Syst., 42(4), Oct. 2017.
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Factorized Databases: A Knowledge Compilation Perspective
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/o-beyondnp16.pdf">
-         pdf
-        </a>
-        ]
-        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
-         Workshop
-        </span>
         <br/>
-        Dan Olteanu.
+
         <br/>
-        In BeyondNP, AAAI workshop, Phoenix, April 2016.
-       </li>
-      </ul>
-      <h3>
-       Factorised Representations for Data and Provenance
-      </h3>
-      <ul>
-       <li id="1812.09526">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         A Layered Aggregate Engine for Analytics Workloads
+          <a href="">
+         
+          </a>
         </strong>
-        .
-               [
-        <a href="http://arxiv.org/pdf/1906.08687">
-         arxiv
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-talk.pdf">
-         slides
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-poster.pdf">
-         poster
-        </a>
-        ,
-        <a href="https://player.vimeo.com/video/345922861#t=3h10m">
-         video
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
         <br/>
-        M. Schleich, D. Olteanu, M. Abo Khamis, H. Ngo and X. Nguyen.
+
         <br/>
-        In ACM SIGMOD, Amsterdam, July 2019.
-        <br/>
-        Updated version in
-        <a href="http://arxiv.org/abs/1906.08687">
-         arXiv report 1906.08687
-        </a>
-        , June 2019.
-       </li>
-      </ul>
-      <ul>
-       <li id="1812.09526">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         On Functional Aggregate Queries with Additive Inequalities
+          <a href="">
+         
+          </a>
         </strong>
-        .
-               [
-        <a href="https://arxiv.org/pdf/1812.09526">
-         arxiv
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-talk.pdf">
-         slides
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-poster.pdf">
-         poster
-        </a>
-        ,
-        <a href="https://player.vimeo.com/video/345869555#t=6m3s">
-         video
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
         <br/>
-        M. Abo Khamis, R. Curtin, B. Moseley, H. Ngo, X. Nguyen, D. Olteanu and M. Schleich.
+
         <br/>
-        In ACM Principles of Database Systems (PODS), Amsterdam, July 2019.
-        <br/>
-        Extended version in
-        <a href="https://arxiv.org/abs/1812.09526">
-         arXiv report 1812.09526
-        </a>
-        , April
-               2019.
-       </li>
-      </ul>
-      <ul>
-       <li id="ko-icdt18">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Covers of Query Results
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="https://arxiv.org/pdf/1709.01600.pdf">
-         arxiv
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
         <br/>
-        Ahmet Kara and Dan Olteanu.
+
         <br/>
-        In Int Conf on Database Theory (ICDT), Vienna, March 2018.
-        <br/>
-        arXiv report 1709.01600, March 2017.
-       </li>
-      </ul>
-      <ul>
-       <li id="co-tr15">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Worst-Case Optimal Join At A Time
+          <a href="">
+         
+          </a>
         </strong>
-        .
-        <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">
-         Tech Report
-        </span>
         <br/>
-        Radu Ciucanu and Dan Olteanu.
+
         <br/>
-        Technical report, November 2015.
-       </li>
-      </ul>
-      <ul>
-       <li id="oz-tods15">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Size Bounds for Factorised Representations of Query Results
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">
-         preliminary version
-        </a>
-        ]
-        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-         Journal
-        </span>
         <br/>
-        Dan Olteanu and Jakub Závodný.
+
         <br/>
-        ACM Transactions on Database Systems (TODS) 40(1):2, 2015.
-       </li>
-      </ul>
-      <ul>
-       <li id="oz-icdt12">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Factorised Representations of Query Results: Size Bounds and Readability
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-icdt12.pdf">
-         pdf
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fdb.pdf">
-         slides
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
         <br/>
-        Dan Olteanu and Jakub Závodný.
+
         <br/>
-        In Int Conf on Database Theory (ICDT), Berlin, 2012.
-        <br/>
-        Prior version (strict subset of results) in
-        <a href="http://arxiv.org/abs/1104.0867">
-         arXiv technical report 1104.0867
-        </a>
-        , April 2011.
-       </li>
-      </ul>
-      <ul>
-       <li id="oz-tap11">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         On Factorisation of Provenance Polynomials
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tap11.pdf">
-         pdf
-        </a>
-        ,
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/factorisation-poster2011.pdf">
-         poster
-        </a>
-        ]
-        <span class="u-label g-bg-green g-rounded-3 g-ml-5">
-         Workshop
-        </span>
         <br/>
-        Dan Olteanu and Jakub Závodný.
+
         <br/>
-        In 3rd USENIX Workshop on the Theory and Practice of Provenance (TaPP), June 2011, Heraklion, Crete.
-       </li>
-      </ul>
-      <h3>
-       Factorised Query Processing
-      </h3>
-      <ul>
-       <li id="knos-17">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Boolean Tensor Decomposition for Conjunctive Queries with Negation
+          <a href="">
+         
+          </a>
         </strong>
-        .
-              [
-        <a href="https://arxiv.org/pdf/1712.07445">
-         arXiv
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Tech Report
-        </span>
         <br/>
-        Mahmoud Abo Khamis, Hung Ngo, Dan Olteanu, and Dan Suciu.
+
         <br/>
-        arXiv report 1712.07445, Dec 2017.
-       </li>
-      </ul>
-      <ul>
-       <li id="co-tr15">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Worst-Case Optimal Join At A Time
+          <a href="">
+         
+          </a>
         </strong>
-        .
-        <span class="u-label g-bg-yellow g-rounded-3 g-ml-5">
-         Tech Report
-        </span>
         <br/>
-        Radu Ciucanu and Dan Olteanu.
+
         <br/>
-        Technical report, November 2015.
-       </li>
-      </ul>
-      <ul>
-       <li id="oz-tods15">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Size Bounds for Factorised Representations of Query Results
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/oz-tods15.pdf">
-         preliminary version
-        </a>
-        ]
-        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-         Journal
-        </span>
         <br/>
-        Dan Olteanu and Jakub Závodný.
+
         <br/>
-        ACM Transactions on Database Systems (TODS) 40(1):2, 2015.
-       </li>
-      </ul>
-      <ul>
-       <li id="bkoz-vldb13">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Aggregation and Ordering in Factorised Databases
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/bkoz-vldb13-with-response.pdf">
-         pdf
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
         <br/>
-        Nurzhan Bakibayev, Tomáš Kočiský , Dan Olteanu, and Jakub Závodný.
+
         <br/>
-        March 2013.
-        <br/>
-        In Very Large Data Bases (PVLDB), vol 6, 2013.
-        <br/>
-        Complementary information available in
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Tomas.Kocisky.pdf">
-         Tomas'thesis
-        </a>
-       </li>
-      </ul>
-      <ul>
-       <li>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         Demonstration of the FDB Query Engine for Factorised Databases
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12b">
-         pdf
-        </a>
-        ;
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/vldb12-poster.pdf">
-         poster
-        </a>
-        ]
-        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
-         Demo
-        </span>
         <br/>
-        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+
         <br/>
-        System demonstration. In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-       </li>
-      </ul>
-      <ul>
-       <li id="boz-vldb12">
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         FDB: A Query Engine for Factorised Relational Databases
+          <a href="">
+         
+          </a>
         </strong>
-        . [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/boz-vldb12">
-         pdf
-        </a>
-        ]
-        <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-         Journal
-        </span>
         <br/>
-        Nurzhan Bakibayev and Dan Olteanu and Jakub Závodný.
+
         <br/>
-        In Very Large Data Bases (PVLDB), 5(12), 2012. Istanbul, 2012.
-        <br/>
-        Prior version in
-        <a href="http://arxiv.org/abs/1203.2672">
-         arXiv technical report 1203.2672.
-        </a>
-       </li>
-      </ul>
-      <div class="g-mb-30">
-       <div class="u-heading-v3-1 g-mb-30">
-        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
-         Code
-        </h2>
-       </div>
-      </div>
-      <ul>
-       <li>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
         <strong>
-         F-BENCH 1.0 Repository
+          <a href="">
+         
+          </a>
         </strong>
-        <a href="https://github.com/fdbresearch/FBENCH">
-         https://github.com/fdbresearch/FBENCH
-        </a>
-       </li>
-      </ul>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+
+      <li class="g-mb-15" id="1">
+        <strong>
+          <a href="">
+         
+          </a>
+        </strong>
+        <br/>
+
+        <br/>
+
+      </li>
+    </ul>
+    
+
+
+
       <div id="stickyblock-end">
       </div>
      </div>
@@ -792,7 +856,7 @@
     <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
      <!-- Copyright -->
      <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-      © 2017-2020 All Rights Reserved.
+      © 2022 All Rights Reserved.
      </p>
      <!-- End Copyright -->
     </div>
@@ -806,7 +870,7 @@
       </li>
       <li class="list-inline-item g-px-10">
        <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-        Last modified: August 2020
+        Last modified: January 31, 2022
        </a>
       </li>
      </ul>
