@@ -503,7 +503,7 @@ function BibtexDisplay() {
 
     this.createTemplate = function(entry, output) {
         // Check if bibtex keys are limiting output (bibtexkeys="key1|key2|...|keyN")
-        console.log(entry)
+        // console.log(entry)
 
         if (output[0].attributes.length > 1) {
             for (var i = 0, attrs = output[0].attributes, n = attrs.length; i < n; ++i) {
@@ -595,7 +595,7 @@ function BibtexDisplay() {
 
             if (key == "AUTHOR") {
                 var format = tpl.find("span:not(a)." + key.toLowerCase());
-                console.log(value, format, this.displayAuthor(value, format))
+                // console.log(value, format, this.displayAuthor(value, format))
                 if (format.length)
                     value = this.displayAuthor(value, format);
             } else if (key == "PAGES") {
@@ -703,8 +703,12 @@ function BibtexDisplay() {
             var rule = group.attr('extra').split(" ")[0];
             var type = group.attr('extra').split(" ")[1];
 
+            // console.log(entries)
+
             //Sort the array based on group rules
             var sortedArray = this.sortArray(entries, groupName, rule, type);
+
+            // console.log(sortedArray)
 
             // Get all the unique values for the groups
             var values = [];
@@ -884,9 +888,15 @@ function BibtexDisplay() {
             var entriesArray = this.createArray(entries);
             this.createStructure(structure, output, entriesArray);
         } else {
+            // console.log(keys_sorted)
+            // console.log(entries["10.1145/3129246"])
+
             // iterate over bibTeX entries
-            for (var entryKey in entries) {
+
+            keys_sorted.forEach(k => {
+                const entryKey = k.toUpperCase()
                 var entry = entries[entryKey];
+                // console.log(entryKey, entry)
 
                 tpl = this.createTemplate(entry, output);
                 // Check if template was created
@@ -898,7 +908,8 @@ function BibtexDisplay() {
                         callback(tpl[0]);
                     }
                 }
-            }
+            });
+
         }
         // remove old entries
         old.remove();

@@ -227,7 +227,7 @@ batch algorithms, which produce the full result and then sort it. Our technique 
 not only faster for returning the first few results, but on some inputs beats the
 batch algorithm even when all results are produced.},
 journal = {Proc. VLDB Endow.},
-month = may,
+month = {may},
 pages = {1582–1597},
 numpages = {16},
 OPTnote = {Factorized databases [13, 75, 76, 82] exploit the distributivity of product over union to represent query results compactly and generalize the results on bounded fhw to the non-Boolean case [77]. Our encoding as a DP graph leverages the same principles and is at least as efficient space-wise... }
@@ -500,7 +500,7 @@ of binary joins. We demonstrate the effectiveness of our plans, adaptive techniq
 and partial intersection sharing optimization through extensive experiments. Our optimizers
 are integrated into GraphflowDB.},
 journal = {ACM Trans. Database Syst.},
-month = may,
+month = {may},
 articleno = {6},
 numpages = {45},
 keywords = {Subgraph queries, worst-case optimal joins, generic join},
@@ -738,7 +738,7 @@ and factorization machines with at least the same accuracy as its competitors an
 up to three orders of magnitude faster than its competitors whenever they do not run
 out of memory, exceed 24-hour timeout, or encounter internal design limitations.},
 journal = {ACM Trans. Database Syst.},
-month = jun,
+month = {jun},
 articleno = {7},
 numpages = {66},
 keywords = {functional dependencies, functional aggregate queries, tensors, model reparameterization, In-database analytics},
@@ -811,7 +811,7 @@ we show that EmptyHeaded can compete with and sometimes outperform two high-leve
 but specialized RDF baselines (TripleBit and RDF-3X), while outperforming MonetDB
 by up to three orders of magnitude and LogicBlox by up to two orders of magnitude.},
 journal = {ACM Trans. Database Syst.},
-month = oct,
+month = {oct},
 articleno = {20},
 numpages = {44},
 keywords = {generalized hypertree decomposition, single-instruction multiple data, SIMD, Worst-case optimal join, graph processing, GHD},
@@ -1004,7 +1004,7 @@ relational storage systems while both compressing and protecting it via cryptogr
 hashes. We experimentally validate our proposed solutions using both scientific and
 OLAP workloads.},
 journal = {Proc. VLDB Endow.},
-month = dec,
+month = {dec},
 pages = {485–497},
 numpages = {13},
 OPTnote = {Prior work [23] has studied factorized representations [29] to reduce overall provenance size. Our scenario is somewhat more complex: PROVision attempts to compute results and provenance efficiently, and thus includes a cost-based query optimizer. We opportunistically exploit shared subexpressions as they occur... Lee and co-authors [23] reduce provenance storage by creating more efficient factorized query ex- pressions [29].1 Their PUG system factors provenance into a d-tree representation [29] before storing it. Similarly, Bao et al. [6] develop strategies for factoring out provenance storage for common query expressions. }
@@ -1084,7 +1084,7 @@ information is typically large and complex, we present two solutions for its eff
 presentation as NL text: one that is based on provenance factorization, with novel
 desiderata relevant to the NL case, and one that is based on summarization.},
 journal = {SIGMOD Rec.},
-month = sep,
+month = {sep},
 pages = {42–49},
 numpages = {8},
 OPTnote = {As observed already in previous work [4, 18], different assignments (explanations) may have signifi- cant parts in common, and this can be leveraged in a fac- torization that groups together multiple occurrences. In our example, we can e.g. factorize explanations based on author, paper name, conference name or year. Importantly, we im- pose a novel constraint on the factorizations that we look for (which we call compatibility), intuitively capturing that their structure is consistent with a partial order defined by the parse tree of the question. This constraint is needed so that we can translate the factorization back to an NL an- swer whose structure is similar to that of the question.... We observe a tight correspondence between factorization and summa- rization: every factorization gives rise to multiple possible summarizations, each obtained by counting the number of sub-explanations that are “factorized together”...Instead, we propose two solu- tions: the first based on the idea of provenance factorization [18, 4], and the second leveraging factorization to provide a summarized form. }
