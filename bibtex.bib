@@ -1,0 +1,1324 @@
+ @inproceedings{DBLP:conf/icdt/OlteanuZ12,
+  author    = {Dan Olteanu and
+               Jakub Z{\'{a}}vodn{\'{y}}},
+  editor    = {Alin Deutsch},
+  title     = {Factorised representations of query results: size bounds and readability},
+  booktitle = {15th International Conference on Database Theory, {ICDT} '12, Berlin,
+               Germany, March 26-29, 2012},
+  pages     = {285--298},
+  publisher = {{ACM}},
+  year      = {2012},
+  url       = {https://doi.org/10.1145/2274576.2274607},
+  doi       = {10.1145/2274576.2274607},
+  timestamp = {Tue, 06 Nov 2018 16:59:26 +0100},
+  biburl    = {https://dblp.org/rec/conf/icdt/OlteanuZ12.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+### RELEVANT PAPERS CITING THE ICDT 2012 work
+
+
+@article{DBLP:journals/sigmod/OlteanuS16,
+  author    = {Dan Olteanu and
+               Maximilian Schleich},
+  title     = {Factorized Databases},
+  journal   = {{SIGMOD} Rec.},
+  volume    = {45},
+  number    = {2},
+  pages     = {5--16},
+  year      = {2016},
+  url       = {https://doi.org/10.1145/3003665.3003667},
+  doi       = {10.1145/3003665.3003667},
+  timestamp = {Fri, 06 Mar 2020 21:56:19 +0100},
+  biburl    = {https://dblp.org/rec/journals/sigmod/OlteanuS16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+##################################################
+##################################################
+##################################################
+##################################################
+
+@article{DBLP:journals/tods/OlteanuZ15,
+  author    = {Dan Olteanu and
+               Jakub Z{\'{a}}vodn{\'{y}}},
+  title     = {Size Bounds for Factorised Representations of Query Results},
+  journal   = {{ACM} Trans. Database Syst.},
+  volume    = {40},
+  number    = {1},
+  pages     = {2:1--2:44},
+  year      = {2015},
+  url       = {https://doi.org/10.1145/2656335},
+  doi       = {10.1145/2656335},
+  timestamp = {Tue, 06 Nov 2018 12:51:47 +0100},
+  biburl    = {https://dblp.org/rec/journals/tods/OlteanuZ15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+ 
+### RELEVANT PAPERS CITING THE TODS 2015 work
+
+################################################
+#### ENUMERATION ####
+################################################
+
+
+@inproceedings{DBLP:conf/csl/BaganDG07,
+  author    = {Guillaume Bagan and
+               Arnaud Durand and
+               Etienne Grandjean},
+  editor    = {Jacques Duparc and
+               Thomas A. Henzinger},
+  title     = {On Acyclic Conjunctive Queries and Constant Delay Enumeration},
+  booktitle = {Computer Science Logic, 21st International Workshop, {CSL} 2007, 16th
+               Annual Conference of the EACSL, Lausanne, Switzerland, September 11-15,
+               2007, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {4646},
+  pages     = {208--222},
+  publisher = {Springer},
+  year      = {2007},
+  url       = {https://doi.org/10.1007/978-3-540-74915-8\_18},
+  doi       = {10.1007/978-3-540-74915-8\_18},
+  timestamp = {Tue, 14 May 2019 10:00:42 +0200},
+  biburl    = {https://dblp.org/rec/conf/csl/BaganDG07.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@misc{deep2021enumeration,
+      title={Enumeration Algorithms for Conjunctive Queries with Projection}, 
+      author={Shaleen Deep and Xiao Hu and Paraschos Koutris},
+      year={2021},
+      eprint={2101.03712},
+      archivePrefix={arXiv},
+      primaryClass={cs.DB},
+      OPTnote = {star and path queries; directly inflluenced by IVMe; tradeoff between preprocessing time and delay guarantees for enumeration of path queries that contain projections.}
+}
+
+@inproceedings{DBLP:conf/icdt/DeepHK21,
+  author    = {Shaleen Deep and
+               Xiao Hu and
+               Paraschos Koutris},
+  editor    = {Ke Yi and
+               Zhewei Wei},
+  title     = {Enumeration Algorithms for Conjunctive Queries with Projection},
+  booktitle = {24th International Conference on Database Theory, {ICDT} 2021, March
+               23-26, 2021, Nicosia, Cyprus},
+  series    = {LIPIcs},
+  volume    = {186},
+  pages     = {14:1--14:17},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year      = {2021},
+  url       = {https://doi.org/10.4230/LIPIcs.ICDT.2021.14},
+  doi       = {10.4230/LIPIcs.ICDT.2021.14},
+  timestamp = {Thu, 11 Mar 2021 17:44:44 +0100},
+  biburl    = {https://dblp.org/rec/conf/icdt/DeepHK21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{10.1145/3196959.3196979,
+author = {Deep, Shaleen and Koutris, Paraschos},
+title = {Compressed Representations of Conjunctive Query Results},
+year = {2018},
+isbn = {9781450347068},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3196959.3196979},
+doi = {10.1145/3196959.3196979},
+abstract = {Relational queries, and in particular join queries, often generate large output results
+when executed over a huge dataset. In such cases, it is often infeasible to store
+the whole materialized output if we plan to reuse it further down a data processing
+pipeline. Motivated by this problem, we study the construction of space-efficient
+compressed representations of the output of conjunctive queries, with the goal of
+supporting the efficient access of the intermediate compressed result for a given
+access pattern. In particular, we initiate the study of an important tradeoff: minimizing
+the space necessary to store the compressed result, versus minimizing the answer time
+and delay for an access request over the result. Our main contribution is a novel
+parameterized data structure, which can be tuned to trade off space for answer time.
+The tradeoff allows us to control the space requirement of the data structure precisely,
+and depends both on the structure of the query and the access pattern. We show how
+we can use the data structure in conjunction with query decomposition techniques in
+order to efficiently represent the outputs for several classes of conjunctive queries.},
+booktitle = {Proceedings of the 37th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+pages = {307–322},
+numpages = {16},
+keywords = {space delay tradeoff, query enumeration, compressed representation, constant delay enumeration, join algorithms},
+location = {Houston, TX, USA},
+series = {SIGMOD/PODS '18},
+OPTnote = {
+The idea of efficiently compressing query results has recently gained considerable attention, both in the context of factorized databases [22], as well as constant-delay enumeration [5, 26]. In these settings, the focus is to construct compressed representa- tions that allow for enumeration of the full result with constant delay... 
+In this work, we show that we can dramatically decrease the space for the compressed representation by both (i) taking advan- tage of the access pattern, and (ii) tolerating a possibly increased delay... Given such indexes, we can perform a full enumeration in constant delay starting from the root (which will be the empty bag), and visiting the nodes of the tree T in a pre-order fashion by following the indexes at each bag. This con- struction uses the same idea as d-representations [22], and requires spaceO(|D|fhw(H))... The key observation is that we can take advantage of the underlying logical structure in order to design algorithms that can compress the data effectively. This idea has been explored before in the context of factorized databases [22], which can be viewed as a form of logical compression. Our approach builds upon the idea of using query decompositions as a factorized representation, and we show that for certain access patterns it is possible to go below |D|fhw space for constant delay enumeration. }
+}
+
+
+@article{DBLP:journals/corr/abs-2109-10889,
+  author    = {Shaleen Deep and
+               Xiao Hu and
+               Paraschos Koutris},
+  title     = {Space-Time Tradeoffs for Answering Boolean Conjunctive Queries},
+  journal   = {CoRR},
+  volume    = {abs/2109.10889},
+  year      = {2021},
+  url       = {https://arxiv.org/abs/2109.10889},
+  eprinttype = {arXiv},
+  eprint    = {2109.10889},
+  timestamp = {Mon, 27 Sep 2021 15:21:05 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2109-10889.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{10.1145/3375395.3387646,
+author = {Kara, Ahmet and Nikolic, Milos and Olteanu, Dan and Zhang, Haozhe},
+title = {Trade-Offs in Static and Dynamic Evaluation of Hierarchical Queries},
+year = {2020},
+isbn = {9781450371087},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3375395.3387646},
+doi = {10.1145/3375395.3387646},
+abstract = {We investigate trade-offs in static and dynamic evaluation of hierarchical queries
+with arbitrary free variables. In the static setting, the trade-off is between the
+time to partially compute the query result and the delay needed to enumerate its tuples.
+In the dynamic setting, we additionally consider the time needed to update the query
+result under single-tuple inserts or deletes to the database.Our approach observes
+the degree of values in the database and uses different computation and maintenance
+strategies for high-degree (heavy) and low-degree (light) values. For the latter it
+partially computes the result, while for the former it computes enough information
+to allow for on-the-fly enumeration.The main result of this work defines the preprocessing
+time, the update time, and the enumeration delay as functions of the light/heavy threshold.
+By conveniently choosing this threshold, our approach recovers a number of prior results
+when restricted to hierarchical queries.For a restricted class of hierarchical queries,
+our approach can achieve worst-case optimal update time and enumeration delay conditioned
+on the Online Matrix-Vector Multiplication Conjecture.},
+booktitle = {Proceedings of the 39th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+pages = {375–392},
+numpages = {18},
+keywords = {sublinear enumeration delay, adaptive query evaluation, sublinear update time, hierarchical queries, incremental view maintenance},
+location = {Portland, OR, USA},
+series = {PODS'20},
+OPTnote = {preprocessing follows factorised computation; case for heavy values builds a factorised representation to ensure the right delay.},
+}
+
+
+@article{10.14778/3397230.3397250,
+author = {Tziavelis, Nikolaos and Ajwani, Deepak and Gatterbauer, Wolfgang and Riedewald, Mirek and Yang, Xiaofeng},
+title = {Optimal Algorithms for Ranked Enumeration of Answers to Full Conjunctive Queries},
+year = {2020},
+issue_date = {May 2020},
+publisher = {VLDB Endowment},
+volume = {13},
+number = {9},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/3397230.3397250},
+doi = {10.14778/3397230.3397250},
+abstract = {We study ranked enumeration of join-query results according to very general orders
+defined by selective dioids. Our main contribution is a framework for ranked enumeration
+over a class of dynamic programming problems that generalizes seemingly different
+problems that had been studied in isolation. To this end, we extend classic algorithms
+that find the k-shortest paths in a weighted graph. For full conjunctive queries,
+including cyclic ones, our approach is optimal in terms of the time to return the
+top result and the delay between results. These optimality properties are derived
+for the widely used notion of data complexity, which treats query size as a constant.
+By performing a careful cost analysis, we are able to uncover a previously unknown
+tradeoff between two incomparable enumeration approaches: one has lower complexity
+when the number of returned results is small, the other when the number is very large.
+We theoretically and empirically demonstrate the superiority of our techniques over
+batch algorithms, which produce the full result and then sort it. Our technique is
+not only faster for returning the first few results, but on some inputs beats the
+batch algorithm even when all results are produced.},
+journal = {Proc. VLDB Endow.},
+month = may,
+pages = {1582–1597},
+numpages = {16},
+OPTnote = {Factorized databases [13, 75, 76, 82] exploit the distributivity of product over union to represent query results compactly and generalize the results on bounded fhw to the non-Boolean case [77]. Our encoding as a DP graph leverages the same principles and is at least as efficient space-wise... }
+}
+
+@inproceedings{10.1145/3034786.3034789,
+author = {Berkholz, Christoph and Keppeler, Jens and Schweikardt, Nicole},
+title = {Answering Conjunctive Queries under Updates},
+year = {2017},
+isbn = {9781450341981},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3034786.3034789},
+doi = {10.1145/3034786.3034789},
+abstract = {We consider the task of enumerating and counting answers to k-ary conjunctive queries
+against relational databases that may be updated by inserting or deleting tuples.
+We exhibit a new notion of q-hierarchical conjunctive queries and show that these
+can be maintained efficiently in the following sense. During a linear time pre-processing
+phase, we can build a data structure that enables constant delay enumeration of the
+query results; and when the database is updated, we can update the data structure
+and restart the enumeration phase within constant time. For the special case of self-join
+free conjunctive queries we obtain a dichotomy: if a query is not q-hierarchical,
+then query enumeration with sublinear *) delay and sublinear update time (and arbitrary
+preprocessing time) is impossible.For answering Boolean conjunctive queries and for
+the more general problem of counting the number of solutions of k-ary queries we obtain
+complete dichotomies: if the query's homomorphic core is q-hierarchical, then size
+of the the query result can be computed in linear time and maintained with constant
+update time. Otherwise, the size of the query result cannot be maintained with sublinear
+update time.All our lower bounds rely on the OMv-conjecture, a conjecture on the hardness
+of online matrix-vector multiplication that has recently emerged in the field of fine-grained
+complexity to characterise the hardness of dynamic problems. The lower bound for the
+counting problem additionally relies on the orthogonal vectors conjecture, which in
+turn is implied by the strong exponential time hypothesis.*) By sublinear we mean
+O(n(1-ε) for some ε > 0, where n is the size of the active domain of the current database.},
+booktitle = {Proceedings of the 36th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+pages = {303–318},
+numpages = {16},
+keywords = {dynamic algorithms, constant delay enumeration, online matrix-vector multiplication, dichotomy, counting complexity, query evaluation},
+location = {Chicago, Illinois, USA},
+series = {PODS '17},
+OPTnote = {The dynamic data structure that is computed by our algorithm can be viewed as an f-representation of the query result [31], but not every f-representation can be efficiently maintained under database updates... }
+}
+
+
+
+
+@inproceedings{DBLP:conf/icalp/AmarilliBJM17,
+  author    = {Antoine Amarilli and
+               Pierre Bourhis and
+               Louis Jachiet and
+               Stefan Mengel},
+  editor    = {Ioannis Chatzigiannakis and
+               Piotr Indyk and
+               Fabian Kuhn and
+               Anca Muscholl},
+  title     = {A Circuit-Based Approach to Efficient Enumeration},
+  booktitle = {44th International Colloquium on Automata, Languages, and Programming,
+               {ICALP} 2017, July 10-14, 2017, Warsaw, Poland},
+  series    = {LIPIcs},
+  volume    = {80},
+  pages     = {111:1--111:15},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year      = {2017},
+  url       = {https://doi.org/10.4230/LIPIcs.ICALP.2017.111},
+  doi       = {10.4230/LIPIcs.ICALP.2017.111},
+  timestamp = {Tue, 11 Feb 2020 15:52:14 +0100},
+  biburl    = {https://dblp.org/rec/conf/icalp/AmarilliBJM17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+OPTnote = {
+We focus on a well-studied class of efficient enumeration algorithms with very strict requirements: the preprocessing must be linear in the input size, and the delay between successive solutions must be constant. Such algorithms have been studied in particular for database applications, to enumerate query answers (see [18, 5, 19, 6, 7, 23, 24] and the recent survey [32]), or to enumerate the tuples of factorized database representations [28]...  Second, we show how d-DNNFs generalize the deterministic factorized representations of relational instances studied in database theory [28]. This allows us to give enumeration algorithms with linear preprocessing and constant delay for arbitrary deterministic d-representations, extending the enumeration result of [28]... The second application describes links to factorized databases and strengthens the enumeration result of [28].
+}
+}
+
+
+@inproceedings{DBLP:conf/icdt/AmarilliBM18,
+  author    = {Antoine Amarilli and
+               Pierre Bourhis and
+               Stefan Mengel},
+  editor    = {Benny Kimelfeld and
+               Yael Amsterdamer},
+  title     = {Enumeration on Trees under Relabelings},
+  booktitle = {21st International Conference on Database Theory, {ICDT} 2018, March
+               26-29, 2018, Vienna, Austria},
+  series    = {LIPIcs},
+  volume    = {98},
+  pages     = {5:1--5:18},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year      = {2018},
+  url       = {https://doi.org/10.4230/LIPIcs.ICDT.2018.5},
+  doi       = {10.4230/LIPIcs.ICDT.2018.5},
+  timestamp = {Tue, 11 Feb 2020 15:52:14 +0100},
+  biburl    = {https://dblp.org/rec/conf/icdt/AmarilliBM18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = { We define set-valued circuits, which are an equivalent rephrasing of the circuits in zero- suppressed semantics used in [3]. They can also be seen to be isomorphic to arithmetic circuits, and generalize factorized representations used in database theory [27].
+},
+  abstract = {We study how to evaluate MSO queries with free variables on trees, within the framework of enumeration algorithms. Previous work has shown how to enumerate answers with linear-time preprocessing and delay linear in the size of each output, i.e., constant-delay for free first-order variables. We extend this result to support relabelings, a restricted kind of update operations on trees which allows us to change the node labels. Our main result shows that we can enumerate the answers of MSO queries on trees with linear-time preprocessing and delay linear in each answer, while supporting node relabelings in logarithmic time. To prove this, we reuse the circuit-based enumeration structure from our earlier work, and develop techniques to maintain its index under node relabelings. We also show how enumeration under relabelings can be applied to evaluate practical query languages, such as aggregate, group-by, and parameterized queries.}
+}
+
+@inproceedings{10.1145/3375395.3387660,
+author = {Toru\'{n}czyk, Szymon},
+title = {Aggregate Queries on Sparse Databases},
+year = {2020},
+isbn = {9781450371087},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3375395.3387660},
+doi = {10.1145/3375395.3387660},
+abstract = {We propose an algebraic framework for studying efficient algorithms for query evaluation,
+aggregation, enumeration, and maintenance under updates, on sparse databases. Our
+framework allows to treat those problems in a unified way, by considering various
+semirings, depending on the considered problem. As a concrete application, we propose
+a powerful query language extending first-order logic by aggregation in multiple semirings.
+We obtain an optimal algorithm for computing the answers of such queries on sparse
+databases. More precisely, given a database from a fixed class with bounded expansion,
+the algorithm computes in linear timea data structure which allows to enumerate the
+set of answers to the query, with constant delay between two outputs.},
+booktitle = {Proceedings of the 39th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+pages = {427–443},
+numpages = {17},
+keywords = {query evaluation, semiring circuits, bounded expansion, updates, provenance, sparse graphs, enumeration},
+location = {Portland, OR, USA},
+series = {PODS'20},
+OPTnote = {Our circuits are very similar to deterministic decomposable nega- tion normal forms (d-DNNF) used in knowledge compilation [5], and generalize them by allowing permanent gates, which, in the circuits obtained from our construction, are both disjunctive and decomposable, in an appropriate sense. Our circuits can be alter- natively viewed as factorized representations (extended by suitable permanent operators) of query answers [20].}
+}
+
+@inproceedings{DBLP:conf/sigmod/IdrisUV17,
+  author    = {Muhammad Idris and
+               Mart{\'{\i}}n Ugarte and
+               Stijn Vansummeren},
+  editor    = {Semih Salihoglu and
+               Wenchao Zhou and
+               Rada Chirkova and
+               Jun Yang and
+               Dan Suciu},
+  title     = {The Dynamic Yannakakis Algorithm: Compact and Efficient Query Processing
+               Under Updates},
+  booktitle = {Proceedings of the 2017 {ACM} International Conference on Management
+               of Data, {SIGMOD} Conference 2017, Chicago, IL, USA, May 14-19, 2017},
+  pages     = {1259--1274},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {https://doi.org/10.1145/3035918.3064027},
+  doi       = {10.1145/3035918.3064027},
+  timestamp = {Tue, 06 Nov 2018 11:07:39 +0100},
+  biburl    = {https://dblp.org/rec/conf/sigmod/IdrisUV17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/pvldb/BakibayevKOZ13,
+  author    = {Nurzhan Bakibayev and
+               Tom{\'{a}}s Kocisk{\'{y}} and
+               Dan Olteanu and
+               Jakub Zavodny},
+  title     = {Aggregation and Ordering in Factorised Databases},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {6},
+  number    = {14},
+  pages     = {1990--2001},
+  year      = {2013},
+  url       = {http://www.vldb.org/pvldb/vol6/p1990-zavodny.pdf},
+  doi       = {10.14778/2556549.2556579},
+  timestamp = {Sat, 25 Apr 2020 13:58:34 +0200},
+  biburl    = {https://dblp.org/rec/journals/pvldb/BakibayevKOZ13.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/sigmod/NikolicO18,
+  author    = {Milos Nikolic and
+               Dan Olteanu},
+  editor    = {Gautam Das and
+               Christopher M. Jermaine and
+               Philip A. Bernstein},
+  title     = {Incremental View Maintenance with Triple Lock Factorization Benefits},
+  booktitle = {Proceedings of the 2018 International Conference on Management of
+               Data, {SIGMOD} Conference 2018, Houston, TX, USA, June 10-15, 2018},
+  pages     = {365--380},
+  publisher = {{ACM}},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3183713.3183758},
+  doi       = {10.1145/3183713.3183758},
+  timestamp = {Wed, 21 Nov 2018 12:44:08 +0100},
+  biburl    = {https://dblp.org/rec/conf/sigmod/NikolicO18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+##################
+#### GRAPH DB ####
+##################
+
+
+@article{DBLP:journals/pvldb/GuptaMS21,
+  author    = {Pranjal Gupta and
+               Amine Mhedhbi and
+               Semih Salihoglu},
+  title     = {Columnar Storage and List-based Processing for Graph Database Management
+               Systems},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {14},
+  number    = {11},
+  pages     = {2491--2504},
+  year      = {2021},
+  url       = {http://www.vldb.org/pvldb/vol14/p2491-gupta.pdf},
+  timestamp = {Fri, 27 Aug 2021 17:02:27 +0200},
+  biburl    = {https://dblp.org/rec/journals/pvldb/GuptaMS21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {Therefore to represent the tuples that are produced by n-n joins, repetitions of values are necessary. To address these repetitions we adopt a factorized tuple set representation scheme [52]. We developed a new block-based processor called list-based pro- cessor (LBP), which we next describe. LBP uses factorized represen- tation of intermediate tuples [8, 51, 52] to address the data copying problem and uses block sizes set to the lengths of adjacency lists in the database, to exploit list-based data storage in GDBMSs.}
+}
+
+@inproceedings{10.1145/3448016.3457314,
+author = {Smagulova, Ainur and Deutsch, Alin},
+title = {Vertex-Centric Parallel Computation of SQL Queries},
+year = {2021},
+isbn = {9781450383431},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3448016.3457314},
+doi = {10.1145/3448016.3457314},
+abstract = {We present a scheme for parallel execution of SQL queries on top of any vertex-centric
+BSP graph processing engine. The scheme comprises a graph encoding of relational instances
+and a vertex program specification of our algorithm called TAG-join, which matches
+the theoretical communication and computation complexity of state-of-the-art join
+algorithms. When run on top of the vertex-centric TigerGraph database engine on a
+single multi-core server, TAG-join exploits thread parallelism and is competitive
+with (and often outperforms) reference RDBMSs on the TPC benchmarks they are traditionally
+tuned for. In a distributed cluster, TAG-join outperforms the popular Spark SQL engine.},
+booktitle = {Proceedings of the 2021 International Conference on Management of Data},
+pages = {1664–1677},
+numpages = {14},
+keywords = {BSP parallel SQL evaluation, vertex-centric graph processing},
+location = {Virtual Event, China},
+series = {SIGMOD/PODS '21},
+OPTnote = {The aggregation scheme is inspired by aggregation over hypertree decompositions in factorized databases [14, 44], since our TAG plan is based on a GHD (recall §5.1)... In Superstep (3), the 𝐴-attribute and 𝐶-attribute values received at a 𝐵-attribute vertex correspond to the factorized representation of the join result [44], i.e. the latter can be obtained losslessly as their Cartesian product. If the distributed and factorized representation of the join is required, then Superstep (3) is skipped. }
+}
+
+@article{10.1145/3446980,
+author = {Mhedhbi, Amine and Kankanamge, Chathura and Salihoglu, Semih},
+title = {Optimizing One-Time and Continuous Subgraph Queries Using Worst-Case Optimal Joins},
+year = {2021},
+issue_date = {June 2021},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {46},
+number = {2},
+issn = {0362-5915},
+url = {https://doi.org/10.1145/3446980},
+doi = {10.1145/3446980},
+abstract = {We study the problem of optimizing one-time and continuous subgraph queries using
+the new worst-case optimal join plans. Worst-case optimal plans evaluate queries by
+matching one query vertex at a time using multiway intersections. The core problem
+in optimizing worst-case optimal plans is to pick an ordering of the query vertices
+to match. We make two main contributions:1. A cost-based dynamic programming optimizer
+for one-time queries that (i) picks efficient query vertex orderings for worst-case
+optimal plans and (ii) generates hybrid plans that mix traditional binary joins with
+worst-case optimal style multiway intersections. In addition to our optimizer, we
+describe an adaptive technique that changes the query vertex orderings of the worst-case
+optimal subplans during query execution for more efficient query evaluation. The plan
+space of our one-time optimizer contains plans that are not in the plan spaces based
+on tree decompositions from prior work.2. A cost-based greedy optimizer for continuous
+queries that builds on the delta subgraph query framework. Given a set of continuous
+queries, our optimizer decomposes these queries into multiple delta subgraph queries,
+picks a plan for each delta query, and generates a single combined plan that evaluates
+all of the queries. Our combined plans share computations across operators of the
+plans for the delta queries if the operators perform the same intersections. To increase
+the amount of computation shared, we describe an additional optimization that shares
+partial intersections across operators.Our optimizers use a new cost metric for worst-case
+optimal plans called intersection-cost. When generating hybrid plans, our dynamic
+programming optimizer for one-time queries combines intersection-cost with the cost
+of binary joins. We demonstrate the effectiveness of our plans, adaptive technique,
+and partial intersection sharing optimization through extensive experiments. Our optimizers
+are integrated into GraphflowDB.},
+journal = {ACM Trans. Database Syst.},
+month = may,
+articleno = {6},
+numpages = {45},
+keywords = {Subgraph queries, worst-case optimal joins, generic join},
+OPTnote = {Our cache gives benefits similar to factorization [52]. In factorized processing, the results of a query are represented as Cartesian products of independent components of the query. In this case, matches of a1 and a4 are independent and can be done once for each match of a2a3. A study of factorized processing is an interesting topic for future work... Reference [27] introduces an algorithm to maintain results of acyclic queries under updates relying instead of materialization on a data structure called Dy- namic Constant-delay Linear Representation (DCLR). DCLR and the Dynamic Yannakakis Algorithm introduced guarantee linear time maintenance under updates while using only linear space in the size of the database. The technique is reminiscent of factorized database representa- tion and processing [52]... Finally, existing literature on subgraph matching, both in the one-time and continuous settings, contain several optimizations for identifying and evaluating independent components of a query separately. Example optimizations include factorization [52] or postponing the Cartesian product optimization from Reference [10].}
+}
+
+@inproceedings{10.1145/2882903.2915236,
+author = {Bi, Fei and Chang, Lijun and Lin, Xuemin and Qin, Lu and Zhang, Wenjie},
+title = {Efficient Subgraph Matching by Postponing Cartesian Products},
+year = {2016},
+isbn = {9781450335317},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2882903.2915236},
+doi = {10.1145/2882903.2915236},
+abstract = {In this paper, we study the problem of subgraph matching that extracts all subgraph
+isomorphic embeddings of a query graph q in a large data graph G. The existing algorithms
+for subgraph matching follow Ullmann's backtracking approach; that is, iteratively
+map query vertices to data vertices by following a matching order of query vertices.
+It has been shown that the matching order of query vertices is a very important aspect
+to the efficiency of a subgraph matching algorithm. Recently, many advanced techniques,
+such as enforcing connectivity and merging similar vertices in query or data graphs,
+have been proposed to provide an effective matching order with the aim to reduce unpromising
+intermediate results especially the ones caused by redundant Cartesian products. In
+this paper, for the first time we address the issue of unpromising results by Cartesian
+products from "dissimilar" vertices. We propose a new framework by postponing the
+Cartesian products based on the structure of a query to minimize the redundant Cartesian
+products. Our second contribution is proposing a new path-based auxiliary data structure,
+with the size O(|E(G)| x |V(q)|), to generate a matching order and conduct subgraph
+matching, which significantly reduces the exponential size O(|V(G)||V(q)|-1) of the
+existing path-based auxiliary data structure, where V (G) and E (G) are the vertex
+and edge sets of a data graph G, respectively, and V (q) is the vertex set of a query
+$q$. Extensive empirical studies on real and synthetic graphs demonstrate that our
+techniques outperform the state-of-the-art algorithms by up to $3$ orders of magnitude.},
+booktitle = {Proceedings of the 2016 International Conference on Management of Data},
+pages = {1199–1214},
+numpages = {16},
+keywords = {core-forest-leaf decomposition, postpone cartesian products, subgraph isomorphism, compact path index},
+location = {San Francisco, California, USA},
+series = {SIGMOD '16},
+OPTnote = {does not acknowledge.}
+}
+
+@InProceedings{10.1007/978-3-030-27520-4_20,
+author="Wu, Xiaoying
+and Theodoratos, Dimitri
+and Skoutas, Dimitrios
+and Lan, Michael",
+editor="Ordonez, Carlos
+and Song, Il-Yeol
+and Anderst-Kotsis, Gabriele
+and Tjoa, A Min
+and Khalil, Ismail",
+title="Efficiently Computing Homomorphic Matches of Hybrid Pattern Queries on Large Graphs",
+booktitle="Big Data Analytics and Knowledge Discovery",
+year="2019",
+publisher="Springer International Publishing",
+address="Cham",
+pages="279--295",
+abstract="In this paper, we address the problem of efficiently finding homomorphic matches for hybrid patterns over large data graphs. Finding matches for patterns in data graphs is of fundamental importance for graph analytics. In hybrid patterns, each edge may correspond either to an edge or a path in the data graph, thus allowing for higher expressiveness and flexibility in query formulation. We introduce the concept of answer graph to compactly represent the query results and exploit computation sharing. We design a holistic bottom-up algorithm called GPM, which greatly reduces the number of intermediate results, leading to significant performance gains. GPM directly processes child constraints in the given query instead of resorting to a post-processing procedure. An extensive experimental evaluation using both real and synthetic datasets shows that our methods evaluate hybrid patterns upÂ to several orders of magnitude faster than existing algorithms and exhibit much better scalability.",
+isbn="978-3-030-27520-4",
+OPTnote="We introduce the concept of answer graph to encode all the possible homomorphisms from a pattern to the graph. By losslessly summarizing the matches of a given pattern, the answer graph represents results more succinctly. Similar to factorized representations of query results studied in the context of classical and probabilistic databases [11], the answer graph exploits computation sharing to reduce redundancy in the representation and computation of query results... The answer graph   𝐺𝐴  losslessly summarizes all the occurrences of Q on G. It exploits computation sharing to reduce redundancy in the representation and computation of query results. The concept has analogies to the factorized representation of query results studied in the context of classical databases and probabilistic databases [11]. A useful property of   𝐺𝐴  is that through a top-down traversal, the answer of Q on G can be obtained in time linear to the total number of occurrences of Q on G. Also, the cardinality of the query answer can be calculated without explicitly enumerating the occurrences of Q on G. Other benefits of succinct representations of query results include the possibility of speeding up subsequent data analysis [11]."
+}
+
+@inproceedings{DBLP:journals/corr/GurovM15,
+  author    = {Dilian Gurov and
+               Minko Markov},
+  editor    = {Ralph Matthes and
+               Matteo Mio},
+  title     = {Self-Correlation and Maximum Independence in Finite Relations},
+  booktitle = {Proceedings Tenth International Workshop on Fixed Points in Computer
+               Science, {FICS} 2015, Berlin, Germany, September 11-12, 2015},
+  series    = {{EPTCS}},
+  volume    = {191},
+  pages     = {60--74},
+  year      = {2015},
+  url       = {https://doi.org/10.4204/EPTCS.191.7},
+  doi       = {10.4204/EPTCS.191.7},
+  timestamp = {Wed, 12 Sep 2018 01:05:15 +0200},
+  biburl    = {https://dblp.org/rec/journals/corr/GurovM15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {An independent partition of the set of attributes S of a finite relation R is any partition X of S such that the join of the projections of R over the elements of X yields R... A subset of S is termed self-correlated if there is a value of each of its attributes such that no tuple of R contains all those values. This paper uncovers a connection between independence and self-correlation, showing that the maximum independent partition is the least fixed point of a certain inflationary transformer alpha that operates on the finite lattice of partitions of S. alpha is defined via the minimal self-correlated subsets of S... future work:  investigate approximate relational factorisation.... The approach of [10] to the problem of computing the prime factors is “horizontal splitting” of the given relation using the selection operation from relational algebra. The approach of this paper to that same problem is quite different. We utilise “vertical splitting”, using the projection operation of relational algebra. The theoretical foundation of our approach is based on the concept of self-correlation of a subset of the attributes; that concept has no analogue in [10].}
+}
+
+@inproceedings{10.1145/3102254.3102260,
+author = {Karim, Farah and Mami, Mohamed Nadjib and Vidal, Maria-Esther and Auer, S\"{o}ren},
+title = {Large-Scale Storage and Query Processing for Semantic Sensor Data},
+year = {2017},
+isbn = {9781450352253},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3102254.3102260},
+doi = {10.1145/3102254.3102260},
+abstract = {Nowadays, there is a rapid increase in the number of sensor data produced by a wide
+variety of devices and sensors. Collections of sensor data can be semantically described
+using ontologies, e.g., the Semantic Sensor Network (SSN) ontology. Albeit semantically
+enriched, the volume of semantic sensor data is considerably larger than raw sensor
+data. Moreover, some measurement values can be observed several times, and a large
+number of repeated facts can be generated. We devise a compact or factorized representation
+of semantic sensor data, where repeated values are represented only once. To scale
+up to large datasets, tabular representation is utilized to store and manage factorized
+semantic sensor data using Big data technologies. We empirically study the effectiveness
+of the proposed factorized representation of semantic sensor data, and the impact
+of factorizing semantic sensor data on query processing. Furthermore, we evaluate
+the effects of storing RDF factorized data on state-of-the-art RDF engines and in
+the proposed tabular-based representation. Results suggest that factorization techniques
+empower storage and query processing of sensor data, and execution time can be reduced
+by up to two orders of magnitude.},
+booktitle = {Proceedings of the 7th International Conference on Web Intelligence, Mining and Semantics},
+articleno = {8},
+numpages = {12},
+keywords = {data factorization, query execution, linked sensor data},
+location = {Amantea, Italy},
+series = {WIMS '17},
+OPTnote = {We present a solution to the problem of factorizing RDF graphs describing semantic sensor data...define the algorithm that solves the problem of query evaluation on a factorized RDF graph...Factorization techniques have been utilized for optimization of relational data and SQL query processing [3, 4]...We build on these experimental results and proposed factorization technique tailored for semantically described sensor data.}
+}
+
+
+@article{DBLP:journals/jiis/KarimVA21,
+  author    = {Farah Karim and
+               Maria{-}Esther Vidal and
+               S{\"{o}}ren Auer},
+  title     = {Compact representations for efficient storage of semantic sensor data},
+  journal   = {J. Intell. Inf. Syst.},
+  volume    = {57},
+  number    = {2},
+  pages     = {203--228},
+  year      = {2021},
+  url       = {https://doi.org/10.1007/s10844-020-00628-3},
+  doi       = {10.1007/s10844-020-00628-3},
+  timestamp = {Wed, 06 Oct 2021 15:43:00 +0200},
+  biburl    = {https://dblp.org/rec/journals/jiis/KarimVA21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+OPTnote = {We propose a compact or factorized representation of semantic sensor data, where repeated measure- ment values are described only once. Furthermore, these compact representations are able to enhance the storage and processing of semantic sensor data. To scale up to large datasets, factorization based, tabular representations are exploited to store and manage factorized semantic sensor data using Big Data technologies....In this work, we propose the Compacting Semantic Sensor Data (CSSD) approach for efficient storage and processing of semantic sensor data. The CSSD approach is based on factorizing the data and storing only a compact or factorized representation of semantic sensor data, where repeated values are represented only once. In addition, uni- versal (Ullman 1984) and Class Template (CT) based tabular representations leveraging the columnar-oriented Parquet storage format are utilized to scale up to even larger RDF datasets. The effectiveness of the proposed factorization techniques are empirically stud- ied, as well as the impact of factorizing semantic sensor data on query processing using LinkedSensorData benchmark (Patni et al. 2010)... SPARQL query rewriting techniques against factorized sensor data;  }
+}
+
+@inproceedings{DBLP:conf/edbt/Abul-BasherYGCC21,
+  author    = {Zahid Abul{-}Basher and
+               Nikolay Yakovets and
+               Parke Godfrey and
+               Stanley Clark and
+               Mark H. Chignell},
+  editor    = {Yannis Velegrakis and
+               Demetris Zeinalipour{-}Yazti and
+               Panos K. Chrysanthis and
+               Francesco Guerra},
+  title     = {Answer Graph: Factorization Matters in Large Graphs},
+  booktitle = {Proceedings of the 24th International Conference on Extending Database
+               Technology, {EDBT} 2021, Nicosia, Cyprus, March 23 - 26, 2021},
+  pages     = {493--498},
+  publisher = {OpenProceedings.org},
+  year      = {2021},
+  url       = {https://doi.org/10.5441/002/edbt.2021.57},
+  doi       = {10.5441/002/edbt.2021.57},
+  timestamp = {Sat, 20 Mar 2021 10:29:38 +0100},
+  biburl    = {https://dblp.org/rec/conf/edbt/Abul-BasherYGCC21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {In [3], the authors introduce the concept of factorization as a query- optimization technique for relational databases. Their technique is designed, and works exceptionally well, for schema and queries for which cross products of projections of the answer tuples all show up as answer tuples. This happens, for instance, in schema not in fourth normal form. Evaluating for these projected tuples first and then cross-producting them later can be a much more efficient strategy. Deciding how best to factorize—how to project into sub-tuples—is difficult, however.
+For CQs, this last part is trivial: the factorization of the embed- ding tuples is fully down to component node pairs, corresponding to the labeled edges. This is our answer graph.1 While factorization is sometimes a significant win for evaluating relational queries, it is virtually always a win for evaluating graph CQs.},
+  abstract = {Our answer-graph method to evaluate SPARQL conjunctive queries (CQs) finds a factorized answer set first, an answer graph, and then finds the embedding tuples from this. This approach can reduce greatly the cost to evaluate CQs. This affords a second advantage: we can construct a cost-based planner. We present the answer- graph approach, and overview our prototype system, Wireframe. We then offer proof of concept via a micro-benchmark over the YAGO2s dataset with two prevalent shapes of queries, snowflake and diamond. We compare Wireframe’s performance over these against PostgreSQL, Virtuoso, MonetDB, and Neo4J to illustrate the performance advantages of our answer-graph approach.},
+  OPTnote = {Best short paper award}
+}
+
+
+
+
+
+################################################
+### COMPLEX COMPUTATION OVER RELATIONAL DBs ####
+################################################
+
+@article{DBLP:journals/corr/abs-1901-03633,
+  author    = {Florent Capelli and
+               Nicolas Crosetti and
+               Joachim Niehren and
+               Jan Ramon},
+  title     = {Dependency Weighted Aggregation on Factorized Databases},
+  journal   = {CoRR},
+  volume    = {abs/1901.03633},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1901.03633},
+  eprinttype = {arXiv},
+  eprint    = {1901.03633},
+  timestamp = {Fri, 01 Feb 2019 13:39:59 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-1901-03633.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {Hence, we based our approach on the framework of factorized databases of Olteanu and Z ́avodny ́ [OZ12]. A factorized database is a data structure that allows to represent a table in a factorized way that can be much smaller than the original table. More precisely, a factorized representation of a table may be seen as a circuit whose inputs are tables with one column and performing only Cartesian products and disjoint unions that we will refer to as {⊎,×}-circuits in this paper. Our central theorem, Theorem 4.6, shows that a given weighting of a table represented by a {⊎, ×}-circuit can be canonically represented as a weighting of the edges of the circuit. This connection gives us a direct way of rewriting a linear program whose variables are the tuples of a table represented by a {⊎, ×}-circuit into a linear program whose variables are the edges of the circuit having the same optimal value.
+Several classes of conjunctive queries are known to admit polynomial size {⊎,×}-circuits, the most notorious one being conjunctive queries with bounded fractional hypertree width [OZ15].... To solve ground linear programs efficiently, we will work on factorized representations of relations. We use a generalization of the framework of factorized databases introduced by Olteanu et al. [OZ12].}
+}
+
+
+@misc{huang2021reptile,
+      title={Reptile: Aggregation-level Explanations for Hierarchical Data}, 
+      author={Zezhou Huang and Eugene Wu},
+      year={2021},
+      eprint={2103.07037},
+      archivePrefix={arXiv},
+      primaryClass={cs.DB},
+      abstract = {Recent query explanation systems help users understand anomalies in aggregation results by proposing predicates that describe input records that, if deleted, would resolve the anomalies. However, it can be difficult for users to understand how a predicate was chosen, and these approaches are limited to errors that can be resolved through deletion. In contrast, data errors may be due to group-wise errors, such as missing records or systematic value errors. This paper presents Reptile, an explanation system for hierarchical data. Given an anomalous aggregate query result, Reptile recommends the next drill-down attribute,and ranks the drill-down groups based on the extent repairing the group's statistics to its expected values resolves the anomaly. Reptile efficiently trains a multi-level model that leverages the data's hierarchy to estimate the expected values, and uses a factorised representation of the feature matrix to remove redundancies due to the data's hierarchical structure. We further extend model training to support factorised data, and develop a suite of optimizations that leverage the data's hierarchical structure. Reptile reduces end-to-end runtimes by more than 6 times compared to a Matlab-based implementation, correctly identifies 21/30 data errors in John Hopkin's COVID-19 data, and correctly resolves 20/22 complaints in a user study using data and researchers from Columbia University's Financial Instruments Sector Team.},
+      OPTnote = {Factorised Feature Matrix: We now outline the construction of the factorised feature matrix, using Figure 3c as the example. We refer readers to Olteanu et al. [41] for a complete procedure...  Instead of materializing a feature matrix exponential in the number of hierarchies, Reptile com- putes a succinct factorised matrix representation [41] that reduces the matrix representation by orders of magnitude. We extend prior work [51, 52], which developed model training procedures over factorised matrices derived from join queries, to matrices based on join-aggregation queries that exhibit fewer redundancies. We fur- ther design factorised matrix multiplication operators, and develop a suite of novel work-sharing and caching-based optimizations....We adapt factorized representations to compactly represent the feature matrix, and extend matrix operations to support factor- ized representations. We develop precomputation, work sharing, and caching optimizations to further accelerate successive drill-down operations....On synthetic data, our factorized matrix operations accelerate matrix materialization and gram matrix computations by orders of magnitude, and work-sharing reduces runtimes by 4× over LMFAO [51]....Factorised Representation: Factorised Representation [41] re- duces redundancies due to functional dependencies, and has been used to optimize model training (linear regression [52], decision tree [27] and Rk-mean [12]) over factorised matrices derived from join queries. Reptile extends prior work [51, 52] to matrices based on join-aggregation queries that exhibit fewer redundancies, sup- ports extra operations including right and left multiplication, and further exploits the hierarchical structure for optimization.}
+}
+
+@article{10.1145/3375661,
+author = {Khamis, Mahmoud Abo and Ngo, Hung Q. and Nguyen, Xuanlong and Olteanu, Dan and Schleich, Maximilian},
+title = {Learning Models over Relational Data Using Sparse Tensors and Functional Dependencies},
+year = {2020},
+issue_date = {July 2020},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {45},
+number = {2},
+issn = {0362-5915},
+url = {https://doi.org/10.1145/3375661},
+doi = {10.1145/3375661},
+abstract = {Integrated solutions for analytics over relational databases are of great practical
+importance as they avoid the costly repeated loop data scientists have to deal with
+on a daily basis: select features from data residing in relational databases using
+feature extraction queries involving joins, projections, and aggregations; export
+the training dataset defined by such queries; convert this dataset into the format
+of an external learning tool; and train the desired model using this tool. These integrated
+solutions are also a fertile ground of theoretically fundamental and challenging problems
+at the intersection of relational and statistical data models.This article introduces
+a unified framework for training and evaluating a class of statistical learning models
+over relational databases. This class includes ridge linear regression, polynomial
+regression, factorization machines, and principal component analysis. We show that,
+by synergizing key tools from database theory such as schema information, query structure,
+functional dependencies, recent advances in query evaluation algorithms, and from
+linear algebra such as tensor and matrix operations, one can formulate relational
+analytics problems and design efficient (query and data) structure-aware algorithms
+to solve them.This theoretical development informed the design and implementation
+of the AC/DC system for structure-aware learning. We benchmark the performance of
+AC/DC against R, MADlib, libFM, and TensorFlow. For typical retail forecasting and
+advertisement planning applications, AC/DC can learn polynomial regression models
+and factorization machines with at least the same accuracy as its competitors and
+up to three orders of magnitude faster than its competitors whenever they do not run
+out of memory, exceed 24-hour timeout, or encounter internal design limitations.},
+journal = {ACM Trans. Database Syst.},
+month = jun,
+articleno = {7},
+numpages = {66},
+keywords = {functional dependencies, functional aggregate queries, tensors, model reparameterization, In-database analytics},
+OPTnote = {Short version appeared in PODS 2019 and was selected as best of the conference}
+}
+
+@inproceedings{10.1145/3209889.3209896,
+author = {Khamis, Mahmoud Abo and Ngo, Hung Q. and Nguyen, XuanLong and Olteanu, Dan and Schleich, Maximilian},
+title = {AC/DC: In-Database Learning Thunderstruck},
+year = {2018},
+isbn = {9781450358286},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3209889.3209896},
+doi = {10.1145/3209889.3209896},
+abstract = {We report on the design and implementation of the AC/DC gradient descent solver for
+a class of optimization problems over normalized databases. AC/DC decomposes an optimization
+problem into a set of aggregates over the join of the database relations. It then
+uses the answers to these aggregates to iteratively improve the solution to the problem
+until it converges.The challenges faced by AC/DC are the large database size, the
+mixture of continuous and categorical features, and the large number of aggregates
+to compute. AC/DC addresses these challenges by employing a sparse data representation,
+factorized computation, problem reparameterization under functional dependencies,
+and a data structure that supports shared computation of aggregates.To train polynomial
+regression models and factorization machines of up to 154K features over the natural
+join of all relations from a real-world dataset of up to 86M tuples, AC/DC needs up
+to 30 minutes on one core of a commodity machine. This is up to three orders of magnitude
+faster than its competitors R, MadLib, libFM, and TensorFlow whenever they finish
+and thus do not exceed memory limitation, 24-hour timeout, or internal design limitations.},
+booktitle = {Proceedings of the Second Workshop on Data Management for End-To-End Machine Learning},
+articleno = {8},
+numpages = {10},
+location = {Houston, TX, USA},
+series = {DEEM'18}
+}
+
+@article{10.1145/3129246,
+author = {Aberger, Christopher R. and Lamb, Andrew and Tu, Susan and N\"{o}tzli, Andres and Olukotun, Kunle and R\'{e}, Christopher},
+title = {EmptyHeaded: A Relational Engine for Graph Processing},
+year = {2017},
+issue_date = {November 2017},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {42},
+number = {4},
+issn = {0362-5915},
+url = {https://doi.org/10.1145/3129246},
+doi = {10.1145/3129246},
+abstract = {There are two types of high-performance graph processing engines: low- and high-level
+engines. Low-level engines (Galois, PowerGraph, Snap) provide optimized data structures
+and computation models but require users to write low-level imperative code, hence
+ensuring that efficiency is the burden of the user. In high-level engines, users write
+in query languages like datalog (SociaLite) or SQL (Grail). High-level engines are
+easier to use but are orders of magnitude slower than the low-level graph engines.
+We present EmptyHeaded, a high-level engine that supports a rich datalog-like query
+language and achieves performance comparable to that of low-level engines. At the
+core of EmptyHeaded’s design is a new class of join algorithms that satisfy strong
+theoretical guarantees, but have thus far not achieved performance comparable to that
+of specialized graph processing engines. To achieve high performance, EmptyHeaded
+introduces a new join engine architecture, including a novel query optimizer and execution
+engine that leverage single-instruction multiple data (SIMD) parallelism. With this
+architecture, EmptyHeaded outperforms high-level approaches by up to three orders
+of magnitude on graph pattern queries, PageRank, and Single-Source Shortest Paths
+(SSSP) and is an order of magnitude faster than many low-level baselines. We validate
+that EmptyHeaded competes with the best-of-breed low-level engine (Galois), achieving
+comparable performance on PageRank and at most 3\texttimes{} worse performance on SSSP. Finally,
+we show that the EmptyHeaded design can easily be extended to accommodate a standard
+resource description framework (RDF) workload, the LUBM benchmark. On the LUBM benchmark,
+we show that EmptyHeaded can compete with and sometimes outperform two high-level,
+but specialized RDF baselines (TripleBit and RDF-3X), while outperforming MonetDB
+by up to three orders of magnitude and LogicBlox by up to two orders of magnitude.},
+journal = {ACM Trans. Database Syst.},
+month = oct,
+articleno = {20},
+numpages = {44},
+keywords = {generalized hypertree decomposition, single-instruction multiple data, SIMD, Worst-case optimal join, graph processing, GHD},
+OPTnote = {Aggregations over GHDs. Previous work has investigated aggregations over hypertree decom- positions [22, 54]. EmptyHeaded adopts this previous work in a straightforward way. }
+}
+
+
+
+@inproceedings{10.1145/2902251.2902293,
+author = {Joglekar, Manas R. and Puttagunta, Rohan and R\'{e}, Christopher},
+title = {AJAR: Aggregations and Joins over Annotated Relations},
+year = {2016},
+isbn = {9781450341912},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2902251.2902293},
+doi = {10.1145/2902251.2902293},
+abstract = {We study a class of aggregate-join queries with multiple aggregation operators evaluated
+over annotated relations. We show that straightforward extensions of standard multiway
+join algorithms and generalized hypertree decompositions (GHDs) provide best-known
+runtime guarantees. In contrast, prior work uses bespoke algorithms and data structures
+and does not match these guarantees. We extend the standard techniques by providing
+a complete characterization of (1) the set of orderings equivalent to a given ordering
+and (2) the set of GHDs valid with respect to the given ordering, i.e., GHDs that
+correctly answer a given aggregate-join query when provided to (simple variants of)
+standard join algorithms. We show by example that previous approaches are incomplete.
+The key technical consequence of our characterizations is a decomposition of a valid
+GHD into a set of (smaller) unconstrained GHDs, i.e., into a set of GHDs of sub-queries
+without aggregations. Since this decomposition is comprised of unconstrained GHDs,
+we are able to connect to the wide literature on GHDs for join query processing, thereby
+obtaining improved runtime bounds, MapReduce variants, and an efficient method to
+find approximately optimal GHDs.},
+booktitle = {Proceedings of the 35th ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems},
+pages = {91–106},
+numpages = {16},
+keywords = {aggregation, join query, semiring, fractional hypertreewidth, generalized hypertree decomposition},
+location = {San Francisco, California, USA},
+series = {PODS '16},
+OPTnote = {There is a standard modifica- tion to Yannakakis to handle aggregations [29], but the classic analysis provides only a O(IN · OUT) bound. Bakibayev, Ko- cisky, Olteanu, and Zavodny study aggregation-join queries in factorized databases [6], and later Olteanu and Zavodny con- nected factorized databases and GHDs/GHDJoin [22]. They develop the intuition that if output attributes are above non- output attributes, the +OUT runtime is preserved; we use the same intuition to develop and analyze AggroGHDJoin, a variant to GHDJoin for aggregate-join queries.}
+}
+
+@inproceedings{10.1145/2882903.2882939,
+author = {Schleich, Maximilian and Olteanu, Dan and Ciucanu, Radu},
+title = {Learning Linear Regression Models over Factorized Joins},
+year = {2016},
+isbn = {9781450335317},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2882903.2882939},
+doi = {10.1145/2882903.2882939},
+abstract = {We investigate the problem of building least squares regression models over training
+datasets defined by arbitrary join queries on database tables. Our key observation
+is that joins entail a high degree of redundancy in both computation and data representation,
+which is not required for the end-to-end solution to learning over joins.We propose
+a new paradigm for computing batch gradient descent that exploits the factorized computation
+and representation of the training datasets, a rewriting of the regression objective
+function that decouples the computation of cofactors of model parameters from their
+convergence, and the commutativity of cofactor computation with relational union and
+projection. We introduce three flavors of this approach: F/FDB computes the cofactors
+in one pass over the materialized factorized join; Favoids this materialization and
+intermixes cofactor and join computation; F/SQL expresses this mixture as one SQL
+query.Our approach has the complexity of join factorization, which can be exponentially
+lower than of standard joins. Experiments with commercial, public, and synthetic datasets
+show that it outperforms MADlib, Python StatsModels, and R, by up to three orders
+of magnitude.},
+booktitle = {Proceedings of the 2016 International Conference on Management of Data},
+pages = {3–18},
+numpages = {16},
+keywords = {linear regression, join processing, factorized databases},
+location = {San Francisco, California, USA},
+series = {SIGMOD '16}
+}
+
+@inproceedings{DBLP:conf/aistats/CurtinM0NOS20,
+  author    = {Ryan R. Curtin and
+               Benjamin Moseley and
+               Hung Q. Ngo and
+               XuanLong Nguyen and
+               Dan Olteanu and
+               Maximilian Schleich},
+  editor    = {Silvia Chiappa and
+               Roberto Calandra},
+  title     = {Rk-means: Fast Clustering for Relational Data},
+  booktitle = {The 23rd International Conference on Artificial Intelligence and Statistics,
+               {AISTATS} 2020, 26-28 August 2020, Online [Palermo, Sicily, Italy]},
+  series    = {Proceedings of Machine Learning Research},
+  volume    = {108},
+  pages     = {2742--2752},
+  publisher = {{PMLR}},
+  year      = {2020},
+  url       = {http://proceedings.mlr.press/v108/curtin20a.html},
+  timestamp = {Mon, 29 Jun 2020 18:03:58 +0200},
+  biburl    = {https://dblp.org/rec/conf/aistats/CurtinM0NOS20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/pods/KhamisNR16,
+  author    = {Mahmoud Abo Khamis and
+               Hung Q. Ngo and
+               Atri Rudra},
+  editor    = {Tova Milo and
+               Wang{-}Chiew Tan},
+  title     = {{FAQ:} Questions Asked Frequently},
+  booktitle = {Proceedings of the 35th {ACM} {SIGMOD-SIGACT-SIGAI} Symposium on Principles
+               of Database Systems, {PODS} 2016, San Francisco, CA, USA, June 26
+               - July 01, 2016},
+  pages     = {13--28},
+  publisher = {{ACM}},
+  year      = {2016},
+  url       = {https://doi.org/10.1145/2902251.2902280},
+  doi       = {10.1145/2902251.2902280},
+  timestamp = {Thu, 14 Oct 2021 10:38:21 +0200},
+  biburl    = {https://dblp.org/rec/conf/pods/KhamisNR16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {Bakibayev et al. [9] and Olteanu and Za ́vodny ́ [43] intro- duced the notion of factorized databases, and showed how one can efficiently compute join and aggregates over fac- torized databases. In hindsight there is much in common between their approach and InsideOut applied to the sin- gle semiring case of FAQ-SS. Both approaches have the same runtime complexity, because both are dynamic pro- gramming algorithms, InsideOut is bottom-up, and factor- ized database computation is top-down (memoized). 
+The FAQ framework is more general in that it can handle multiple aggregate types. Our contribution also involves the characterization of EVO and an approximation algorithm for faqw. On the other hand, aspects of factorized database that FAQ does not handle include the evaluation of SQL queries and output size bounds on the factorized representations... However, inspired by Olteanu and Za ́vodny ́ [43] we can first compute the output in the factorized representation, and then report it.}
+}
+
+@inproceedings{DBLP:conf/sigmod/SchleichOK0N19,
+  author    = {Maximilian Schleich and
+               Dan Olteanu and
+               Mahmoud Abo Khamis and
+               Hung Q. Ngo and
+               XuanLong Nguyen},
+  editor    = {Peter A. Boncz and
+               Stefan Manegold and
+               Anastasia Ailamaki and
+               Amol Deshpande and
+               Tim Kraska},
+  title     = {A Layered Aggregate Engine for Analytics Workloads},
+  booktitle = {Proceedings of the 2019 International Conference on Management of
+               Data, {SIGMOD} Conference 2019, Amsterdam, The Netherlands, June 30
+               - July 5, 2019},
+  pages     = {1642--1659},
+  publisher = {{ACM}},
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3299869.3324961},
+  doi       = {10.1145/3299869.3324961},
+  timestamp = {Thu, 14 Oct 2021 10:11:37 +0200},
+  biburl    = {https://dblp.org/rec/conf/sigmod/SchleichOK0N19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/tods/KhamisCMNNOS20,
+  author    = {Mahmoud Abo Khamis and
+               Ryan R. Curtin and
+               Benjamin Moseley and
+               Hung Q. Ngo and
+               XuanLong Nguyen and
+               Dan Olteanu and
+               Maximilian Schleich},
+  title     = {Functional Aggregate Queries with Additive Inequalities},
+  journal   = {{ACM} Trans. Database Syst.},
+  volume    = {45},
+  number    = {4},
+  pages     = {17:1--17:41},
+  year      = {2020},
+  url       = {https://doi.org/10.1145/3426865},
+  doi       = {10.1145/3426865},
+  timestamp = {Thu, 14 Oct 2021 09:33:15 +0200},
+  biburl    = {https://dblp.org/rec/journals/tods/KhamisCMNNOS20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+
+####################
+#### PROVENANCE ####
+####################
+
+@article{10.14778/3436905.3436909,
+author = {Zheng, Nan and Ives, Zachary G.},
+title = {Compact, Tamper-Resistant Archival of Fine-Grained Provenance},
+year = {2020},
+issue_date = {December 2020},
+publisher = {VLDB Endowment},
+volume = {14},
+number = {4},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/3436905.3436909},
+doi = {10.14778/3436905.3436909},
+abstract = {Data provenance tools aim to facilitate reproducible data science and auditable data
+analyses, by tracking the processes and inputs responsible for each result of an analysis.
+Fine-grained provenance further enables sophisticated reasoning about why individual
+output results appear or fail to appear. However, for reproducibility and auditing,
+we need a provenance archival system that is tamper-resistant, and efficiently stores
+provenance for computations computed over time (i.e., it compresses repeated results).
+We study this problem, developing solutions for storing fine-grained provenance in
+relational storage systems while both compressing and protecting it via cryptographic
+hashes. We experimentally validate our proposed solutions using both scientific and
+OLAP workloads.},
+journal = {Proc. VLDB Endow.},
+month = dec,
+pages = {485–497},
+numpages = {13},
+OPTnote = {Prior work [23] has studied factorized representations [29] to reduce overall provenance size. Our scenario is somewhat more complex: PROVision attempts to compute results and provenance efficiently, and thus includes a cost-based query optimizer. We opportunistically exploit shared subexpressions as they occur... Lee and co-authors [23] reduce provenance storage by creating more efficient factorized query ex- pressions [29].1 Their PUG system factors provenance into a d-tree representation [29] before storing it. Similarly, Bao et al. [6] develop strategies for factoring out provenance storage for common query expressions. }
+}
+
+@inproceedings{10.1145/2396761.2398439,
+author = {Bao, Zhifeng and K\"{o}hler, Henning and Wang, Liwei and Zhou, Xiaofang and Sadiq, Shazia},
+title = {Efficient Provenance Storage for Relational Queries},
+year = {2012},
+isbn = {9781450311564},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2396761.2398439},
+doi = {10.1145/2396761.2398439},
+abstract = {Provenance information is vital in many application areas as it helps explain data
+lineage and derivation. However, storing fine-grained provenance information can be
+expensive. In this paper, we present a framework for storing provenance information
+relating to data derived via database queries. In particular, we first propose a provenance
+tree data structure which matches the query structure and thereby presents a possibility
+to avoid redundant storage of information regarding the derivation process. Then we
+investigate two approaches for reducing storage costs. The first approach utilizes
+two ingenious rules to achieve reduction on provenance trees. The second one is a
+dynamic programming solution, which provides a way of optimizing the selection of
+query tree nodes where provenance information should be stored. The optimization algorithm
+runs in polynomial time in the query size and is linear in the size of the provenance
+information, thus enabling provenance tracking and optimization without incurring
+large overheads. Experiments show that our approaches guarantee significantly lower
+storage costs than existing approaches.},
+booktitle = {Proceedings of the 21st ACM International Conference on Information and Knowledge Management},
+pages = {1352–1361},
+numpages = {10},
+keywords = {provenance storage},
+location = {Maui, Hawaii, USA},
+series = {CIKM '12}
+}
+
+
+@article{DBLP:journals/vldb/LeeLG19,
+  author    = {Seokki Lee and
+               Bertram Lud{\"{a}}scher and
+               Boris Glavic},
+  title     = {{PUG:} a framework and practical implementation for why and why-not
+               provenance},
+  journal   = {{VLDB} J.},
+  volume    = {28},
+  number    = {1},
+  pages     = {47--71},
+  year      = {2019},
+  url       = {https://doi.org/10.1007/s00778-018-0518-5},
+  doi       = {10.1007/s00778-018-0518-5},
+  timestamp = {Wed, 13 Feb 2019 23:02:12 +0100},
+  biburl    = {https://dblp.org/rec/journals/vldb/LeeLG19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {first practical approach for answering such questions for queries with negation.. PUG (Provenance Unification through Graphs) system takes a provenance question and Datalog query as an input and generates a Datalog program that computes an explanation, i.e., the part of the provenance that is relevant to answer the question. Furthermore, we demonstrate how a desirable factorization of provenance can be achieved by rewriting an input query... We exploit this fact by rewriting the input pro- gram to generate more concise, but equivalent, provenance. This is akin to factorization of provenance polynomials in the semiring model and utilizes factorized databases tech- niques [33,34]... Entire Section 9 devoted to provenance factorisation... "extend our approach to produce concise, factorized representations of provenance."}
+}
+
+
+@article{10.1145/3277006.3277017,
+author = {Deutch, Daniel and Frost, Nave and Gilad, Amir},
+title = {Natural Language Explanations for Query Results},
+year = {2018},
+issue_date = {March 2018},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {47},
+number = {1},
+issn = {0163-5808},
+url = {https://doi.org/10.1145/3277006.3277017},
+doi = {10.1145/3277006.3277017},
+abstract = {Multiple lines of research have developed Natural Language (NL) interfaces for formulating
+database queries. We build upon this work, but focus on presenting a highly detailed
+form of the answers in NL. The answers that we present are importantly based on the
+provenance of tuples in the query result, detailing not only the results but also
+their explanations. We develop a novel method for transforming provenance information
+to NL, by leveraging the original NL query structure. Furthermore, since provenance
+information is typically large and complex, we present two solutions for its effective
+presentation as NL text: one that is based on provenance factorization, with novel
+desiderata relevant to the NL case, and one that is based on summarization.},
+journal = {SIGMOD Rec.},
+month = sep,
+pages = {42–49},
+numpages = {8},
+OPTnote = {As observed already in previous work [4, 18], different assignments (explanations) may have signifi- cant parts in common, and this can be leveraged in a fac- torization that groups together multiple occurrences. In our example, we can e.g. factorize explanations based on author, paper name, conference name or year. Importantly, we im- pose a novel constraint on the factorizations that we look for (which we call compatibility), intuitively capturing that their structure is consistent with a partial order defined by the parse tree of the question. This constraint is needed so that we can translate the factorization back to an NL an- swer whose structure is similar to that of the question.... We observe a tight correspondence between factorization and summa- rization: every factorization gives rise to multiple possible summarizations, each obtained by counting the number of sub-explanations that are “factorized together”...Instead, we propose two solu- tions: the first based on the idea of provenance factorization [18, 4], and the second leveraging factorization to provide a summarized form. }
+}
+
+@article{DBLP:journals/vldb/DeutchFG20,
+  author    = {Daniel Deutch and
+               Nave Frost and
+               Amir Gilad},
+  title     = {Explaining Natural Language query results},
+  journal   = {{VLDB} J.},
+  volume    = {29},
+  number    = {1},
+  pages     = {485--508},
+  year      = {2020},
+  url       = {https://doi.org/10.1007/s00778-019-00584-7},
+  doi       = {10.1007/s00778-019-00584-7},
+  timestamp = {Thu, 06 Feb 2020 18:13:19 +0100},
+  biburl    = {https://dblp.org/rec/journals/vldb/DeutchFG20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = {conference version received VLDB 2017 Best Paper Award}
+}
+
+@article{DBLP:journals/pvldb/DeutchFG17,
+  author    = {Daniel Deutch and
+               Nave Frost and
+               Amir Gilad},
+  title     = {Provenance for Natural Language Queries},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {10},
+  number    = {5},
+  pages     = {577--588},
+  year      = {2017},
+  url       = {http://www.vldb.org/pvldb/vol10/p577-deutch.pdf},
+  doi       = {10.14778/3055540.3055550},
+  timestamp = {Sat, 25 Apr 2020 13:58:56 +0200},
+  biburl    = {https://dblp.org/rec/journals/pvldb/DeutchFG17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{10.1145/3035918.3035926,
+author = {Chen, Chen and Lehri, Harshal Tushar and Kuan Loh, Lay and Alur, Anupam and Jia, Limin and Loo, Boon Thau and Zhou, Wenchao},
+title = {Distributed Provenance Compression},
+year = {2017},
+isbn = {9781450341974},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3035918.3035926},
+doi = {10.1145/3035918.3035926},
+abstract = {Network provenance, which records the execution history of network events as meta-data,
+is becoming increasingly important for network accountability and failure diagnosis.
+For example, network provenance may be used to trace the path that a message traversed
+in a network, or to reveal how a particular routing entry was derived and the parties
+involved in its derivation. A challenge when storing the provenance of a live network
+is that the large number of the arriving messages may incur substantial storage overhead.
+In this paper, we explore techniques to dynamically compress distributed provenance
+stored at scale. Logically, the compression is achieved by grouping equivalent provenance
+trees and maintaining only one concrete copy for each equivalence class. To efficiently
+identify equivalent provenance, we (1) introduce distributed event-based linear programs
+(DELP) to specify distributed network applications, and (2) statically analyze DELPs
+to allow for quick detection of provenance equivalence at runtime. Our experimental
+results demonstrate that our approach leads to significant storage reduction and query
+latency improvement over alternative approaches.},
+booktitle = {Proceedings of the 2017 ACM International Conference on Management of Data},
+pages = {203–218},
+numpages = {16},
+keywords = {storage, provenance, static analysis, distributed systems},
+location = {Chicago, Illinois, USA},
+series = {SIGMOD '17},
+abstract = {Network provenance, which records the execution history of network events as meta-data, is becoming increasingly important for network accountability and failure diagnosis. For example, network provenance may be used to trace the path that a message traversed in a network, or to reveal how a particular routing entry was derived and the parties involved in its derivation. A challenge when storing the provenance of a live network is that the large number of ar- riving messages may incur substantial storage overhead. In this paper, we explore techniques to dynamically compress distributed provenance stored at scale. Logically, compres- sion is achieved by grouping equivalent provenance trees and maintaining only one concrete copy for each equiva- lence class. To efficiently identify the equivalent provenance, we (1) introduce distributed event-based linear programs (DELPs) to specify distributed network applications, and (2) statically analyze DELPs to allow for quick detection of provenance equivalence at runtime. Our experimental results demonstrate that our approach leads to significant storage reduction and query latency improvement over al- ternative approaches.},
+OPTnote = {Our compression technique implicitly factorizes provenance trees at runtime before removing redundant factors among trees in the same equivalence class. Olteanu et al. [16][17] propose factorization of provenance polynomials for con- junctive queries with a new data structure called factoriza- tion tree. Polynomial factorization in [17] can be viewed as a more general form of the factorization used in the equivalence-based compression proposed in this paper. If we encode the provenance trees of each packet as polynomials, the general factorization algorithm in [17], with specialized factorization tree, would produce the same factorization re- sult in our setting. Our approach is slightly more efficient, as we can skip the factorization step by directly using the equivalence keys at runtime to group provenance trees for compression. Exploring the more general form of factor- ization in [17] for provenance of distributed queries is an interesting avenue of future work.}
+}
+
+#############
+#### IVM ####
+#############
+
+@inproceedings{10.1145/3183713.3183758,
+author = {Nikolic, Milos and Olteanu, Dan},
+title = {Incremental View Maintenance with Triple Lock Factorization Benefits},
+year = {2018},
+isbn = {9781450347037},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3183713.3183758},
+doi = {10.1145/3183713.3183758},
+abstract = {We introduce F-IVM, a unified incremental view maintenance (IVM) approach for a variety
+of tasks, including gradient computation for learning linear regression models over
+joins, matrix chain multiplication, and factorized evaluation of conjunctive queries.F-IVM
+is a higher-order IVM algorithm that reduces the maintenance of the given task to
+the maintenance of a hierarchy of increasingly simpler views. The views are functions
+mapping keys, which are tuples of input data values, to payloads, which are elements
+from a task-specific ring. Whereas the computation over the keys is the same for all
+tasks, the computation over the payloads depends on the task. F-IVM achieves efficiency
+by factorizing the computation of the keys, payloads, and updates. We implemented
+F-IVM as an extension of DBToaster. We show in a range of scenarios that it can outperform
+classical first-order IVM, DBToaster's fully recursive higher-order IVM, and plain
+recomputation by orders of magnitude while using less memory.},
+booktitle = {Proceedings of the 2018 International Conference on Management of Data},
+pages = {365–380},
+numpages = {16},
+keywords = {query optimization, incremental view maintenance, factorized representation, rings, materialized views, stream processing},
+location = {Houston, TX, USA},
+series = {SIGMOD '18}
+}
+
+@article{DBLP:journals/tods/KaraNNOZ20,
+  author    = {Ahmet Kara and
+               Hung Q. Ngo and
+               Milos Nikolic and
+               Dan Olteanu and
+               Haozhe Zhang},
+  title     = {Maintaining Triangle Queries under Updates},
+  journal   = {{ACM} Trans. Database Syst.},
+  volume    = {45},
+  number    = {3},
+  pages     = {11:1--11:46},
+  year      = {2020},
+  url       = {https://doi.org/10.1145/3396375},
+  doi       = {10.1145/3396375},
+  timestamp = {Thu, 08 Oct 2020 09:19:37 +0200},
+  biburl    = {https://dblp.org/rec/journals/tods/KaraNNOZ20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+########################
+#### REPRESENTATION ####
+########################
+
+
+##############################
+#### FACTORIZED ML AND LA ####
+##############################
+
+@inproceedings{DBLP:conf/sigmod/LiC019,
+  author    = {Side Li and
+               Lingjiao Chen and
+               Arun Kumar},
+  editor    = {Peter A. Boncz and
+               Stefan Manegold and
+               Anastasia Ailamaki and
+               Amol Deshpande and
+               Tim Kraska},
+  title     = {Enabling and Optimizing Non-linear Feature Interactions in Factorized
+               Linear Algebra},
+  booktitle = {Proceedings of the 2019 International Conference on Management of
+               Data, {SIGMOD} Conference 2019, Amsterdam, The Netherlands, June 30
+               - July 5, 2019},
+  pages     = {1571--1588},
+  publisher = {{ACM}},
+  year      = {2019},
+  url       = {https://doi.org/10.1145/3299869.3319878},
+  doi       = {10.1145/3299869.3319878},
+  timestamp = {Sat, 22 Jun 2019 17:10:04 +0200},
+  biburl    = {https://dblp.org/rec/conf/sigmod/LiC019.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/pvldb/JustoYSPK21,
+  author    = {David Justo and
+               Shaoqing Yi and
+               Lukas Stadler and
+               Nadia Polikarpova and
+               Arun Kumar},
+  title     = {Towards {A} Polyglot Framework for Factorized {ML}},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {14},
+  number    = {12},
+  pages     = {2918--2931},
+  year      = {2021},
+  url       = {http://www.vldb.org/pvldb/vol14/p2918-justo.pdf},
+  timestamp = {Fri, 27 Aug 2021 17:02:27 +0200},
+  biburl    = {https://dblp.org/rec/journals/pvldb/JustoYSPK21.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  OPTnote = { Industrial Track},
+  OPTnote = {We extend a recent line of work in the DB world on factorized ML, which we split into 3 groups based on setting and target workloads: specific ML algorithms [33, 46, 49], in-RDBMS execution [20, 34, 48], and LA systems [23, 32, 35, 36]. Our work is complementary to all these prior works and builds on their ideas. The novelty of our Trinity is in its generality: it is the first to support factorized ML style ideas in a polyglot setting. Our work enables such novel DB+ML query optimization ideas to be implemented once but made available to multiple PL/LA systems in one go. },
+  abstract = {Optimizing machine learning (ML) workloads on structured data is a key concern for data platforms. One class of optimizations called “factorized ML” helps reduce ML runtimes over multi-table datasets by pushing ML computations down through joins, avoid- ing the need to materialize such joins. The recent Morpheus system automated factorized ML to any ML algorithm expressible in lin- ear algebra (LA). But all such prior factorized ML/LA stacks are restricted by their chosen programming language (PL) and run- time environment, limiting their reach in emerging industrial data science environments with many PLs (R, Python, etc.) and even cross-PL analytics workflows. Re-implementing Morpheus from scratch in each PL/environment is a massive developability over- head for implementation, testing, and maintenance. We tackle this challenge by proposing a new system architecture, Trinity, to en- able factorized LA logic to be written only once and easily reused across many PLs/LA tools in one go. To do this in an extensible and efficient manner without costly data copies, Trinity leverages and extends an emerging industrial polyglot compiler and runtime, Or- acle’s GraalVM. Trinity enables factorized LA in multiple PLs and even cross-PL workflows. Experiments with real datasets show that Trinity is significantly faster than materialized execution (> 8x speedups in some cases), while being largely competitive to a prior single PL-focused Morpheus stack.}
+  }
+
+@INPROCEEDINGS {9101671,
+author = {K. Yang and Y. Gao and L. Liang and B. Yao and S. Wen and G. Chen},
+booktitle = {2020 IEEE 36th International Conference on Data Engineering (ICDE)},
+title = {Towards Factorized SVM with Gaussian Kernels over Normalized Data},
+year = {2020},
+volume = {},
+issn = {},
+pages = {1453-1464},
+keywords = {support vector machines;kernel;databases;motion pictures;optimization;training;machine learning},
+doi = {10.1109/ICDE48307.2020.00129},
+url = {https://doi.ieeecomputersociety.org/10.1109/ICDE48307.2020.00129},
+publisher = {IEEE Computer Society},
+address = {Los Alamitos, CA, USA},
+month = {apr}
+}
+
+
+
+@inproceedings{DBLP:conf/sigmod/KumarNP15,
+  author    = {Arun Kumar and
+               Jeffrey F. Naughton and
+               Jignesh M. Patel},
+  editor    = {Timos K. Sellis and
+               Susan B. Davidson and
+               Zachary G. Ives},
+  title     = {Learning Generalized Linear Models Over Normalized Data},
+  booktitle = {Proceedings of the 2015 {ACM} {SIGMOD} International Conference on
+               Management of Data, Melbourne, Victoria, Australia, May 31 - June
+               4, 2015},
+  pages     = {1969--1984},
+  publisher = {{ACM}},
+  year      = {2015},
+  url       = {https://doi.org/10.1145/2723372.2723713},
+  doi       = {10.1145/2723372.2723713},
+  timestamp = {Tue, 06 Nov 2018 11:07:38 +0100},
+  biburl    = {https://dblp.org/rec/conf/sigmod/KumarNP15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{DBLP:journals/pvldb/ChenKNP17,
+  author    = {Lingjiao Chen and
+               Arun Kumar and
+               Jeffrey F. Naughton and
+               Jignesh M. Patel},
+  title     = {Towards Linear Algebra over Normalized Data},
+  journal   = {Proc. {VLDB} Endow.},
+  volume    = {10},
+  number    = {11},
+  pages     = {1214--1225},
+  year      = {2017},
+  url       = {http://www.vldb.org/pvldb/vol10/p1214-chen.pdf},
+  doi       = {10.14778/3137628.3137633},
+  timestamp = {Sat, 25 Apr 2020 13:59:39 +0200},
+  biburl    = {https://dblp.org/rec/journals/pvldb/ChenKNP17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
