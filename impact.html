@@ -1934,7 +1934,7 @@
 
     const idx = keys_sorted.findIndex(k => k == id)
 
-    $(this).text(idx + 1)
+    $(this).replaceWith(`<a href="#${id}">${idx + 1}</a>`)
     $(this).css("display", "inline-block")
   })
 </script>
