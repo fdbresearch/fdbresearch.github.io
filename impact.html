@@ -234,7 +234,7 @@
               </h3>
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-        <p>Sample citation: <strong class="g-color-primary"> [<citation style="display:none;">DBLP:CONF/ICDT/OLTEANUZ12</citation>]</strong>
+        <p>Sample citation: <strong class="g-color-primary"> [<citation style="display:none;">DBLP:CONF/ICDT/OLTEANUZ12</citation>, <citation style="display:none;">DBLP:conf/pods/KhamisNR16</citation>]</strong>
         </p>
         <p class="g-color-black-opacity-0_8">
           The ICDT 2012 paper <strong class="g-color-primary">[<a href="#30">30</a>]</strong> and its extended version published in the ACM TODS 2015 journal <strong class="g-color-primary">[<a href="#31">31</a>]</strong>, both by Olteanu and Z&aacute;vodn&yacute;, put forward a basic yet fundamental observation: 
@@ -1915,12 +1915,20 @@
     return a_au.localeCompare(b_au);
   })
 
-  const keys_sorted = entries_sorted.map(e => e._id.toUpperCase())
+  let keys_sorted = entries_sorted.map(e => e._id.toUpperCase())
+
+  var all = $("citation").map(function() {
+    return this.innerHTML.toUpperCase();
+  }).get();
+  // console.log(all)
+  keys_sorted = keys_sorted.filter(k => all.findIndex(a => a == k) !== -1)
+  // console.log(keys_sorted)
+  // console.log(keys)
 
 
   $("citation").each(function(index) {
-    console.log(index + ": " + $( this ).text())
-    const id = $(this).text();
+    // console.log(index + ": " + $( this ).text())
+    const id = $(this).text().toUpperCase();
 
     // console.log(id)
 
