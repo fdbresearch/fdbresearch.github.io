@@ -584,6 +584,7 @@ function BibtexDisplay() {
 
         // fill in remaining fields 
         for (var index in keys) {
+
             var key = keys[index];
             var value = entry[key] || "";
 
@@ -617,6 +618,8 @@ function BibtexDisplay() {
             });
         }
         tpl.addClass("bibtexentry");
+        tpl.attr("id", entry.BIBTEXKEY.toUpperCase())
+        // console.log(
         return tpl;
     }
 
