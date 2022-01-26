@@ -197,7 +197,7 @@
      <div class="d-sm-flex text-center">
       <div class="align-self-center">
        <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        A 2022 Review of the Impact of Factorized Databases
+        Ten Years of Factorized Databases: A 2022 Review of their Impact
        </h2>
       </div>
       <!--div class="align-self-center ml-auto">
@@ -230,23 +230,28 @@
       <article class="g-mb-60">
        <div class="text-center g-width-60x--md mx-auto g-my-40">
               <h3 class="text-uppercase g-color-primary">
-                The work that started it
+                The work that started factorized databases
               </h3>
        </div>
        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
         <p class="g-color-black-opacity-0_8">
-          The ICDT 2012 paper <strong class="g-color-primary">[<citation style="display:none;">DBLP:CONF/ICDT/OLTEANUZ12</citation>]</strong> and its extended version published in the ACM TODS 2015 journal <strong class="g-color-primary">[<citation style="display:none;">DBLP:journals/tods/OlteanuZ15</citation>]</strong>, both by Olteanu and Z&aacute;vodn&yacute;, put forward a basic yet fundamental observation: 
-          <div><em>The relational representation and computation of the answers to conjunctive queries entail redundancy that can be systematically avoided by a succinct lossless <strong>factorized</strong> representation.</em></div>
+          The International Conference on Database Theory (ICDT) 2012 paper <strong class="g-color-primary">[<citation style="display:none;">DBLP:CONF/ICDT/OLTEANUZ12</citation>]</strong> and its extended version published in the ACM Transactions on Database Systems (TODS) 2015 journal <strong class="g-color-primary">[<citation style="display:none;">DBLP:journals/tods/OlteanuZ15</citation>]</strong>, both by Olteanu and Z&aacute;vodn&yacute;, put forward two basic yet fundamental observations:
+          </p>
+          <ul>
+            <li><div><em>The relational representation of the answers to conjunctive queries entail redundancy that can be systematically avoided by a succinct and lossless <strong>factorized</strong> representation.</em></div></li>
+            <li><div><em>This factorized representation can be computed directly from the input database and in time proportional to its size and the input size.</em></div></li>
+          </ul> 
+        <p>
+          Such factorized representations give a proper balance between compactness (elimination of redundancy) and efficiency. Subsequent work by the same authors also showed that a host of computations can be performed directly on the factorized representation, so without the need to de-factorize the represented data.
         </p>
         <p>
-          Such factorized representations give a proper balance between compactness (elimination of redundancy) and efficiency. They are a special form of compression: it factorizes data akin to factorization of polynomials (<em>a*b + a*c = a* (b+c)</em>). It is orthogonal to value-based compression techniques, such as run-length encoding, and it can be combined with the latter to achieve a greater compression factor.
-        </p>
-        <p>
-          Specifically, the framework exploits the conditional independence in the data to compress relations such as those that constitute the results of database joins.
-          In particular, a factorized representation can be viewed as a relational algebra query that involves data values and only two operators: union and Cartesian product. We also refer generally to such representations as <em>factorized databases.</em>
+          A factorized representation can be viewed as a relational algebra query that involves data values and only two operators: union and Cartesian product. We also refer generally to such representations as <em>factorized databases.</em>
+          They are a special form of compression:  they factorize data akin to the factorization of polynomials, e.g., 
+          <div class="text-center"><em>a*x + a*y + b*x + b*y = (a+b)* (x+y)</em>.</div>
+           Data factorization is orthogonal to value-based compression, such as run-length encoding; the two can be combined to achieve an even greater compression factor.
         </p>
         <p> 
-          This work also gives effective tools for managing such factorized representations, including:
+          This initial work also gives effective tools for managing such factorized representations, including:
         </p>
         <ul> 
           <li>representation systems, </li>
