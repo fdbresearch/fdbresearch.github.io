@@ -1,321 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
   </script>
   <script>
-   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-111495058-1');
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111495058-1');
   </script>
   <!-- Title -->
   <title>
-   Factorized Databases Workshop, Zurich, August 2 - 4, 2022  
+    Factorized Databases Workshop, Zurich, August 2 - 4, 2022
   </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <!-- Favicon -->
-  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-  <link href="manifest.json" rel="manifest"/>
-  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
-  <meta content="#ffffff" name="theme-color"/>
-  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Zurich,University of Zurich,Oxford,University of Oxford,Computer Science" name="keywords"/>
-  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning" name="description"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="manifest.json" rel="manifest" />
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Zurich,University of Zurich,Oxford,University of Oxford,Computer Science"
+    name="keywords" />
+  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning"
+    name="description" />
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <!-- CSS Global Icons -->
-  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/animate.css" rel="stylesheet"/>
-  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
-  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet" />
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css" rel="stylesheet" />
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet" />
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet" />
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet" />
+  <!-- CSS Implementing Plugins -->
+  <link href="assets/vendor/custombox/custombox.min.css" rel="stylesheet"/>
   <!-- CSS Unify -->
-  <link href="assets/css/unify-core.css" rel="stylesheet"/>
-  <link href="assets/css/unify-components.css" rel="stylesheet"/>
-  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
+  <link href="assets/css/unify-core.css" rel="stylesheet" />
+  <link href="assets/css/unify-components.css" rel="stylesheet" />
+  <link href="assets/css/unify-globals.css" rel="stylesheet" />
   <!-- CSS Customization -->
-  <link href="assets/css/custom.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet" />
   <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
-  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML" type="text/javascript">
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"
+    type="text/javascript">
   </script>
- </head>
- <body>
+</head>
+
+<body>
   <main>
-   <!-- Header -->
-   <header class="u-header u-header--static u-shadow-v19" id="js-header">
-    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-     <nav class="js-mega-menu navbar navbar-expand-lg">
+    <!-- Header -->
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
+            </a>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="FDBworkshop2022.html">
+                        Workshop
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing based on Degree Information
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-50">
       <div class="container">
-       <!-- Responsive Toggle Button -->
-       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
-        <span class="hamburger hamburger--slider">
-         <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </span>
-       </button>
-       <!-- End Responsive Toggle Button -->
-       <!-- Logo -->
-       <a class="navbar-brand" href="index.html">
-        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
-       </a>
-       <!-- End Logo -->
-       <!-- Navigation -->
-       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           News
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-            <li class="dropdown-item">
-              <a class="nav-link" href="FDBworkshop2022.html">
-              Workshop
-              </a>
-             </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="visitors.html">
-             Visitors
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="events.html">
-             Events
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="awards.html">
-             Awards
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="people.html">
-           People
-          </a>
-         </li>
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Projects
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="principles.html">
-             Principles of Factorised Databases
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="analytics.html">
-             In-Database Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivm.html">
-             Incremental Maintenance for Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivme.html">
-             Adaptive Query Processing based on Degree Information
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="publications.html">
-           Publications
-          </a>
-         </li>
-         <!-- Code -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Code
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="fivm-code.html">
-             FIVM
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="fbench-code.html">
-             FBENCH
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Code -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="talks.html">
-           Talks
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="videos.html">
-           Videos
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
-           ACK
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
-           Contact
-          </a>
-         </li>
-        </ul>
-       </div>
-       <!-- End Navigation -->
-      </div>
-     </nav>
-    </div>
-   </header>
-   <!-- End Header -->
-   <!-- Breadcrumbs -->
-   <section class="g-bg-gray-light-v5 g-py-50">
-    <div class="container">
-     <div class="d-sm-flex text-center">
-      <div class="align-self-center">
-       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        Factorized Databases Workshop <br/> Zurich and online, August 2 - 4 2022
-       </h2>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- End Breadcrumbs -->
-   <div class="g-pt-50">
-   </div>
-   <!-- Blog Minimal Blocks -->
-   <div class="container g-pb-20">
-    <div class="row justify-content-between">
-     <!-- left panel -->
-     <div class="col-lg-1 g-mb-80">
-     </div>
-     <!-- end left panel -->
-     <!-- Articles Content -->
-     <div class="col-lg-10 g-mb-50 g-mb-0--lg">
-      <article class="g-mb-60">
-        <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-          <p>This year, factorized databases turn 10 years. It is a good time to reflect on their use so far and potential avenues for future research. 
-          </p>
-          <p>
-            This workshop will feature a series of talks on <a href="https://fdbresearch.github.io/impact.html">topics that build on factorized databases</a>. In particular, there will be workshop sessions on: graph database systems; enumeration in static and dynamic query evaluation; query provenance management; factorized aggregate computation; and factorized machine learning over relational data.
-          </p> 
-          <p>Stay tuned for the upcoming programme! It should be available shortly.</p>
+        <div class="d-sm-flex">
+          <div class="align-self-center">
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+              Factorized Databases Workshop
+            </h2>
+            <h4><strong>Zurich and online, August 2 - 4 2022</strong></h4>
+          </div>
         </div>
-      </article>
       </div>
-     
-     <!-- End Articles Content -->
-     <!-- right panel -->
-     <div class="col-lg-10 g-mb-50">
-      <div class="g-mb-60" id="participants">
-         <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
-          Participants
-         </h2>
-       </div>
-       <p>
-        The following participants from industry and academia have already confirmed their attendance:
-      </p>
-      <ul>
-        <li>Mahmoud Abo Khamis (RelationalAI Berkeley, USA)</li>
-        <li>Antoine Amarilli (Télécom Paris, France)</li>
-        <li>Michael B&ouml;hlen (University of Zurich, Switzerland)</li>
-        <li>Florent Capelli (University of Lille, France)</li>
-        <li>Nofar Carmeli (ENS Paris, France)</li>
-        <li>Shaleen Deep (Microsoft Gray Systems Lab, USA)</li>
-        <li>Daniel Deutch (Tel Aviv University, Israel)</li>
-        <li>Boris Glavic (Illinois Institute of Technology, USA)</li>
-        <li>Niko G&ouml;bel (RelationalAI Zurich, Switzerland)</li>
-        <li>Zachary Huang (University of Columbia, USA)</li>
-        <li>David Justo (Microsoft Seattle, USA)</li>
-        <li>Ahmet Kara (University of Zurich, Switzerland)</li>
-        <li>Nadezda Knorozova (University of Zurich, Switzerland)</li>
-        <li>Paris Koutris (University of Wisconsin-Madison, USA)</li>
-        <li>Arun Kumar (Univerity of California San Diego, USA)</li>
-        <li>Amine Mhedhbi (University of Waterloo, Canada)</li>
-        <li>Hung Ngo (RelationalAI Berkeley, USA)</li>
-        <li>Milos Nikolic (University of Edinburgh, UK)</li>
-        <li>Cédric Renggli (ETH Zurich, Switzerland)</li>
-        <li>Semih Salihoglu (University of Waterloo, Canada)</li>
-        <li>Malte Sandstede (RelationalAI Zurich, Switzerland)</li>
-        <li>Maximilian Schleich (RelationalAI Vienna, Austria)</li>
-        <li>Amir Shaikhha (University of Edinburgh, UK)</li>
-        <li>Ainur Smagulova (TigerGraph, USA)</li>
-        <li>Dan Suciu (University of Washington, USA)</li>
-        <li>Immanuel Trummer (Cornell University, USA)</li>
-        <li>Nils Vortmeier (University of Bochum, Germany)</li>
-        <li>Haozhe Zhang (University of Zurich, Switzerland)</li>
-        <li>Dorde Zivanovic (University of Oxford, UK)</li>
-      </ul>       
-     </div>
-     <!-- end right panel -->
+    </section>
+    <!-- End Breadcrumbs -->
+    <div class="g-pt-50">
     </div>
-   </div>
-   <!-- End Blog Minimal Blocks -->
-   <!-- Footer -->
-   <div class="g-pt-50">
-    <footer class="g-bg-secondary">
-     <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
-     </div>
-     <div class="container">
-      <!-- Footer - Bottom Section -->
-      <div class="row align-items-center">
-       <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-        <!-- Copyright -->
-        <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-         © 2017-2022 All Rights Reserved.
-        </p>
-        <!-- End Copyright -->
-       </div>
-       <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
-        <!-- Links -->
-        <ul class="list-inline mb-0">
-         <li class="list-inline-item g-pl-0 g-pr-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
-           Contact Us
-          </a>
-         </li>
-         <li class="list-inline-item g-px-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-           Last modified: April 2022
-          </a>
-         </li>
-        </ul>
-        <!-- End Links -->
-       </div>
+    <!-- Blog Minimal Blocks -->
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
+
+        <!-- Main Column -->
+        <div class="col-lg-10 g-mb-50 g-mb-0--lg">
+
+          <!-- Introduction Content -->
+          <article class="g-mb-60">
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p>This year, factorized databases turn 10 years. It is a good time to reflect on their use so far and
+                potential avenues for future research.
+              </p>
+              <p>
+                This workshop will feature a series of talks on <a
+                  href="https://fdbresearch.github.io/impact.html">topics that build on factorized databases</a>. In
+                particular, there will be workshop sessions on: graph database systems; enumeration in static and
+                dynamic query evaluation; query provenance management; factorized aggregate computation; and factorized
+                machine learning over relational data.
+              </p>
+              <p>Stay tuned for the upcoming programme! It should be available shortly.</p>
+            </div>
+          </article>
+          <!-- END Introduction Content -->
+
+          <!--- Agenda -->
+
+
+          <!-- <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+              Agenda
+            </h2>
+          </div> -->
+
+          
+          <a name="August2"></a>
+          <div class="g-mb-20" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              August 2
+            </h2>
+          </div>
+
+          
+
+
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                9:30 am - 10:00 am: 
+                <strong>Coffee</strong>
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                10:00 am - 12:40 pm: 
+                <strong>Query Enumeration and Ranking</strong>
+              </h5>
+            </span>
+
+            <ul>
+              <li>Nofar Carmeli (ENS Paris, France): 
+                <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-nofar" href="#modal-nofar">
+                  Efficiently Answering Quantile Queries
+                 </a>
+              </li>
+              <li>Paris Koutris (University of Wisconsin-Madison, USA): 
+                <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-paris" href="#modal-paris">
+                  On Query Enumeration
+                 </a>
+              </li>
+              <li>Antoine Amarilli (Telecom Paris-Tech, France):
+                <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-antoine-amarilli" href="#modal-antoine-amarilli">
+                  Efficient enumeration via factorized representations
+                 </a>
+              </li>
+
+            </ul>
+
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+
+          <!--- END Agenda -->
+
+          <br><br><br>
+
+          <!-- Participants Content -->
+          <div class="g-mb-60" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Participants
+            </h2>
+          </div>
+          <p>
+            The following participants from industry and academia have already confirmed their attendance:
+          </p>
+          <ul>
+            <li>Mahmoud Abo Khamis (RelationalAI Berkeley, USA)</li>
+            <li>Antoine Amarilli (Télécom Paris, France)</li>
+            <li>Michael B&ouml;hlen (University of Zurich, Switzerland)</li>
+            <li>Florent Capelli (University of Lille, France)</li>
+            <li>Nofar Carmeli (ENS Paris, France)</li>
+            <li>Shaleen Deep (Microsoft Gray Systems Lab, USA)</li>
+            <li>Daniel Deutch (Tel Aviv University, Israel)</li>
+            <li>Boris Glavic (Illinois Institute of Technology, USA)</li>
+            <li>Niko G&ouml;bel (RelationalAI Zurich, Switzerland)</li>
+            <li>Zachary Huang (University of Columbia, USA)</li>
+            <li>David Justo (Microsoft Seattle, USA)</li>
+            <li>Ahmet Kara (University of Zurich, Switzerland)</li>
+            <li>Nadezda Knorozova (University of Zurich, Switzerland)</li>
+            <li>Paris Koutris (University of Wisconsin-Madison, USA)</li>
+            <li>Arun Kumar (Univerity of California San Diego, USA)</li>
+            <li>Amine Mhedhbi (University of Waterloo, Canada)</li>
+            <li>Hung Ngo (RelationalAI Berkeley, USA)</li>
+            <li>Milos Nikolic (University of Edinburgh, UK)</li>
+            <li>Cédric Renggli (ETH Zurich, Switzerland)</li>
+            <li>Semih Salihoglu (University of Waterloo, Canada)</li>
+            <li>Malte Sandstede (RelationalAI Zurich, Switzerland)</li>
+            <li>Maximilian Schleich (RelationalAI Vienna, Austria)</li>
+            <li>Amir Shaikhha (University of Edinburgh, UK)</li>
+            <li>Ainur Smagulova (TigerGraph, USA)</li>
+            <li>Dan Suciu (University of Washington, USA)</li>
+            <li>Immanuel Trummer (Cornell University, USA)</li>
+            <li>Nils Vortmeier (University of Bochum, Germany)</li>
+            <li>Haozhe Zhang (University of Zurich, Switzerland)</li>
+            <li>Dorde Zivanovic (University of Oxford, UK)</li>
+          </ul>
+          <!-- END Participants Content -->
+
+
+
+        </div>
+        <!-- END Main Column -->
+
+
+        <!-- Right panel -->
+        <div class="col-lg-2 g-mb-50">
+          <!-- add additional useful links here -->
+        </div>
+        <!-- END Right panel -->
+
       </div>
-      <!-- End Footer - Bottom Section -->
+    </div>
+    <!-- End Blog Minimal Blocks -->
+    <!-- Footer -->
+    <div class="g-pt-50">
+      <footer class="g-bg-secondary">
+        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+        </div>
+        <div class="container">
+          <!-- Footer - Bottom Section -->
+          <div class="row align-items-center">
+            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Copyright -->
+              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+                © 2017-2022 All Rights Reserved.
+              </p>
+              <!-- End Copyright -->
+            </div>
+            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
+              <!-- Links -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item g-pl-0 g-pr-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+                    Contact Us
+                  </a>
+                </li>
+                <li class="list-inline-item g-px-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+                    Last modified: April 2022
+                  </a>
+                </li>
+              </ul>
+              <!-- End Links -->
+            </div>
+          </div>
+          <!-- End Footer - Bottom Section -->
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
+
+
+    <!-- Popup window -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-nofar" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+       <i class="hs-icon hs-icon-close">
+       </i>
+      </button>
+      <h4 class="g-mb-20">
+       <a>
+        Efficiently Answering Quantile Queries
+       </a>
+      </h4>
+      <p>
+        We discuss the task of direct access to the k-th answer of a Conjunctive Query according to a user-specified order over the answers. In other words, our goal is to simulate the sorted array of query answers without materializing all answers. Assuming we can also efficiently count the query answers, this allows efficiently answering quantile queries (e.g., finding the median). We focus on identifying the preprocessing time needed to allow logarithmic access time.
+      </p>
      </div>
-    </footer>
-   </div>
-   <!-- End Footer -->
+    <!-- END Popup window -->
+
+    <!-- Popup window -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-paris" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+       <i class="hs-icon hs-icon-close">
+       </i>
+      </button>
+      <h4 class="g-mb-20">
+       <a>
+        On Query Enumeration
+       </a>
+      </h4>
+      <p>
+        
+      </p>
+     </div>
+    <!-- END Popup window -->
+
+    <!-- Popup window -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-antoine-amarilli" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+       <i class="hs-icon hs-icon-close">
+       </i>
+      </button>
+      <h4 class="g-mb-20">
+       <a>
+        Efficient enumeration via factorized representations
+       </a>
+      </h4>
+      <p>
+        This talk will present our latest results about efficient enumeration algorithms. These algorithms are defined on circuit classes inspired by knowledge compilation: they can be seen as factorized representations with some differences such as having non-constant height. I will review our results on enumeration for d-DNNF circuits (ICALP'17), and their applications. One first application is to enumerate the matches of document spanners on words (ICALP'19). The second application is to enumerate the answers to monadic second-order queries on trees with support for efficient update operations (PODS'19). The third application is to enumerate extraction results for enumeration grammars (PODS'22).
+
+      </p>
+     </div>
+    <!-- END Popup window -->
+
+
   </main>
   <!-- JS Global Compulsory -->
   <script src="assets/vendor/jquery/jquery.min.js">
@@ -341,6 +502,8 @@
   </script>
   <script src="assets/vendor/slick-carousel/slick/slick.js">
   </script>
+  <script src="assets/vendor/custombox/custombox.min.js">
+  </script>
   <!-- JS Unify -->
   <script src="assets/js/hs.core.js">
   </script>
@@ -360,12 +523,17 @@
   </script>
   <script src="assets/js/components/hs.carousel.js">
   </script>
+  <script src="assets/js/components/hs.modal-window.js">
+  </script>
   <!-- JS Customization -->
   <script src="assets/js/custom.js">
   </script>
   <!-- JS Plugins Init. -->
   <script>
    $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
