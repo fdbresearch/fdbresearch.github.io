@@ -339,7 +339,7 @@
               </li>
               <li>Shaleen Deep (Microsoft, USA):
                 <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-shaleen" href="#modal-shaleen">
-                  Factorization and Ranking: Theory and Practice
+                  Efficient Enumeration for CQs with Projections
                  </a>
               </li>
             </ul>
@@ -373,7 +373,7 @@
             </li>
             <li>Ainur Smagulova (TigerGraph, USA): 
               <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-ainur" href="#modal-ainur">
-                Vertex-centric Parallel Computation of SQL Queries*
+                Vertex-centric Parallel Computation of SQL Queries (remote)
                </a>
             </li>
           </ul>
@@ -420,12 +420,12 @@
         <ul>
           <li>Florent Capelli (U Lille, France):
             <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-florent" href="#modal-florent">
-              Linear Programs with Conjunctive Queries*
+              Linear Programs with Relations (remote)
              </a>
           </li>
           <li>Zachary Huang (U Columbia, USA): 
             <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-zachary" href="#modal-zachary">
-              On Factorized Aggregate Computation*
+              Materialized View for Factorized Queries (remote)
              </a>
           </li>
         </ul>
@@ -451,12 +451,12 @@
               <ul>
           <li>Arun Kumar (UC San Diego, USA): 
             <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-arun" href="#modal-arun">
-              Factorized Machine Learning: Paths and Roadblocks*
+              Factorized Machine Learning: Paths and Roadblocks (remote)
              </a>
           </li>
           <li>Immanuel Trummer (Cornell University, USA):
             <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-immanuel" href="#modal-immanuel">
-              Intra-Query Learning for Worst-Case Optimal Join Algorithms*
+              Intra-Query Learning for Worst-Case Optimal Join Algorithms (remote)
              </a>
           </li>
         </ul>
@@ -491,12 +491,12 @@
         </li>
         <li>Mahmoud Abo Khamis (RelationalAI, USA):  
           <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-mahmoud" href="#modal-mahmoud">
-            Relational AutoDiff
+            Relational AutoDiff (remote)
            </a>
         </li>
         <li>David Justo (Microsoft, USA):  
           <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-david" href="#modal-david">
-            Towards A Polyglot Framework for Factorized ML*
+            Towards A Polyglot Framework for Factorized ML (remote)
            </a>
         </li>
       </ul>
@@ -665,7 +665,7 @@
           </p>
           <ul>
             <li>Molham Aref (RelationalAI Berkeley, USA)</li>
-            <li>Mahmoud Abo Khamis (RelationalAI Berkeley, USA)</li>
+            <li>Mahmoud Abo Khamis* (RelationalAI Berkeley, USA)</li>
             <li>Antoine Amarilli (Télécom Paris, France)</li>
             <li>Michael B&ouml;hlen (University of Zurich, Switzerland)</li>
             <li>Florent Capelli* (University of Lille, France)</li>
@@ -688,7 +688,7 @@
             <li>Malte Sandstede (RelationalAI Zurich, Switzerland)</li>
             <li>Maximilian Schleich (RelationalAI Vienna, Austria)</li>
             <li>Amir Shaikhha (University of Edinburgh, UK)</li>
-            <li>Ainur Smagulova (TigerGraph, USA)</li>
+            <li>Ainur Smagulova* (TigerGraph, USA)</li>
             <li>Dan Suciu (University of Washington, USA)</li>
             <li>Immanuel Trummer (Cornell University, USA)</li>
             <li>Nils Vortmeier (University of Bochum, Germany)</li>
@@ -793,11 +793,11 @@
       </button>
       <h4 class="g-mb-20">
        <a>
-        Factorization and Ranking: Theory and Practice
+        Efficient Enumeration for CQs with Projections
        </a>
       </h4>
       <p>
-        TBD
+        CQs with projections are an interesting class of queries that are widely used in practice. In this talk, I will review our results on ranked (ICDT 2021, VLDB 2022) and unranked enumeration for CQs (ICDT 2021) with projections. We will also look at some new results and techniques on how we can build data structures that allow for answering Boolean queries over CQs (such as k-path reachability). These results build upon the core ideas of factorized databases literature with several twists that lead to intriguing tradeoffs between space requirement of the data structure and the answering time.
       </p>
      </div>
     <!-- END Popup window -->
@@ -869,11 +869,22 @@
       </button>
       <h4 class="g-mb-20">
        <a>
-        Linear Programs with Conjunctive Queries
+        Linear Programs with Relations
        </a>
       </h4>
       <p>
-        TBD
+        In this talk, we introduce the problem of optimizing a linear program
+        whose variables are the tuples of a relation. For this we propose the
+        language for specifying linear programs whose constraints and
+        objective functions depend on relations schemas. The naive
+        interpretation of such linear programs has one variable per element in
+        the relation, which can be large in the size of the database when the
+        relation is not given explicitly in the input, e.g., if it is
+        specified as the result of conjunctive queries or as a factorized
+        database. In these cases, we present an approach to construct a linear
+        program having the same optimal value as the naive interpretation but
+        whose number of variables is much smaller, by exploiting the structure
+        of the conjunctive query or the circuit itslef.
       </p>
      </div>
     <!-- END Popup window -->
@@ -887,11 +898,14 @@
       </button>
       <h4 class="g-mb-20">
        <a>
-        On Factorized Aggregate Computation
+        Materialized View for Factorized Queries
        </a>
       </h4>
       <p>
-        TBD
+        Data analytics over normalized databases typically requires computing and materializing expensive joins. Factorized query execution models execution as message passing between relations in the join graph and pushes aggregations through joins to reduce intermediate result sizes. Although this accelerates query execution, it only optimizes a single query. In contrast, analytics is iterative, and offers novel work-sharing opportunities between queries. 
+        </p>
+        <p>
+        This work shows that carefully materializing messages during query execution can accelerate subsequent aggregation queries by >10^5x as compared to factorized execution, and only incurs a constant factor overhead. The key challenge is that messages are sensitive to the message passing ordering. To address this challenge, we borrow the concept of calibration in probabilistic graphical models to materialize sufficient messages to support any ordering. We manifest these ideas in the novel Calibrated Junction Hypertree (CJT) data structure, which is fast to build, aggressively re-uses messages to accelerate future queries, and is incrementally maintainable under updates. We further show how CJTs benefit applications such as OLAP, query explanation, streaming data, and data augmentation for ML.
       </p>
      </div>
     <!-- END Popup window -->
