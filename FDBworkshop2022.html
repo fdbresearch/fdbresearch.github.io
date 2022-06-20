@@ -677,7 +677,7 @@
             <li>Zachary Huang* (University of Columbia, USA)</li>
             <li>David Justo* (Microsoft Seattle, USA)</li>
             <li>Ahmet Kara (University of Zurich, Switzerland)</li>
-            <li>Nadezda Knorozova (University of Zurich, Switzerland)</li>
+            <!--li>Nadezda Knorozova (University of Zurich, Switzerland)</li-->
             <li>Paris Koutris (University of Wisconsin-Madison, USA)</li>
             <li>Arun Kumar* (Univerity of California San Diego, USA)</li>
             <li>Amine Mhedhbi (University of Waterloo, Canada)</li>
@@ -690,7 +690,7 @@
             <li>Amir Shaikhha (University of Edinburgh, UK)</li>
             <li>Ainur Smagulova* (TigerGraph, USA)</li>
             <li>Dan Suciu (University of Washington, USA)</li>
-            <li>Immanuel Trummer (Cornell University, USA)</li>
+            <li>Immanuel Trummer* (Cornell University, USA)</li>
             <li>Nils Vortmeier (University of Bochum, Germany)</li>
             <li>Haozhe Zhang* (University of Zurich, Switzerland)</li>
             <li>Dorde Zivanovic* (University of Oxford, UK)</li>
@@ -737,7 +737,7 @@
                 </li>
                 <li class="list-inline-item g-px-10">
                   <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-                    Last modified: April 2022
+                    Last modified: June 2022
                   </a>
                 </li>
               </ul>
@@ -1001,7 +1001,10 @@
        </a>
       </h4>
       <p>
-        TBD
+        Modern database systems have been progressively expanding their use cases far outside traditional bookkeeping and into data analytics, machine learning, and mathematical optimization among other application domains. This in turn motivates the need for native in-database automatic differentiation to better support these use cases.
+      </p>
+      <p>
+        In this talk, we present relationalAD (rAD), our framework for automatic differentiation at relationalAI (rAI). The modeling language underlying rAI is called Rel and is declarative and can be viewed as a (vast) generalization of Datalog with aggregation and function symbols. In rAD, the input is a Rel program that computes some (multivalued) function and the output is another Rel program that computes its derivatives with respect to some given input relations. We show that performing AutoDiff inside a high-level database language like Rel allows us to evaluate derivatives while enjoying many features offered by the underlying database engine like factorization, query optimization and compilation, as well as support for higher order derivatives. We present several examples covering recursive Rel programs, matrix calculus, neural network training, and gradient descent among others. We conclude with some challenges, design issues, as well as open problems.
       </p>
      </div>
     <!-- END Popup window -->
@@ -1088,10 +1091,10 @@
       </p>
       <p>
         We present two practically effective solutions for computing Shapley values in query answering.
-We start by establishing a tight theoretical connection to the extensively studied problem of query evaluation over probabilistic databases, which allows us to obtain a polynomial-time algorithm for the class of queries for which probability computation is tractable.
-We then propose a first practical solution for computing Shapley values that adopts tools from probabilistic query evaluation. In particular, we capture the dependence of query answers on input database facts using Boolean expressions (data provenance), and then transform it, via Knowledge Compilation, into a particular circuit form for which we devise an algorithm for computing the Shapley values. 
-Our second practical solution is a faster yet inexact approach that transforms the provenance to a Conjunctive Normal Form and uses a heuristic to compute the Shapley values.
-Our experiments on TPC-H and IMDB demonstrate the practical effectiveness of our solutions.
+        We start by establishing a tight theoretical connection to the extensively studied problem of query evaluation over probabilistic databases, which allows us to obtain a polynomial-time algorithm for the class of queries for which probability computation is tractable.
+        We then propose a first practical solution for computing Shapley values that adopts tools from probabilistic query evaluation. In particular, we capture the dependence of query answers on input database facts using Boolean expressions (data provenance), and then transform it, via Knowledge Compilation, into a particular circuit form for which we devise an algorithm for computing the Shapley values. 
+        Our second practical solution is a faster yet inexact approach that transforms the provenance to a Conjunctive Normal Form and uses a heuristic to compute the Shapley values.
+        Our experiments on TPC-H and IMDB demonstrate the practical effectiveness of our solutions.
       </p>
      </div>
     <!-- END Popup window -->
