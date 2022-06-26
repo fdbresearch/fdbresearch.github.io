@@ -306,7 +306,7 @@
               </li>
               <li>Paris Koutris (University of Wisconsin-Madison, USA): 
                 <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-paris" href="#modal-paris">
-                  On Query Enumeration
+                  Tradeoffs between Join Materialization and Enumeration
                  </a>
               </li>
               </ul>
@@ -776,11 +776,11 @@
       </button>
       <h4 class="g-mb-20">
        <a>
-        On Query Enumeration
+        Tradeoffs between Join Materialization and Enumeration
        </a>
       </h4>
       <p>
-        TBD
+        Join queries often generate large output results when executed over a huge dataset. In such cases, it is prohibitively expensive to store the whole materialized output if we plan to reuse it further down a data processing pipeline. In this talk, I will present several techniques that allow us to avoid this materialization step and discuss their applications. First, I will present a space-efficient compressed representation of the output of join queries, where we can control the tradeoff between minimizing the space necessary to store the result, versus minimizing the answering time during enumeration. Then, I will discuss how we can avoid materialization when the output of the join query result is accessed in an order given by a ranking function. 
       </p>
      </div>
     <!-- END Popup window -->
