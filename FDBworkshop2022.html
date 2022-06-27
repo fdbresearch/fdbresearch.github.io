@@ -544,7 +544,7 @@
         <ul>    
       <li>Milos Nikolic (U Edinburgh, UK): 
         <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-milos" href="#modal-milos">
-          In-database Cleaning
+          In-database Handling of Missing Data
          </a>
       </li>
       <li>Nils Vortmeier (U Bochum, Germany):
@@ -1044,11 +1044,17 @@
       </button>
       <h4 class="g-mb-20">
        <a>
-        In-database Cleaning
+        In-database Handling of Missing Data
        </a>
       </h4>
       <p>
-        TBD
+        Missing data is pervasive in real-world databases and is often a major cause of misleading analysis and poor predictions. Common methods of dealing with missing data such as tuple deletion and mean imputation may introduce bias and distort the data distribution. More reliable imputation methods utilize regression models for predicting missing values but rely on slow external libraries that operate over denormalized data.
+        </p>
+        <p>
+        This talk presents our ongoing work on enabling data imputation within a database system. We focus on Multiple Imputation by Chained Equations (MICE), a state-of-the-art method that requires expensive training of multiple regression models to impute missing values of multiple attributes. We show how to reformulate the MICE method such that computationally most intensive parts of the training process are shared across the models and executed entirely within the database system. Our implementation within PostgreSQL supports scalable data imputation of both numerical and categorical values, supports normalized datasets, and exhibits orders of magnitude better performance than competitors such as scikit-learn and MADlib.
+      </p>
+      <p>
+        This is joint work with Massimo Perini.
       </p>
      </div>
     <!-- END Popup window -->
