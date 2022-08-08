@@ -782,6 +782,7 @@
       <p>
         We discuss the task of direct access to the k-th answer of a Conjunctive Query according to a user-specified order over the answers. In other words, our goal is to simulate the sorted array of query answers without materializing all answers. Assuming we can also efficiently count the query answers, this allows efficiently answering quantile queries (e.g., finding the median). We focus on identifying the preprocessing time needed to allow logarithmic access time.
       </p>
+      <p><a href="./workshop2022-slides/Nofar.Carmeli.FDBworkshop2022.slides.pdf">Presentation (pdf)</a></p>
      </div>
     <!-- END Popup window -->
 
@@ -799,6 +800,7 @@
       <p>
         Join queries often generate large output results when executed over a huge dataset. In such cases, it is prohibitively expensive to store the whole materialized output if we plan to reuse it further down a data processing pipeline. In this talk, I will present several techniques that allow us to avoid this materialization step and discuss their applications. First, I will present a space-efficient compressed representation of the output of join queries, where we can control the tradeoff between minimizing the space necessary to store the result, versus minimizing the answering time during enumeration. Then, I will discuss how we can avoid materialization when the output of the join query result is accessed in an order given by a ranking function. 
       </p>
+      <p><a href="./workshop2022-slides/Paris.Koutris.FDBworkshop2022.slides.pptx"></a>Presentation (pptx)</p>
      </div>
     <!-- END Popup window -->
 
@@ -816,6 +818,7 @@
       <p>
         CQs with projections are an interesting class of queries that are widely used in practice. In this talk, I will review our results on ranked (ICDT 2021, VLDB 2022) and unranked enumeration for CQs (ICDT 2021) with projections. We will also look at some new results and techniques on how we can build data structures that allow for answering Boolean queries over CQs (such as k-path reachability). These results build upon the core ideas of factorized databases literature with several twists that lead to intriguing tradeoffs between space requirement of the data structure and the answering time.
       </p>
+      <p><a href="https://pages.cs.wisc.edu/~shaleen/fdb2022/FDB2022_final.pptx">Presentation (pptx)</a></p>
      </div>
     <!-- END Popup window -->
 
@@ -834,7 +837,7 @@
       <p>
         This talk will present our latest results about efficient enumeration algorithms. These algorithms are defined on circuit classes inspired by knowledge compilation: they can be seen as factorized representations with some differences such as having non-constant height. I will review our results on enumeration for d-DNNF circuits (ICALP'17), and their applications. One first application is to enumerate the matches of document spanners on words (ICALP'19). The second application is to enumerate the answers to monadic second-order queries on trees with support for efficient update operations (PODS'19). The third application is to enumerate extraction results for enumeration grammars (PODS'22).
       </p>
-      <p><a href="https://a3nm.net/work/talks/fdb2022/amarilli2022efficient_slides.pdf">Presentation</a></p>
+      <p><a href="https://a3nm.net/work/talks/fdb2022/amarilli2022efficient_slides.pdf">Presentation (pdf)</a></p>
      </div>
     <!-- END Popup window -->
 
