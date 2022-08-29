@@ -65,6 +65,9 @@
   <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"
     type="text/javascript">
   </script>
+  <!-- image-slider -->
+  <link href="./bower_components/ideal-image-slider/ideal-image-slider.css" rel="stylesheet"/>
+  <link href="./bower_components/ideal-image-slider/themes/default/default.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -241,6 +244,54 @@
     <!-- End Breadcrumbs -->
     <div class="g-pt-50">
     </div>
+
+    <div class="container g-pb-20">
+    <div class="row justify-content-between">
+           <!-- Group block -->
+     <div class="col-lg-12 col-sm-12">
+      <!-- Team Block -->
+      <div class="u-info-v1-2">
+       <!-- Figure -->
+       <figure class="u-block-hover">
+        <!-- Figure Image -->
+        <div id="slider">
+
+          <img alt="Factorized Databases Workshop" src="./workshop2022/photos/workshop-start.jpeg" title="2 Aug 2022"/>
+          <img alt="Factorized Databases Workshop" src="./workshop2022/photos/workshop-room.jpeg" title="2 Aug 2022"/>
+         <img alt="Zurich, Switzerland" src="./workshop2022/photos/Rheinfall-Danx2-Molham.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-arrival.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-dinner.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-group-photo.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-hike.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-lakeview.jpeg" title="2 Aug 2022"/>
+         <img alt="Uetliberg, Switzerland" src="./workshop2022/photos/Uetliberg-sunset.jpeg" title="2 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-1.jpeg" title="3 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-2.jpeg" title="3 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-3.jpeg" title="3 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-4.jpeg" title="3 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-5.jpeg" title="3 Aug 2022"/>
+         <img alt="Zürisee" src="./workshop2022/photos/boat-dinner-6.jpeg" title="3 Aug 2022"/>
+
+        </div>
+       </figure>
+       <!-- End Figure -->
+       <!-- Figure Info -->
+       <div class="g-bg-white g-py-25" id="group-members">
+        <div class="g-mb-15">
+         <h4 class="h5 g-color-black g-mb-5">
+          FDB Group
+         </h4>
+         <em class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary">
+         </em>
+        </div>
+       </div>
+       <!-- End Figure Info-->
+      </div>
+      <!-- End Team Block -->
+     </div>
+     <!-- End Group block -->
+    </div>
+  </div>
     
     <!-- Blog Minimal Blocks -->
     <div class="container g-pb-20">
@@ -1214,6 +1265,22 @@
   </script>
   <!-- JS Customization -->
   <script src="assets/js/custom.js">
+  </script>
+  <!-- slider -->
+  <script src="./bower_components/ideal-image-slider/ideal-image-slider.min.js">
+  </script>
+  <script src="./bower_components/ideal-image-slider/extensions/captions/iis-captions.js">
+  </script>
+  <script src="./bower_components/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js">
+  </script>
+  <script>
+   var slider = new IdealImageSlider.Slider({
+      selector: '#slider',
+      interval: 4000
+    });
+    slider.addBulletNav();
+    slider.addCaptions();
+    slider.start();
   </script>
   <!-- JS Plugins Init. -->
   <script>
