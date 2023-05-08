@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111495058-1');
+  </script>
+  <!-- Title -->
+  <title>
+    Factorized Databases Workshop, Zurich, August 2 - 4, 2022
+  </title>
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <!-- Favicon -->
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="manifest.json" rel="manifest" />
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Zurich,University of Zurich,Oxford,University of Oxford,Computer Science"
+    name="keywords" />
+  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning"
+    name="description" />
+  <!-- Google Fonts -->
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
+  <!-- CSS Global Compulsory -->
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <!-- CSS Global Icons -->
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet" />
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css" rel="stylesheet" />
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet" />
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet" />
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet" />
+  <!-- CSS Implementing Plugins -->
+  <link href="assets/vendor/custombox/custombox.min.css" rel="stylesheet" />
+  <!-- CSS Unify -->
+  <link href="assets/css/unify-core.css" rel="stylesheet" />
+  <link href="assets/css/unify-components.css" rel="stylesheet" />
+  <link href="assets/css/unify-globals.css" rel="stylesheet" />
+  <!-- CSS Customization -->
+  <link href="assets/css/custom.css" rel="stylesheet" />
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"
+    type="text/javascript">
+    </script>
+  <!-- image-slider -->
+  <link href="./bower_components/ideal-image-slider/ideal-image-slider.css" rel="stylesheet" />
+  <link href="./bower_components/ideal-image-slider/themes/default/default.css" rel="stylesheet" />
+</head>
+
+<body>
+  <main>
+    <!-- Header -->
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
+            </a>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="FDBworkshop2022.html">
+                        Workshop
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing based on Degree Information
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- <div style="padding: 0" class="container-fluid">
+      <img width="100%" src="./assets/zurich/slice1.jpg" alt="">
+    </div> -->
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-50">
+      <div class="container">
+        <div class="d-sm-flex">
+          <div class="align-self-center">
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+              DaST Research Retreat
+            </h2>
+            <h4><strong>Locarno, 12 - 15 April 2023</strong></h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+    <div class="g-pt-50">
+    </div>
+
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
+        <!-- Group block -->
+        <div class="col-lg-12 col-sm-12">
+          <!-- Team Block -->
+          <div class="u-info-v1-2">
+            <!-- Figure -->
+            <figure class="u-block-hover">
+              <!-- Figure Image -->
+              <div id="slider">
+
+                <a target="_blank" href="./retreat2023/1-dinner.jpg">
+                  <img alt="Dinner"
+                    src="./retreat2023/1-dinner.jpg" title="12 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/2-hiking.jpg">
+                  <img alt="Hiking in Valle Verzasca"
+                    src="./retreat2023/2-hiking.jpg" title="14 Apr 2023" />
+                </a>
+                
+                <a target="_blank" href="./retreat2023/3-hiking.jpg">
+                  <img alt="Hiking in Valle Verzasca"
+                    src="./retreat2023/3-hiking.jpg" title="14 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/4-hiking.jpg">
+                  <img alt="Hiking in Valle Verzasca"
+                    src="./retreat2023/4-hiking.jpg" title="14 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/5-hiking.jpg">
+                  <img alt="Hiking in Valle Verzasca"
+                    src="./retreat2023/5-hiking.jpg" title="14 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/6-talk.jpg">
+                  <img alt="Talk given by Moe Kayali"
+                    src="./retreat2023/6-talk.jpg" title="15 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/7-talk.jpg">
+                  <img alt="Talk given by Moe Kayali"
+                    src="./retreat2023/7-talk.jpg" title="15 Apr 2023" />
+                </a>
+                <a target="_blank" href="./retreat2023/8-talk.jpg">
+                  <img alt="Talk given by Moe Kayali"
+                    src="./retreat2023/8-talk.jpg" title="15 Apr 2023" />
+                </a>
+
+              </div>
+            </figure>
+            <!-- End Figure -->
+            <!-- Figure Info -->
+            <div class="g-bg-white g-py-25" id="group-members">
+              <div class="g-mb-15">
+                <h4 class="h5 g-color-black g-mb-5">
+                  Research Retreat 2023
+                </h4>
+                <em class="d-block u-info-v1-2__item g-font-style-normal g-font-size-11 text-uppercase g-color-primary">
+                </em>
+              </div>
+            </div>
+            <!-- End Figure Info-->
+          </div>
+          <!-- End Team Block -->
+        </div>
+        <!-- End Group block -->
+      </div>
+    </div>
+
+    <!-- Blog Minimal Blocks -->
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
+
+        <!-- Main Column -->
+        <div class="col-lg-10 g-mb-50 g-mb-0--lg">
+
+
+          <!--- Agenda -->
+
+
+          <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+              Agenda
+            </h2>
+          </div>
+
+          <a name="Wednesday"></a>
+          <div class="g-mb-20" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Wednesday
+            </h2>
+          </div>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Before 8pm: Arrival at the hotel Belvedere in Locarno
+              </h5>
+              <h5 class="h6">
+                For those travelling from Zurich: We could take the train from HB at 5:05pm to arrive at 7:45pm at the
+                hotel.
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                8pm: Dinner at the hotel
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+          <a name="Thursday"></a>
+          <div class="g-mb-20" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Thursday
+            </h2>
+          </div>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                8am - 9am: Breakfast at the hotel
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Morning talk sessions:
+              </h5>
+            </span>
+            <ul>
+              <li>
+                <h5 class="h6">
+                  9am - 10am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-sachin" href="#modal-sachin">
+                    Talk #1 by Sachin Basil John
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  10am - 11am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-zilu" href="#modal-zilu">
+                    Talk #2 by Tian Zilu
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  11am - 12pm: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-christoph" href="#modal-christoph">
+                  Talk #3 by Christoph Mayer
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  12pm - 1:10pm: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-moe" href="#modal-moe">
+                    Talk #4 by Moe Kayali
+                  </a>
+                </h5>
+              </li>
+            </ul>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                1:30pm Lunch at the hotel
+              </h5>
+            </span>
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                3pm - 6pm: Free time, the plan is to walk together around Locarno and in the direction of Ascona.
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+          <a name="Friday"></a>
+          <div class="g-mb-20" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Friday
+            </h2>
+          </div>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Before 8:30am: Breakfast at the hotel
+              </h5>
+              <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+              <h5 class="h6">
+                8:30am: Meet in the lobby, take the bus to Valle Verzasca from the Locarno train station at approx 8:50am
+              </h5>
+            </span>
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Hike from Sonogno to Lavertezzo
+              </h5>
+              <h5 class="h6">
+                Note: Please pack your own lunch, there is no lunch planned
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                19:00pm Dinner at restaurant Blu in Locarno
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+
+          <a name="Saturday"></a>
+          <div class="g-mb-20" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Saturday
+            </h2>
+          </div>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                8am - 9am: Breakfast at the hotel
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Morning talk sessions:
+              </h5>
+            </span>
+            <ul>
+              <li>
+                <h5 class="h6">
+                  9am - 9:45am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-nils" href="#modal-nils">
+                    Talk #5 by Nils Vortmeier
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  9:45am - 10:30am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-peter" href="#modal-peter">
+                    Talk #6 by Peter Lindner
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  10:30am - 11:15am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-moe2" href="#modal-moe2">
+                    Talk #7 by Moe Kayali
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  11:15am - 12pm: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-anton" href="#modal-anton">
+                    Talk #8 by Anton Lykov
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  12am - 12:45am: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-niko" href="#modal-niko">
+                  Talk #9 by Niko Göbel
+                  </a>
+                </h5>
+              </li>
+              <li>
+                <h5 class="h6">
+                  12:45am - 1:30pm: 
+                  <a class="g-font-weight-700" data-modal-effect="fadein" data-modal-target="#modal-ahmet" href="#modal-ahmet">
+                  Talk #10 by Ahmet Kara
+                  </a>
+                </h5>
+              </li>
+            </ul>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                1:30pm Lunch at the hotel
+              </h5>
+            </span>
+          </article>
+          <article>
+            <span class="g-font-size-12">
+              <h5 class="h6">
+                Afternoon: Free time, the plan is to do a hike together in Locarno or Bellinzona, 
+                weather permitting.           
+              </h5>
+            </span>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-10" />
+          </article>
+
+          <!-- stop here -->
+
+
+
+          <!--- END Agenda -->
+
+          <br><br><br>
+
+          <!-- Participants Content -->
+          <div class="g-mb-60" id="participants">
+            <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+              Participants
+            </h2>
+          </div>
+         
+          <ul>
+            <li>Sachin Basil John</li>
+            <li>Niko Göbel</li>
+            <li>Ahmet Kara</li>
+            <li>Moe Kayali</li>
+            <li>Peter Lindner</li>
+            <li>Anton Lykov</li>
+            <li>NIKOLIC Milos</li>
+            <li>Christoph Mayer</li>
+            <li>Dan Olteanu</li>
+            <li>Amir Shaikhha</li>
+            <li>Dan Suciu</li>
+            <li>Nils Vortmeier</li>
+            <li>Tian Zilu</li>
+          </ul>
+          <!-- END Participants Content -->
+
+
+
+        </div>
+        <!-- END Main Column -->
+
+
+        <!-- Right panel -->
+        <div class="col-lg-2 g-mb-50">
+          <!-- add additional useful links here -->
+        </div>
+        <!-- END Right panel -->
+
+      </div>
+    </div>
+    <!-- End Blog Minimal Blocks -->
+    <!-- Footer -->
+    <div class="g-pt-50">
+      <footer class="g-bg-secondary">
+        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+        </div>
+        <div class="container">
+          <!-- Footer - Bottom Section -->
+          <div class="row align-items-center">
+            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Copyright -->
+              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+                © 2022 All Rights Reserved.
+              </p>
+              <!-- End Copyright -->
+            </div>
+            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
+              <!-- Links -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item g-pl-0 g-pr-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+                    Contact Us
+                  </a>
+                </li>
+                <li class="list-inline-item g-px-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+                    Last modified: August 2022
+                  </a>
+                </li>
+              </ul>
+              <!-- End Links -->
+            </div>
+          </div>
+          <!-- End Footer - Bottom Section -->
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
+
+
+    <!-- Popup window for Sachin Basil John's talk -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-sachin" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+        <i class="hs-icon hs-icon-close">
+        </i>
+      </button>
+      <h4 class="g-mb-20">
+        <a>
+          Interactive Speed Querying on High-Dimensional Data with Partially Materialized Data Cubes
+        </a>
+      </h4>
+      <p>
+        In this talk, Sachin Basil John will present Sudokube, a novel data cube system for interactive querying of
+        high-dimensional data. Sudokube chooses which projections to precompute and materialize based on a given storage
+        budget, and then uses them to approximate query results at runtime, reducing both compute and storage requirements
+        compared to fully materialized data cubes. Sudokube supports a large number of dimensions, allowing users to load
+        denormalized data directly without the need to carefully select a minimal number of dimensions. Support for
+        denormalized data also results in faster queries as they avoid expensive joins. This makes Sudokube a valuable tool
+        for OLAP and other scenarios such as exploring high-dimensional data for feature engineering.
+      </p>
+    </div>
+    <!-- END Popup window for Sachin Basil John's talk -->
+    <!-- Popup window for Tian Zilu's talk -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-zilu" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+        <i class="hs-icon hs-icon-close">
+        </i>
+      </button>
+      <h4 class="g-mb-20">
+        <a>
+          Generalizing Bulk-Synchronous Parallel Processing for Data Science: From Data to Threads and Agent-Based
+          Simulations
+        </a>
+      </h4>
+      <p>
+        In this talk, Tian Zilu will present a generalization of the bulk-synchronous parallel (BSP) processing model to
+        better support agent-based simulations. Such simulations frequently exhibit hierarchical structure in their
+        communication patterns which can be exploited to improve performance. They allow for the creation of temporary
+        artificial network partitions during which agents synchronize only locally within their group in a way that does not
+        compromise the correctness of a simulation. They have built a distributed engine, CloudCity, which uses this idea to
+        improve the locality of computation, communication, and synchronization in such simulations. They experimentally
+        evaluate the performance of their system on a benchmark of simulation workloads and compare it against other popular
+        BSP-like systems, obtaining insights into the impact of various system design choices and optimization on simulation
+        engine performance.
+      </p>
+    </div>
+    <!-- END Popup window for Tian Zilu's talk -->
+    <!-- Popup window for Christoph Mayer's talk -->
+    <div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-christoph" style="display: none;">
+      <button class="close" onclick="Custombox.modal.close();" type="button">
+        <i class="hs-icon hs-icon-close">
+        </i>
+      </button>
+      <h4 class="g-mb-20">
+        <a>
+          Reinforcement Learning for Factorized Databases
+        </a>
+      </h4>
+      <p>
+        In this talk, Christoph Mayer will introduce an approach based on reinforcement learning for finding the optimal
+        variable order for join queries in factorized databases. This problem is NP-hard and remains a major challenge in
+        database research. Their approach tries out several variable orders while executing the query and eventually
+        converges to a near-optimal variable order.
+      </p>
+    </div>
+    <!-- END Popup window for Christoph Mayer's talk -->
+    <!-- Popup window for Moe Kayali's talk -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-moe" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Quasi-stable Coloring for Graph Compression
+    </a>
+  </h4>
+  <p>
+    In this talk, Moe Kayali will propose quasi-stable coloring, an approximate version of stable coloring, a well-studied technique in graph theory for classifying vertices, which can be used to build compact, lossless representations of graphs. However, its usefulness is limited due to its reliance on strict symmetries. Real data compresses very poorly using color refinement. They propose the first, to their knowledge, approximate color refinement scheme, which they call quasi-stable coloring. By using approximation, they alleviate the need for strict symmetry, and allow for a tradeoff between the degree of compression and the accuracy of the representation. They study three applications: Linear Programming, Max-Flow, and Betweenness Centrality, and provide theoretical evidence in each case that a quasi-stable coloring can lead to good approximations on the reduced graph. Next, they consider how to compute a maximal quasi-stable coloring: they prove that, in general, this problem is NP-hard, and propose a simple, yet effective algorithm based on heuristics. Finally, they evaluate experimentally the quasi-stable coloring technique on several real graphs and applications, comparing with prior approximation techniques.
+  </p>
+</div>
+<!-- END Popup window for Moe Kayali's talk -->
+<!-- Popup window for Nils Vortmeier's talk -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-nils" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Teaching reductions: Formal foundations
+    </a>
+  </h4>
+  <p>
+    In this talk, Nils Vortmeier explores formal foundations for offering support in teaching students how to design computational reductions. Their approach is to (a) identify typical building blocks of reductions, (b) develop a simple descriptional language for specifying reductions that allows for combining building blocks in a simple, modular manner, (c) study the expressive power of such a language to ensure that it is reasonably broad, and to (d) design suitable algorithms for employing this language in teaching support systems, including the design of feedback mechanisms.
+  </p>
+</div>
+<!-- END Popup window for Nils Vortmeier's talk -->
+<!-- Popup window for Peter Lindner's talk -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-peter" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Probabilistic Query Evaluation with Bag Semantics
+    </a>
+  </h4>
+  <p>
+    In this talk, Peter Lindner studies query evaluation on probabilistic databases with duplicates. In this framework, the answer to a Boolean query is a non-negative, integer-valued random variable. Hence, the problem comes in two flavors: computing expected answer counts, and computing answer count probabilities. Subject to mild assumptions, he finds that computing expected answer counts is possible in polynomial time. For computing answer count probabilities, he can show that the little dichotomy theorem of Dalvi and Suciu for self-join free conjunctive queries still holds in the bag semantics framework.
+  </p>
+</div>
+<!-- END Popup window for Peter Lindner's talk -->
+<!-- Popup window for Moe Kayali's talk -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-moe2" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Unifying Data Discovery and Exploration with Foundation Models
+    </a>
+  </h4>
+  <p>
+    In this talk, Moe Kayali explores the application of foundation models to data discovery and exploration tasks. Foundation models are large language models (LLMs) that show promising performance on a range of diverse tasks unrelated to their training. He shows that these models are highly applicable to the data discovery and data exploration domain. When carefully used, they have superior capability on three representative tasks: table-class detection, column-type annotation and join-column prediction. On all three tasks, he shows that a foundation-model-based approach outperforms the task-specific models and the state-of-the-art. Further, his approach often surpasses human-expert task performance. This suggests a future direction in which disparate data management tasks can be unified under foundation models.
+  </p>
+</div>
+<!-- END Popup window for Moe Kayali's talk -->
+<!-- Popup window for Niko Göbel's talk -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-niko" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Challenges of putting IVM into production
+    </a>
+  </h4>
+  <p>
+    In this talk, Niko Göbel provides an overview of the operational challenges of incremental view maintenance (IVM) that RelationalAI has encountered. Even with incrementality built-in from the ground up, many unexpected challenges remain before things like IVM actually deliver user value. To customers, the operational benefits of traditional batch processing put the bar for IVM adoption much higher than simply "it runs faster". Niko raises some open questions that he thinks are underrepresented in research on this topic.
+  </p>
+</div>
+<!-- END Popup window for Niko Göbel's talk -->
+
+<!-- Popup window -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-ahmet" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      Ranking Database Facts by their Shapley Values
+    </a>
+  </h4>
+  <p>
+    In this talk, Ahmet Kara will present a novel approach to measure the contribution of database facts to query
+    results using the concept of Shapley value. Shapley value is a widely used concept in economics and machine learning
+    to measure the contribution of each player in a cooperative game to the overall gain. The talk will address the
+    following problems:
+  <ol>
+    <li>What is the computational complexity of ranking database facts based on their Shapley values?</li>
+    <li>What is the computational difference between the Shapley value and the Banzhaf power index?</li>
+    <li>Can we design an efficient ranking algorithm that can scale to large real-world datasets?</li>
+  </ol>
+  The talk will also present some preliminary results and discuss potential future directions for research.
+  </p>
+</div>
+<!-- END Popup window -->
+
+<!-- Popup window -->
+<div class="text-left g-max-width-800 g-bg-white g-overflow-y-auto g-pa-20" id="modal-anton" style="display: none;">
+  <button class="close" onclick="Custombox.modal.close();" type="button">
+    <i class="hs-icon hs-icon-close">
+    </i>
+  </button>
+  <h4 class="g-mb-20">
+    <a>
+      ExpressQuery: Query Answering with Knowledge Graphs
+    </a>
+  </h4>
+  <p>
+    As availability of structured data grows, it is becoming increasingly important to query it for applications such as analytics and knowledge discovery. At the same time, the schemas for the underlying databases and Knowledge Graphs (KG) are often complicated. This is why in recent years, there's a significant interest towards Query Answering (QA) on large KGs via natural language interfaces, such as NLP to SQL converters.
+    </p>
+    <p>
+      In this work, we combine the power of LLMs for commonsense basic reasoning, and the interpretability and structure of database systems, and propose ExpressQuery, a system that allows formulating structured queries with very loose natural language constraints, allowing the query writers to express their intent without learning potentially very complicated database schema. 
+    </p>
+    <p>
+      Along with the system, we propose a corresponding query language, ExpressQL. 
+We validate our system on a snapshot of Wikidata Knowledge Graph (KG), one of the largest publicly available general-purpose knowledge graphs.
+
+    </p>
+</div>
+<!-- END Popup window -->
+
+  </main>
+  <!-- JS Global Compulsory -->
+  <script src="assets/vendor/jquery/jquery.min.js">
+  </script>
+  <script src="assets/vendor/jquery-migrate/jquery-migrate.min.js">
+  </script>
+  <script src="assets/vendor/jquery.easing/js/jquery.easing.js">
+  </script>
+  <script src="assets/vendor/popper.min.js">
+  </script>
+  <script src="assets/vendor/bootstrap/bootstrap.min.js">
+  </script>
+  <!-- JS Implementing Plugins -->
+  <script src="assets/vendor/appear.js">
+  </script>
+  <script src="assets/vendor/hs-megamenu/src/hs.megamenu.js">
+  </script>
+  <script src="assets/vendor/masonry/dist/masonry.pkgd.min.js">
+  </script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js">
+  </script>
+  <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js">
+  </script>
+  <script src="assets/vendor/slick-carousel/slick/slick.js">
+  </script>
+  <script src="assets/vendor/custombox/custombox.min.js">
+  </script>
+  <!-- JS Unify -->
+  <script src="assets/js/hs.core.js">
+  </script>
+  <script src="assets/js/components/hs.header.js">
+  </script>
+  <script src="assets/js/helpers/hs.hamburgers.js">
+  </script>
+  <script src="assets/js/components/hs.dropdown.js">
+  </script>
+  <script src="assets/js/components/hs.tabs.js">
+  </script>
+  <script src="assets/js/components/hs.cubeportfolio.js">
+  </script>
+  <script src="assets/js/components/hs.onscroll-animation.js">
+  </script>
+  <script src="assets/js/components/hs.go-to.js">
+  </script>
+  <script src="assets/js/components/hs.carousel.js">
+  </script>
+  <script src="assets/js/components/hs.modal-window.js">
+  </script>
+  <!-- JS Customization -->
+  <script src="assets/js/custom.js">
+  </script>
+  <!-- slider -->
+  <script src="./bower_components/ideal-image-slider/ideal-image-slider.min.js">
+  </script>
+  <script src="./bower_components/ideal-image-slider/extensions/captions/iis-captions.js">
+  </script>
+  <script src="./bower_components/ideal-image-slider/extensions/bullet-nav/iis-bullet-nav.js">
+  </script>
+  <script>
+    var slider = new IdealImageSlider.Slider({
+      selector: '#slider',
+      interval: 6000
+    });
+    slider.addBulletNav();
+    slider.addCaptions();
+    slider.start();
+  </script>
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // initialization of popups
+      $.HSCore.components.HSModalWindow.init('[data-modal-target]');
+
+      // initialization of tabs
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+      // initialization of scroll animation
+      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
+
+      // initialization of HSDropdown component
+      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+        afterOpen: function () {
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+    });
+
+
+
+    $(window).on('load', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#js-header'));
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+      });
+
+      // initialization of masonry
+      $('.masonry-grid').imagesLoaded().then(function () {
+        $('.masonry-grid').masonry({
+          columnWidth: '.masonry-grid-sizer',
+          itemSelector: '.masonry-grid-item',
+          percentPosition: true
+        });
+      });
+
+      // initialization of cubeportfolio
+      $.HSCore.components.HSCubeportfolio.init('.cbp');
+    });
+
+    $(window).on('resize', function () {
+      setTimeout(function () {
+        $.HSCore.components.HSTabs.init('[role="tablist"]');
+      }, 200);
+    });
+  </script>
+</body>
+
+</html>
