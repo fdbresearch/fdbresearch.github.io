@@ -1,1086 +1,1133 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
   </script>
   <script>
-   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-111495058-1');
+    gtag('config', 'UA-111495058-1');
   </script>
   <!-- Title -->
   <title>
-   FDB Research
+    FDB Research
   </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Zurich,University of Zurich,Oxford,University of Oxford,Computer Science" name="keywords"/>
-  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning" name="description"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <meta
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Zurich,University of Zurich,Oxford,University of Oxford,Computer Science"
+    name="keywords" />
+  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning"
+    name="description" />
   <!-- Favicon -->
-  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-  <link href="manifest.json" rel="manifest"/>
-  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
-  <meta content="#ffffff" name="theme-color"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="manifest.json" rel="manifest" />
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon" />
+  <meta content="#ffffff" name="theme-color" />
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <!-- CSS Global Icons -->
-  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/animate.css" rel="stylesheet"/>
-  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
-  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet" />
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css" rel="stylesheet" />
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet" />
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet" />
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet" />
   <!-- CSS Unify -->
-  <link href="assets/css/unify-core.css" rel="stylesheet"/>
-  <link href="assets/css/unify-components.css" rel="stylesheet"/>
-  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
+  <link href="assets/css/unify-core.css" rel="stylesheet" />
+  <link href="assets/css/unify-components.css" rel="stylesheet" />
+  <link href="assets/css/unify-globals.css" rel="stylesheet" />
   <!-- CSS Customization -->
-  <link href="assets/css/custom.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet" />
   <!-- Script to render LaTex equations  -->
   <script type="text/x-mathjax-config">
    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
-  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML" type="text/javascript">
-  </script>
- </head>
- <body>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"
+    type="text/javascript">
+    </script>
+</head>
+
+<body>
   <main>
-   <!-- Header -->
-   <header class="u-header u-header--static u-shadow-v19" id="js-header">
-    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-     <nav class="js-mega-menu navbar navbar-expand-lg">
+    <!-- Header -->
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
+            </a>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="retreat2023.html">
+                        Retreat 2023
+                      </a>
+                    </li>                    
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="FDBworkshop2022.html">
+                        FDB Workshop 2022
+                      </a>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing based on Degree Information
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-50">
       <div class="container">
-       <!-- Responsive Toggle Button -->
-       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
-        <span class="hamburger hamburger--slider">
-         <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </span>
-       </button>
-       <!-- End Responsive Toggle Button -->
-       <!-- Logo -->
-       <a class="navbar-brand" href="index.html">
-        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
-       </a>
-       <!-- End Logo -->
-       <!-- Navigation -->
-       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           News
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-              <a class="nav-link" href="FDBworkshop2022.html">
-               FDB Workshop 2022
-              </a>
-             </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="visitors.html">
-             Visitors
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="events.html">
-             Events
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="awards.html">
-             Awards
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="people.html">
-           People
-          </a>
-         </li>
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Projects
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="principles.html">
-             Principles of Factorised Databases
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="analytics.html">
-             In-Database Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivm.html">
-             Incremental Maintenance for Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivme.html">
-             Adaptive Query Processing based on Degree Information
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="publications.html">
-           Publications
-          </a>
-         </li>
-         <!-- Code -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Code
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="fivm-code.html">
-             FIVM
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="fbench-code.html">
-             FBENCH
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Code -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="talks.html">
-           Talks
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="videos.html">
-           Videos
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
-           ACK
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
-           Contact
-          </a>
-         </li>
-        </ul>
-       </div>
-       <!-- End Navigation -->
-      </div>
-     </nav>
-    </div>
-   </header>
-   <!-- End Header -->
-   <!-- Breadcrumbs -->
-   <section class="g-bg-gray-light-v5 g-py-50">
-    <div class="container">
-     <div class="d-sm-flex text-center">
-      <div class="align-self-center">
-       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        Factorised In-Database Analytics
-       </h2>
-      </div>
-      <div class="align-self-center ml-auto">
-       <div class="px-4">
-        <!-- <ul class="u-list-inline"> -->
-        <!--   <\!-- <li class="list-inline-item g-mr-5"> -\-> -->
-        <!--   <\!--   <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Home</a> -\-> -->
-        <!--   <\!--   <i class="g-color-gray-light-v2 g-ml-5">/</i> -\-> -->
-        <!--   <\!-- </li> -\-> -->
-        <!--   <li class="list-inline-item g-mr-5"> -->
-        <!--     <a class="u-link-v5 g-color-main g-color-primary--hover" href="#publications">Publications</a> -->
-        <!--   </li> -->
-        <!-- </ul>  -->
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- End Breadcrumbs -->
-   <div class="g-pt-50">
-   </div>
-   <!-- Blog Minimal Blocks -->
-   <div class="container g-pb-20">
-    <div class="row justify-content-between">
-     <!-- <\!-- left panel -\-> -->
-     <!-- <div class="col-lg-1 g-mb-80"></div> -->
-     <!-- <\!-- end left panel -\-> -->
-     <!-- Articles Content -->
-     <div class="col-lg-9 g-mb-50 g-mb-0--lg">
-      <article class="g-mb-60">
-       <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-        <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
-         Motivation
-        </h3>
-        <p class="g-color-black-opacity-0_8">
-         Our aim is to build a database engine that provides scalable techniques to compute machine learning models over normalised
-                databases. We show that the data-intensive computations of many machine learning models can be factorised
-                and computed directly inside a database engine. Doing so can lead to orders-of-magnitude performance improvements
-                over current state-of-the-art analytics systems. In addition, a host of machine learning models can be learned
-                with the same low complexity guarantees as factorised query processing (see
-         <a href="principles.html">
-          Principles of Factorised Databases
-         </a>
-         for details).
-        </p>
-        <div class="text-center g-width-90x--md mx-auto g-my-40">
-         <h3 class="g-color-primary">
-          We unify database and analytics engines into one highly optimised in-database analytics engine.
-         </h3>
+        <div class="d-sm-flex text-center">
+          <div class="align-self-center">
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+              Factorised In-Database Analytics
+            </h2>
+          </div>
+          <div class="align-self-center ml-auto">
+            <div class="px-4">
+              <!-- <ul class="u-list-inline"> -->
+              <!--   <\!-- <li class="list-inline-item g-mr-5"> -\-> -->
+              <!--   <\!--   <a class="u-link-v5 g-color-main g-color-primary--hover" href="#">Home</a> -\-> -->
+              <!--   <\!--   <i class="g-color-gray-light-v2 g-ml-5">/</i> -\-> -->
+              <!--   <\!-- </li> -\-> -->
+              <!--   <li class="list-inline-item g-mr-5"> -->
+              <!--     <a class="u-link-v5 g-color-main g-color-primary--hover" href="#publications">Publications</a> -->
+              <!--   </li> -->
+              <!-- </ul>  -->
+            </div>
+          </div>
         </div>
-        <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
-        <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
-         Why in-database analytics?
-        </h3>
-        <p>
-         For many practical scenarios, machine learning models are computed over several data sources that are stored
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+    <div class="g-pt-50">
+    </div>
+    <!-- Blog Minimal Blocks -->
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
+        <!-- <\!-- left panel -\-> -->
+        <!-- <div class="col-lg-1 g-mb-80"></div> -->
+        <!-- <\!-- end left panel -\-> -->
+        <!-- Articles Content -->
+        <div class="col-lg-9 g-mb-50 g-mb-0--lg">
+          <article class="g-mb-60">
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
+                Motivation
+              </h3>
+              <p class="g-color-black-opacity-0_8">
+                Our aim is to build a database engine that provides scalable techniques to compute machine learning
+                models over normalised
+                databases. We show that the data-intensive computations of many machine learning models can be
+                factorised
+                and computed directly inside a database engine. Doing so can lead to orders-of-magnitude performance
+                improvements
+                over current state-of-the-art analytics systems. In addition, a host of machine learning models can be
+                learned
+                with the same low complexity guarantees as factorised query processing (see
+                <a href="principles.html">
+                  Principles of Factorised Databases
+                </a>
+                for details).
+              </p>
+              <div class="text-center g-width-90x--md mx-auto g-my-40">
+                <h3 class="g-color-primary">
+                  We unify database and analytics engines into one highly optimised in-database analytics engine.
+                </h3>
+              </div>
+              <!-- WE ARE BUILDING A DATABASE ENGINE THAT UNIFIES DATA MANAGEMENT AND DATA ANALYTICS WORKLOADS. -->
+              <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
+                Why in-database analytics?
+              </h3>
+              <p>
+                For many practical scenarios, machine learning models are computed over several data sources that are
+                stored
                 in a database management system (DBMS). Machine learning algorithms, on the other hand, require as input
-                a single design matrix, which means that the distinct data sources need to be joined into a single relation.
-         <!-- <p  class="example g-color-black-opacity-0_8"> -->
-         <!--   <strong>Example: </strong> (TBD) <br> -->
-         <!--   For instance, a retailer wants to be a model which predicts whether a customer -->
-         <!--   buys a certain product. The model would be based on information about this -->
-         <!--   customer and product, but also external factors such as the current weather -->
-         <!--   conditions, demographics, and more. In a relational DBMS, these data sources are -->
-         <!--   stored in different relations. (different example: perhaps signals from sensors?) -->
-         <!-- </p>  -->
-         <p>
-          In a conventional technology stack, the join is computed in a DBMS and the join result is then exported into
-                  a specialised analytics system that computes the machine learning model. Computing the machine learning
-                  model directly in the DBMS has several non-trivial benefits over the conventional approach with specialized
-                  systems:
-          <ol>
-           <br/>
-           <li>
-            <strong>
-             <font class="g-color-primary">
-              In-database analytics brings analytics closer to the data.
-             </font>
-            </strong>
-            <br/>
-            Computing the machine learning model directly in an optimized DBMS implies that we can avoid the time-consuming
-                      import/export step between the specialised systems in a conventional technology stack.
-           </li>
-           <br/>
-           <li>
-            <strong>
-             <font class="g-color-primary">
-              In-database analytics can exploit the benefits of factorised join computation.
-             </font>
-            </strong>
-            <br/>
-            As shown in the
-            <a href="principles.html">
-             Principles of Factorised Databases
-            </a>
-            project, listing representations of relational data are known to require a high degree of redundancy
-                      for data representation and computation, especially in the case of relations representing joins. This
-                      redundancy is not necessary for subsequent processing, such as learning regression or classification
-                      models, and we avoid such redundancy by computing machine learning algorithms over factorised joins
-                      instead. By doing so, we are able to show that the data-intensive computation of many machine learning
-                      models follows the low complexity guarantees of factorised query processing. In fact, computing the
-                      model over the factorised joins can take less time than computing the conventional listing representation
-                      of the join only!
-           </li>
-           <br/>
-           <li>
-            <strong>
-             <font class="g-color-primary">
-              In-database analytics can exploit relational structures in the underlying data.
-             </font>
-            </strong>
-            <br/>
-            When computing a machine learning model inside a database engine, it is possible to exploit relational
-                      structures in the underlying data to compute machine learning models faster. For instance, we can exploit
-                      functional dependencies to decrease the dimensionality of a machine learning model, which leads to
-                      significant performance improvements (see our
-            <a href="#annos-pods">
-             PODS'18
-            </a>
-            paper).
-            <!-- In our algorithms, we use structure in the data, such as the schema -->
-            <!-- or functional dependencies between variables, to avoid redundant computation for -->
-            <!-- the analytics task.  This is along the lines of the factorized join computation -->
-            <!-- that has been described in the Principles project. -->
-           </li>
-          </ol>
-          <!-- Since state-of-the-art analytics systems are inherently suboptimal, data scientists -->
-          <!-- are often forced to omit relevant data sources from their models, which means that -->
-          <!-- the models can miss important patterns in the data. miss important patterns in -->
-          <!-- the data and, thus, do not reach their full potential. Computing the machine -->
-          <!-- learning models directly inside a database engine mitigates these insufficiencies -->
-          <!-- and thus cannot only scale the computation of the models but also lead to the -->
-          <!-- computation of more accurate models. It is for this reason, that there is increasing -->
-          <!-- interest in academia and industry in building systems that integrate databases and -->
-          <!-- machine learning. -->
-          <!-- The conventional technology stack leads to poor integration of analytics and -->
-          <!-- databases, and misses crucial optimization opportunities. More importantly, however, -->
-          <!-- specialised analytics systems that require a listing representation of the join as -->
-          <!-- input are inherently inefficient and often lead to the omission of relevant data -->
-          <!-- sources. This implies that the machine learning models miss important patterns in -->
-          <!-- the data and, thus, do not reach their full potential. Computing the machine -->
-          <!-- learning models directly inside a database engine mitigates these insufficiencies -->
-          <!-- and thus cannot only scale the computation of the models but also lead to the -->
-          <!-- computation of more accurate models. It is for this reason, that there is increasing -->
-          <!-- interest in academia and industry in building systems that integrate databases and -->
-          <!-- machine learning. -->
-          <!-- <div class="text-center g-width-90x--md mx-auto g-my-40"> -->
-          <!--   <h3 class="g-color-primary"> We propose a unified in-database analytics -->
-          <!--     solution for a host of optimization problems. </h3> -->
-          <!-- </div> -->
-          <br/>
-          <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
-           Our Approach to In-Database Analytics
-          </h3>
-          <p>
-           The data-intensive computations of a large class of machine learning models can be rewritten into aggregates over joins and
-                    factorised. This class includes (among others) regression, principal component analysis, decision trees,
-                    random forests, naive bayes, Bayesian networks, k-nearest neighbors, and frequent itemset mining. Our
-                    experiments show that this rewriting can lead to performance improvements of several orders-of-magnitude
-                    over over systems like R, Python StatsModels, and MADlib, while maintaining the accuracy of these competitors
-                    (see our
-           <a href="#soc16">
-            SIGMOD'16 paper
-           </a>
-           for details).
-           <div class="text-center mx-auto g-my-40">
-            <h3 class="g-color-primary">
-             Large chunks of analytics code can be rewritten into aggregates over joins and factorised.
-            </h3>
-           </div>
-           <figure class="u-shadow-v25 g-mb-30">
-            <img alt="Image Description" class="img-fluid w-100" src="assets/projects/analytics.png"/>
-            <em>
-             The
-             <font color="red">
-              conventional technology stack
-             </font>
-             compared to our approach to
-             <font color="green">
-              in-database analytics
-             </font>
-             .
-            </em>
-           </figure>
-           <p class="example g-color-black-opacity-0_8">
-            <strong>
-             Example:
-            </strong>
-            Consider the above Figure, which gives a high-level overview of our approach to in-database anayltics.
-            <br/>
-            In a conventional technology stack (the
-            <font color="red">
-             red
-            </font>
-            part of the diagram), a feature extraction query is issued to the database engine which
-                      computes and materialises the output table. This table is then imported into a machine learning tool
-                      that learns and outputs the best model parameters $\mathbb{\theta^*}$.
-            <br/>
-            In our in-database analytics framework (the
-            <font color="green">
-             green
-            </font>
-            part), we rewrite the query and model formulation into highly optimized factorized aggregate queries. These queries capture
-                      the data-intensive part of the machine learning model, which is fed into an optimisation algorithm
-                      (gradient descent in this case) which computes $\mathbb{\theta^*}$, without ever having to go back
-                      to the original data tables.
-            <!-- have -->
-            <!-- a unified model formulation that subsumes many commonly-used models: Choosing a -->
-            <!-- specific model reduces mainly to choosing a function h of the features and a -->
-            <!-- function g of the model parameters. The function h, the feature extraction query, -->
-            <!-- and the input tables are all fed into a factorisation-based query optimizer, which -->
-            <!-- computes a relatively small “digest” in the form of a matrix ⌃ and a vector -->
-            <!-- c. Only this small digest along with the function g are needed by the -->
-            <!-- gradient-descent trainer to carry out all iterations of gradient-descent and -->
-            <!-- compute ✓⇤, without ever having to go back to the original data tables. -->
-           </p>
-           The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
-           <ol>
-            <li>
-             We can efficiently capture categorical variables, without any an intermediate encoding of the input
-                        data. Typically, categorical variables are one-hot encoded, which leads to a significant blow-up
-                        of the input data. We avoid such intermediate encodings by treating categorical variables as group-by
-                        variables in our aggregate queries (see
-             <a href="#annos-pods">
-              PODS'18 paper
-             </a>
-             for details).
-            </li>
-            <li>
-             We can exploit functional dependencies to decrease the dimensionality of the model (see our
-             <a href="#annos-pods">
-              PODS'18 paper
-             </a>
-             for details).
-            </li>
-            <li>
-             Aggregates computed for a model can be re-used to compute models over any subset of the original features,
-                        which means we can efficiently explore the feature space for the best model (see
-             <a href="#os-pvldb16">
-              VLDB'16 demo paper
-             </a>
-             for details).
-            </li>
-            <li>
-             The aggregates that capture the data-intensive computations of the model are distributive, which means
-                        these computations can be easily parallelized and distributed (see
-             <a href="#soc16">
-              SIGMOD'16 paper
-             </a>
-             for details).
-            </li>
-           </ol>
-           <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3> -->
-           <!-- <p> -->
-           <!--   Rewriting the data-intensive computations into aggregates over joins has -->
-           <!--   additional benefits. One such advantage is that we can efficiently treat -->
-           <!--   categorical variables as group-by variables. -->
-           <!--   TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables.  -->
-           <!-- we can treat categorical variables as group-by variables, and compute -->
-           <!-- models over such variables without any intermediate encoding of the input data, -->
-           <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
-           <!--   [2] </a>. -->
-           <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3> -->
-           <!-- Also, we can exploit functional dependencies to decrease the -->
-           <!-- dimensionality of the model [1]; -->
-           <!-- Our observation is that the data-intensive computations of analytics problems can be -->
-           <!-- rewritten into aggregates over joins. -->
-           <!-- - Factorized aggregate computation. -->
-           <!-- - One hot encoding is turned into group-by aggregates. -->
-           <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
-           <!-- Further benefits: (3) aggregates computed for a model can be re-used to compute -->
-           <!-- models over any subset of the original features, which means we can efficiently -->
-           <!-- explore the feature space for the best model [5]; and (4) the aggregates that -->
-           <!-- capture the data-intensive computations of the model are distributive, which means -->
-           <!-- these computations can be easily parallelized and distributed [8]. -->
-           <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
-           <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
-           <!-- <ul> -->
-           <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
-           <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
-           <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
-           <!--     - Use scalable systems and low complexity for query processing </li> -->
-           <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
-           <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
-           <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
-           <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
-           <!-- </ul> -->
-           <!-- (1) Poor integration of analytics and databases, which are -->
-           <!-- traditionally confined to distinct specialized systems in the -->
-           <!-- ever-growing technology stack [2]; -->
-           <!-- (2) poor efficiency already for few data sources; and -->
-           <!-- (3) insufficient accuracy due to omission of further relevant -->
-           <!-- data sources. -->
-           <!-- <br> -->
-           <!-- <p class="g-color-black-opacity-0_8"> -->
-           <!--   Due to ever growing technology stacks, it is common for -->
-           <!--   companies to have two distinct systems for data management -->
-           <!--   and data analytics workloads.  This distinction is (up to a -->
-           <!--   few exceptions) also predominate in academic -->
-           <!--   literature. In-database analytics is a research field that -->
-           <!--   aims to unify data management and data analytics workloads in -->
-           <!--   one database engine. Combining both types of workloads in one -->
-           <!--   systems engine can have many advantages:   -->
-           <!--   <ol> -->
-           <!--     <li> <font class="g-color-primary">In-database analytics -->
-           <!--         brings analytics closer to the data </font><br> -->
-           <!--       In many real world scenarios, data is stored in a relation -->
-           <!--       database management system. To complete an analytics task, -->
-           <!--       the data is then exported from the DBMS and imported in a -->
-           <!--       statistical analytics package, which is inefficient. Save -->
-           <!--       non-trivial export/import time </li> -->
-           <!--     <li> <font class="g-color-primary"> Database management -->
-           <!--         systems have structural information that can be useful for -->
-           <!--         analytics workloads. </font><br> -->
-           <!--       In our algorithms, we use structure in the data, such as -->
-           <!--       the schema or functional dependencies between variables, -->
-           <!--       to avoid redundant computation for the analytics task. -->
-           <!--       This is along the lines of the factorized join computation -->
-           <!--       that has been described in the Principles project. -->
-           <!--       (Using schema information to factorize the computation and -->
-           <!--       avoid redundant computation ) -->
-           <!--     </li> -->
-           <!--     <li> -->
-           <!--       <font class="g-color-primary"> Large chunks of analytics -->
-           <!--         code can be rewritten into aggregates over joins </font> -->
-           <!--       <br> -->
-           <!--       Use scalable systems and low complexity for query -->
-           <!--       processing -->
-           <!--     </li> -->
-           <!--   </ol> -->
-           <!-- </p> -->
-           <!-- (1) Poor integration of analytics and databases, which are -->
-           <!-- traditionally confined to distinct specialized systems in the -->
-           <!-- ever-growing technology stack [2]; -->
-           <!-- (2) poor efficiency already for few data sources; and -->
-           <!-- (3) insufficient accuracy due to omission of further relevant -->
-           <!-- data sources. -->
-          </p>
-         </p>
-        </p>
-       </div>
-      </article>
-     </div>
-     <!-- right panel -->
-     <div class="col-lg-3 g-mb-80">
-      <div class="g-mb-50">
-       <div class="u-heading-v3-1 g-mb-30">
-        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
-         Additional Information
-        </h2>
-       </div>
-       <ul class="list-unstyled">
-        <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-         <h4 class="h6">
-          <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
-          </i>
-          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="analytics/vision.html">
-           Vision of the project
-          </a>
-         </h4>
-        </li>
-        <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-         <h4 class="h6">
-          <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
-          </i>
-          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="https://arxiv.org/abs/2008.07864">
-           VLDB2020 Key note
-          </a>
-         </h4>
-        </li>
-        <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
-         <h4 class="h6">
-          <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
-          </i>
-          <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="https://arxiv.org/abs/1911.06577">
-           A Brief Tutorial
-          </a>
-         </h4>
-        </li>
-       </ul>
+                a single design matrix, which means that the distinct data sources need to be joined into a single
+                relation.
+                <!-- <p  class="example g-color-black-opacity-0_8"> -->
+                <!--   <strong>Example: </strong> (TBD) <br> -->
+                <!--   For instance, a retailer wants to be a model which predicts whether a customer -->
+                <!--   buys a certain product. The model would be based on information about this -->
+                <!--   customer and product, but also external factors such as the current weather -->
+                <!--   conditions, demographics, and more. In a relational DBMS, these data sources are -->
+                <!--   stored in different relations. (different example: perhaps signals from sensors?) -->
+                <!-- </p>  -->
+              <p>
+                In a conventional technology stack, the join is computed in a DBMS and the join result is then exported
+                into
+                a specialised analytics system that computes the machine learning model. Computing the machine learning
+                model directly in the DBMS has several non-trivial benefits over the conventional approach with
+                specialized
+                systems:
+              <ol>
+                <br />
+                <li>
+                  <strong>
+                    <font class="g-color-primary">
+                      In-database analytics brings analytics closer to the data.
+                    </font>
+                  </strong>
+                  <br />
+                  Computing the machine learning model directly in an optimized DBMS implies that we can avoid the
+                  time-consuming
+                  import/export step between the specialised systems in a conventional technology stack.
+                </li>
+                <br />
+                <li>
+                  <strong>
+                    <font class="g-color-primary">
+                      In-database analytics can exploit the benefits of factorised join computation.
+                    </font>
+                  </strong>
+                  <br />
+                  As shown in the
+                  <a href="principles.html">
+                    Principles of Factorised Databases
+                  </a>
+                  project, listing representations of relational data are known to require a high degree of redundancy
+                  for data representation and computation, especially in the case of relations representing joins. This
+                  redundancy is not necessary for subsequent processing, such as learning regression or classification
+                  models, and we avoid such redundancy by computing machine learning algorithms over factorised joins
+                  instead. By doing so, we are able to show that the data-intensive computation of many machine learning
+                  models follows the low complexity guarantees of factorised query processing. In fact, computing the
+                  model over the factorised joins can take less time than computing the conventional listing
+                  representation
+                  of the join only!
+                </li>
+                <br />
+                <li>
+                  <strong>
+                    <font class="g-color-primary">
+                      In-database analytics can exploit relational structures in the underlying data.
+                    </font>
+                  </strong>
+                  <br />
+                  When computing a machine learning model inside a database engine, it is possible to exploit relational
+                  structures in the underlying data to compute machine learning models faster. For instance, we can
+                  exploit
+                  functional dependencies to decrease the dimensionality of a machine learning model, which leads to
+                  significant performance improvements (see our
+                  <a href="#annos-pods">
+                    PODS'18
+                  </a>
+                  paper).
+                  <!-- In our algorithms, we use structure in the data, such as the schema -->
+                  <!-- or functional dependencies between variables, to avoid redundant computation for -->
+                  <!-- the analytics task.  This is along the lines of the factorized join computation -->
+                  <!-- that has been described in the Principles project. -->
+                </li>
+              </ol>
+              <!-- Since state-of-the-art analytics systems are inherently suboptimal, data scientists -->
+              <!-- are often forced to omit relevant data sources from their models, which means that -->
+              <!-- the models can miss important patterns in the data. miss important patterns in -->
+              <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+              <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+              <!-- and thus cannot only scale the computation of the models but also lead to the -->
+              <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+              <!-- interest in academia and industry in building systems that integrate databases and -->
+              <!-- machine learning. -->
+              <!-- The conventional technology stack leads to poor integration of analytics and -->
+              <!-- databases, and misses crucial optimization opportunities. More importantly, however, -->
+              <!-- specialised analytics systems that require a listing representation of the join as -->
+              <!-- input are inherently inefficient and often lead to the omission of relevant data -->
+              <!-- sources. This implies that the machine learning models miss important patterns in -->
+              <!-- the data and, thus, do not reach their full potential. Computing the machine -->
+              <!-- learning models directly inside a database engine mitigates these insufficiencies -->
+              <!-- and thus cannot only scale the computation of the models but also lead to the -->
+              <!-- computation of more accurate models. It is for this reason, that there is increasing -->
+              <!-- interest in academia and industry in building systems that integrate databases and -->
+              <!-- machine learning. -->
+              <!-- <div class="text-center g-width-90x--md mx-auto g-my-40"> -->
+              <!--   <h3 class="g-color-primary"> We propose a unified in-database analytics -->
+              <!--     solution for a host of optimization problems. </h3> -->
+              <!-- </div> -->
+              <br />
+              <h3 class="h3 g-color-gray-dark-v1 g-font-weight-600 g-mb-10">
+                Our Approach to In-Database Analytics
+              </h3>
+              <p>
+                The data-intensive computations of a large class of machine learning models can be rewritten into
+                aggregates over joins and
+                factorised. This class includes (among others) regression, principal component analysis, decision trees,
+                random forests, naive bayes, Bayesian networks, k-nearest neighbors, and frequent itemset mining. Our
+                experiments show that this rewriting can lead to performance improvements of several orders-of-magnitude
+                over over systems like R, Python StatsModels, and MADlib, while maintaining the accuracy of these
+                competitors
+                (see our
+                <a href="#soc16">
+                  SIGMOD'16 paper
+                </a>
+                for details).
+              <div class="text-center mx-auto g-my-40">
+                <h3 class="g-color-primary">
+                  Large chunks of analytics code can be rewritten into aggregates over joins and factorised.
+                </h3>
+              </div>
+              <figure class="u-shadow-v25 g-mb-30">
+                <img alt="Image Description" class="img-fluid w-100" src="assets/projects/analytics.png" />
+                <em>
+                  The
+                  <font color="red">
+                    conventional technology stack
+                  </font>
+                  compared to our approach to
+                  <font color="green">
+                    in-database analytics
+                  </font>
+                  .
+                </em>
+              </figure>
+              <p class="example g-color-black-opacity-0_8">
+                <strong>
+                  Example:
+                </strong>
+                Consider the above Figure, which gives a high-level overview of our approach to in-database anayltics.
+                <br />
+                In a conventional technology stack (the
+                <font color="red">
+                  red
+                </font>
+                part of the diagram), a feature extraction query is issued to the database engine which
+                computes and materialises the output table. This table is then imported into a machine learning tool
+                that learns and outputs the best model parameters $\mathbb{\theta^*}$.
+                <br />
+                In our in-database analytics framework (the
+                <font color="green">
+                  green
+                </font>
+                part), we rewrite the query and model formulation into highly optimized factorized aggregate queries.
+                These queries capture
+                the data-intensive part of the machine learning model, which is fed into an optimisation algorithm
+                (gradient descent in this case) which computes $\mathbb{\theta^*}$, without ever having to go back
+                to the original data tables.
+                <!-- have -->
+                <!-- a unified model formulation that subsumes many commonly-used models: Choosing a -->
+                <!-- specific model reduces mainly to choosing a function h of the features and a -->
+                <!-- function g of the model parameters. The function h, the feature extraction query, -->
+                <!-- and the input tables are all fed into a factorisation-based query optimizer, which -->
+                <!-- computes a relatively small “digest” in the form of a matrix ⌃ and a vector -->
+                <!-- c. Only this small digest along with the function g are needed by the -->
+                <!-- gradient-descent trainer to carry out all iterations of gradient-descent and -->
+                <!-- compute ✓⇤, without ever having to go back to the original data tables. -->
+              </p>
+              The rewriting of the data-intensive computation into aggregates over joins has additional benefits:
+              <ol>
+                <li>
+                  We can efficiently capture categorical variables, without any an intermediate encoding of the input
+                  data. Typically, categorical variables are one-hot encoded, which leads to a significant blow-up
+                  of the input data. We avoid such intermediate encodings by treating categorical variables as group-by
+                  variables in our aggregate queries (see
+                  <a href="#annos-pods">
+                    PODS'18 paper
+                  </a>
+                  for details).
+                </li>
+                <li>
+                  We can exploit functional dependencies to decrease the dimensionality of the model (see our
+                  <a href="#annos-pods">
+                    PODS'18 paper
+                  </a>
+                  for details).
+                </li>
+                <li>
+                  Aggregates computed for a model can be re-used to compute models over any subset of the original
+                  features,
+                  which means we can efficiently explore the feature space for the best model (see
+                  <a href="#os-pvldb16">
+                    VLDB'16 demo paper
+                  </a>
+                  for details).
+                </li>
+                <li>
+                  The aggregates that capture the data-intensive computations of the model are distributive, which means
+                  these computations can be easily parallelized and distributed (see
+                  <a href="#soc16">
+                    SIGMOD'16 paper
+                  </a>
+                  for details).
+                </li>
+              </ol>
+              <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Categorical Variables in In-Database Analytics </h3> -->
+              <!-- <p> -->
+              <!--   Rewriting the data-intensive computations into aggregates over joins has -->
+              <!--   additional benefits. One such advantage is that we can efficiently treat -->
+              <!--   categorical variables as group-by variables. -->
+              <!--   TODO: Need to explain one-hot encoding - and how it blows up the data. Provide alternative with group-by variables.  -->
+              <!-- we can treat categorical variables as group-by variables, and compute -->
+              <!-- models over such variables without any intermediate encoding of the input data, -->
+              <!-- which typically blow up the data significantly <a href="#annos-pods"> -->
+              <!--   [2] </a>. -->
+              <!-- <h3 class="h5 g-color-gray-dark-v1 g-font-weight-600 g-mb-10"> Functional dependencies </h3> -->
+              <!-- Also, we can exploit functional dependencies to decrease the -->
+              <!-- dimensionality of the model [1]; -->
+              <!-- Our observation is that the data-intensive computations of analytics problems can be -->
+              <!-- rewritten into aggregates over joins. -->
+              <!-- - Factorized aggregate computation. -->
+              <!-- - One hot encoding is turned into group-by aggregates. -->
+              <!-- - Functional dependencies can be used to decrease the dimensionality of the problem.  -->
+              <!-- Further benefits: (3) aggregates computed for a model can be re-used to compute -->
+              <!-- models over any subset of the original features, which means we can efficiently -->
+              <!-- explore the feature space for the best model [5]; and (4) the aggregates that -->
+              <!-- capture the data-intensive computations of the model are distributive, which means -->
+              <!-- these computations can be easily parallelized and distributed [8]. -->
+              <!-- - aggregates can be reused for models over subsets of features - model selection highly efficient -->
+              <!-- - distributivity of aggregates allows for efficient distributed and parallel computation of the data intensive computations of the model -->
+              <!-- <ul> -->
+              <!--   <li> Bringing analytics closer to the data - Save non-trivial export/import time </li> -->
+              <!--   <li> Using schema information to factorize the computation and avoid redundant computation </li> -->
+              <!--   <li> 2. Large chunks of analytics code can be rewritten into aggregates over joins -->
+              <!--     - Use scalable systems and low complexity for query processing </li> -->
+              <!--   <li> Consider learning over the join - common scenario in many practical applications </li> -->
+              <!--   <li> lots of interest in academia - Panels, Tutorials, etc.  </li>  -->
+              <!--   <li> Unified in-database analytics solution for a host of optimization problems. </li> -->
+              <!--   <li> There is increasing interest in academia and industry in building systems that integrate databases and machine learning </li> -->
+              <!-- </ul> -->
+              <!-- (1) Poor integration of analytics and databases, which are -->
+              <!-- traditionally confined to distinct specialized systems in the -->
+              <!-- ever-growing technology stack [2]; -->
+              <!-- (2) poor efficiency already for few data sources; and -->
+              <!-- (3) insufficient accuracy due to omission of further relevant -->
+              <!-- data sources. -->
+              <!-- <br> -->
+              <!-- <p class="g-color-black-opacity-0_8"> -->
+              <!--   Due to ever growing technology stacks, it is common for -->
+              <!--   companies to have two distinct systems for data management -->
+              <!--   and data analytics workloads.  This distinction is (up to a -->
+              <!--   few exceptions) also predominate in academic -->
+              <!--   literature. In-database analytics is a research field that -->
+              <!--   aims to unify data management and data analytics workloads in -->
+              <!--   one database engine. Combining both types of workloads in one -->
+              <!--   systems engine can have many advantages:   -->
+              <!--   <ol> -->
+              <!--     <li> <font class="g-color-primary">In-database analytics -->
+              <!--         brings analytics closer to the data </font><br> -->
+              <!--       In many real world scenarios, data is stored in a relation -->
+              <!--       database management system. To complete an analytics task, -->
+              <!--       the data is then exported from the DBMS and imported in a -->
+              <!--       statistical analytics package, which is inefficient. Save -->
+              <!--       non-trivial export/import time </li> -->
+              <!--     <li> <font class="g-color-primary"> Database management -->
+              <!--         systems have structural information that can be useful for -->
+              <!--         analytics workloads. </font><br> -->
+              <!--       In our algorithms, we use structure in the data, such as -->
+              <!--       the schema or functional dependencies between variables, -->
+              <!--       to avoid redundant computation for the analytics task. -->
+              <!--       This is along the lines of the factorized join computation -->
+              <!--       that has been described in the Principles project. -->
+              <!--       (Using schema information to factorize the computation and -->
+              <!--       avoid redundant computation ) -->
+              <!--     </li> -->
+              <!--     <li> -->
+              <!--       <font class="g-color-primary"> Large chunks of analytics -->
+              <!--         code can be rewritten into aggregates over joins </font> -->
+              <!--       <br> -->
+              <!--       Use scalable systems and low complexity for query -->
+              <!--       processing -->
+              <!--     </li> -->
+              <!--   </ol> -->
+              <!-- </p> -->
+              <!-- (1) Poor integration of analytics and databases, which are -->
+              <!-- traditionally confined to distinct specialized systems in the -->
+              <!-- ever-growing technology stack [2]; -->
+              <!-- (2) poor efficiency already for few data sources; and -->
+              <!-- (3) insufficient accuracy due to omission of further relevant -->
+              <!-- data sources. -->
+              </p>
+              </p>
+              </p>
+            </div>
+          </article>
+        </div>
+        <!-- right panel -->
+        <div class="col-lg-3 g-mb-80">
+          <div class="g-mb-50">
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+                Additional Information
+              </h2>
+            </div>
+            <ul class="list-unstyled">
+              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                <h4 class="h6">
+                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
+                  </i>
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="analytics/vision.html">
+                    Vision of the project
+                  </a>
+                </h4>
+              </li>
+              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                <h4 class="h6">
+                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
+                  </i>
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover"
+                    href="https://arxiv.org/abs/2008.07864">
+                    VLDB2020 Key note
+                  </a>
+                </h4>
+              </li>
+              <li class="g-brd-bottom g-brd-gray-light-v4 g-pb-10 g-mb-12">
+                <h4 class="h6">
+                  <i class="fa fa-angle-right g-color-gray-dark-v5 g-mr-5">
+                  </i>
+                  <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover"
+                    href="https://arxiv.org/abs/1911.06577">
+                    A Brief Tutorial
+                  </a>
+                </h4>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- end right panel -->
       </div>
-     </div>
-     <!-- end right panel -->
-    </div>
-    <a name="publications">
-    </a>
-    <div class="g-mb-30">
-     <div class="u-heading-v3-1 g-mb-30">
-      <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
-       Publications
-      </h2>
-     </div>
-    </div>
-    <ul>
-     <li>
-      <strong>
-       The Relational Data Borg is Learning (
-       <a href="https://vldb2020.org/keynote.html">
-        Keynote
-       </a>
-       )
-      </strong>
-      [
-      <a href="https://arxiv.org/abs/2008.07864">
-       arxiv
+      <a name="publications">
       </a>
-      ]
-      <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-       Journal
-      </span>
-      <br/>
-      Dan Olteanu.
-      <br/>
-      In PVLDB 13(12): 3503 - 3516, 2020.
-     </li>
-    </ul>
-    <ul>
-     <li>
-      <strong>
-       LMFAO: An Engine for Batches of Group-By Aggregates
-      </strong>
-      [
-      <a href="https://arxiv.org/abs/2008.08657">
-       arxiv
-      </a>
-      ,
-      <a href="https://www.youtube.com/watch?v=D-u4kR6z2nk">
-       video
-      </a>
-      ]
-      <span class="g-bg-pink g-ml-5 g-rounded-3 u-label">
-       Demo
-      </span>
-      <br/>
-      Maximilian Schleich, Dan Olteanu.
-      <br/>
-      In PVLDB 13(12): 2945 - 2948, 2020.
-     </li>
-    </ul>
-    <ul>
-     <li id="1910.04939">
-      <strong>
-       Rk-means: Fast Clustering for Relational Data
-      </strong>
-      .
-             [
-      <a href="https://arxiv.org/abs/1910.04939">
-       arxiv
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Ryan Curtin, Ben Moseley, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, Maximilian Schleich.
-      <br/>
-      In Artificial Intelligence and Statistics (AISTATS), Palermo, Italy, June, 2020.
-      <br/>
-      <a href="https://arxiv.org/abs/1910.04939">
-       arXiv report 1910.04939
-      </a>
-      , October 2019.
-     </li>
-    </ul>
-    <ul>
-     <li id="2001.03541">
-      <strong>
-       Multi-Layer Optimizations for End-to-End Data Analytics
-      </strong>
-      .
-             [
-      <a href="https://arxiv.org/abs/2001.03541">
-       arxiv
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Amir Shaikhha, Maximilian Schleich, Alexandru Ghita, and Dan Olteanu.
-      <br/>
-      In Code Generation and Optimization (CGO), San Diego, February 2020.
-      <br/>
-      <a href="https://arxiv.org/abs/2001.03541">
-       arXiv report 2001.03541
-      </a>
-      , January 2020.
-     </li>
-    </ul>
-    <ul>
-     <li id="1703.04780">
-      <strong>
-       Learning Models over Relational Data
-               using Sparse Tensors and Functional Dependencies
-      </strong>
-      .
-             [
-      <a href="https://arxiv.org/pdf/1703.04780.pdf">
-       arxiv
-      </a>
-      ]
-      <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
-       Journal
-      </span>
-      <br/>
-      Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-      <br/>
-      To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted Dec 2019)
-      <br/>
-      Special issue of best papers at PODS 2018
-      <br/>
-      arXiv report
-      <a href="https://arxiv.org/abs/1703.04780">
-       1703.04780
-      </a>
-      , Nov 2018.
-     </li>
-    </ul>
-    <ul>
-     <li id="sum19">
-      <strong>
-       Learning Models over Relational Data: A Brief Tutorial
-      </strong>
-      . [
-      <a href="https://arxiv.org/abs/1911.06577">
-       arxiv
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Maximilian Schleich, Dan Olteanu, Mahmoud Abo-Khamis, Hung Q. Ngo, and XuanLong Nguyen.
-      <br/>
-      In Scalable Uncertainty Management (SUM), Compiègne, December 2019.
-      <br/>
-      <a href="https://arxiv.org/abs/1911.06577">
-       arXiv report 1911.06577
-      </a>
-      , December 2019.
-     </li>
-    </ul>
-    <ul>
-     <a name="soann-sigmod">
-     </a>
-     <li class="g-mb-15">
-      <strong>
-       A Layered Aggregate Engine for Analytics Workloads
-      </strong>
-      .
-            [
-      <a href="http://arxiv.org/pdf/1906.08687">
-       arxiv
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-talk.pdf">
-       slides
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-poster.pdf">
-       poster
-      </a>
-      ,
-      <a href="https://player.vimeo.com/video/345922861#t=3h10m">
-       video
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      M. Schleich, D. Olteanu, M. Abo Khamis, H. Ngo and X. Nguyen.
-      <br/>
-      In ACM SIGMOD, Amsterdam, July 2019.
-      <br/>
-      Updated version in
-      <a href="http://arxiv.org/abs/1906.08687">
-       arXiv report 1906.08687
-      </a>
-      , June 2019.
-     </li>
-     <li id="1812.09526">
-      <strong>
-       On Functional Aggregate Queries with Additive Inequalities
-      </strong>
-      .
-            [
-      <a href="https://arxiv.org/pdf/1812.09526">
-       arxiv
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-talk.pdf">
-       slides
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-poster.pdf">
-       poster
-      </a>
-      ,
-      <a href="https://player.vimeo.com/video/345869555#t=6m3s">
-       video
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      M. Abo Khamis, R. Curtin, B. Moseley, H. Ngo, X. Nguyen, D. Olteanu and M. Schleich.
-      <br/>
-      In ACM Principles of Database Systems (PODS), Amsterdam, July 2019.
-      <br/>
-      Extended version in
-      <a href="https://arxiv.org/abs/1812.09526">
-       arXiv report 1812.09526
-      </a>
-      , April
-            2019.
-     </li>
-     <br/>
-     <a name="annos-pods">
-     </a>
-     <li id="no-sigmod18">
-      <strong>
-       Incremental View Maintenance with Triple Lock Factorisation Benefits
-      </strong>
-      .
-             [
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-sigmod18.pdf">
-       pdf
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
-       slides
-      </a>
-      ,
-      <a href="https://github.com/fdbresearch/FIVM">
-       repository
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Milos Nikolic and Dan Olteanu.
-      <br>
-       In ACM SIGMOD, Houston (USA), June 2018.
-       <br/>
-       Prior version (strict subset of results) in
-       <a href="http://arxiv.org/abs/1703.07484">
-        arXiv technical report 1703.07484
-       </a>
-       , March 2017.
-      </br>
-     </li>
-     <br/>
-     <li class="g-mb-15">
-      <strong>
-       In-Database Learning with Sparse Tensors
-      </strong>
-      . [
-      <a href="https://arxiv.org/pdf/1703.04780.pdf">
-       arxiv
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">
-       slides
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-      <br>
-       In ACM Principles of Database Systems (PODS), Houston, June 2018.
-       <br/>
-       arXiv report 1703.04780, March 2017.
-      </br>
-     </li>
-     <li class="g-mb-15" id="no-sigmod18">
-      <strong>
-       Incremental View Maintenance with Triple Lock Factorisation Benefits
-      </strong>
-      . [
-      <!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
-       slides
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Milos Nikolic and Dan Olteanu.
-      <br/>
-      In ACM SIGMOD, Houston (USA), June 2018.
-      <br/>
-      Prior version (strict subset of results) in
-      <a href="http://arxiv.org/abs/1703.07484">
-       arXiv technical report 1703.07484
-      </a>
-      , March 2017.
-     </li>
-     <li class="g-mb-15">
-      <strong>
-       AC/DC: In-Database Learning Thunderstruck
-      </strong>
-      .
+      <div class="g-mb-30">
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary">
+            Publications
+          </h2>
+        </div>
+      </div>
+      <ul>
+        <li>
+          <strong>
+            The Relational Data Borg is Learning (
+            <a href="https://vldb2020.org/keynote.html">
+              Keynote
+            </a>
+            )
+          </strong>
           [
-      <a href="https://arxiv.org/pdf/1803.07480">
-       arxiv
-      </a>
-      ]
-      <span class="u-label g-bg-green g-rounded-3 g-ml-5">
-       Workshop
-      </span>
-      <br/>
-      Mahmoud Abo Khamis, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-      <br/>
-      In 2nd Workshop on Data Management for End-to-End Machine Learning (DEEM@SIGMOD), Houston, June 2018.
-      <br/>
-      arXiv report 1803.07480, March 2018.
-     </li>
-     <a name="nnos-amw">
-     </a>
-     <li class="g-mb-15">
-      <strong>
-       In-Database Factorized Learning
-      </strong>
-      . [
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">
-       local
-      </a>
-      ]
-      <span class="u-label g-bg-green g-rounded-3 g-ml-5">
-       Workshop
-      </span>
-      <br/>
-      Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
-      <br/>
-      In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
-      <br/>
-      Extended version in arXiv report
-      <a href="https://arxiv.org/pdf/1703.04780.pdf">
-       1703.04780
-      </a>
-      .
-     </li>
-     <li class="g-mb-15" id="os-pvldb16">
-      <strong>
-       F: Regression Models over Factorized Views
-      </strong>
-      . [
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">
-       pdf
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
-       poster
-      </a>
-      ]
-      <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
-       Demo
-      </span>
-      <br/>
-      Dan Olteanu and Maximilian Schleich.
-      <br/>
-      In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016.
-     </li>
-     <li class="g-mb-15" id="soc16">
-      <strong>
-       Learning Linear Regression Models over Factorized Joins
-      </strong>
-      . [
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
-       updated version
-      </a>
-      ,
-      <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
-       poster
-      </a>
-      ]
-      <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-       Conference
-      </span>
-      <br/>
-      Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
-      <br/>
-      In SIGMOD, San Francisco, June 2016.
-     </li>
-    </ul>
-    <br/>
-    <div class="g-mb-30">
-     <div class="u-heading-v3-1 g-mb-30">
-      <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
-       Acknowledgements
-      </h2>
-     </div>
-    </div>
-    <div>
-     <article class="media g-bg-white">
-      <figure class="d-flex g-width-70 g-height-70 mr-3">
-       <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/infor.png"/>
-      </figure>
-      <div class="media-body">
-       <span class="g-font-size-14">
-        <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">
-         December 2018
+          <a href="https://arxiv.org/abs/2008.07864">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+            Journal
+          </span>
+          <br />
+          Dan Olteanu.
+          <br />
+          In PVLDB 13(12): 3503 - 3516, 2020.
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <strong>
+            LMFAO: An Engine for Batches of Group-By Aggregates
+          </strong>
+          [
+          <a href="https://arxiv.org/abs/2008.08657">
+            arxiv
+          </a>
+          ,
+          <a href="https://www.youtube.com/watch?v=D-u4kR6z2nk">
+            video
+          </a>
+          ]
+          <span class="g-bg-pink g-ml-5 g-rounded-3 u-label">
+            Demo
+          </span>
+          <br />
+          Maximilian Schleich, Dan Olteanu.
+          <br />
+          In PVLDB 13(12): 2945 - 2948, 2020.
+        </li>
+      </ul>
+      <ul>
+        <li id="1910.04939">
+          <strong>
+            Rk-means: Fast Clustering for Relational Data
+          </strong>
+          .
+          [
+          <a href="https://arxiv.org/abs/1910.04939">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Ryan Curtin, Ben Moseley, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, Maximilian Schleich.
+          <br />
+          In Artificial Intelligence and Statistics (AISTATS), Palermo, Italy, June, 2020.
+          <br />
+          <a href="https://arxiv.org/abs/1910.04939">
+            arXiv report 1910.04939
+          </a>
+          , October 2019.
+        </li>
+      </ul>
+      <ul>
+        <li id="2001.03541">
+          <strong>
+            Multi-Layer Optimizations for End-to-End Data Analytics
+          </strong>
+          .
+          [
+          <a href="https://arxiv.org/abs/2001.03541">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Amir Shaikhha, Maximilian Schleich, Alexandru Ghita, and Dan Olteanu.
+          <br />
+          In Code Generation and Optimization (CGO), San Diego, February 2020.
+          <br />
+          <a href="https://arxiv.org/abs/2001.03541">
+            arXiv report 2001.03541
+          </a>
+          , January 2020.
+        </li>
+      </ul>
+      <ul>
+        <li id="1703.04780">
+          <strong>
+            Learning Models over Relational Data
+            using Sparse Tensors and Functional Dependencies
+          </strong>
+          .
+          [
+          <a href="https://arxiv.org/pdf/1703.04780.pdf">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-lightred g-rounded-3 g-ml-5">
+            Journal
+          </span>
+          <br />
+          Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+          <br />
+          To appear in ACM Transactions on Database Systems (TODS), 2020 (accepted Dec 2019)
+          <br />
+          Special issue of best papers at PODS 2018
+          <br />
+          arXiv report
+          <a href="https://arxiv.org/abs/1703.04780">
+            1703.04780
+          </a>
+          , Nov 2018.
+        </li>
+      </ul>
+      <ul>
+        <li id="sum19">
+          <strong>
+            Learning Models over Relational Data: A Brief Tutorial
+          </strong>
+          . [
+          <a href="https://arxiv.org/abs/1911.06577">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Maximilian Schleich, Dan Olteanu, Mahmoud Abo-Khamis, Hung Q. Ngo, and XuanLong Nguyen.
+          <br />
+          In Scalable Uncertainty Management (SUM), Compiègne, December 2019.
+          <br />
+          <a href="https://arxiv.org/abs/1911.06577">
+            arXiv report 1911.06577
+          </a>
+          , December 2019.
+        </li>
+      </ul>
+      <ul>
+        <a name="soann-sigmod">
         </a>
-       </span>
-       <h4 class="g-font-size-13 mb-0">
-        We received an unrestricted gift from
-        <a href="https://www.infor.com/news/infor-partnering-with-oxford-and-carnegie-mellon-on-machine-learning??utm_source=3609&amp;utm_medium=LinkedIn&amp;utm_campaign=dysi">
-         Infor
+        <li class="g-mb-15">
+          <strong>
+            A Layered Aggregate Engine for Analytics Workloads
+          </strong>
+          .
+          [
+          <a href="http://arxiv.org/pdf/1906.08687">
+            arxiv
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-talk.pdf">
+            slides
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/sigmod19-poster.pdf">
+            poster
+          </a>
+          ,
+          <a href="https://player.vimeo.com/video/345922861#t=3h10m">
+            video
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          M. Schleich, D. Olteanu, M. Abo Khamis, H. Ngo and X. Nguyen.
+          <br />
+          In ACM SIGMOD, Amsterdam, July 2019.
+          <br />
+          Updated version in
+          <a href="http://arxiv.org/abs/1906.08687">
+            arXiv report 1906.08687
+          </a>
+          , June 2019.
+        </li>
+        <li id="1812.09526">
+          <strong>
+            On Functional Aggregate Queries with Additive Inequalities
+          </strong>
+          .
+          [
+          <a href="https://arxiv.org/pdf/1812.09526">
+            arxiv
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-talk.pdf">
+            slides
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/pods19-poster.pdf">
+            poster
+          </a>
+          ,
+          <a href="https://player.vimeo.com/video/345869555#t=6m3s">
+            video
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          M. Abo Khamis, R. Curtin, B. Moseley, H. Ngo, X. Nguyen, D. Olteanu and M. Schleich.
+          <br />
+          In ACM Principles of Database Systems (PODS), Amsterdam, July 2019.
+          <br />
+          Extended version in
+          <a href="https://arxiv.org/abs/1812.09526">
+            arXiv report 1812.09526
+          </a>
+          , April
+          2019.
+        </li>
+        <br />
+        <a name="annos-pods">
         </a>
-        to support our work on in-database machine learning.
-        <br/>
-        [
-        <a href="http://www.cs.ox.ac.uk/news/1604-full.html">
-         Oxford news release
+        <li id="no-sigmod18">
+          <strong>
+            Incremental View Maintenance with Triple Lock Factorisation Benefits
+          </strong>
+          .
+          [
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/no-sigmod18.pdf">
+            pdf
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
+            slides
+          </a>
+          ,
+          <a href="https://github.com/fdbresearch/FIVM">
+            repository
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Milos Nikolic and Dan Olteanu.
+          <br>
+          In ACM SIGMOD, Houston (USA), June 2018.
+          <br />
+          Prior version (strict subset of results) in
+          <a href="http://arxiv.org/abs/1703.07484">
+            arXiv technical report 1703.07484
+          </a>
+          , March 2017.
+          </br>
+        </li>
+        <br />
+        <li class="g-mb-15">
+          <strong>
+            In-Database Learning with Sparse Tensors
+          </strong>
+          . [
+          <a href="https://arxiv.org/pdf/1703.04780.pdf">
+            arxiv
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/f-relationalAI17.pdf">
+            slides
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Mahmoud Abo Khamis, Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+          <br>
+          In ACM Principles of Database Systems (PODS), Houston, June 2018.
+          <br />
+          arXiv report 1703.04780, March 2017.
+          </br>
+        </li>
+        <li class="g-mb-15" id="no-sigmod18">
+          <strong>
+            Incremental View Maintenance with Triple Lock Factorisation Benefits
+          </strong>
+          . [
+          <!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
+            slides
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Milos Nikolic and Dan Olteanu.
+          <br />
+          In ACM SIGMOD, Houston (USA), June 2018.
+          <br />
+          Prior version (strict subset of results) in
+          <a href="http://arxiv.org/abs/1703.07484">
+            arXiv technical report 1703.07484
+          </a>
+          , March 2017.
+        </li>
+        <li class="g-mb-15">
+          <strong>
+            AC/DC: In-Database Learning Thunderstruck
+          </strong>
+          .
+          [
+          <a href="https://arxiv.org/pdf/1803.07480">
+            arxiv
+          </a>
+          ]
+          <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+            Workshop
+          </span>
+          <br />
+          Mahmoud Abo Khamis, Hung Q. Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+          <br />
+          In 2nd Workshop on Data Management for End-to-End Machine Learning (DEEM@SIGMOD), Houston, June 2018.
+          <br />
+          arXiv report 1803.07480, March 2018.
+        </li>
+        <a name="nnos-amw">
         </a>
-        ,
-        <a href="https://www.infor.com/news/infor-partnering-with-oxford-and-carnegie-mellon-on-machine-learning??utm_source=3609&amp;utm_medium=LinkedIn&amp;utm_campaign=dysi">
-         Infor news release
-        </a>
-        ]
-       </h4>
+        <li class="g-mb-15">
+          <strong>
+            In-Database Factorized Learning
+          </strong>
+          . [
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/nnos-amw17.pdf">
+            local
+          </a>
+          ]
+          <span class="u-label g-bg-green g-rounded-3 g-ml-5">
+            Workshop
+          </span>
+          <br />
+          Hung Ngo, XuanLong Nguyen, Dan Olteanu, and Maximilian Schleich.
+          <br />
+          In Alberto Mendelzon Workshop (AMW), Montevideo, June 2017.
+          <br />
+          Extended version in arXiv report
+          <a href="https://arxiv.org/pdf/1703.04780.pdf">
+            1703.04780
+          </a>
+          .
+        </li>
+        <li class="g-mb-15" id="os-pvldb16">
+          <strong>
+            F: Regression Models over Factorized Views
+          </strong>
+          . [
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/os-pvldb16.pdf">
+            pdf
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
+            poster
+          </a>
+          ]
+          <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+            Demo
+          </span>
+          <br />
+          Dan Olteanu and Maximilian Schleich.
+          <br />
+          In Very Large Data Bases (PVLDB), 9(13), New Delhi, Sept 2016.
+        </li>
+        <li class="g-mb-15" id="soc16">
+          <strong>
+            Learning Linear Regression Models over Factorized Joins
+          </strong>
+          . [
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/soc-sigmod16.pdf">
+            updated version
+          </a>
+          ,
+          <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/F-poster.pdf">
+            poster
+          </a>
+          ]
+          <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+            Conference
+          </span>
+          <br />
+          Maximilian Schleich and Dan Olteanu and Radu Ciucanu.
+          <br />
+          In SIGMOD, San Francisco, June 2016.
+        </li>
+      </ul>
+      <br />
+      <div class="g-mb-30">
+        <div class="u-heading-v3-1 g-mb-30">
+          <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
+            Acknowledgements
+          </h2>
+        </div>
       </div>
-     </article>
+      <div>
+        <article class="media g-bg-white">
+          <figure class="d-flex g-width-70 g-height-70 mr-3">
+            <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/infor.png" />
+          </figure>
+          <div class="media-body">
+            <span class="g-font-size-14">
+              <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2" href="#">
+                December 2018
+              </a>
+            </span>
+            <h4 class="g-font-size-13 mb-0">
+              We received an unrestricted gift from
+              <a
+                href="https://www.infor.com/news/infor-partnering-with-oxford-and-carnegie-mellon-on-machine-learning??utm_source=3609&amp;utm_medium=LinkedIn&amp;utm_campaign=dysi">
+                Infor
+              </a>
+              to support our work on in-database machine learning.
+              <br />
+              [
+              <a href="http://www.cs.ox.ac.uk/news/1604-full.html">
+                Oxford news release
+              </a>
+              ,
+              <a
+                href="https://www.infor.com/news/infor-partnering-with-oxford-and-carnegie-mellon-on-machine-learning??utm_source=3609&amp;utm_medium=LinkedIn&amp;utm_campaign=dysi">
+                Infor news release
+              </a>
+              ]
+            </h4>
+          </div>
+        </article>
+      </div>
+      <div id="stickyblock-end">
+      </div>
     </div>
-    <div id="stickyblock-end">
+    <!-- End Articles Content -->
+    <!-- right panel -->
+    <div class="col-lg-1 g-mb-80">
     </div>
-   </div>
-   <!-- End Articles Content -->
-   <!-- right panel -->
-   <div class="col-lg-1 g-mb-80">
-   </div>
-   <!-- end right panel -->
+    <!-- end right panel -->
   </main>
- </body>
+</body>
+
 </html>
 <!-- End Blog Minimal Blocks -->
 <!-- Footer -->
 <div class="g-pt-50">
- <footer class="g-bg-secondary">
-  <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
-  </div>
-  <div class="container">
-   <!-- Footer - Bottom Section -->
-   <div class="row align-items-center">
-    <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-     <!-- Copyright -->
-     <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-      © 2017-2022 All Rights Reserved.
-     </p>
-     <!-- End Copyright -->
+  <footer class="g-bg-secondary">
+    <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
     </div>
-    <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
-     <!-- Links -->
-     <ul class="list-inline mb-0">
-      <li class="list-inline-item g-pl-0 g-pr-10">
-       <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
-        Contact Us
-       </a>
-      </li>
-      <li class="list-inline-item g-px-10">
-       <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-        Last modified: April 2022
-       </a>
-      </li>
-     </ul>
-     <!-- End Links -->
+    <div class="container">
+      <!-- Footer - Bottom Section -->
+      <div class="row align-items-center">
+        <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+          <!-- Copyright -->
+          <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+            © 2017-2022 All Rights Reserved.
+          </p>
+          <!-- End Copyright -->
+        </div>
+        <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
+          <!-- Links -->
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item g-pl-0 g-pr-10">
+              <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+                Contact Us
+              </a>
+            </li>
+            <li class="list-inline-item g-px-10">
+              <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+                Last modified: April 2022
+              </a>
+            </li>
+          </ul>
+          <!-- End Links -->
+        </div>
+      </div>
+      <!-- End Footer - Bottom Section -->
     </div>
-   </div>
-   <!-- End Footer - Bottom Section -->
-  </div>
- </footer>
+  </footer>
 </div>
 <!-- End Footer -->
 <!-- JS Global Compulsory -->
@@ -1131,55 +1178,55 @@
 </script>
 <!-- JS Plugins Init. -->
 <script>
- $(document).on('ready', function () {
-      // initialization of tabs
+  $(document).on('ready', function () {
+    // initialization of tabs
+    $.HSCore.components.HSTabs.init('[role="tablist"]');
+
+    // initialization of scroll animation
+    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+
+    // initialization of go to
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+
+    // initialization of HSDropdown component
+    $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
+      afterOpen: function () {
+        $(this).find('input[type="search"]').focus();
+      }
+    });
+
+  });
+
+
+
+  $(window).on('load', function () {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+      event: 'hover',
+      pageContainer: $('.container'),
+      breakpoint: 991
+    });
+
+    // initialization of masonry
+    $('.masonry-grid').imagesLoaded().then(function () {
+      $('.masonry-grid').masonry({
+        columnWidth: '.masonry-grid-sizer',
+        itemSelector: '.masonry-grid-item',
+        percentPosition: true
+      });
+    });
+
+    // initialization of cubeportfolio
+    $.HSCore.components.HSCubeportfolio.init('.cbp');
+  });
+
+  $(window).on('resize', function () {
+    setTimeout(function () {
       $.HSCore.components.HSTabs.init('[role="tablist"]');
-
-      // initialization of scroll animation
-      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
-
-      // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
-
-      // initialization of HSDropdown component
-      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-        afterOpen: function () {
-          $(this).find('input[type="search"]').focus();
-        }
-      });
-
-    });
-
-
-
-    $(window).on('load', function () {
-      // initialization of header
-      $.HSCore.components.HSHeader.init($('#js-header'));
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-      // initialization of HSMegaMenu component
-      $('.js-mega-menu').HSMegaMenu({
-        event: 'hover',
-        pageContainer: $('.container'),
-        breakpoint: 991
-      });
-
-      // initialization of masonry
-      $('.masonry-grid').imagesLoaded().then(function () {
-        $('.masonry-grid').masonry({
-          columnWidth: '.masonry-grid-sizer',
-          itemSelector: '.masonry-grid-item',
-          percentPosition: true
-        });
-      });
-
-      // initialization of cubeportfolio
-      $.HSCore.components.HSCubeportfolio.init('.cbp');
-    });
-
-    $(window).on('resize', function () {
-      setTimeout(function () {
-        $.HSCore.components.HSTabs.init('[role="tablist"]');
-      }, 200);
-    });
+    }, 200);
+  });
 </script>

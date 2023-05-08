@@ -1,503 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
   </script>
   <script>
-   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-111495058-1');
+    gtag('config', 'UA-111495058-1');
   </script>
   <!-- Title -->
   <title>
-   FDB Research
+    FDB Research
   </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
   <!-- Favicon -->
-  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-  <link href="manifest.json" rel="manifest"/>
-  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
-  <meta content="#ffffff" name="theme-color"/>
-  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science" name="keywords"/>
-  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning" name="description"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="manifest.json" rel="manifest" />
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science"
+    name="keywords" />
+  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning"
+    name="description" />
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <!-- CSS Global Icons -->
-  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/animate.css" rel="stylesheet"/>
-  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
-  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet" />
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css" rel="stylesheet" />
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet" />
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet" />
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet" />
   <!-- CSS Unify -->
-  <link href="assets/css/unify-core.css" rel="stylesheet"/>
-  <link href="assets/css/unify-components.css" rel="stylesheet"/>
-  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
+  <link href="assets/css/unify-core.css" rel="stylesheet" />
+  <link href="assets/css/unify-components.css" rel="stylesheet" />
+  <link href="assets/css/unify-globals.css" rel="stylesheet" />
   <!-- CSS Customization -->
-  <link href="assets/css/custom.css" rel="stylesheet"/>
+  <link href="assets/css/custom.css" rel="stylesheet" />
   <script type="text/x-mathjax-config">
    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
   </script>
-  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML" type="text/javascript">
-  </script>
- </head>
- <body>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML"
+    type="text/javascript">
+    </script>
+</head>
+
+<body>
   <main>
-   <!-- Header -->
-   <header class="u-header u-header--static u-shadow-v19" id="js-header">
-    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-     <nav class="js-mega-menu navbar navbar-expand-lg">
+    <!-- Header -->
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
+            </a>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="retreat2023.html">
+                        Retreat 2023
+                      </a>
+                    </li>                    
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="FDBworkshop2022.html">
+                        FDB Workshop 2022
+                      </a>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing based on Degree Information
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-50">
       <div class="container">
-       <!-- Responsive Toggle Button -->
-       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
-        <span class="hamburger hamburger--slider">
-         <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </span>
-       </button>
-       <!-- End Responsive Toggle Button -->
-       <!-- Logo -->
-       <a class="navbar-brand" href="index.html">
-        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
-       </a>
-       <!-- End Logo -->
-       <!-- Navigation -->
-       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           News
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-              <a class="nav-link" href="FDBworkshop2022.html">
-               FDB Workshop 2022
-              </a>
-             </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="visitors.html">
-             Visitors
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="events.html">
-             Events
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="awards.html">
-             Awards
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="people.html">
-           People
-          </a>
-         </li>
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Projects
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="principles.html">
-             Principles of Factorised Databases
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="analytics.html">
-             In-Database Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivm.html">
-             Incremental Maintenance for Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivme.html">
-             Adaptive Query Processing based on Degree Information
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="publications.html">
-           Publications
-          </a>
-         </li>
-         <!-- Code -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Code
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="fivm-code.html">
-             FIVM
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="fbench-code.html">
-             FBENCH
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Code -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="talks.html">
-           Talks
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="videos.html">
-           Videos
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
-           ACK
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
-           Contact
-          </a>
-         </li>
-        </ul>
-       </div>
-       <!-- End Navigation -->
-      </div>
-     </nav>
-    </div>
-   </header>
-   <!-- End Header -->
-   <!-- Breadcrumbs -->
-   <section class="g-bg-gray-light-v5 g-py-50">
-    <div class="container">
-     <div class="d-sm-flex text-center">
-      <div class="align-self-center">
-       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        Incremental Maintenance for Analytics
-       </h2>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- End Breadcrumbs -->
-   <div class="g-pt-50">
-   </div>
-   <!-- Blog Minimal Blocks -->
-   <div class="container g-pb-20">
-    <div class="row justify-content-between">
-     <!-- left panel -->
-     <div class="col-lg-1 g-mb-80">
-     </div>
-     <!-- end left panel -->
-     <!-- Articles Content -->
-     <div class="col-lg-10 g-mb-50 g-mb-0--lg">
-      <article class="g-mb-60">
-       <div class="text-center g-width-60x--md mx-auto g-my-40">
-        <h3 class="text-uppercase g-color-primary">
-         <strong>
-          F-IVM
-         </strong>
-         is a unified incremental maintenance approach for analytics over normalised databases.
-        </h3>
-       </div>
-       <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
-        <p class="g-color-black-opacity-0_8">
-         Analytical tasks are expressed as views on joins with group-by aggregates over functions that map keys to payloads.
-         <strong>
-          F-IVM
-         </strong>
-         has been already used for gradient computation in learning linear regression models, matrix
-                chain multiplication, and factorised evaluation of conjunctive queries. Although these applications achieve
-                different outcomes, the insight of this project is that they only differ in the specification of the sum
-                and product operations over payloads. These payload operations can be: arithmetic addition and multiplication
-                for queries with joins and group-by aggregates; relational union and join for listing and factorised representation
-                of conjunctive query results; matrix addition and multiplication for gradient computation; in general, sum
-                and product in an appropriate
-         <em>
-          ring
-         </em>
-         .
-         <br/>
-         The
-         <strong>
-          F-IVM
-         </strong>
-         ’s mechanisms for maintenance and computation over keys stay the same. Efficient incremental
-                view maintenance (IVM) for new analytics is readily available as long as they come with an appropriate specification
-                of the sum and product ring operations.
-        </p>
-        <div class="text-center g-width-60x--md mx-auto g-my-40">
-         <h3 class="text-uppercase g-color-primary">
-          IVM your next analytics by just providing the rings.
-          <br/>
-          <strong>
-           F-IVM
-          </strong>
-          does the rest!
-         </h3>
+        <div class="d-sm-flex text-center">
+          <div class="align-self-center">
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+              Incremental Maintenance for Analytics
+            </h2>
+          </div>
         </div>
-        <p class="g-color-black-opacity-0_8">
-         <strong>
-          F-IVM
-         </strong>
-         has two ingredients:
-        </p>
-        <ol>
-         <li>
-          It leverages higher-order IVM to reduce the maintenance of the input view to the maintenance of a tree of increasingly simpler
-                  views. In contrast to classical (first- order) IVM, which does not use extra views and computes changes
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+    <div class="g-pt-50">
+    </div>
+    <!-- Blog Minimal Blocks -->
+    <div class="container g-pb-20">
+      <div class="row justify-content-between">
+        <!-- left panel -->
+        <div class="col-lg-1 g-mb-80">
+        </div>
+        <!-- end left panel -->
+        <!-- Articles Content -->
+        <div class="col-lg-10 g-mb-50 g-mb-0--lg">
+          <article class="g-mb-60">
+            <div class="text-center g-width-60x--md mx-auto g-my-40">
+              <h3 class="text-uppercase g-color-primary">
+                <strong>
+                  F-IVM
+                </strong>
+                is a unified incremental maintenance approach for analytics over normalised databases.
+              </h3>
+            </div>
+            <div class="g-font-size-18 g-color-black-opacity-1_0 g-line-height-1_6 g-mb-30">
+              <p class="g-color-black-opacity-0_8">
+                Analytical tasks are expressed as views on joins with group-by aggregates over functions that map keys
+                to payloads.
+                <strong>
+                  F-IVM
+                </strong>
+                has been already used for gradient computation in learning linear regression models, matrix
+                chain multiplication, and factorised evaluation of conjunctive queries. Although these applications
+                achieve
+                different outcomes, the insight of this project is that they only differ in the specification of the sum
+                and product operations over payloads. These payload operations can be: arithmetic addition and
+                multiplication
+                for queries with joins and group-by aggregates; relational union and join for listing and factorised
+                representation
+                of conjunctive query results; matrix addition and multiplication for gradient computation; in general,
+                sum
+                and product in an appropriate
+                <em>
+                  ring
+                </em>
+                .
+                <br />
+                The
+                <strong>
+                  F-IVM
+                </strong>
+                ’s mechanisms for maintenance and computation over keys stay the same. Efficient incremental
+                view maintenance (IVM) for new analytics is readily available as long as they come with an appropriate
+                specification
+                of the sum and product ring operations.
+              </p>
+              <div class="text-center g-width-60x--md mx-auto g-my-40">
+                <h3 class="text-uppercase g-color-primary">
+                  IVM your next analytics by just providing the rings.
+                  <br />
+                  <strong>
+                    F-IVM
+                  </strong>
+                  does the rest!
+                </h3>
+              </div>
+              <p class="g-color-black-opacity-0_8">
+                <strong>
+                  F-IVM
+                </strong>
+                has two ingredients:
+              </p>
+              <ol>
+                <li>
+                  It leverages higher-order IVM to reduce the maintenance of the input view to the maintenance of a tree
+                  of increasingly simpler
+                  views. In contrast to classical (first- order) IVM, which does not use extra views and computes
+                  changes
                   in the query result on the fly, by using carefully chosen extra views
-          <strong>
-           F-IVM
-          </strong>
-          can tremendously speed up the maintenance task and lower its complexity. Nevertheless, it
+                  <strong>
+                    F-IVM
+                  </strong>
+                  can tremendously speed up the maintenance task and lower its complexity. Nevertheless, it
                   may use substantially fewer and cheaper views than fully-recursive IVM, which is the approach taken by
                   the state-of-the-art IVM system DBToaster.
-         </li>
-         <li>
-          It is the first approach to employ factorised computation for three aspects of incremental maintenance for
+                </li>
+                <li>
+                  It is the first approach to employ factorised computation for three aspects of incremental maintenance
+                  for
                   queries with aggregates and joins:
-          <ol>
-           <li>
-            It exploits insights from query evaluation algorithms with best known complexity and optimisations that
+                  <ol>
+                    <li>
+                      It exploits insights from query evaluation algorithms with best known complexity and optimisations
+                      that
                       push aggregates past joins;
-           </li>
-           <li>
-            It can process bulk updates expressed as low-rank decompositions; and
-           </li>
-           <li>
-            It can maintain compressed representation of query results.
-           </li>
-          </ol>
-         </li>
-        </ol>
-        <p class="g-color-black-opacity-0_8">
-         <strong>
-          F-IVM
-         </strong>
-         is implemented on top of DBToaster’s open-source back- end, which can generate optimised C++
-                code from high-level update trigger specifications. In a range of applications, it outperforms DBToaster,
-                classical first-order IVM, and re-evaluation by up to four orders of magnitude while using up to two orders
+                    </li>
+                    <li>
+                      It can process bulk updates expressed as low-rank decompositions; and
+                    </li>
+                    <li>
+                      It can maintain compressed representation of query results.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+              <p class="g-color-black-opacity-0_8">
+                <strong>
+                  F-IVM
+                </strong>
+                is implemented on top of DBToaster’s open-source back- end, which can generate optimised C++
+                code from high-level update trigger specifications. In a range of applications, it outperforms
+                DBToaster,
+                classical first-order IVM, and re-evaluation by up to four orders of magnitude while using up to two
+                orders
                 of magnitude less space.
-        </p>
-        <div class="g-width-70x--md 1mx-auto g-my-40">
-         <blockquote class="blockquote g-color-primary g-brd-2 g-brd-primary--hover text-uppercase g-font-size-22 g-transition-0_2 g-mb-30">
-          <p>
-           If you liked it, then you should put a ring on it.
-          </p>
-         </blockquote>
-        </div>
-        <!-- Sources & Tags -->
-        <div class="g-mb-30">
-         <h6 class="g-color-gray-dark-v1">
-          <strong class="g-mr-5">
-           Tags:
-          </strong>
-          <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-           factorisation
-          </a>
-          <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-           joins
-          </a>
-          <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-           aggregates
-          </a>
-          <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-           incremental view maintenance
-          </a>
-          <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5" href="#">
-           rings
-          </a>
-         </h6>
-        </div>
-        <!-- End Sources & Tags -->
-        <!-- <hr class="g-brd-gray-light-v4"> -->
-       </div>
-      </article>
-      <div class="g-mb-30">
-       <div class="u-heading-v3-1 g-mb-30">
-        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
-         Publications
-        </h2>
-       </div>
-      </div>
-      <ul>
-       <li id="2006.00694">
-        <strong>
-         F-IVM: Learning over Fast Evolving Relational Data
-        </strong>
-        .
-               [
-        <a href="https://arxiv.org/abs/2006.00694">
-         arixv
-        </a>
-        ,
-        <a href="https://www.youtube.com/watch?v=xbXCm14szH0">
-         video
-        </a>
-        ]
-        <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
-         Demo
-        </span>
-        <br/>
-        Milos Nikolic, Haozhe Zhang, Ahmet Kara, Dan Olteanu.
-        <br/>
-        In ACM SIGMOD, Portland, Oregon, June, 2020.
-        <br/>
-        <a href="https://arxiv.org/abs/2006.00694">
-         arXiv report 2006.00694
-        </a>
-        , Junes 2020.
-       </li>
-      </ul>
-      <ul>
-       <li id="ekov-cikm18">
-        <strong>
-         Incremental Techniques for Large-Scale Dynamic Query Processing
-        </strong>
-        .
+              </p>
+              <div class="g-width-70x--md 1mx-auto g-my-40">
+                <blockquote
+                  class="blockquote g-color-primary g-brd-2 g-brd-primary--hover text-uppercase g-font-size-22 g-transition-0_2 g-mb-30">
+                  <p>
+                    If you liked it, then you should put a ring on it.
+                  </p>
+                </blockquote>
+              </div>
+              <!-- Sources & Tags -->
+              <div class="g-mb-30">
+                <h6 class="g-color-gray-dark-v1">
+                  <strong class="g-mr-5">
+                    Tags:
+                  </strong>
+                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                    href="#">
+                    factorisation
+                  </a>
+                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                    href="#">
+                    joins
+                  </a>
+                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                    href="#">
+                    aggregates
+                  </a>
+                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                    href="#">
+                    incremental view maintenance
+                  </a>
+                  <a class="u-tags-v1 g-font-size-12 g-brd-around g-brd-gray-light-v4 g-bg-primary--hover g-brd-primary--hover g-color-black-opacity-0_8 g-color-white--hover rounded g-py-6 g-px-15 g-mr-5"
+                    href="#">
+                    rings
+                  </a>
+                </h6>
+              </div>
+              <!-- End Sources & Tags -->
+              <!-- <hr class="g-brd-gray-light-v4"> -->
+            </div>
+          </article>
+          <div class="g-mb-30">
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
+                Publications
+              </h2>
+            </div>
+          </div>
+          <ul>
+            <li id="2006.00694">
+              <strong>
+                F-IVM: Learning over Fast Evolving Relational Data
+              </strong>
+              .
               [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/ekov-cikm18.pdf">
-         pdf
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
-        <br/>
-        Iman Elghandour, Ahmet Kara, Dan Olteanu, and Stijn Vansummeren.
-        <br/>
-        Tutorial In CIKM, Turin (Italy), Oct 2018.
-        <br/>
-        Extended version in
-        <a href="https://arxiv.org/abs/1902.00585">
-         arXiv report 1804.02780
-        </a>
-        , February 2019.
-       </li>
-       <br/>
-       <li id="no-sigmod18">
-        <strong>
-         Incremental View Maintenance with Triple Lock Factorisation Benefits
-        </strong>
-        .
-        <!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
-        [
-        <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
-         slides
-        </a>
-        ]
-        <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
-         Conference
-        </span>
-        <br/>
-        Milos Nikolic and Dan Olteanu.
-        <br>
-         In ACM SIGMOD, Houston (USA), June 2018.
-         <br/>
-         Prior version (strict subset of results) in
-         <a href="http://arxiv.org/abs/1703.07484">
-          arXiv technical report 1703.07484
-         </a>
-         , March 2017.
-        </br>
-       </li>
-      </ul>
-      <br/>
-      <div class="g-mb-30">
-       <div class="u-heading-v3-1 g-mb-30">
-        <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
-         Code
-        </h2>
-       </div>
+              <a href="https://arxiv.org/abs/2006.00694">
+                arixv
+              </a>
+              ,
+              <a href="https://www.youtube.com/watch?v=xbXCm14szH0">
+                video
+              </a>
+              ]
+              <span class="u-label g-bg-pink g-rounded-3 g-ml-5">
+                Demo
+              </span>
+              <br />
+              Milos Nikolic, Haozhe Zhang, Ahmet Kara, Dan Olteanu.
+              <br />
+              In ACM SIGMOD, Portland, Oregon, June, 2020.
+              <br />
+              <a href="https://arxiv.org/abs/2006.00694">
+                arXiv report 2006.00694
+              </a>
+              , Junes 2020.
+            </li>
+          </ul>
+          <ul>
+            <li id="ekov-cikm18">
+              <strong>
+                Incremental Techniques for Large-Scale Dynamic Query Processing
+              </strong>
+              .
+              [
+              <a href="http://www.cs.ox.ac.uk/dan.olteanu/papers/ekov-cikm18.pdf">
+                pdf
+              </a>
+              ]
+              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+                Conference
+              </span>
+              <br />
+              Iman Elghandour, Ahmet Kara, Dan Olteanu, and Stijn Vansummeren.
+              <br />
+              Tutorial In CIKM, Turin (Italy), Oct 2018.
+              <br />
+              Extended version in
+              <a href="https://arxiv.org/abs/1902.00585">
+                arXiv report 1804.02780
+              </a>
+              , February 2019.
+            </li>
+            <br />
+            <li id="no-sigmod18">
+              <strong>
+                Incremental View Maintenance with Triple Lock Factorisation Benefits
+              </strong>
+              .
+              <!--A href="https://arxiv.org/pdf/1703.07484">arxiv</A>,-->
+              [
+              <a href="http://www.cs.ox.ac.uk/dan.olteanu/tutorials/fivm-relationalAI17.pdf">
+                slides
+              </a>
+              ]
+              <span class="u-label g-bg-blue g-rounded-3 g-ml-5">
+                Conference
+              </span>
+              <br />
+              Milos Nikolic and Dan Olteanu.
+              <br>
+              In ACM SIGMOD, Houston (USA), June 2018.
+              <br />
+              Prior version (strict subset of results) in
+              <a href="http://arxiv.org/abs/1703.07484">
+                arXiv technical report 1703.07484
+              </a>
+              , March 2017.
+              </br>
+            </li>
+          </ul>
+          <br />
+          <div class="g-mb-30">
+            <div class="u-heading-v3-1 g-mb-30">
+              <h2 class="h5 u-heading-v3__title g-color-gray-dark-v1 text-uppercase g-brd-primary" id="publications">
+                Code
+              </h2>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <strong>
+                FIVM 1.0 Repository
+              </strong>
+              <a href="https://github.com/fdbresearch/FIVM">
+                https://github.com/fdbresearch/FIVM
+              </a>
+            </li>
+          </ul>
+          <div id="stickyblock-end">
+          </div>
+        </div>
+        <!-- End Articles Content -->
+        <!-- right panel -->
+        <div class="col-lg-1 g-mb-80">
+        </div>
+        <!-- end right panel -->
       </div>
-      <ul>
-       <li>
-        <strong>
-         FIVM 1.0 Repository
-        </strong>
-        <a href="https://github.com/fdbresearch/FIVM">
-         https://github.com/fdbresearch/FIVM
-        </a>
-       </li>
-      </ul>
-      <div id="stickyblock-end">
-      </div>
-     </div>
-     <!-- End Articles Content -->
-     <!-- right panel -->
-     <div class="col-lg-1 g-mb-80">
-     </div>
-     <!-- end right panel -->
     </div>
-   </div>
-   <!-- End Blog Minimal Blocks -->
-   <!-- Footer -->
-   <div class="g-pt-50">
-    <footer class="g-bg-secondary">
-     <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
-     </div>
-     <div class="container">
-      <!-- Footer - Bottom Section -->
-      <div class="row align-items-center">
-       <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-        <!-- Copyright -->
-        <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-         © 2017-2022 All Rights Reserved.
-        </p>
-        <!-- End Copyright -->
-       </div>
-       <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
-        <!-- Links -->
-        <ul class="list-inline mb-0">
-         <li class="list-inline-item g-pl-0 g-pr-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
-           Contact Us
-          </a>
-         </li>
-         <li class="list-inline-item g-px-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-            Last modified: April 2022
-          </a>
-         </li>
-        </ul>
-        <!-- End Links -->
-       </div>
-      </div>
-      <!-- End Footer - Bottom Section -->
-     </div>
-    </footer>
-   </div>
-   <!-- End Footer -->
+    <!-- End Blog Minimal Blocks -->
+    <!-- Footer -->
+    <div class="g-pt-50">
+      <footer class="g-bg-secondary">
+        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+        </div>
+        <div class="container">
+          <!-- Footer - Bottom Section -->
+          <div class="row align-items-center">
+            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Copyright -->
+              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+                © 2017-2022 All Rights Reserved.
+              </p>
+              <!-- End Copyright -->
+            </div>
+            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
+              <!-- Links -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item g-pl-0 g-pr-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+                    Contact Us
+                  </a>
+                </li>
+                <li class="list-inline-item g-px-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+                    Last modified: April 2022
+                  </a>
+                </li>
+              </ul>
+              <!-- End Links -->
+            </div>
+          </div>
+          <!-- End Footer - Bottom Section -->
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
   </main>
   <!-- JS Global Compulsory -->
   <script src="assets/vendor/jquery/jquery.min.js">
@@ -547,7 +592,7 @@
   </script>
   <!-- JS Plugins Init. -->
   <script>
-   $(document).on('ready', function () {
+    $(document).on('ready', function () {
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
@@ -599,5 +644,6 @@
       }, 200);
     });
   </script>
- </body>
+</body>
+
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109826838-1">
   </script>
@@ -9,7 +10,7 @@
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-111495058-1">
   </script>
   <script>
-   window.dataLayer = window.dataLayer || [];
+    window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
@@ -20,616 +21,659 @@
   </script>
   <!-- Title -->
   <title>
-   FDB Research
+    FDB Research
   </title>
   <!-- Required Meta Tags Always Come First -->
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
-  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
-  <meta content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science" name="keywords"/>
-  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning" name="description"/>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+  <meta content="ie=edge" http-equiv="x-ua-compatible" />
+  <meta
+    content="Factorised,Factorized,Factorised Databases,Factorized Databases,join,query,FDB,FDBResearch,Databases,CS,Compression,Worst-case optimal,Oxford,University of Oxford,Computer Science"
+    name="keywords" />
+  <meta content="We investigate foundational and systems aspects of factorized data processing and machine learning"
+    name="description" />
   <!-- Favicon -->
-  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-  <link href="manifest.json" rel="manifest"/>
-  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon"/>
-  <meta content="#ffffff" name="theme-color"/>
+  <link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <link href="manifest.json" rel="manifest" />
+  <link color="#4270a9" href="safari-pinned-tab.svg" rel="mask-icon" />
+  <meta content="#ffffff" name="theme-color" />
   <!-- Google Fonts -->
   <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700%7CPlayfair+Display%7CRoboto%7CRaleway%7CSpectral%7CRubik"> -->
   <!-- CSS Global Compulsory -->
-  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <!-- CSS Global Icons -->
-  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet"/>
-  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/animate.css" rel="stylesheet"/>
-  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet"/>
-  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet"/>
-  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet"/>
+  <link href="assets/vendor/icon-awesome/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line/css/simple-line-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-etlinefont/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-line-pro/style.css" rel="stylesheet" />
+  <link href="assets/vendor/icon-hs/style.css" rel="stylesheet" />
+  <link href="assets/vendor/cubeportfolio-full/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" />
+  <link href="assets/vendor/animate.css" rel="stylesheet" />
+  <link href="assets/vendor/hs-megamenu/src/hs.megamenu.css" rel="stylesheet" />
+  <link href="assets/vendor/hamburgers/hamburgers.min.css" rel="stylesheet" />
+  <link href="assets/vendor/slick-carousel/slick/slick.css" rel="stylesheet" />
   <!-- CSS Unify -->
-  <link href="assets/css/unify-core.css" rel="stylesheet"/>
-  <link href="assets/css/unify-components.css" rel="stylesheet"/>
-  <link href="assets/css/unify-globals.css" rel="stylesheet"/>
+  <link href="assets/css/unify-core.css" rel="stylesheet" />
+  <link href="assets/css/unify-components.css" rel="stylesheet" />
+  <link href="assets/css/unify-globals.css" rel="stylesheet" />
   <!-- CSS Customization -->
-  <link href="assets/css/custom.css" rel="stylesheet"/>
- </head>
- <body>
+  <link href="assets/css/custom.css" rel="stylesheet" />
+</head>
+
+<body>
   <main>
-   <!-- Header -->
-   <header class="u-header u-header--static u-shadow-v19" id="js-header">
-    <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
-     <nav class="js-mega-menu navbar navbar-expand-lg">
-      <div class="container">
-       <!-- Responsive Toggle Button -->
-       <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0" data-target="#navBar" data-toggle="collapse" type="button">
-        <span class="hamburger hamburger--slider">
-         <span class="hamburger-box">
-          <span class="hamburger-inner">
-          </span>
-         </span>
-        </span>
-       </button>
-       <!-- End Responsive Toggle Button -->
-       <!-- Logo -->
-       <a class="navbar-brand" href="index.html">
-        <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png"/>
-       </a>
-       <!-- End Logo -->
-       <!-- Navigation -->
-       <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg" id="navBar">
-        <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           News
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-              <a class="nav-link" href="FDBworkshop2022.html">
-               FDB Workshop 2022
-              </a>
-             </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="visitors.html">
-             Visitors
+    <!-- Header -->
+    <header class="u-header u-header--static u-shadow-v19" id="js-header">
+      <div class="u-header__section u-header__section--light g-bg-white g-transition-0_3 g-py-10">
+        <nav class="js-mega-menu navbar navbar-expand-lg">
+          <div class="container">
+            <!-- Responsive Toggle Button -->
+            <button aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation"
+              class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-top-3 g-right-0"
+              data-target="#navBar" data-toggle="collapse" type="button">
+              <span class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner">
+                  </span>
+                </span>
+              </span>
+            </button>
+            <!-- End Responsive Toggle Button -->
+            <!-- Logo -->
+            <a class="navbar-brand" href="index.html">
+              <img alt="Image Description" height="40px" src="assets/img/logo/logo-fdb.png" />
             </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="events.html">
-             Events
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="awards.html">
-             Awards
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="people.html">
-           People
-          </a>
-         </li>
-         <!-- Projects -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Projects
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="principles.html">
-             Principles of Factorised Databases
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="analytics.html">
-             In-Database Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivm.html">
-             Incremental Maintenance for Analytics
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="ivme.html">
-             Adaptive Query Processing based on Degree Information
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Projects -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="publications.html">
-           Publications
-          </a>
-         </li>
-         <!-- Code -->
-         <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn" data-animation-out="fadeOut">
-          <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true" class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
-           Code
-          </a>
-          <ul aria-labelledby="nav-link--features" class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling" id="nav-submenu--features">
-           <li class="dropdown-item">
-            <a class="nav-link" href="fivm-code.html">
-             FIVM
-            </a>
-           </li>
-           <li class="dropdown-item">
-            <a class="nav-link" href="fbench-code.html">
-             FBENCH
-            </a>
-           </li>
-          </ul>
-         </li>
-         <!-- End Code -->
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="talks.html">
-           Talks
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="videos.html">
-           Videos
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
-           ACK
-          </a>
-         </li>
-         <li class="nav-item g-mx-10--lg g-mx-15--xl">
-          <a class="nav-link g-py-7 g-px-0" href="contacts.html">
-           Contact
-          </a>
-         </li>
-        </ul>
-       </div>
-       <!-- End Navigation -->
-      </div>
-     </nav>
-    </div>
-   </header>
-   <!-- End Header -->
-   <!-- Breadcrumbs -->
-   <section class="g-bg-gray-light-v5 g-py-50">
-    <div class="container">
-     <div class="d-sm-flex text-center">
-      <div class="align-self-center">
-       <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
-        Awards
-       </h2>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- End Breadcrumbs -->
-   <div class="g-pt-50">
-   </div>
-   <!-- Blog Minimal Blocks -->
-   <div class="container g-pb-20" id="fdb-app">
-    <div class="row justify-content-between">
-     <!-- left panel -->
-     <div class="col-md-1">
-     </div>
-     <!-- end left panel -->
-     <!-- Articles Content -->
-     <div class="col-md-9">
-      <a name="honours">
-      </a>
-      <div class="u-heading-v3-1 g-mb-30">
-       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
-        Honours
-       </h2>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           2019
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Invited to ACM TODS special issue of best papers at PODS 2019.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           2019
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Invited to ACM TODS special issue of best papers at ICDT 2019.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           2018
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Invited to ACM TODS special issue of best papers at PODS 2018.
-         </h4>
-        </div>
-       </article>
-       <!-- <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"> -->
-       <br/>
-       <br/>
-      </div>
-      <a name="student_awards">
-      </a>
-      <div class="u-heading-v3-1 g-mb-30">
-       <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
-        Student Awards
-       </h2>
-      </div>
-      <!-- NEW ENTRY -->
-      <div>
-        <article class="media g-bg-white">
-          <figure class="d-flex g-width-70 g-height-70 mr-3">
-           <img alt="https://conferences.inf.ed.ac.uk/edbticdt2022/images/logos/EDBT-ICDT-edinburgh.png" class="img-fluid" src="assets/acknowledgements/EDBT-ICDT-edinburgh.png"/>
-         </figure>
-        <div class="media-body">
-           <span class="g-font-size-14">
-            <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-             April 2022
-            </a>
-           </span>
-           <h4 class="g-font-size-13 mb-0">
-            Our paper <a href="https://dl.acm.org/doi/10.1145/2274576.2274607">"Factorized Representations of Query Results: Size Bounds and Readability"</a> (by Dan Olteanu and Jakub Závodný) received the <a href="https://conferences.inf.ed.ac.uk/edbticdt2022/?contents=awards_tot_icdt.html">ICDT 2022 Test of Time Award</a>. This award recognizes a paper presented 10 years prior at the ICDT conference that has best met the "test of time" and had the highest impact in terms of research, methodology, conceptual contribution, or transfer to practice over the past decade.
-           </h4>
+            <!-- End Logo -->
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg g-mr-40--lg"
+              id="navBar">
+              <ul class="navbar-nav text-uppercase g-pos-rel g-font-weight-600 ml-auto">
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    News
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="retreat2023.html">
+                        Retreat 2023
+                      </a>
+                    </li>                    
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="FDBworkshop2022.html">
+                        FDB Workshop 2022
+                      </a>
+                    </li>
+
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="visitors.html">
+                        Visitors
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="events.html">
+                        Events
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="awards.html">
+                        Awards
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="people.html">
+                    People
+                  </a>
+                </li>
+                <!-- Projects -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Projects
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="principles.html">
+                        Principles of Factorised Databases
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="analytics.html">
+                        In-Database Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivm.html">
+                        Incremental Maintenance for Analytics
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="ivme.html">
+                        Adaptive Query Processing based on Degree Information
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Projects -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="publications.html">
+                    Publications
+                  </a>
+                </li>
+                <!-- Code -->
+                <li class="nav-item hs-has-sub-menu g-mx-10--lg g-mx-15--xl" data-animation-in="fadeIn"
+                  data-animation-out="fadeOut">
+                  <a aria-controls="nav-submenu--features" aria-expanded="false" aria-haspopup="true"
+                    class="nav-link g-py-7 g-px-0" href="#" id="nav-link--features">
+                    Code
+                  </a>
+                  <ul aria-labelledby="nav-link--features"
+                    class="hs-sub-menu list-unstyled u-shadow-v11 g-brd-top g-brd-primary g-brd-top-2 g-min-width-220 g-mt-21 g-mt-11--lg--scrolling"
+                    id="nav-submenu--features">
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fivm-code.html">
+                        FIVM
+                      </a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="nav-link" href="fbench-code.html">
+                        FBENCH
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- End Code -->
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="talks.html">
+                    Talks
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="videos.html">
+                    Videos
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="acknowledgements.html">
+                    ACK
+                  </a>
+                </li>
+                <li class="nav-item g-mx-10--lg g-mx-15--xl">
+                  <a class="nav-link g-py-7 g-px-0" href="contacts.html">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
           </div>
-         </article> 
-         <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-        </div>
-        <!-- NEW ENTRY -->
-        <div>
-        <article class="media g-bg-white">
-         <figure class="d-flex g-width-70 g-height-70 mr-3">
-          <img alt="https://www.bcs.org/media/8094/black-logo-main.png" class="img-fluid" src="assets/acknowledgements/BCS-logo.png"/>
-        </figure>
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-          <img alt="https://cphcuk.files.wordpress.com/2014/07/logoblue320.jpg?w=306" class="img-fluid" src="assets/acknowledgements/CPHC-logo.jpg"/>
-      </figure>
-       <div class="media-body">
-          <span class="g-font-size-14">
-           <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-            July 2021
-           </a>
-          </span>
-          <h4 class="g-font-size-13 mb-0">
-           Maximilian Schleich was Highly Commended in the competition for the <a href="https://www.bcs.org/about-us/press-office/press-releases/winner-of-the-cphcbcs-distinguished-dissertation-award-announced/">CPHC/BCS 2020 Distinguished Dissertation Award</a>. Each year, BCS and the Conference of Professors and Heads of Computing (CPHC) award the best UK PhD/DPhil dissertations in computer science that stand out for their excellence.
-          </h4>
-         </div>
-        </article>
-        <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-       </div>
-       <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-160 g-height-70 mr-3">
-         <img alt="https://2021.sigmod.org/images/2021sigmod-logo1.jpg" class="img-fluid" src="assets/acknowledgements/2021sigmod-logo1.jpeg"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           May 2021
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich received an Honourable Mention for the <a href="https://sigmod.org/sigmod-awards/sigmod-jim-gray-doctoral-dissertation-award/">2021 SIGMOD Jim Gray Doctoral Dissertation Award</a>  for his DPhil dissertation entitled <a href="https://ora.ox.ac.uk/objects/uuid:960ebe68-532e-4c32-bea7-5b41c1cef257">"Structure-Aware Learning over Multi-Relational Databases"</a>. The award recognizes excellent research by doctoral candidates in the database field.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
+        </nav>
       </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/microsoft.jpg"/>
-        </figure>
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           October 2019
+    </header>
+    <!-- End Header -->
+    <!-- Breadcrumbs -->
+    <section class="g-bg-gray-light-v5 g-py-50">
+      <div class="container">
+        <div class="d-sm-flex text-center">
+          <div class="align-self-center">
+            <h2 class="h2 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">
+              Awards
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Breadcrumbs -->
+    <div class="g-pt-50">
+    </div>
+    <!-- Blog Minimal Blocks -->
+    <div class="container g-pb-20" id="fdb-app">
+      <div class="row justify-content-between">
+        <!-- left panel -->
+        <div class="col-md-1">
+        </div>
+        <!-- end left panel -->
+        <!-- Articles Content -->
+        <div class="col-md-9">
+          <a name="honours">
           </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Gabriel-Robert Inelus was awarded Microsoft Prize for best 4th-year
+          <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+              Honours
+            </h2>
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    2019
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Invited to ACM TODS special issue of best papers at PODS 2019.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    2019
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Invited to ACM TODS special issue of best papers at ICDT 2019.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/tods_th.webp" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    2018
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Invited to ACM TODS special issue of best papers at PODS 2018.
+                </h4>
+              </div>
+            </article>
+            <!-- <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"> -->
+            <br />
+            <br />
+          </div>
+          <a name="student_awards">
+          </a>
+          <div class="u-heading-v3-1 g-mb-30">
+            <h2 class="u-heading-v3__title g-color-gray-dark-v1 g-brd-primary">
+              Student Awards
+            </h2>
+          </div>
+          <!-- NEW ENTRY -->
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="https://conferences.inf.ed.ac.uk/edbticdt2022/images/logos/EDBT-ICDT-edinburgh.png"
+                  class="img-fluid" src="assets/acknowledgements/EDBT-ICDT-edinburgh.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    April 2022
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Our paper <a href="https://dl.acm.org/doi/10.1145/2274576.2274607">"Factorized Representations of
+                    Query Results: Size Bounds and Readability"</a> (by Dan Olteanu and Jakub Závodný) received the <a
+                    href="https://conferences.inf.ed.ac.uk/edbticdt2022/?contents=awards_tot_icdt.html">ICDT 2022 Test
+                    of Time Award</a>. This award recognizes a paper presented 10 years prior at the ICDT conference
+                  that has best met the "test of time" and had the highest impact in terms of research, methodology,
+                  conceptual contribution, or transfer to practice over the past decade.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <!-- NEW ENTRY -->
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="https://www.bcs.org/media/8094/black-logo-main.png" class="img-fluid"
+                  src="assets/acknowledgements/BCS-logo.png" />
+              </figure>
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="https://cphcuk.files.wordpress.com/2014/07/logoblue320.jpg?w=306" class="img-fluid"
+                  src="assets/acknowledgements/CPHC-logo.jpg" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    July 2021
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich was Highly Commended in the competition for the <a
+                    href="https://www.bcs.org/about-us/press-office/press-releases/winner-of-the-cphcbcs-distinguished-dissertation-award-announced/">CPHC/BCS
+                    2020 Distinguished Dissertation Award</a>. Each year, BCS and the Conference of Professors and Heads
+                  of Computing (CPHC) award the best UK PhD/DPhil dissertations in computer science that stand out for
+                  their excellence.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-160 g-height-70 mr-3">
+                <img alt="https://2021.sigmod.org/images/2021sigmod-logo1.jpg" class="img-fluid"
+                  src="assets/acknowledgements/2021sigmod-logo1.jpeg" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    May 2021
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich received an Honourable Mention for the <a
+                    href="https://sigmod.org/sigmod-awards/sigmod-jim-gray-doctoral-dissertation-award/">2021 SIGMOD Jim
+                    Gray Doctoral Dissertation Award</a> for his DPhil dissertation entitled <a
+                    href="https://ora.ox.ac.uk/objects/uuid:960ebe68-532e-4c32-bea7-5b41c1cef257">"Structure-Aware
+                    Learning over Multi-Relational Databases"</a>. The award recognizes excellent research by doctoral
+                  candidates in the database field.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/microsoft.jpg" />
+              </figure>
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    October 2019
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Gabriel-Robert Inelus was awarded Microsoft Prize for best 4th-year
                   Computer Science project 2019. His project investigates factorised learning of low-rank models
                   (so-called quadratically regularised principal component analysis) over multi-relational databases. [
-          <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Gabriel-Robert.Inelus.pdf">
-           pdf
-          </a>
-          ]
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/icdt2019.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           January 2019
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Our paper
-          <a href="./publications.html#ivme-icdt19">
-           Counting Triangles under Updates in
-                      Worst-Case Optimal Time
-          </a>
-          received the best paper award at ICDT 2019.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/microsoft.jpg"/>
-        </figure>
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           July 2018
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Radu-Bogdan Berteanu received the Microsoft Prize for best 4th-year
+                  <a href="http://www.cs.ox.ac.uk/dan.olteanu/theses/Gabriel-Robert.Inelus.pdf">
+                    pdf
+                  </a>
+                  ]
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/icdt2019.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    January 2019
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Our paper
+                  <a href="./publications.html#ivme-icdt19">
+                    Counting Triangles under Updates in
+                    Worst-Case Optimal Time
+                  </a>
+                  received the best paper award at ICDT 2019.
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/microsoft.jpg" />
+              </figure>
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    July 2018
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Radu-Bogdan Berteanu received the Microsoft Prize for best 4th-year
                   Computer Science Project. His project tackles the problem of computing covers, which are succinct,
                   lossless, relational representations for query results in relational databases.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-160 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/deemsigmod2018.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           June 2018
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich received a travel award to attend the DEEM
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-160 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/deemsigmod2018.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    June 2018
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich received a travel award to attend the DEEM
                   workshop@SIGMOD 2018.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           October 2016
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Pierre-Yves Bigourdan was awarded the Hoare Prize for best MSc in CS
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    October 2016
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Pierre-Yves Bigourdan was awarded the Hoare Prize for best MSc in CS
                   project 2016. His project investigates the problem
                   of many-core and distributed regression learning over factorised joins.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/VLDB-2016-Logo.jpg"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           September 2016
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich received a travel award to attend VLDB 2016 in New
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/VLDB-2016-Logo.jpg" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    September 2016
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich received a travel award to attend VLDB 2016 in New
                   Delhi.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/sigmod2016.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           May 2016
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich received a SIGMOD travel grant to attend SIGMOD in
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/sigmod2016.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    May 2016
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich received a SIGMOD travel grant to attend SIGMOD in
                   San Francisco in June 2016.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/vcla.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           March 2016
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich received the honourable mention (2nd place out of 17
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/vcla.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    March 2016
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich received the honourable mention (2nd place out of 17
                   submissions) from Vienna Centre for Logic
                   and Algorithms (VCLA) International Student Awards for Outstanding Master Thesis.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           September 2015
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Maximilian Schleich was awarded the Hoare Prize for best MSc in CS
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    September 2015
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Maximilian Schleich was awarded the Hoare Prize for best MSc in CS
                   project 2015. His project investigates the problem
                   of learning linear regression models over factorised joins.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           October 2013
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Laura Draghici was awarded the Hoare Prize for best MSc in CS project
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    October 2013
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Laura Draghici was awarded the Hoare Prize for best MSc in CS project
                   2013. Her project investigates the problem of
                   updates in factorised databases.
-         </h4>
-        </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
-      </div>
-      <div>
-       <article class="media g-bg-white">
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/gresearch.jpg"/>
-        </figure>
-        <figure class="d-flex g-width-70 g-height-70 mr-3">
-         <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png"/>
-        </figure>
-        <div class="media-body">
-         <span class="g-font-size-14">
-          <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
-           September 2012
-          </a>
-         </span>
-         <h4 class="g-font-size-13 mb-0">
-          Tomáš Kočiský was awarded the Gloucester Research Project Prize for best
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
+          <div>
+            <article class="media g-bg-white">
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/gresearch.jpg" />
+              </figure>
+              <figure class="d-flex g-width-70 g-height-70 mr-3">
+                <img alt="Image Description" class="img-fluid" src="assets/acknowledgements/oxford.png" />
+              </figure>
+              <div class="media-body">
+                <span class="g-font-size-14">
+                  <a class="u-link-v5 g-font-weight-700 g-color-gray-dark-v2">
+                    September 2012
+                  </a>
+                </span>
+                <h4 class="g-font-size-13 mb-0">
+                  Tomáš Kočiský was awarded the Gloucester Research Project Prize for best
                   4th year Maths&amp;CS project 2012. His
                   project investigates the evaluation problem for queries with ORDER-BY and GROUP-BY clauses on
                   factorised
                   databases.
-         </h4>
+                </h4>
+              </div>
+            </article>
+            <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15" />
+          </div>
         </div>
-       </article>
-       <hr class="g-brd-gray-light-v4 g-mt-15 g-mb-15"/>
+        <!-- right panel -->
+        <div class="col-md-2">
+        </div>
+        <!-- end right panel -->
       </div>
-     </div>
-     <!-- right panel -->
-     <div class="col-md-2">
-     </div>
-     <!-- end right panel -->
     </div>
-   </div>
-   <!-- End Blog Minimal Blocks -->
-   <!-- Footer -->
-   <div class="g-pt-50">
-    <footer class="g-bg-secondary">
-     <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
-     </div>
-     <div class="container">
-      <!-- Footer - Bottom Section -->
-      <div class="row align-items-center">
-       <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
-        <!-- Copyright -->
-        <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
-         © 2017-2022 All Rights Reserved.
-        </p>
-        <!-- End Copyright -->
-       </div>
-       <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
-        <!-- Links -->
-        <ul class="list-inline mb-0">
-         <li class="list-inline-item g-pl-0 g-pr-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
-           Contact Us
-          </a>
-         </li>
-         <li class="list-inline-item g-px-10">
-          <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
-           Last modified: April 2022
-          </a>
-         </li>
-        </ul>
-        <!-- End Links -->
-       </div>
-      </div>
-      <!-- End Footer - Bottom Section -->
-     </div>
-    </footer>
-   </div>
-   <!-- End Footer -->
+    <!-- End Blog Minimal Blocks -->
+    <!-- Footer -->
+    <div class="g-pt-50">
+      <footer class="g-bg-secondary">
+        <div class="g-brd-bottom g-brd-secondary-light-v2 g-py-20">
+        </div>
+        <div class="container">
+          <!-- Footer - Bottom Section -->
+          <div class="row align-items-center">
+            <div class="col-md-4 g-brd-right--md g-brd-secondary-light-v2 g-mb-30">
+              <!-- Copyright -->
+              <p class="g-color-secondary-light-v1 g-font-size-12 mb-0">
+                © 2017-2022 All Rights Reserved.
+              </p>
+              <!-- End Copyright -->
+            </div>
+            <div class="col-md-8 g-brd-right--md g-brd-secondary-light-v2 g-mb-30 text-right">
+              <!-- Links -->
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item g-pl-0 g-pr-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12" href="contacts.html">
+                    Contact Us
+                  </a>
+                </li>
+                <li class="list-inline-item g-px-10">
+                  <a class="u-link-v5 g-color-black-opacity-0_5 g-font-size-12">
+                    Last modified: April 2022
+                  </a>
+                </li>
+              </ul>
+              <!-- End Links -->
+            </div>
+          </div>
+          <!-- End Footer - Bottom Section -->
+        </div>
+      </footer>
+    </div>
+    <!-- End Footer -->
   </main>
   <!-- Vue.js part -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js">
@@ -684,7 +728,7 @@
   </script>
   <!-- JS Plugins Init. -->
   <script>
-   $(document).on('ready', function () {
+    $(document).on('ready', function () {
       // initialization of tabs
       $.HSCore.components.HSTabs.init('[role="tablist"]');
 
@@ -736,5 +780,6 @@
       }, 200);
     });
   </script>
- </body>
+</body>
+
 </html>
