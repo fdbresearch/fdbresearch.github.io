@@ -84,12 +84,12 @@ tag_doc = """
                     </li>
                     <li class="dropdown-item">
                       <a class="nav-link" href="ivm.html">
-                        Incremental Maintenance for Analytics
+                        Real-time analytics over fast and continuously evolving relational data
                       </a>
                     </li>
                     <li class="dropdown-item">
                       <a class="nav-link" href="ivme.html">
-                        Adaptive Query Processing based on Degree Information
+                        The Complexity of Incremental View Maintenance
                       </a>
                     </li>
                   </ul>
